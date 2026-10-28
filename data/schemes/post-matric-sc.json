@@ -1,0 +1,93 @@
+{
+  "scheme_id": "post-matric-sc",
+  "name": "Post Matric Scholarship for SC Students",
+  "name_kannada": "ಪರಿಶಿಷ್ಟ ಜಾತಿ (SC) ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಮೆಟ್ರಿಕ್ ನಂತರದ ವಿದ್ಯಾರ್ಥಿವೇತನ",
+  "aliases": [
+    "Post Matric SC Scholarship",
+    "SC PMS",
+    "ಎಸ್‍ಸಿ ವಿದ್ಯಾರ್ಥಿವೇತನ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Social Justice and Empowerment, Govt of India",
+  "category": "Education",
+  "subcategory": "Scholarships",
+  "short_description": "Complete tuition fee waiver and monthly maintenance allowance for Scheduled Caste students pursuing post-matriculation courses.",
+  "detailed_description": "Centrally sponsored scheme providing financial assistance to Scheduled Caste students studying at post-matriculation or post-secondary stage to enable them to complete their higher education, covering all non-refundable compulsory fees and monthly maintenance allowances.",
+  "description_kannada": "ಪರಿಶಿಷ್ಟ ಜಾತಿಯ ವಿದ್ಯಾರ್ಥಿಗಳು ಎಸ್.ಎಸ್.ಎಲ್.ಸಿ ನಂತರದ ಯಾವುದೇ ಉನ್ನತ ಶಿಕ್ಷಣವನ್ನು ಮುಂದುವರಿಸಲು ಪೂರ್ಣ ಬೋಧನಾ ಶುಲ್ಕ ಮತ್ತು ಮಾಸಿಕ ನಿರ್ವಹಣಾ ಭತ್ಯೆ ಒದಗಿಸುವ ವಿದ್ಯಾರ್ಥಿವೇತನ.",
+  "min_age": 15,
+  "max_age": 35,
+  "max_income": 250000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "sc"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sc_pms_category",
+      "name": "Social Category must be SC",
+      "field": "social_category",
+      "operator": "equals",
+      "expected_value": "sc",
+      "is_mandatory": true,
+      "source_citation": "Post Matric Scholarship SC Guidelines 2020-21 to 2025-26, Section 3.1",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಪರಿಶಿಷ್ಟ ಜಾತಿಗೆ (SC) ಸೇರಿರಬೇಕು",
+      "clarification_question_en": "Do you belong to the Scheduled Caste (SC) category?",
+      "clarification_question_kn": "ನೀವು ಪರಿಶಿಷ್ಟ ಜಾತಿ (SC) ವರ್ಗಕ್ಕೆ ಸೇರಿದವರೇ?"
+    },
+    {
+      "criterion_id": "sc_pms_income",
+      "name": "Annual Family Income <= Rs. 2.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 250000.0,
+      "is_mandatory": true,
+      "source_citation": "Post Matric Scholarship SC Guidelines, Section 4 (Means Test)",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 2.50 ಲಕ್ಷ ಮೀರಬಾರದು",
+      "clarification_question_en": "Is your total family annual income below or up to Rs. 2,50,000?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 2,50,000 ಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯೇ?"
+    },
+    {
+      "criterion_id": "sc_pms_student",
+      "name": "Must be an active student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Post Matric Scholarship SC Guidelines, Section 3 (Eligibility)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಹಾಲಿ ಕಲಿಯುತ್ತಿರುವ ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently enrolled as a full-time or part-time student?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ಕಾಲೇಜು ಅಥವಾ ಕೋರ್ಸ್‌ನಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಯಾಗಿದ್ದೀರಾ?"
+    }
+  ],
+  "benefits_summary": "100% compulsory non-refundable fees reimbursed + monthly maintenance allowance up to Rs. 1,200/month.",
+  "benefits_amount": "Tuition fees + Rs. 13,500/year allowance",
+  "required_documents": [
+    "Caste Certificate issued by authorized revenue authority (Tahsildar)",
+    "Income Certificate (valid within ceiling of Rs. 2.5 Lakh)",
+    "SSLC Marks card / Previous qualifying exam marks sheet",
+    "College admission fee receipt",
+    "Aadhaar card linked with active bank account"
+  ],
+  "application_process": [
+    "Register on the National Scholarship Portal (scholarships.gov.in) or Karnataka SSP (ssp.postmatric.karnataka.gov.in).",
+    "Complete student e-KYC using Aadhaar and mobile OTP.",
+    "Enter college admission details, college code, and course name.",
+    "Upload verified caste and income certificate RD numbers.",
+    "Submit and submit printout to the college nodal officer for verification."
+  ],
+  "official_portal_url": "https://scholarships.gov.in/",
+  "application_url": "https://ssp.postmatric.karnataka.gov.in/",
+  "source_title": "Ministry of Social Justice and Empowerment, Government of India",
+  "source_excerpt": "Scholarships are paid to students whose parents/guardians' income from all sources does not exceed Rs. 2,50,000/- per annum.",
+  "effective_date": "2020-12-23",
+  "last_verified_date": "2025-01-12",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

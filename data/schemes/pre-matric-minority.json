@@ -1,0 +1,90 @@
+{
+  "scheme_id": "pre-matric-minority",
+  "name": "Pre-Matric Scholarship for Minorities",
+  "name_kannada": "ಅಲ್ಪಸಂಖ್ಯಾತ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಮೆಟ್ರಿಕ್ ಪೂರ್ವ ವಿದ್ಯಾರ್ಥಿವೇತನ",
+  "aliases": [
+    "Pre-Matric Minority Scholarship",
+    "Minority Pre-Matric",
+    "ಅಲ್ಪಸಂಖ್ಯಾತ ವಿದ್ಯಾರ್ಥಿವೇತನ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Minority Affairs, Govt of India",
+  "category": "Education",
+  "subcategory": "Scholarships",
+  "short_description": "Financial scholarship for Class 9 and Class 10 minority students (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) with family income <= Rs. 1 Lakh.",
+  "detailed_description": "Provides financial assistance to students belonging to notified minority communities studying in Class 9 and 10 in government and government-aided schools, with at least 50% marks in the previous final examination and family income not exceeding Rs. 1.00 Lakh.",
+  "description_kannada": "ಕೇಂದ್ರ ಸರ್ಕಾರದಿಂದ ಅಧಿಸೂಚಿತಗೊಂಡ ಅಲ್ಪಸಂಖ್ಯಾತ ಸಮುದಾಯಗಳ 9 ಮತ್ತು 10 ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಶಿಕ್ಷಣ ಮುಂದುವರಿಸಲು ಆರ್ಥಿಕ ನೆರವು ನೀಡುವ ವಿದ್ಯಾರ್ಥಿವೇತನ.",
+  "min_age": 13,
+  "max_age": 17,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "minority"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pmm_category",
+      "name": "Must belong to Minority Community",
+      "field": "social_category",
+      "operator": "equals",
+      "expected_value": "minority",
+      "is_mandatory": true,
+      "source_citation": "Pre-Matric Minority Guidelines Section 3 (Target Group)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಅಲ್ಪಸಂಖ್ಯಾತ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿರಬೇಕು",
+      "clarification_question_en": "Do you belong to a notified religious minority community (Muslim, Christian, Sikh, Buddhist, Jain, or Parsi)?",
+      "clarification_question_kn": "ನೀವು ಅಲ್ಪಸಂಖ್ಯಾತ ಸಮುದಾಯಕ್ಕೆ (ಮುಸ್ಲಿಂ, ಕ್ರಿಶ್ಚಿಯನ್, ಸಿಖ್, ಬೌದ್ಧ, ಜೈನ, ಪಾರ್ಸಿ) ಸೇರಿದವರೇ?"
+    },
+    {
+      "criterion_id": "pmm_income",
+      "name": "Annual Family Income <= Rs. 1 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 100000.0,
+      "is_mandatory": true,
+      "source_citation": "Pre-Matric Minority Guidelines Section 4 (Income Ceiling)",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 1,00,000 ಮೀರಬಾರದು",
+      "clarification_question_en": "What is your total annual family income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    },
+    {
+      "criterion_id": "pmm_student",
+      "name": "Must be an active student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Pre-Matric Minority Guidelines Section 3",
+      "description_kannada": "ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently studying in school?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ಶಾಲಾ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Admission and tuition fee grant up to Rs. 4,000 + maintenance allowance of Rs. 500/month for 10 months.",
+  "benefits_amount": "Up to Rs. 9,000 per year",
+  "required_documents": [
+    "Minority community self-declaration / certificate",
+    "Income certificate by competent revenue authority",
+    "Previous class marksheet (minimum 50% marks)",
+    "Aadhaar Card and student bank account details"
+  ],
+  "application_process": [
+    "Apply through National Scholarship Portal (scholarships.gov.in).",
+    "Authenticate with student OTR and Aadhaar eKYC.",
+    "School head verifies application online."
+  ],
+  "official_portal_url": "https://scholarships.gov.in/",
+  "application_url": "https://scholarships.gov.in/",
+  "source_title": "Ministry of Minority Affairs, Government of India",
+  "source_excerpt": "Scholarship will be awarded to students who have secured not less than 50% marks in the previous final examination and annual income does not exceed Rs. 1.00 lakh.",
+  "effective_date": "2008-04-01",
+  "last_verified_date": "2025-01-17",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

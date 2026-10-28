@@ -1,0 +1,78 @@
+{
+  "scheme_id": "nmmss",
+  "name": "National Means-cum-Merit Scholarship Scheme (NMMSS)",
+  "name_kannada": "ರಾಷ್ಟ್ರೀಯ ಮೀನ್ಸ್-ಕಮ್-ಮೆರಿಟ್ ವಿದ್ಯಾರ್ಥಿವೇತನ ಯೋಜನೆ",
+  "aliases": [
+    "NMMSS",
+    "Means cum Merit Scholarship",
+    "ಎನ್‌ಎಂಎಂಎಸ್‌ಎಸ್"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Department of School Education and Literacy, Ministry of Education, Govt of India",
+  "category": "Education",
+  "subcategory": "Merit Scholarships",
+  "short_description": "Scholarship of Rs. 12,000 per year (Rs. 1,000/month) for meritorious students from economically weaker sections studying from Class 9 to Class 12.",
+  "detailed_description": "NMMSS awards 1,00,000 scholarships annually to meritorious students whose parents' annual income is not more than Rs. 3,50,000, to prevent dropout after Class 8 and encourage completion of secondary stage schooling up to Class 12.",
+  "description_kannada": "ಆರ್ಥಿಕವಾಗಿ ಹಿಂದುಳಿದ ಪ್ರತಿಭಾವಂತ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ 8ನೇ ತರಗತಿಯ ನಂತರ ಶಿಕ್ಷಣ ಮೊಟಕುಗೊಳಿಸುವುದನ್ನು ತಪ್ಪಿಸಲು 9ನೇ ತರಗತಿಯಿಂದ 12ನೇ ತರಗತಿವರೆಗೆ ವಾರ್ಷಿಕ ರೂ. 12,000 ವಿದ್ಯಾರ್ಥಿವೇತನ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 13,
+  "max_age": 18,
+  "max_income": 350000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "nmmss_student",
+      "name": "Must be a Student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "NMMSS Operational Guidelines Section 2",
+      "description_kannada": "ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently studying in school?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ಶಾಲಾ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    },
+    {
+      "criterion_id": "nmmss_income",
+      "name": "Family Income <= Rs. 3.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 350000.0,
+      "is_mandatory": true,
+      "source_citation": "NMMSS Guidelines Section 3 (Parental Income Ceiling)",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 3,50,000 ಮೀರಬಾರದು",
+      "clarification_question_en": "Is your total parental annual income up to Rs. 3,50,000?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪೋಷಕರ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 3,50,000 ಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 12,000 per annum (Rs. 1,000 per month) for 4 years from Class 9 to Class 12.",
+  "benefits_amount": "Rs. 12,000 per year",
+  "required_documents": [
+    "Class 7/8 Marksheet showing minimum 55% marks (50% for SC/ST)",
+    "Parental Income Certificate",
+    "Aadhaar Card",
+    "Aadhaar-seeded bank passbook"
+  ],
+  "application_process": [
+    "Appear for the state-level NMMSS selection exam conducted by DSEL / KSEAB in Class 8.",
+    "Upon selection, register on National Scholarship Portal (scholarships.gov.in) with student OTR.",
+    "DBT credited directly to the student's Aadhaar-seeded bank account annually."
+  ],
+  "official_portal_url": "https://scholarships.gov.in/",
+  "application_url": "https://scholarships.gov.in/",
+  "source_title": "Department of School Education and Literacy, Ministry of Education",
+  "source_excerpt": "Under this scheme, 100,000 scholarships are awarded to the gifted or meritorious students whose parental income is not more than Rs. 3,50,000/- per annum.",
+  "effective_date": "2008-05-01",
+  "last_verified_date": "2025-01-16",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

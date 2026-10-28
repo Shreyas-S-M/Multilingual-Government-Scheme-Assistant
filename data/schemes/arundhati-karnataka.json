@@ -1,0 +1,91 @@
+{
+  "scheme_id": "arundhati-karnataka",
+  "name": "Karnataka Arundhati Scheme",
+  "name_kannada": "ಕರ್ನಾಟಕ ಅರುಂಧತಿ ಯೋಜನೆ",
+  "aliases": [
+    "Arundhati Scheme",
+    "Arundhati Yojane",
+    "ಅರುಂಧತಿ ಯೋಜನೆ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Karnataka State Brahmin Development Board, Govt of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Marriage Assistance for EWS",
+  "short_description": "Financial assistance of Rs. 25,000 for marriages of economically weaker families in Karnataka.",
+  "detailed_description": "The Arundhati scheme provides financial assistance of Rs. 25,000 to economically weaker brides from recognized communities in Karnataka having EWS certificates and family annual income below Rs. 8 Lakh.",
+  "description_kannada": "ಕರ್ನಾಟಕದ ಆರ್ಥಿಕವಾಗಿ ಹಿಂದುಳಿದ ಬಡ ಕುಟುಂಬಗಳ ಹೆಣ್ಣು ಮಕ್ಕಳ ವಿವಾಹಕ್ಕಾಗಿ ರೂ. 25,000 ಆರ್ಥಿಕ ಸಹಾಯ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 800000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "ews",
+    "general"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ar_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Arundhati Scheme Operational Guidelines 2021",
+      "description_kannada": "ಕರ್ನಾಟಕದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "ar_gender",
+      "name": "Applicant must be Female",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Arundhati Scheme Rules Section 2",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿ ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant female?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯೇ?"
+    },
+    {
+      "criterion_id": "ar_age",
+      "name": "Bride Age at least 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Arundhati Rules Section 3 (Legal Age of Marriage)",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the bride?",
+      "clarification_question_kn": "ವಧುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "One-time financial grant of Rs. 25,000 via DBT into the bride's bank account.",
+  "benefits_amount": "Rs. 25,000 one-time",
+  "required_documents": [
+    "Aadhaar Card of Bride and Groom",
+    "Karnataka Resident Certificate",
+    "Income and EWS Certificate (RD number)",
+    "Marriage Registration Certificate / Marriage Invitation card"
+  ],
+  "application_process": [
+    "Apply online through Seva Sindhu portal (sevasindhu.karnataka.gov.in).",
+    "Enter Aadhaar and EWS certificate number.",
+    "Upload wedding invitation and marriage registration details."
+  ],
+  "official_portal_url": "https://ksbdb.karnataka.gov.in/",
+  "application_url": "https://sevasindhu.karnataka.gov.in/",
+  "source_title": "Karnataka State Development Board, Govt of Karnataka",
+  "source_excerpt": "Under Arundhati scheme, financial assistance of Rs. 25,000 is given to economically weaker brides for their marriage expenses.",
+  "effective_date": "2021-01-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,95 @@
+{
+  "scheme_id": "yuva-nidhi-karnataka",
+  "name": "Yuva Nidhi Scheme (Karnataka)",
+  "name_kannada": "ಯುವ ನಿಧಿ ಯೋಜನೆ (ಕರ್ನಾಟಕ)",
+  "aliases": [
+    "Yuva Nidhi",
+    "Yuvanidhi",
+    "ಯುವನಿಧಿ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Department of Skill Development, Entrepreneurship and Livelihood, Govt of Karnataka",
+  "category": "Employment",
+  "subcategory": "Unemployment Allowance",
+  "short_description": "Unemployment allowance of Rs. 3,000/month for degree holders and Rs. 1,500/month for diploma holders in Karnataka.",
+  "detailed_description": "Yuva Nidhi provides financial support to graduates and diploma holders from Karnataka who remain unemployed 6 months after graduation, for a maximum period of 2 years or until employment is secured, alongside skill development training.",
+  "description_kannada": "ಪದವಿ ಪಡೆದು 6 ತಿಂಗಳಾದರೂ ಉದ್ಯೋಗ ದೊರೆಯದ ಕರ್ನಾಟಕದ ಯುವಕರಿಗೆ ಮಾಸಿಕ ರೂ. 3,000 ಮತ್ತು ಡಿಪ್ಲೋಮಾ ಹೊಂದಿದವರಿಗೆ ಮಾಸಿಕ ರೂ. 1,500 ನಿರುದ್ಯೋಗ ಭತ್ಯೆ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 20,
+  "max_age": 35,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "unemployed"
+  ],
+  "rules": [
+    {
+      "criterion_id": "yn_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Karnataka Yuva Nidhi Notification, SDEL Dept, 2023",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕದಲ್ಲಿ ವಾಸಿಸುತ್ತಿದ್ದೀರಾ?"
+    },
+    {
+      "criterion_id": "yn_occupation",
+      "name": "Must be Unemployed",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "unemployed",
+      "is_mandatory": true,
+      "source_citation": "Yuva Nidhi Guidelines Section 4 (Self-Declaration of Unemployment)",
+      "description_kannada": "ಪ್ರಸ್ತುತ ನಿರುದ್ಯೋಗಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently unemployed and seeking employment?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ನಿರುದ್ಯೋಗಿಯಾಗಿದ್ದೀರಾ?"
+    },
+    {
+      "criterion_id": "yn_education",
+      "name": "Degree or Diploma Graduate",
+      "field": "education_level",
+      "operator": "in_list",
+      "expected_value": [
+        "graduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "is_mandatory": true,
+      "source_citation": "Yuva Nidhi Eligibility Criteria, Clause 2 (Educational Qualification)",
+      "description_kannada": "ಪದವಿ ಅಥವಾ ಡಿಪ್ಲೋಮಾ ಪೂರ್ಣಗೊಳಿಸಿರಬೇಕು",
+      "clarification_question_en": "Have you completed a degree or diploma program?",
+      "clarification_question_kn": "ನೀವು ಪದವಿ ಅಥವಾ ಡಿಪ್ಲೋಮಾ ಪೂರ್ಣಗೊಳಿಸಿದ್ದೀರಾ?"
+    }
+  ],
+  "benefits_summary": "Rs. 3,000/month for degree holders and Rs. 1,500/month for diploma holders for up to 2 years.",
+  "benefits_amount": "Rs. 1,500 - 3,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Degree or Diploma Marks Cards / Passing Certificate",
+    "Karnataka Domicile / Study Certificate proving 6 years study in Karnataka",
+    "Bank passbook linked with Aadhaar and mobile"
+  ],
+  "application_process": [
+    "Register on Seva Sindhu portal (sevasindhuservices.karnataka.gov.in).",
+    "Select 'Yuva Nidhi Scheme' application.",
+    "Enter University / Board registration number to fetch degree details.",
+    "Submit self-declaration of unemployment and verify with Aadhaar OTP."
+  ],
+  "official_portal_url": "https://sevasindhu.karnataka.gov.in/",
+  "application_url": "https://sevasindhuservices.karnataka.gov.in/",
+  "source_title": "Skill Development, Entrepreneurship and Livelihood Dept, Govt of Karnataka",
+  "source_excerpt": "Yuva Nidhi offers financial support of Rs. 3000 to degree graduates and Rs. 1500 to diploma holders who passed out in the academic year 2022-23 and remained unemployed for 6 months.",
+  "effective_date": "2024-01-01",
+  "last_verified_date": "2025-01-18",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

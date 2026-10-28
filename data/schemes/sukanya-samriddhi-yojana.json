@@ -1,0 +1,78 @@
+{
+  "scheme_id": "sukanya-samriddhi-yojana",
+  "name": "Sukanya Samriddhi Yojana (SSY)",
+  "name_kannada": "ಸುಕನ್ಯಾ ಸಮೃದ್ಧಿ ಯೋಜನೆ",
+  "aliases": [
+    "SSY",
+    "Sukanya Scheme",
+    "ಸುಕನ್ಯಾ ಸಮೃದ್ಧಿ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Department of Posts / Ministry of Finance, Govt of India",
+  "category": "Social Welfare",
+  "subcategory": "Girl Child Welfare",
+  "short_description": "High-interest small savings scheme (current 8.2% p.a.) with tax exemption for girl children up to 10 years of age.",
+  "detailed_description": "Under Beti Bachao Beti Padhao campaign, parents or legal guardians can open an SSY account for a girl child from her birth until she turns 10 years old. Deposits can be made for 15 years, maturing after 21 years with triple tax exemption (EEE).",
+  "description_kannada": "ಹೆಣ್ಣು ಮಕ್ಕಳ ಉನ್ನತ ಶಿಕ್ಷಣ ಮತ್ತು ಮದುವೆ ವೆಚ್ಚಗಳಿಗಾಗಿ ಪೋಷಕರು 10 ವರ್ಷದೊಳಗಿನ ಹೆಣ್ಣು ಮಗುವಿನ ಹೆಸರಿನಲ್ಲಿ ಅಂಚೆ ಕಚೇರಿ ಅಥವಾ ಬ್ಯಾಂಕ್‌ನಲ್ಲಿ ಗರಿಷ್ಠ ಬಡ್ಡಿ ದರದ ಉಳಿತಾಯ ಖಾತೆ ತೆರೆಯುವ ಯೋಜನೆ.",
+  "min_age": 0,
+  "max_age": 10,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ssy_gender",
+      "name": "Must be Girl Child",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Sukanya Samriddhi Account Rules 2019, Rule 3",
+      "description_kannada": "ಮಗು ಹೆಣ್ಣಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the child for whom the account is being opened a girl?",
+      "clarification_question_kn": "ಖಾತೆ ತೆರೆಯಲಾಗುತ್ತಿರುವ ಮಗು ಹೆಣ್ಣು ಮಗುವೇ?"
+    },
+    {
+      "criterion_id": "ssy_age",
+      "name": "Age must be 10 years or below",
+      "field": "age",
+      "operator": "less_than_or_equal",
+      "expected_value": 10,
+      "is_mandatory": true,
+      "source_citation": "Sukanya Samriddhi Account Rules 2019, Rule 3(1)",
+      "description_kannada": "ಮಗುವಿನ ವಯಸ್ಸು 10 ವರ್ಷ ಅಥವಾ ಅದಕ್ಕಿಂತ ಕಡಿಮೆಯಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the girl child?",
+      "clarification_question_kn": "ಹೆಣ್ಣು ಮಗುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "8.2% annual compounded interest, complete tax exemption under Sec 80C, partial withdrawal for higher education at age 18.",
+  "benefits_amount": "8.2% p.a. compounded interest",
+  "required_documents": [
+    "Girl child birth certificate",
+    "Aadhaar / ID proof of parent or guardian",
+    "Address proof",
+    "Initial deposit (minimum Rs. 250)"
+  ],
+  "application_process": [
+    "Visit any Post Office or authorized commercial bank branch.",
+    "Submit the SSY account opening form with the child's birth certificate and guardian's KYC.",
+    "Passbook is provided upon deposit."
+  ],
+  "official_portal_url": "https://www.indiapost.gov.in/",
+  "application_url": "https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samriddhi-Account.aspx",
+  "source_title": "Department of Posts, Ministry of Communications, Govt of India",
+  "source_excerpt": "The account may be opened by one of the guardian in the name of a girl child, who has not attained the age of ten years as on the date of opening of the account.",
+  "effective_date": "2015-01-22",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

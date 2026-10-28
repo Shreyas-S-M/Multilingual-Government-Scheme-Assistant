@@ -1,0 +1,112 @@
+{
+  "scheme_id": "ganga-kalyana-karnataka",
+  "name": "Karnataka Ganga Kalyana Scheme",
+  "name_kannada": "ಕರ್ನಾಟಕ ಗಂಗಾ ಕಲ್ಯಾಣ ಯೋಜನೆ",
+  "aliases": [
+    "Ganga Kalyana",
+    "Borewell Scheme Karnataka",
+    "ಗಂಗಾ ಕಲ್ಯಾಣ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Karnataka Backward Classes, Social Welfare & Minorities Development Corporations",
+  "category": "Agriculture",
+  "subcategory": "Irrigation",
+  "short_description": "Free individual and community borewell drilling with pump energization for small & marginal SC/ST/OBC farmers in Karnataka.",
+  "detailed_description": "Ganga Kalyana provides agricultural irrigation facilities by drilling open wells or borewells and installing submersible pump sets with electricity connection free of cost for small and marginal farmers belonging to SC, ST, and Backward Classes in Karnataka.",
+  "description_kannada": "ಕರ್ನಾಟಕದ ಸಣ್ಣ ಮತ್ತು ಅತಿ ಸಣ್ಣ ಹಿಂದುಳಿದ ವರ್ಗ, ಪರಿಶಿಷ್ಟ ಜಾತಿ ಮತ್ತು ಪಂಗಡದ ರೈತರಿಗೆ ಕೃಷಿ ನೀರಾವರಿಗಾಗಿ ಉಚಿತ ಬೋರ್‌ವೆಲ್ ಮತ್ತು ಪಂಪ್‌ಸೆಟ್ ಅಳವಡಿಸಿಕೊಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 60,
+  "max_income": 200000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "sc",
+    "st",
+    "obc",
+    "minority"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "gk_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Karnataka Ganga Kalyana Scheme Guidelines 2023",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "gk_occupation",
+      "name": "Occupation must be Farmer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "Ganga Kalyana Guidelines Section 2 (Landholding Farmers)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿ ರೈತರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you an agricultural farmer?",
+      "clarification_question_kn": "ನೀವು ಕೃಷಿಕರೇ?"
+    },
+    {
+      "criterion_id": "gk_category",
+      "name": "Social Category must be SC, ST, OBC, or Minority",
+      "field": "social_category",
+      "operator": "in_list",
+      "expected_value": [
+        "sc",
+        "st",
+        "obc",
+        "minority"
+      ],
+      "is_mandatory": true,
+      "source_citation": "Ganga Kalyana Corporation Rules, Section 3",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು SC, ST, ಹಿಂದುಳಿದ ವರ್ಗ ಅಥವಾ ಅಲ್ಪಸಂಖ್ಯಾತ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿರಬೇಕು",
+      "clarification_question_en": "Which social category do you belong to (SC, ST, OBC, Minority, or General)?",
+      "clarification_question_kn": "ನೀವು ಯಾವ ಸಾಮಾಜಿಕ ವರ್ಗಕ್ಕೆ ಸೇರಿದವರು (SC, ST, OBC, ಅಲ್ಪಸಂಖ್ಯಾತ ಅಥವಾ ಸಾಮಾನ್ಯ)?"
+    },
+    {
+      "criterion_id": "gk_income",
+      "name": "Annual Family Income <= Rs. 2 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 200000.0,
+      "is_mandatory": true,
+      "source_citation": "Ganga Kalyana Annual Income Ceiling Notification 2023",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 2,00,000 ಮೀರಬಾರದು",
+      "clarification_question_en": "What is your total annual family income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "100% subsidy for borewell drilling, casing pipe, submersible pump set installation, and electrification up to Rs. 4.5 Lakh.",
+  "benefits_amount": "Free Borewell & Energization (worth ~Rs. 4.5 Lakh)",
+  "required_documents": [
+    "Caste Certificate with RD number",
+    "Income Certificate with RD number",
+    "Aadhaar Card",
+    "Land RTC / Pahani copy showing small/marginal farmer status (1.5 to 5 acres)",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply online through Karnataka Seva Sindhu portal (sevasindhu.karnataka.gov.in) when notifications open.",
+    "Select the relevant Development Corporation (D. Devaraj Urs, Dr. B.R. Ambedkar, Valmiki, etc.).",
+    "Upload RTC and caste/income documents.",
+    "Scrutiny by taluk selection committee headed by MLA."
+  ],
+  "official_portal_url": "https://karnataka.gov.in/",
+  "application_url": "https://sevasindhu.karnataka.gov.in/",
+  "source_title": "Social Welfare & Backward Classes Dept, Govt of Karnataka",
+  "source_excerpt": "Irrigation facility is provided by drilling borewells to agricultural lands owned by small and marginal farmers belonging to SC/ST and backward classes.",
+  "effective_date": "2015-06-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

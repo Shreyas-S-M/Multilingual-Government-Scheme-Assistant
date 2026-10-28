@@ -1,0 +1,66 @@
+{
+  "scheme_id": "pmfby",
+  "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+  "name_kannada": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಫಸಲ್ ಬಿಮಾ ಯೋಜನೆ",
+  "aliases": [
+    "PMFBY",
+    "Crop Insurance Scheme",
+    "ಫಸಲ್ ಬಿಮಾ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Agriculture and Farmers Welfare, Govt of India",
+  "category": "Agriculture",
+  "subcategory": "Crop Insurance",
+  "short_description": "Comprehensive crop insurance with minimal farmer premium (1.5% to 2% for food crops, 5% for horticultural crops) covering natural disaster yield loss.",
+  "detailed_description": "PMFBY provides comprehensive insurance coverage and financial support to farmers suffering crop loss or damage arising out of unforeseen events such as drought, floods, pests, and unseasonal rainfall.",
+  "description_kannada": "ನೈಸರ್ಗಿಕ ವಿಕೋಪಗಳು, ಅನಾವೃಷ್ಟಿ, ಪ್ರವಾಹ ಅಥವಾ ಕೀಟಬಾಧೆಯಿಂದ ಬೆಳೆ ನಷ್ಟ ಉಂಟಾದಾಗ ರೈತರಿಗೆ ಸಂಪೂರ್ಣ ಆರ್ಥಿಕ ಪರಿಹಾರ ಒದಗಿಸುವ ರಾಷ್ಟ್ರೀಯ ಬೆಳೆ ವಿಮಾ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pmfby_occupation",
+      "name": "Must be Farmer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "PMFBY Revised Operational Guidelines, Section 2 (Farmer Eligibility)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ರೈತರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a farmer cultivating notifying crops?",
+      "clarification_question_kn": "ನೀವು ಅಧಿಸೂಚಿತ ಬೆಳೆಗಳನ್ನು ಬೆಳೆಯುವ ರೈತರೇ?"
+    }
+  ],
+  "benefits_summary": "Full sum insured payout against crop failure at a subsidized premium rate (max 2% for Kharif, 1.5% for Rabi crops).",
+  "benefits_amount": "Full Sum Insured on Crop Loss",
+  "required_documents": [
+    "Land RTC / RoR (Pahani)",
+    "Sowing certificate / Self-declaration of crop sown",
+    "Bank passbook",
+    "Aadhaar Card"
+  ],
+  "application_process": [
+    "Apply via National Crop Insurance Portal (pmfby.gov.in) or Karnataka Samrakshane portal (samrakshane.karnataka.gov.in).",
+    "Submit land survey number and crop details.",
+    "Pay the subsidized farmer premium online or at bank/CSC."
+  ],
+  "official_portal_url": "https://pmfby.gov.in/",
+  "application_url": "https://samrakshane.karnataka.gov.in/",
+  "source_title": "Ministry of Agriculture and Farmers Welfare, Govt of India",
+  "source_excerpt": "PMFBY aims at supporting sustainable production in agriculture sector by way of providing financial support to farmers suffering crop loss.",
+  "effective_date": "2016-01-13",
+  "last_verified_date": "2025-01-15",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

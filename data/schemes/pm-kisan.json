@@ -1,0 +1,81 @@
+{
+  "scheme_id": "pm-kisan",
+  "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+  "name_kannada": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ (ಪಿಎಂ-ಕಿಸಾನ್)",
+  "aliases": [
+    "PM-KISAN",
+    "PM Kisan",
+    "Kisan Samman Nidhi",
+    "ಪಿಎಂ ಕಿಸಾನ್"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Agriculture and Farmers Welfare",
+  "category": "Agriculture",
+  "subcategory": "Income Support",
+  "short_description": "Direct income support of Rs. 6,000 per year in three equal installments to all landholding farmer families across India.",
+  "detailed_description": "Under the PM-KISAN scheme, operational since December 2018, all landholding farmer families with cultivable landholding in their names are provided financial assistance of Rs. 6,000 per year, payable in three installments of Rs. 2,000 every four months directly into their Aadhaar-seeded bank accounts.",
+  "description_kannada": "ದೇಶದ ಎಲ್ಲಾ ಕೃಷಿ ಭೂಮಿ ಹೊಂದಿರುವ ರೈತ ಕುಟುಂಬಗಳಿಗೆ ವರ್ಷಕ್ಕೆ ರೂ. 6,000 ಆರ್ಥಿಕ ನೆರವನ್ನು ಮೂರು ಸಮಾನ ಕಂತುಗಳಲ್ಲಿ ನೇರವಾಗಿ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ ವರ್ಗಾಯಿಸುವ ಕೇಂದ್ರ ಸರ್ಕಾರದ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pmk_occupation",
+      "name": "Occupation must be Farmer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "PM-KISAN Operational Guidelines, Section 2.1 (Definition of Farmer Family)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ರೈತರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you engaged in agricultural farming as your primary occupation?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿ ಅಥವಾ ಕೃಷಿ ಕೆಲಸವೇ?"
+    },
+    {
+      "criterion_id": "pmk_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "PM-KISAN Operational Guidelines, Section 3 (Beneficiary Identification)",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is your current age in years?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Rs. 6,000 annual direct benefit transfer in 3 installments of Rs. 2,000 each.",
+  "benefits_amount": "Rs. 6,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Land ownership records / RoR (Record of Rights / Pahani)",
+    "Aadhaar-seeded Bank Account passbook",
+    "Active mobile number linked with Aadhaar"
+  ],
+  "application_process": [
+    "Visit the official PM-KISAN portal (pmkisan.gov.in) or visit your nearest Common Service Centre (CSC).",
+    "Click on 'Farmers Corner' -> 'New Farmer Registration'.",
+    "Enter Aadhaar number and select state/district.",
+    "Fill in landholding survey numbers and bank account details.",
+    "Submit the application and complete eKYC via OTP or biometric authentication."
+  ],
+  "official_portal_url": "https://pmkisan.gov.in/",
+  "application_url": "https://pmkisan.gov.in/RegistrationFormNew.aspx",
+  "source_title": "PM-KISAN Official Portal, Ministry of Agriculture & Farmers Welfare, Govt of India",
+  "source_excerpt": "The Scheme aims to provide income support to all landholder farmer families across the country with cultivable land, subject to certain exclusion criteria relating to higher income brackets.",
+  "effective_date": "2018-12-01",
+  "last_verified_date": "2025-01-15",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

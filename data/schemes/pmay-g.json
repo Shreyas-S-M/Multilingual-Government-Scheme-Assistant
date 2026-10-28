@@ -1,0 +1,78 @@
+{
+  "scheme_id": "pmay-g",
+  "name": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+  "name_kannada": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಆವಾಸ್ ಯೋಜನೆ - ಗ್ರಾಮೀಣ (ಪಿಎಂಎವೈ-ಜಿ)",
+  "aliases": [
+    "PMAY-G",
+    "PMAY Gramin",
+    "Rural Housing Scheme",
+    "ಪ್ರಧಾನ ಮಂತ್ರಿ ಗ್ರಾಮೀಣ ವಸತಿ ಯೋಜನೆ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Rural Development, Govt of India",
+  "category": "Social Welfare",
+  "subcategory": "Housing",
+  "short_description": "Financial assistance of Rs. 1.20 Lakh to Rs. 1.30 Lakh to rural homeless and families living in kutcha houses for pucca house construction.",
+  "detailed_description": "PMAY-G aims to provide a pucca house with basic amenities to all rural families who are homeless or living in kutcha or dilapidated houses, with unit assistance of Rs. 1.20 Lakh in plain areas and Rs. 1.30 Lakh in hilly/difficult areas, alongside 90-95 days of unskilled wage labor under MGNREGS.",
+  "description_kannada": "ಗ್ರಾಮೀಣ ಭಾಗದ ಬಡ, ನಿರಾಶ್ರಿತ ಮತ್ತು ಕಚ್ಚಾ ಮನೆಗಳಲ್ಲಿ ವಾಸಿಸುತ್ತಿರುವ ಕುಟುಂಬಗಳಿಗೆ ಪಕ್ಕಾ ಮನೆ ನಿರ್ಮಿಸಿಕೊಳ್ಳಲು ರೂ. 1,20,000 ಆರ್ಥಿಕ ನೆರವು ನೀಡುವ ಕೇಂದ್ರ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 150000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pmayg_residence",
+      "name": "Rural Residence",
+      "field": "residence_type",
+      "operator": "equals",
+      "expected_value": "rural",
+      "is_mandatory": true,
+      "source_citation": "PMAY-G Framework for Implementation, Section 2.1",
+      "description_kannada": "ಗ್ರಾಮೀಣ ಪ್ರದೇಶದಲ್ಲಿ ವಾಸವಾಗಿರಬೇಕು",
+      "clarification_question_en": "Do you live in a rural village area?",
+      "clarification_question_kn": "ನೀವು ಗ್ರಾಮೀಣ ಪ್ರದೇಶದಲ್ಲಿ ವಾಸಿಸುತ್ತಿದ್ದೀರಾ?"
+    },
+    {
+      "criterion_id": "pmayg_income",
+      "name": "Annual Family Income <= Rs. 1.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 150000.0,
+      "is_mandatory": true,
+      "source_citation": "SECC 2011 Rural Deprivation Criteria for Housing",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 1.5 ಲಕ್ಷ ಮೀರಬಾರದು",
+      "clarification_question_en": "What is your approximate annual family income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Financial grant of Rs. 1,20,000 for house construction + MGNREGA wages (~Rs. 25,000) + Rs. 12,000 for toilet under SBM.",
+  "benefits_amount": "Rs. 1,20,000 to Rs. 1,30,000",
+  "required_documents": [
+    "Aadhaar Card",
+    "Bank passbook details",
+    "MGNREGA Job Card Number",
+    "Document of land/site ownership or Gram Panchayat allotment"
+  ],
+  "application_process": [
+    "Beneficiary list is drawn from SECC/Awaas+ data and verified by Gram Sabha.",
+    "Registration is done by Panchayat Secretary via the AwaasSoft portal with geotagged photo of existing kutcha house."
+  ],
+  "official_portal_url": "https://pmayg.nic.in/",
+  "application_url": "https://awaassoft.nic.in/",
+  "source_title": "Ministry of Rural Development, Government of India",
+  "source_excerpt": "To achieve the objective of providing 'Housing for All' in rural areas, unit assistance of Rs. 1.20 lakh is provided in plain areas.",
+  "effective_date": "2016-11-20",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

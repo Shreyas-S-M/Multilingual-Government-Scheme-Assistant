@@ -1,0 +1,67 @@
+{
+  "scheme_id": "gruha-jyothi-karnataka",
+  "name": "Gruha Jyothi Scheme (Karnataka)",
+  "name_kannada": "ಗೃಹ ಜ್ಯೋತಿ ಯೋಜನೆ (ಕರ್ನಾಟಕ)",
+  "aliases": [
+    "Gruha Jyothi",
+    "Gruhajyothi",
+    "Free Electricity Karnataka",
+    "ಗೃಹಜ್ಯೋತಿ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Energy Department, Government of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Power & Energy Subsidy",
+  "short_description": "Free domestic electricity up to 200 units per month for all residential households in Karnataka.",
+  "detailed_description": "Gruha Jyothi provides zero-electricity bills up to 200 units of monthly domestic electricity consumption to all household consumers in Karnataka whose average consumption is within their eligible entitlement limit.",
+  "description_kannada": "ಕರ್ನಾಟಕದ ಎಲ್ಲಾ ಮನೆ ಬಳಕೆದಾರರಿಗೆ ತಿಂಗಳಿಗೆ 200 ಯೂನಿಟ್‌ಗಳವರೆಗೆ ಉಚಿತ ವಿದ್ಯುತ್ ಒದಗಿಸುವ ಸರ್ಕಾರದ ಗ್ಯಾರಂಟಿ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "gj_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Govt Order No. EN 22 PSR 2023, Energy Dept, Govt of Karnataka",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you living in a household in Karnataka?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಮನೆ ಕರ್ನಾಟಕದಲ್ಲಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Zero electricity charge for domestic consumption up to 200 units/month.",
+  "benefits_amount": "Up to 200 Free Units/Month",
+  "required_documents": [
+    "Electricity Account ID / Connection Consumer Number (from BESCOM/MESCOM/HESCOM/GESCOM/CESC)",
+    "Aadhaar Card of the applicant",
+    "Tenancy agreement / Rental agreement (if tenant)"
+  ],
+  "application_process": [
+    "Visit Seva Sindhu portal (sevasindhugs.karnataka.gov.in/gruhajyothi).",
+    "Enter your electricity ESCOM name and Consumer Account ID.",
+    "Verify Aadhaar with OTP.",
+    "Select whether applicant is Owner or Tenant and submit."
+  ],
+  "official_portal_url": "https://sevasindhu.karnataka.gov.in/",
+  "application_url": "https://sevasindhugs.karnataka.gov.in/gruhajyothi",
+  "source_title": "Energy Department, Government of Karnataka",
+  "source_excerpt": "The Gruha Jyothi scheme provides up to 200 units of free power to all domestic electricity consumers in the state of Karnataka.",
+  "effective_date": "2023-08-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

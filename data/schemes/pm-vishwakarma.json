@@ -1,0 +1,79 @@
+{
+  "scheme_id": "pm-vishwakarma",
+  "name": "PM Vishwakarma Scheme",
+  "name_kannada": "ಪಿಎಂ ವಿಶ್ವಕರ್ಮ ಯೋಜನೆ",
+  "aliases": [
+    "PM Vishwakarma",
+    "Vishwakarma Yojana",
+    "ವಿಶ್ವಕರ್ಮ ಯೋಜನೆ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Micro, Small and Medium Enterprises, Govt of India",
+  "category": "Employment",
+  "subcategory": "Artisans & Craftsmen",
+  "short_description": "End-to-end holistic support for traditional artisans with skill training, Rs. 15,000 toolkit incentive, and collateral-free loans up to Rs. 3 Lakh at 5% interest.",
+  "detailed_description": "PM Vishwakarma is designed to uplift traditional artisans and craftspeople across 18 designated trades (such as carpenters, blacksmiths, goldsmiths, potters, cobblers, tailors) with official recognition, stipend of Rs. 500/day during skill training, Rs. 15,000 modern toolkit grant, and collateral-free enterprise credit up to Rs. 3,00,000.",
+  "description_kannada": "18 ಸಾಂಪ್ರದಾಯಿಕ ಕಸುಬುದಾರರು ಮತ್ತು ಕುಶಲಕರ್ಮಿಗಳಿಗೆ ಕೌಶಲ್ಯ ತರಬೇತಿ, ರೂ. 15,000 ಟೂಲ್‌ಕಿಟ್ ಅನುದಾನ ಮತ್ತು ಶೇ. 5ರ ರಿಯಾಯಿತಿ ಬಡ್ಡಿದರದಲ್ಲಿ ರೂ. 3 ಲಕ್ಷದವರೆಗೆ ಆಸ್ತಿರಹಿತ ಸಾಲ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "artisan"
+  ],
+  "rules": [
+    {
+      "criterion_id": "vk_occupation",
+      "name": "Traditional Artisan / Craftsman",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "artisan",
+      "is_mandatory": true,
+      "source_citation": "PM Vishwakarma Scheme Guidelines 2023, Section 3.1 (Eligible Trades)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು 18 ಸಾಂಪ್ರದಾಯಿಕ ಕಸುಬುದಾರರಲ್ಲಿ ಒಬ್ಬರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you engaged in one of the 18 traditional artisan trades (carpenter, potter, tailor, cobbler, blacksmith, etc.)?",
+      "clarification_question_kn": "ನೀವು 18 ಸಾಂಪ್ರದಾಯಿಕ ಕಸುಬುಗಳಲ್ಲಿ (ಬಡಗಿ, ಕುಂಬಾರ, ಕಮ್ಮಾರ, ದರ್ಜಿ, ಅಕ್ಕಸಾಲಿಗ ಇತ್ಯಾದಿ) ತೊಡಗಿಸಿಕೊಂಡಿದ್ದೀರಾ?"
+    },
+    {
+      "criterion_id": "vk_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "PM Vishwakarma Guidelines Section 3 (Eligibility Criteria)",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is your current age in years?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "PM Vishwakarma Certificate & ID, Rs. 500/day training stipend, Rs. 15,000 toolkit voucher, and collateral-free credit up to Rs. 3 Lakh at 5% interest.",
+  "benefits_amount": "Rs. 15,000 toolkit + Loan up to Rs. 3 Lakh",
+  "required_documents": [
+    "Aadhaar Card",
+    "Active mobile number linked to Aadhaar",
+    "Bank passbook details",
+    "Ration Card for family details"
+  ],
+  "application_process": [
+    "Visit nearest Common Service Centre (CSC) with Aadhaar and mobile.",
+    "Biometric authentication and verification of trade details.",
+    "Gram Panchayat or ULB verification followed by District Committee approval.",
+    "Download PM Vishwakarma digital ID and attend basic skill training."
+  ],
+  "official_portal_url": "https://pmvishwakarma.gov.in/",
+  "application_url": "https://pmvishwakarma.gov.in/",
+  "source_title": "Ministry of Micro, Small and Medium Enterprises, Govt of India",
+  "source_excerpt": "To strengthen and nurture traditional artisans and craftspeople, who work with their hands and tools.",
+  "effective_date": "2023-09-17",
+  "last_verified_date": "2025-01-24",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

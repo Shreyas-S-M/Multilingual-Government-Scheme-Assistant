@@ -1,0 +1,72 @@
+{
+  "scheme_id": "pm-mudra-yojana",
+  "name": "Pradhan Mantri MUDRA Yojana (PMMY)",
+  "name_kannada": "ಪ್ರಧಾನ ಮಂತ್ರಿ ಮುದ್ರಾ ಯೋಜನೆ (ಪಿಎಂಎಂವೈ)",
+  "aliases": [
+    "Mudra Yojana",
+    "PMMY",
+    "Mudra Loan",
+    "ಮುದ್ರಾ ಯೋಜನೆ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Department of Financial Services, Ministry of Finance",
+  "category": "Employment",
+  "subcategory": "Micro Credit / Entrepreneurship",
+  "short_description": "Collateral-free institutional business loans up to Rs. 10 Lakh (extended to Rs. 20 Lakh) for micro and small enterprises.",
+  "detailed_description": "PMMY provides loans up to Rs. 10 Lakh (and up to Rs. 20 Lakh under Tarun Plus category) to non-corporate, non-farm small/micro enterprises. Classified into three categories: Shishu (loans up to Rs. 50,000), Kishore (loans Rs. 50,001 to Rs. 5 Lakh), and Tarun (loans Rs. 5 Lakh to Rs. 10 Lakh).",
+  "description_kannada": "ಸಣ್ಣ ವ್ಯಾಪಾರಸ್ಥರು, ಉದ್ಯಮಿಗಳು ಮತ್ತು ಸ್ವಯಂ ಉದ್ಯೋಗಿಗಳಿಗೆ ಯಾವುದೇ ಆಸ್ತಿ ಅಡಮಾನವಿಲ್ಲದೆ ರೂ. 50,000 ದಿಂದ ರೂ. 10 ಲಕ್ಷದವರೆಗೆ ಸಾಲ ಸೌಲಭ್ಯ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 65,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "artisan",
+    "street_vendor",
+    "self_employed",
+    "salaried",
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "mudra_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Mudra Guidelines 2015, Section 3 (Borrower Eligibility)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಗೆ ಕನಿಷ್ಠ 18 ವರ್ಷ ವಯಸ್ಸಾಗಿರಬೇಕು",
+      "clarification_question_en": "What is your current age in years?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Collateral-free loans up to Rs. 10 Lakh with affordable interest rates and Mudra RuPay card.",
+  "benefits_amount": "Loans up to Rs. 10,00,000",
+  "required_documents": [
+    "Proof of Identity (Aadhaar / Voter ID / PAN Card)",
+    "Proof of Residence",
+    "Business registration / enterprise quotation / project report",
+    "Bank statement for the last 6 months"
+  ],
+  "application_process": [
+    "Apply online through the Udyamimitra portal (udyamimitra.in) or visit any commercial bank, RRB, or MFI.",
+    "Select appropriate loan category: Shishu, Kishore, or Tarun.",
+    "Submit business proposal and identity documents.",
+    "Loan is processed and sanctioned without requiring collateral security."
+  ],
+  "official_portal_url": "https://www.mudra.org.in/",
+  "application_url": "https://www.udyamimitra.in/",
+  "source_title": "Micro Units Development & Refinance Agency Ltd (MUDRA), Govt of India",
+  "source_excerpt": "Under the aegis of PMMY, MUDRA has created products for funding micro enterprises at various stages of growth.",
+  "effective_date": "2015-04-08",
+  "last_verified_date": "2025-01-25",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

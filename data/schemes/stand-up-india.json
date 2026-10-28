@@ -1,0 +1,66 @@
+{
+  "scheme_id": "stand-up-india",
+  "name": "Stand-Up India Scheme",
+  "name_kannada": "ಸ್ಟ್ಯಾಂಡ್-ಅಪ್ ಇಂಡಿಯಾ ಯೋಜನೆ",
+  "aliases": [
+    "Stand Up India",
+    "Standup India",
+    "ಸ್ಟ್ಯಾಂಡ್ ಅಪ್ ಇಂಡಿಯಾ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Department of Financial Services, Ministry of Finance, Govt of India",
+  "category": "Employment",
+  "subcategory": "Entrepreneurship for SC/ST and Women",
+  "short_description": "Bank loans between Rs. 10 Lakh and Rs. 1 Crore for at least one SC/ST borrower and at least one woman borrower per bank branch.",
+  "detailed_description": "Stand-Up India facilitates bank loans between Rs. 10 Lakh and Rs. 1 Crore to at least one Scheduled Caste (SC) or Scheduled Tribe (ST) borrower and at least one woman borrower per bank branch for setting up a greenfield enterprise in manufacturing, services, agri-allied, or trading.",
+  "description_kannada": "ಪರಿಶಿಷ್ಟ ಜಾತಿ (SC), ಪರಿಶಿಷ್ಟ ಪಂಗಡ (ST) ಅಥವಾ ಮಹಿಳಾ ಉದ್ಯಮಿಗಳು ಹೊಸ ಉದ್ಯಮ ಆರಂಭಿಸಲು ಬ್ಯಾಂಕ್‌ಗಳ ಮೂಲಕ ರೂ. 10 ಲಕ್ಷದಿಂದ ರೂ. 1 ಕೋಟಿಯವರೆಗೆ ಸಾಲ ಸೌಲಭ್ಯ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sui_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Stand-Up India Guidelines, Section 2 (Eligibility)",
+      "description_kannada": "ಕನಿಷ್ಠ 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is your current age in years?",
+      "clarification_question_kn": "ನಿಮ್ಮ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Composite loan (term loan + working capital) between Rs. 10 Lakh and Rs. 1 Crore with margin money support.",
+  "benefits_amount": "Loan: Rs. 10 Lakh to Rs. 1 Crore",
+  "required_documents": [
+    "Proof of identity (Aadhaar / Passport / PAN Card)",
+    "Caste certificate (for SC/ST applicants)",
+    "Detailed Project Report (DPR) for greenfield enterprise",
+    "Proof of business address and lease agreement"
+  ],
+  "application_process": [
+    "Apply online through the Stand-Up Mitra portal (standupmitra.in).",
+    "Choose whether you need handholding support or are ready to borrow.",
+    "Portal forwards application to preferred bank branch for appraisal."
+  ],
+  "official_portal_url": "https://www.standupmitra.in/",
+  "application_url": "https://www.standupmitra.in/Login/Register",
+  "source_title": "Department of Financial Services, Ministry of Finance",
+  "source_excerpt": "The objective of the Stand-Up India scheme is to facilitate bank loans between 10 lakh and 1 Crore to at least one Scheduled Caste or Scheduled Tribe borrower and at least one woman borrower.",
+  "effective_date": "2016-04-05",
+  "last_verified_date": "2025-01-22",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,76 @@
+{
+  "scheme_id": "anna-bhagya-karnataka",
+  "name": "Karnataka Anna Bhagya Scheme",
+  "name_kannada": "ಕರ್ನಾಟಕ ಅನ್ನಭಾಗ್ಯ ಯೋಜನೆ",
+  "aliases": [
+    "Anna Bhagya",
+    "Free Rice Scheme Karnataka",
+    "ಅನ್ನಭಾಗ್ಯ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Food, Civil Supplies & Consumer Affairs Department, Govt of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Food Security",
+  "short_description": "10 kg food grains per person per month (5 kg food grains + cash equivalent of Rs. 170 per person) for BPL and Antyodaya families in Karnataka.",
+  "detailed_description": "Anna Bhagya ensures food security for underprivileged families in Karnataka holding Antyodaya Anna Yojana (AAY) or Priority Household (BPL) ration cards, delivering 5 kg rice per person plus DBT direct cash transfer of Rs. 170 (at Rs. 34/kg for 5 kg) per beneficiary per month.",
+  "description_kannada": "ಕರ್ನಾಟಕದ ಬಿಪಿಎಲ್ ಮತ್ತು ಅಂತ್ಯೋದಯ ಪಡಿತರ ಚೀಟಿ ಹೊಂದಿರುವ ಕುಟುಂಬಗಳಿಗೆ ಪ್ರತಿ ವ್ಯಕ್ತಿಗೆ ತಿಂಗಳಿಗೆ 10 ಕೆಜಿ ಆಹಾರ ಧಾನ್ಯ (ಅಕ್ಕಿ ಹಾಗೂ ಉಳಿದ 5 ಕೆಜಿಗೆ ನಗದು ವರ್ಗಾವಣೆ) ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ab_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Karnataka Food & Civil Supplies Dept Notification 2023",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "ab_bpl",
+      "name": "Must have BPL or Antyodaya Card",
+      "field": "has_bpl_card",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Anna Bhagya Scheme Rules, Clause 2 (BPL / AAY Cardholder)",
+      "description_kannada": "ಬಿಪಿಎಲ್ ಅಥವಾ ಅಂತ್ಯೋದಯ ಪಡಿತರ ಚೀಟಿ ಹೊಂದಿರಬೇಕು",
+      "clarification_question_en": "Does your family hold a valid BPL or Antyodaya ration card?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬವು ಬಿಪಿಎಲ್ ಅಥವಾ ಅಂತ್ಯೋದಯ ಪಡಿತರ ಚೀಟಿ ಹೊಂದಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "5 kg free rice + DBT cash of Rs. 170 per person per month directly into bank account.",
+  "benefits_amount": "Food grains + Rs. 170 per person/month",
+  "required_documents": [
+    "BPL or Antyodaya (AAY) Ration Card",
+    "Aadhaar card of all family members",
+    "Aadhaar-seeded bank account of the head of family"
+  ],
+  "application_process": [
+    "Holders of valid BPL/AAY ration cards in Karnataka are automatically enrolled.",
+    "Collect rice from local Fair Price Shop (FPS) and receive monthly DBT for additional 5 kg directly in bank."
+  ],
+  "official_portal_url": "https://ahara.kar.nic.in/",
+  "application_url": "https://ahara.kar.nic.in/",
+  "source_title": "Food, Civil Supplies & Consumer Affairs Department, Govt of Karnataka",
+  "source_excerpt": "Under Anna Bhagya guarantee scheme, 10 kg food grains are provided to every member of BPL and AAY ration card holder families.",
+  "effective_date": "2023-07-01",
+  "last_verified_date": "2025-01-19",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

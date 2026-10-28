@@ -1,0 +1,78 @@
+{
+  "scheme_id": "pm-svanidhi",
+  "name": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+  "name_kannada": "ಪಿಎಂ ಸ್ವನಿಧಿ ಯೋಜನೆ (ಬೀದಿ ವ್ಯಾಪಾರಿಗಳ ಆತ್ಮನಿರ್ಭರ ನಿಧಿ)",
+  "aliases": [
+    "PM SVANidhi",
+    "Street Vendor Loan",
+    "ಸ್ವನಿಧಿ ಯೋಜನೆ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Housing and Urban Affairs, Govt of India",
+  "category": "Employment",
+  "subcategory": "Micro Credit / Street Vendors",
+  "short_description": "Affordable collateral-free working capital loan starting from Rs. 10,000 up to Rs. 50,000 for street vendors.",
+  "detailed_description": "PM SVANidhi provides working capital loans to urban and peri-urban street vendors to resume livelihoods. Offers first tranche loan up to Rs. 10,000, second tranche up to Rs. 20,000 on prompt repayment, and third tranche up to Rs. 50,000 with 7% interest subsidy.",
+  "description_kannada": "ನಗರ ಮತ್ತು ಗ್ರಾಮೀಣ ಬೀದಿ ವ್ಯಾಪಾರಿಗಳಿಗೆ ತಮ್ಮ ವ್ಯಾಪಾರವನ್ನು ಬೆಳೆಸಲು ಯಾವುದೇ ಭದ್ರತೆಯಿಲ್ಲದೆ ರೂ. 10,000 ದಿಂದ 50,000 ವರೆಗೆ ಕಡಿಮೆ ಬಡ್ಡಿದರದ ಸಾಲ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "street_vendor"
+  ],
+  "rules": [
+    {
+      "criterion_id": "svanidhi_occupation",
+      "name": "Occupation must be Street Vendor",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "street_vendor",
+      "is_mandatory": true,
+      "source_citation": "PM SVANidhi Scheme Guidelines Section 3.1 (Beneficiary Identification)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಬೀದಿ ವ್ಯಾಪಾರಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a street vendor or hawker engaged in vending goods/services?",
+      "clarification_question_kn": "ನೀವು ಬೀದಿ ಬದಿಯ ವ್ಯಾಪಾರಿ ಅಥವಾ ತಳ್ಳುವ ಗಾಡಿ ವ್ಯಾಪಾರಿಯೇ?"
+    },
+    {
+      "criterion_id": "svanidhi_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "PM SVANidhi Guidelines Section 3",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is your current age in years?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Collateral-free working capital loan of Rs. 10,000 / 20,000 / 50,000 with 7% interest subsidy and cashback on digital transactions.",
+  "benefits_amount": "Loan up to Rs. 50,000 + 7% subsidy",
+  "required_documents": [
+    "Aadhaar Card",
+    "Vending Certificate / Identity Card issued by Urban Local Body (ULB) or Letter of Recommendation (LoR)",
+    "Bank account passbook details"
+  ],
+  "application_process": [
+    "Access the official portal pmsvanidhi.mohua.gov.in.",
+    "Verify mobile number with OTP linked to Aadhaar.",
+    "Enter Vending ID or ULB Letter of Recommendation.",
+    "Choose preferred lending institution and submit."
+  ],
+  "official_portal_url": "https://pmsvanidhi.mohua.gov.in/",
+  "application_url": "https://pmsvanidhi.mohua.gov.in/Home/VendorLender",
+  "source_title": "Ministry of Housing and Urban Affairs, Government of India",
+  "source_excerpt": "A central sector scheme to facilitate street vendors access to affordable working capital loans for resuming their livelihoods.",
+  "effective_date": "2020-06-01",
+  "last_verified_date": "2025-01-22",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

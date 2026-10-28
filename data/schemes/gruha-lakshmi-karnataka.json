@@ -1,0 +1,91 @@
+{
+  "scheme_id": "gruha-lakshmi-karnataka",
+  "name": "Gruha Lakshmi Scheme (Karnataka)",
+  "name_kannada": "ಗೃಹಲಕ್ಷ್ಮಿ ಯೋಜನೆ (ಕರ್ನಾಟಕ)",
+  "aliases": [
+    "Gruha Lakshmi",
+    "Gruhalakshmi",
+    "ಗೃಹಲಕ್ಷ್ಮಿ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Department of Women and Child Development, Govt of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Women Empowerment",
+  "short_description": "Financial assistance of Rs. 2,000 per month to the woman head of household in Karnataka.",
+  "detailed_description": "Gruha Lakshmi is one of the flagship guarantee schemes of the Government of Karnataka, providing monthly financial assistance of Rs. 2,000 directly transferred to the bank account of the woman designated as head of the family on Antyodaya, BPL, and APL ration cards.",
+  "description_kannada": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಗ್ಯಾರಂಟಿ ಯೋಜನೆಗಳಲ್ಲಿ ಒಂದಾಗಿದ್ದು, ಬಿಪಿಎಲ್/ಎಪಿಎಲ್ ಪಡಿತರ ಚೀಟಿಯಲ್ಲಿ ಕುಟುಂಬದ ಯಜಮಾನಿ ಎಂದು ಗುರುತಿಸಲಾದ ಮಹಿಳೆಗೆ ಪ್ರತಿ ತಿಂಗಳು ರೂ. 2,000 ಆರ್ಥಿಕ ನೆರವು ನೀಡಲಾಗುತ್ತದೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "gl_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Govt of Karnataka Order No. WCD 129 MPS 2023, Dated 05-06-2023",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಖಾಯಂ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "gl_gender",
+      "name": "Must be Female Head of Family",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Gruha Lakshmi Scheme Rules, Section 3 (Eligibility of Female Head)",
+      "description_kannada": "ಅರ್ಜಿದಾರರು ಕುಟುಂಬದ ಯಜಮಾನಿ ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant the female head of the household?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳಾ ಕುಟುಂಬದ ಯಜಮಾನಿಯೇ?"
+    },
+    {
+      "criterion_id": "gl_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Gruha Lakshmi Scheme Guidelines 2023",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the female applicant?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರ ಮಹಿಳೆಯ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 2,000 every month into the Aadhaar-linked bank account.",
+  "benefits_amount": "Rs. 2,000 per month",
+  "required_documents": [
+    "Ration Card with woman specified as Head of Family",
+    "Aadhaar Card of the applicant woman",
+    "Aadhaar Card of the spouse",
+    "Bank passbook with Aadhaar-seeded NPCI mapping"
+  ],
+  "application_process": [
+    "Visit the nearest Grama One, Karnataka One, or Bangalore One centre, or apply on Seva Sindhu portal.",
+    "Provide Ration Card number and Aadhaar details.",
+    "Complete biometric or OTP verification.",
+    "Receive SMS confirmation with application acknowledgement number."
+  ],
+  "official_portal_url": "https://sevasindhu.karnataka.gov.in/",
+  "application_url": "https://sevasindhugs.karnataka.gov.in/",
+  "source_title": "Seva Sindhu Guarantee Schemes Portal, Government of Karnataka",
+  "source_excerpt": "Financial assistance of Rs. 2,000 per month is provided to women heads of families in Karnataka who hold Antyodaya, BPL, or APL cards, excluding income tax payees.",
+  "effective_date": "2023-08-30",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

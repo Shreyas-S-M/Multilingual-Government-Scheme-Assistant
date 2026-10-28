@@ -1,0 +1,77 @@
+{
+  "scheme_id": "shakti-scheme-karnataka",
+  "name": "Shakti Scheme (Karnataka)",
+  "name_kannada": "ಶಕ್ತಿ ಯೋಜನೆ (ಕರ್ನಾಟಕ)",
+  "aliases": [
+    "Shakti Scheme",
+    "Free Bus Travel Karnataka",
+    "ಶಕ್ತಿ ಯೋಜನೆ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Transport Department, Government of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Transport & Women Mobility",
+  "short_description": "Free bus travel for all women residents of Karnataka across state-run RTC ordinary and express buses.",
+  "detailed_description": "The Shakti scheme offers free travel for women, girls, and transgender persons who are permanent residents of Karnataka in non-luxury buses operated by KSRTC, BMTC, NWKRTC, and KKRTC across Karnataka state.",
+  "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಎಲ್ಲಾ ಮಹಿಳೆಯರು, ವಿದ್ಯಾರ್ಥಿನಿಯರು ಮತ್ತು ತೃತೀಯಲಿಂಗಿಗಳಿಗೆ ಕೆ.ಎಸ್.ಆರ್.ಟಿ.ಸಿ ಮತ್ತು ಬಿ.ಎಂ.ಟಿ.ಸಿ ಸೇರಿದಂತೆ ಸರ್ಕಾರಿ ಬಸ್‌ಗಳಲ್ಲಿ ಉಚಿತ ಪ್ರಯಾಣ ಸೌಲಭ್ಯ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "female",
+    "transgender"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "shakti_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Govt Order No. TD 43 SL 2023, Bengaluru, dated 05-06-2023",
+      "description_kannada": "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "shakti_gender",
+      "name": "Female or Transgender",
+      "field": "gender",
+      "operator": "in_list",
+      "expected_value": [
+        "female",
+        "transgender"
+      ],
+      "is_mandatory": true,
+      "source_citation": "Govt Order No. TD 43 SL 2023, Clause 2 (Eligible Beneficiaries)",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆ ಅಥವಾ ತೃತೀಯಲಿಂಗಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "What is your gender?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಲಿಂಗ ಯಾವುದು?"
+    }
+  ],
+  "benefits_summary": "100% free bus fare across all non-AC state transport buses in Karnataka.",
+  "benefits_amount": "100% Free Bus Travel",
+  "required_documents": [
+    "Any Govt-issued photo ID showing Karnataka address (Aadhaar, Voter ID, Driving Licence)"
+  ],
+  "application_process": [
+    "Present a government-issued address proof to the bus conductor inside any eligible state transport bus to receive a zero-fare ticket."
+  ],
+  "official_portal_url": "https://ksrtc.karnataka.gov.in/",
+  "application_url": "https://sevasindhu.karnataka.gov.in/",
+  "source_title": "Transport Department, Government of Karnataka",
+  "source_excerpt": "Free travel is permitted to all women domiciled in Karnataka in KSRTC, BMTC, NWKRTC, and KKRTC ordinary and express buses.",
+  "effective_date": "2023-06-11",
+  "last_verified_date": "2025-01-18",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

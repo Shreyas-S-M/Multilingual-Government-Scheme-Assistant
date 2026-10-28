@@ -1,0 +1,68 @@
+{
+  "scheme_id": "atal-pension-yojana",
+  "name": "Atal Pension Yojana (APY)",
+  "name_kannada": "ಅಟಲ್ ಪಿಂಚಣಿ ಯೋಜನೆ",
+  "aliases": [
+    "APY",
+    "Atal Pension",
+    "ಅಟಲ್ ಪಿಂಚಣಿ"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Pension Fund Regulatory and Development Authority (PFRDA), Ministry of Finance",
+  "category": "Social Welfare",
+  "subcategory": "Pensions / Social Security",
+  "short_description": "Guaranteed minimum monthly pension of Rs. 1,000 to Rs. 5,000 after 60 years of age for unorganized sector workers.",
+  "detailed_description": "APY is a government-backed pension scheme targeted at citizens in the unorganized sector. Subscribers contribute periodically between age 18 and 40, and receive a guaranteed monthly pension of Rs. 1,000 to Rs. 5,000 from the age of 60 years until death, with spouse continuation and return of corpus to nominee.",
+  "description_kannada": "ಅಸಂಘಟಿತ ವಲಯದ ಕಾರ್ಮಿಕರಿಗೆ ಮತ್ತು ಸಾರ್ವಜನಿಕರಿಗೆ 60 ವರ್ಷ ತುಂಬಿದ ನಂತರ ಮಾಸಿಕ ರೂ. 1,000 ದಿಂದ 5,000 ವರೆಗೆ ಖಾತರಿಯ ಪಿಂಚಣಿ ಒದಗಿಸುವ ಕೇಂದ್ರ ಸರ್ಕಾರದ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 40,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "apy_age",
+      "name": "Age between 18 and 40 years",
+      "field": "age",
+      "operator": "inclusive_range",
+      "expected_value": [
+        18,
+        40
+      ],
+      "is_mandatory": true,
+      "source_citation": "APY Scheme Notification, PFRDA, 2015",
+      "description_kannada": "ವಯಸ್ಸು 18 ರಿಂದ 40 ವರ್ಷಗಳ ನಡುವೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is your current age? (Must be between 18 and 40 to enroll in APY)",
+      "clarification_question_kn": "ನಿಮ್ಮ ವಯಸ್ಸು ಎಷ್ಟು? (ಅಟಲ್ ಪಿಂಚಣಿ ಯೋಜನೆಗೆ 18 ರಿಂದ 40 ವರ್ಷದೊಳಗಿರಬೇಕು)"
+    }
+  ],
+  "benefits_summary": "Guaranteed monthly lifetime pension of Rs. 1,000, 2,000, 3,000, 4,000, or 5,000 starting from age 60.",
+  "benefits_amount": "Rs. 1,000 to 5,000 monthly pension",
+  "required_documents": [
+    "Aadhaar Card",
+    "Active Savings Bank account",
+    "Nominee details"
+  ],
+  "application_process": [
+    "Visit any bank branch or post office where you hold a savings bank account.",
+    "Fill in the APY registration form with auto-debit consent.",
+    "PRAN (Permanent Retirement Account Number) card is issued."
+  ],
+  "official_portal_url": "https://www.npscra.nsdl.co.in/scheme-details.php",
+  "application_url": "https://enps.nsdl.com/eNPS/ApySubRegistration.html",
+  "source_title": "Pension Fund Regulatory and Development Authority (PFRDA)",
+  "source_excerpt": "Under the APY, a guaranteed minimum pension of Rs. 1,000/- to Rs. 5,000/- per month will be given at the age of 60 years depending on the contributions by the subscriber.",
+  "effective_date": "2015-05-09",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

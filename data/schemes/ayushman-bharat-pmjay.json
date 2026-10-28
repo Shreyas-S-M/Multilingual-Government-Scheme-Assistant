@@ -1,0 +1,67 @@
+{
+  "scheme_id": "ayushman-bharat-pmjay",
+  "name": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+  "name_kannada": "ಆಯುಷ್ಮಾನ್ ಭಾರತ್ - ಪ್ರಧಾನ ಮಂತ್ರಿ ಜನ ಆರೋಗ್ಯ ಯೋಜನೆ",
+  "aliases": [
+    "PM-JAY",
+    "Ayushman Bharat",
+    "AB-PMJAY",
+    "ಆಯುಷ್ಮಾನ್ ಭಾರತ್"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "National Health Authority, Ministry of Health and Family Welfare",
+  "category": "Healthcare",
+  "subcategory": "Health Insurance",
+  "short_description": "Cashless health insurance coverage up to Rs. 5 Lakh per family per year for secondary and tertiary hospitalization.",
+  "detailed_description": "PM-JAY is the world's largest health assurance scheme aimed at providing a health cover of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization to over 12 crore poor and vulnerable families (approximately 55 crore beneficiaries) that form the bottom 40% of the Indian population.",
+  "description_kannada": "ಬಡ ಮತ್ತು ಆರ್ಥಿಕವಾಗಿ ಹಿಂದುಳಿದ ಕುಟುಂಬಗಳಿಗೆ ಆಸ್ಪತ್ರೆ ವೆಚ್ಚಕ್ಕಾಗಿ ಪ್ರತಿ ಕುಟುಂಬಕ್ಕೆ ವಾರ್ಷಿಕ ರೂ. 5 ಲಕ್ಷದವರೆಗೆ ನಗದು ರಹಿತ ಆರೋಗ್ಯ ವಿಮೆ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 300000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pmjay_income",
+      "name": "Family Annual Income Limit",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 300000.0,
+      "is_mandatory": true,
+      "source_citation": "AB-PMJAY Guidelines, Deprivation Criteria based on SECC 2011 / State NFSA lists",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 3,00,000 ಮೀರಬಾರದು",
+      "clarification_question_en": "What is your approximate total annual family income in rupees?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ಒಟ್ಟು ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Cashless treatment and secondary/tertiary hospitalization cover up to Rs. 5,00,000 per family per year.",
+  "benefits_amount": "Rs. 5,00,000 per family/year",
+  "required_documents": [
+    "Aadhaar Card or Ration Card (BPL/Antyodaya)",
+    "Active mobile number",
+    "Age/Identity proof"
+  ],
+  "application_process": [
+    "Visit the official portal at pmjay.gov.in or beneficiary.nha.gov.in.",
+    "Enter your mobile number and authenticate via OTP to check SECC eligibility.",
+    "Verify your family details using Ration Card or Aadhaar number.",
+    "Visit any empaneled public or private hospital with your Ayushman Card for cashless admission."
+  ],
+  "official_portal_url": "https://pmjay.gov.in/",
+  "application_url": "https://beneficiary.nha.gov.in/",
+  "source_title": "National Health Authority, Ministry of Health and Family Welfare",
+  "source_excerpt": "Ayushman Bharat PM-JAY provides cashless access to healthcare services for the beneficiary at the point of service, that is, the hospital.",
+  "effective_date": "2018-09-23",
+  "last_verified_date": "2025-01-10",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

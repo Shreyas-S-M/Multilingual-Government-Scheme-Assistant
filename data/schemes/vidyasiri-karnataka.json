@@ -1,0 +1,93 @@
+{
+  "scheme_id": "vidyasiri-karnataka",
+  "name": "Karnataka Vidyasiri Scheme (Food & Accommodation Stipend)",
+  "name_kannada": "ಕರ್ನಾಟಕ ವಿದ್ಯಾಸಿರಿ ಯೋಜನೆ (ಊಟ ಮತ್ತು ವಸತಿ ಸಹಾಯ)",
+  "aliases": [
+    "Vidyasiri",
+    "BCWD Food and Accommodation",
+    "ವಿದ್ಯಾಸಿರಿ"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Backward Classes Welfare Department, Government of Karnataka",
+  "category": "Education",
+  "subcategory": "Student Living Stipend",
+  "short_description": "Monthly stipend of Rs. 1,500 for 10 months to backward classes post-matric students who do not secure government hostel admission.",
+  "detailed_description": "Vidyasiri scheme provides Rs. 1,500 per month for 10 months each academic year (total Rs. 15,000) directly to bank accounts of post-matric OBC/SC/ST/Minority students who live in rented accommodation because government hostels have no available seats.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಹಾಸ್ಟೆಲ್‌ಗಳಲ್ಲಿ ಸೀಟು ಸಿಗದೆ ಬಾಡಿಗೆ ಮನೆಯಲ್ಲಿ ಉಳಿದು ಉನ್ನತ ಶಿಕ್ಷಣ ಕಲಿಯುತ್ತಿರುವ ಹಿಂದುಳಿದ ವರ್ಗಗಳ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ತಿಂಗಳಿಗೆ ರೂ. 1,500 ರಂತೆ 10 ತಿಂಗಳು ಊಟ ಮತ್ತು ವಸತಿ ಭತ್ಯೆ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 16,
+  "max_age": 30,
+  "max_income": 250000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "obc",
+    "sc",
+    "st",
+    "minority"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "vs_state",
+      "name": "Resident of Karnataka",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Karnataka",
+      "is_mandatory": true,
+      "source_citation": "Vidyasiri Rules, BCWD Karnataka",
+      "description_kannada": "ಕರ್ನಾಟಕದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a student resident of Karnataka?",
+      "clarification_question_kn": "ನೀವು ಕರ್ನಾಟಕದ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    },
+    {
+      "criterion_id": "vs_student",
+      "name": "Must be an active student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Vidyasiri Guidelines Section 3.1",
+      "description_kannada": "ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently studying in a recognized post-matric course?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ಮಾನ್ಯತೆ ಪಡೆದ ಕಾಲೇಜಿನಲ್ಲಿ ಕಲಿಯುತ್ತಿರುವ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    },
+    {
+      "criterion_id": "vs_income",
+      "name": "Annual Family Income <= Rs. 2.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 250000.0,
+      "is_mandatory": true,
+      "source_citation": "Vidyasiri Means Criteria 2023",
+      "description_kannada": "ವಾರ್ಷಿಕ ಆದಾಯ ರೂ. 2.50 ಲಕ್ಷ ಮೀರಬಾರದು",
+      "clarification_question_en": "What is your total annual family income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ಒಟ್ಟು ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Rs. 1,500 per month for 10 months (Total Rs. 15,000 per academic year).",
+  "benefits_amount": "Rs. 15,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Caste & Income Certificate (RD Number)",
+    "College Bonafide / Admission Receipt",
+    "Bank passbook mapped to Aadhaar"
+  ],
+  "application_process": [
+    "Apply via Karnataka State Scholarship Portal (ssp.postmatric.karnataka.gov.in).",
+    "Enter SSP student ID, college details, and hostel non-availability status.",
+    "DBT credited directly to bank account upon verification."
+  ],
+  "official_portal_url": "https://bcwd.karnataka.gov.in/",
+  "application_url": "https://ssp.postmatric.karnataka.gov.in/",
+  "source_title": "Backward Classes Welfare Department, Govt of Karnataka",
+  "source_excerpt": "Financial assistance of Rs. 1500 per month for 10 months is provided to eligible students pursuing post-matric courses who could not get admission into departmental hostels.",
+  "effective_date": "2014-07-01",
+  "last_verified_date": "2025-01-21",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}
