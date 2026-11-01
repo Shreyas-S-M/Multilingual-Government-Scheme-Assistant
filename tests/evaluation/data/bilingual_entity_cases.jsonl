@@ -1,0 +1,12 @@
+{"id": "en_farmer_complete", "text": "I am a 26 year old farmer in Karnataka with annual income of 1.8 lakh.", "language": "en", "expected": {"age": 26, "annual_income": 180000.0, "state": "Karnataka", "occupation": "farmer"}}
+{"id": "kn_farmer_complete", "text": "ನಾನು ಕರ್ನಾಟಕದ ರೈತ, ವಯಸ್ಸು ೩೦ ವರ್ಷ, ವಾರ್ಷಿಕ ಆದಾಯ ೧ ಲಕ್ಷ ರೂಪಾಯಿ.", "language": "kn", "expected": {"age": 30, "annual_income": 100000.0, "state": "Karnataka", "occupation": "farmer"}}
+{"id": "kanglish_student", "text": "Nanna age 23, degree pass out unemployed in Karnataka. Scheme beku.", "language": "kn", "expected": {"age": 23, "state": "Karnataka", "occupation": "unemployed", "education_level": "graduate"}}
+{"id": "en_student", "text": "I am 21 years old, currently studying in college in Karnataka.", "language": "en", "expected": {"age": 21, "state": "Karnataka", "is_student": true, "occupation": "student"}}
+{"id": "kn_student", "text": "ನಾನು ವಿದ್ಯಾರ್ಥಿ, ವಯಸ್ಸು ೨೨ ವರ್ಷ, ಕರ್ನಾಟಕದಲ್ಲಿ ವಾಸಿಸುತ್ತೇನೆ.", "language": "kn", "expected": {"age": 22, "state": "Karnataka", "is_student": true, "occupation": "student"}}
+{"id": "en_bpl_woman", "text": "I am a 35 year old woman with annual income of 90000, from Karnataka, and I have a BPL card.", "language": "en", "expected": {"age": 35, "annual_income": 90000.0, "state": "Karnataka", "gender": "female", "has_bpl_card": true}}
+{"id": "kn_bpl", "text": "ನನಗೆ ಬಿಪಿಎಲ್ ಕಾರ್ಡ್ ಇದೆ. ನಾನು ಕರ್ನಾಟಕದ ನಿವಾಸಿ.", "language": "kn", "expected": {"state": "Karnataka", "has_bpl_card": true}}
+{"id": "en_street_vendor", "text": "I am a 40 year old street vendor in Bengaluru with income of 2 lakh.", "language": "en", "expected": {"age": 40, "state": "Karnataka", "occupation": "street_vendor", "annual_income": 200000.0}}
+{"id": "kn_income_digits", "text": "ವಾರ್ಷಿಕ ಆದಾಯ ₹೨,೫೦,೦೦೦, ವಯಸ್ಸು ೨೮ ವರ್ಷ, ಕರ್ನಾಟಕ.", "language": "kn", "expected": {"annual_income": 250000.0, "age": 28, "state": "Karnataka"}}
+{"id": "en_land_acres", "text": "I am a farmer in Karnataka and own 2 acres of land.", "language": "en", "expected": {"state": "Karnataka", "occupation": "farmer", "land_ownership_ha": 0.81}}
+{"id": "kanglish_income", "text": "Nanna vayassu 29, Karnataka alli farmer, annual income 2 lakh.", "language": "kn", "expected": {"age": 29, "state": "Karnataka", "occupation": "farmer", "annual_income": 200000.0}}
+{"id": "en_education_category", "text": "I am a 24 year old graduate from Karnataka, OBC category.", "language": "en", "expected": {"age": 24, "state": "Karnataka", "education_level": "graduate", "social_category": "obc"}}

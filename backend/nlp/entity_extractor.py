@@ -23,10 +23,11 @@ class EntityExtractor:
         normalized_text = TextNormalizer.normalize_unicode(text)
         digits_normalized = TextNormalizer.normalize_digits(normalized_text)
 
-        # 1. Age extraction
+        # 1. Age extraction with robust Dravidian agglutinative suffix handling
         age_patterns = [
-            r"\b(?:i am|age is|age|ವಯಸ್ಸು|ವರ್ಷ)\s*[:=]?\s*([0-9]{1,2})\b",
-            r"\b([0-9]{1,2})\s*(?:years?|yrs?|ವಯಸ್ಸು|ವರ್ಷ)\s*(?:old|ಆಗಿದೆ)?\b",
+            r"(?:i am|age is|age|aged|vayassu|varsha|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ)?)\s*[:=]?\s*([0-9]{1,2})(?:\b|[^\w]|$)",
+            r"([0-9]{1,2})\s*(?:years?|yrs?|vayassu|varsha|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ|ಗಳ|ಗಳು)?)\s*(?:old|ಆಗಿದೆ|ಇದೆ)?(?:\b|[^\w]|$)",
+            r"(?:ನನಗೆ|ನನ್ನ)\s*([0-9]{1,2})\s*(?:ವರ್ಷ|ವಯಸ್ಸು)",
         ]
         for pat in age_patterns:
             m = re.search(pat, digits_normalized, re.IGNORECASE)
@@ -50,10 +51,11 @@ class EntityExtractor:
                     "confidence": 0.85,
                 }
 
-        # 2. Annual Income extraction
+        # 2. Annual Income extraction with Indian currency & Kannada postfix notations
         income_patterns = [
-            r"(?:income|salary|earning|annual income|ಆದಾಯ|ಸಂಬಳ)\s*(?:is|of|around)?\s*[:=]?\s*(?:rs\.?|inr|₹|ರೂ\.?)?\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)\b",
-            r"(?:rs\.?|inr|₹|ರೂ\.?)\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ)",
+            r"(?:income|salary|earning|annual income|ಆದಾಯ|ಸಂಬಳ)\s*(?:is|of|around)?\s*[:=]?\s*(?:rs\.?|inr|₹|ರೂ\.?)?\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)(?:\b|[^\w]|$)",
+            r"(?:rs\.?|inr|₹|ರೂ\.?)\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ)?(?:\b|[^\w]|$)",
+            r"([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ))\s*(?:ರೂಪಾಯಿ|ರೂ\.?|rs\.?|inr)?\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ)?(?:\b|[^\w]|$)",
         ]
         for pat in income_patterns:
             m = re.search(pat, digits_normalized, re.IGNORECASE)
@@ -179,6 +181,14 @@ class EntityExtractor:
                 "value": val,
                 "span": m_land.group(0),
                 "confidence": 0.85,
+            }
+
+        # 11. Disability extraction (only if voluntarily mentioned)
+        if any(w in lower_t for w in ["disabled", "disability", "handicapped", "divyang", "physically challenged", "ಅಂಗವಿಕಲ", "ವಿಕಲಚೇತನ", "ವಿಶೇಷ ಚೇತನ"]):
+            results["is_disabled"] = {
+                "value": True,
+                "span": "disabled",
+                "confidence": 0.95,
             }
 
         return results

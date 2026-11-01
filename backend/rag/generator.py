@@ -4,6 +4,9 @@ Implements provider-independent generation with an authoritative, deterministic 
 Enforces that eligibility statuses (PASS, FAIL, UNKNOWN) are strictly preserved from the rule engine.
 """
 from typing import List, Dict, Any, Optional
+import json
+from urllib.request import Request, urlopen
+from urllib.error import URLError, HTTPError
 from backend.core.config import settings
 from backend.schemas.eligibility import SchemeEligibilityResult, EligibilityStatus
 from backend.schemas.user_profile import UserProfile
@@ -14,6 +17,7 @@ from backend.core.logging import logger
 class ResponseGenerator:
     def __init__(self, provider: str = None):
         self.provider = provider or settings.LLM_PROVIDER
+        self.last_used_llm = False
 
     def generate_response(
         self,
@@ -29,11 +33,25 @@ class ResponseGenerator:
         Synthesizes grounded conversational response.
         Uses deterministic generation by default or if external LLM provider fails/is unconfigured.
         """
-        if self.provider == "gemini" and settings.LLM_API_KEY:
+        self.last_used_llm = False
+
+        if self.provider == "ollama":
             try:
-                return self._generate_gemini(
+                answer = self._generate_ollama(
                     query, profile, recommended_schemes, schemes_data_map, language, follow_up_question, near_misses
                 )
+                self.last_used_llm = True
+                return answer
+            except Exception as e:
+                logger.warning(f"Ollama generation failed ({e}), falling back to deterministic response.")
+
+        elif self.provider == "gemini" and settings.LLM_API_KEY:
+            try:
+                answer = self._generate_gemini(
+                    query, profile, recommended_schemes, schemes_data_map, language, follow_up_question, near_misses
+                )
+                self.last_used_llm = True
+                return answer
             except Exception as e:
                 logger.warning(f"Gemini generation failed ({e}), falling back to deterministic response.")
 
@@ -149,12 +167,60 @@ class ResponseGenerator:
 
         return "\n".join(lines)
 
-    def _generate_gemini(self, query, profile, recommended_schemes, schemes_data_map, language, follow_up_question, near_misses) -> str:
-        """Invokes Gemini API with strict grounding instructions."""
-        import google.generativeai as genai
-        genai.configure(api_key=settings.LLM_API_KEY)
-        model = genai.GenerativeModel(settings.LLM_MODEL_NAME)
+    def _generate_ollama(
+        self, query, profile, recommended_schemes, schemes_data_map, language, follow_up_question, near_misses
+    ) -> str:
+        """Generate conversational response via local Ollama instance with strict evidence grounding."""
+        context = RAGContextBuilder.build_context(
+            recommended_schemes, profile, schemes_data_map, language
+        )
+        lang_name = "Kannada" if language == "kn" else "English"
+        prompt = f"""You are Sahayaka, an official multilingual Indian government scheme discovery assistant.
+Reply in {lang_name}. Be warm, concise, and easy to understand.
 
+USER MESSAGE:
+{query}
+
+VERIFIED BACKEND EVIDENCE (scheme details, citations and eligibility statuses):
+{context}
+
+FOLLOW-UP QUESTION TO INCLUDE:
+{follow_up_question or 'None'}
+
+INSTRUCTIONS:
+1. Base your answer strictly on the provided evidence.
+2. Preserve every PASS, FAIL, and UNKNOWN status exactly as provided; never make a different eligibility decision.
+3. Do not invent any benefits or conditions.
+4. End with an informational disclaimer.
+"""
+        payload = {
+            "model": settings.LLM_MODEL_NAME or "llama3.2:3b",
+            "messages": [
+                {"role": "system", "content": "You generate grounded explanations. Never override structured eligibility evidence."},
+                {"role": "user", "content": prompt},
+            ],
+            "stream": False,
+            "options": {"temperature": 0.2},
+        }
+        url = f"{settings.OLLAMA_BASE_URL.rstrip('/')}/api/chat"
+        req = Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+        )
+        timeout = getattr(settings, "OLLAMA_TIMEOUT_SECONDS", 90)
+        with urlopen(req, timeout=timeout) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            msg = data.get("message", {}) or {}
+            content = msg.get("content", "")
+            if not content:
+                content = data.get("response", "")
+            return content.strip()
+
+    def _generate_gemini(
+        self, query, profile, recommended_schemes, schemes_data_map, language, follow_up_question, near_misses
+    ) -> str:
+        """Invokes Gemini API with strict grounding instructions."""
         context = RAGContextBuilder.build_context(recommended_schemes, profile, schemes_data_map, language)
         prompt = f"""
 You are an official Multilingual Government Scheme Assistant for India and Karnataka.
@@ -174,5 +240,17 @@ INSTRUCTIONS:
 4. Do not invent any benefits, income limits, or deadlines.
 5. End with the official disclaimer.
 """
-        response = model.generate_content(prompt)
-        return response.text
+        try:
+            from google import genai
+            client = genai.Client(api_key=settings.LLM_API_KEY)
+            response = client.models.generate_content(
+                model=settings.LLM_MODEL_NAME or "gemini-2.5-flash",
+                contents=prompt,
+            )
+            return response.text
+        except ImportError:
+            import google.generativeai as legacy_genai
+            legacy_genai.configure(api_key=settings.LLM_API_KEY)
+            model = legacy_genai.GenerativeModel(settings.LLM_MODEL_NAME)
+            response = model.generate_content(prompt)
+            return response.text

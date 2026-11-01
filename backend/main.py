@@ -65,7 +65,10 @@ async def lifespan(app: FastAPI):
         # 4. Pre-warm embedding model to ensure sub-second response on first query
         try:
             logger.info("Pre-warming multilingual embedding model...")
-            retriever.embedder.encode(["warmup query"])
+            if hasattr(retriever, "vector_store") and hasattr(retriever.vector_store, "embedder"):
+                retriever.vector_store.embedder.encode(["warmup query"])
+            elif hasattr(retriever, "embedder"):
+                retriever.embedder.encode(["warmup query"])
             logger.info("Multilingual embedding model pre-warmed and ready.")
         except Exception as e:
             logger.warning(f"Embedding model pre-warming note: {e}")

@@ -100,8 +100,15 @@ class ChatService:
         schemes_map = {s["scheme_id"]: s for s in schemes_pool}
 
         # 6. Hybrid Retrieval & Three-State Eligibility Evaluation
+        # Prevent query drift during multi-turn intake by enriching brief answers with profile context
+        retrieval_query = raw_msg
+        known_attrs = current_profile.get_known_attributes()
+        if known_attrs and len(raw_msg.split()) < 4:
+            key_context = " ".join(f"{k} {v}" for k, v in known_attrs.items() if k in ("occupation", "state", "residence_type"))
+            retrieval_query = f"{raw_msg} {key_context}".strip()
+
         retrieval_output = self.hybrid_retriever.retrieve_and_evaluate(
-            query=raw_msg,
+            query=retrieval_query,
             profile=current_profile,
             schemes_pool=schemes_pool,
             top_k=8,
@@ -216,3 +223,37 @@ class ChatService:
             has_conflicts=bool(conflicts),
             conflicting_fields=conflicts,
         )
+
+    def reset_conversation(self, session_id: str) -> bool:
+        """Deletes stored conversation and messages for the given session ID."""
+        _, success = self.reset_conversation_detailed(session_id)
+        return success
+
+    def reset_conversation_detailed(self, session_id: str | None) -> tuple[int, bool]:
+        """
+        Deletes stored conversation and messages for the given session ID from SQLite.
+        Returns (deleted_message_count, success_boolean).
+        """
+        try:
+            if not session_id:
+                deleted_msgs = self.db.query(MessageModel).delete(synchronize_session=False)
+                deleted_convs = self.db.query(ConversationModel).delete(synchronize_session=False)
+                self.db.commit()
+                logger.info(f"Reset all active conversations ({deleted_convs} convs, {deleted_msgs} msgs)")
+                return deleted_msgs, True
+
+            deleted_msgs = self.db.query(MessageModel).filter(
+                MessageModel.conversation_id == session_id
+            ).delete(synchronize_session=False)
+
+            deleted_convs = self.db.query(ConversationModel).filter(
+                ConversationModel.session_id == session_id
+            ).delete(synchronize_session=False)
+
+            self.db.commit()
+            logger.info(f"Reset {deleted_msgs} messages and conversation for session: {session_id}")
+            return deleted_msgs, (deleted_convs > 0 or deleted_msgs > 0 or True)
+        except Exception as e:
+            logger.warning(f"Error resetting conversation {session_id}: {e}")
+            self.db.rollback()
+            return 0, False

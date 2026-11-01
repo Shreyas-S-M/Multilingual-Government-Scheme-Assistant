@@ -49,6 +49,29 @@ class EligibilityEngine:
         missing_attrs = []
         failed_criteria = []
 
+        # Safeguard: A scheme entry without explicit criteria must never be marked eligible (PASS).
+        if not rules_raw:
+            return SchemeEligibilityResult(
+                scheme_id=scheme_id,
+                scheme_name=scheme_name,
+                overall_status=EligibilityStatus.UNKNOWN,
+                mandatory_passed_count=0,
+                mandatory_failed_count=0,
+                mandatory_unknown_count=1,
+                optional_passed_count=0,
+                optional_failed_count=0,
+                optional_unknown_count=0,
+                criteria_results=[],
+                summary_explanation=(
+                    f"Eligibility for {scheme_name} cannot be assessed because structured, verified criteria are not yet available. "
+                    "Check the official portal before relying on this entry."
+                ),
+                missing_attributes=["scheme_specific_criteria"],
+                failed_criteria=[],
+                official_portal_url=official_url,
+                benefits_summary=benefits_summary,
+            )
+
         # Evaluate every criterion rule
         for r in rules_raw:
             rule_obj = r if isinstance(r, CriterionRule) else CriterionRule(**(r if isinstance(r, dict) else r.__dict__))

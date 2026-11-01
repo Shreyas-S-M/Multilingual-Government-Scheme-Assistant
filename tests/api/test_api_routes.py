@@ -82,3 +82,53 @@ def test_standalone_eligibility_check(client):
     for r in results:
         assert r["overall_status"] == "PASS"
         assert len(r["criteria_results"]) > 0
+
+
+def test_chat_reset_endpoint(client):
+    """Verifies that /chat/reset deletes stored messages and conversation records (FAULT-05)."""
+    conv_id = "test-reset-session-999"
+    # 1. Post a message to create session and messages
+    res1 = client.post("/api/v1/chat", json={
+        "message": "I am a 30 year old teacher in Karnataka",
+        "conversation_id": conv_id,
+    })
+    assert res1.status_code == 200
+
+    # 2. Reset via JSON body
+    res2 = client.post("/api/v1/chat/reset", json={"conversation_id": conv_id})
+    assert res2.status_code == 200
+    data2 = res2.json()
+    assert data2["status"] == "success"
+    assert data2["conversation_id"] == conv_id
+    assert data2["messages_deleted"] >= 1
+
+    # 3. Subsequent reset should safely report 0 deleted messages
+    res3 = client.post(f"/api/v1/chat/reset?conversation_id={conv_id}")
+    assert res3.status_code == 200
+    data3 = res3.json()
+    assert data3["status"] == "success"
+    assert data3["messages_deleted"] == 0
+
+
+def test_evaluation_metrics_dynamic(client):
+    """Verifies that /evaluation/metrics computes live dynamic NLP and benchmark stats (FAULT-07)."""
+    res = client.get("/api/v1/evaluation/metrics?dynamic=true")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["status"] == "success"
+    assert data["evaluation_mode"] == "dynamic_live_evaluation"
+    bench = data["benchmark_results"]
+    assert bench["language_detection"]["overall_accuracy"] == 1.0
+    assert bench["nlp_extraction"]["micro_f1_score"] == 1.0
+    assert "age" in bench["nlp_extraction"]["per_field_metrics"]
+
+
+def test_sqlite_wal_pragmas(client):
+    """Verifies SQLite WAL mode and busy timeout concurrency settings (FAULT-09)."""
+    from backend.db.session import engine
+    with engine.connect() as conn:
+        journal_mode = conn.exec_driver_sql("PRAGMA journal_mode;").scalar()
+        busy_timeout = conn.exec_driver_sql("PRAGMA busy_timeout;").scalar()
+        assert str(journal_mode).lower() == "wal"
+        assert int(busy_timeout) >= 5000
+

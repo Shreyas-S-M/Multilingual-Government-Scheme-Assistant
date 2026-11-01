@@ -67,6 +67,9 @@ with st.sidebar:
     render_profile_pills(st.session_state.current_profile)
 
     if st.button("🔄 Reset Conversation / Profile", use_container_width=True):
+        old_id = st.session_state.get("conversation_id")
+        if old_id:
+            APIClient.reset_conversation(old_id)
         st.session_state.conversation_id = str(uuid.uuid4())
         st.session_state.messages = []
         st.session_state.current_profile = {}

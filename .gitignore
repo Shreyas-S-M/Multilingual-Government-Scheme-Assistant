@@ -13,8 +13,9 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+/lib/
+/lib64/
+!frontend-web/lib/
 parts/
 sdist/
 var/
@@ -23,8 +24,19 @@ wheels/
 .installed.cfg
 *.egg
 
+# Node & Frontend Web
+node_modules/
+frontend-web/node_modules/
+.next/
+frontend-web/.next/
+out/
+frontend-web/out/
+.vercel
+
 # Database
 *.db
+*.db-shm
+*.db-wal
 *.sqlite3
 data/processed/*.db
 

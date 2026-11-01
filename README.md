@@ -10,7 +10,22 @@
 
 An intelligent, full-stack, multilingual natural language assistant engineered to discover Indian Central and Karnataka State government welfare schemes with **transparent three-state eligibility reasoning (`PASS`, `FAIL`, `UNKNOWN`)**, adaptive clarification questioning, and evidence-grounded recommendations.
 
-Built natively in Python using **Streamlit**, **FastAPI**, **SQLAlchemy 2.0**, **FAISS**, and **Multilingual Sentence Transformers / BM25**.
+Built natively with a **Next.js 14** Citizen Web Portal, a **Streamlit** Admin/Evaluation Workbench, **FastAPI**, **SQLAlchemy 2.0 (SQLite WAL)**, **FAISS**, and **Multilingual Sentence Transformers / BM25**.
+
+---
+
+## 📚 Authoritative Project Documentation & Audit Reports
+
+The complete engineering, requirement, integration, and verification records are permanently documented in the repository:
+
+1. 📄 **[Multilingual_Government_Scheme_Assistant_SRS.pdf](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/Multilingual_Government_Scheme_Assistant_SRS.pdf)**: Complete 16-page IEEE 830-1998 Software Requirements Specification.
+2. 📋 **[REQUIREMENT_TRACEABILITY.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/REQUIREMENT_TRACEABILITY.md)**: Full Requirement Traceability Matrix (FR-01 to FR-15 and NFR-01 to NFR-08).
+3. 🧬 **[SAHAYAKA_FEATURE_INTEGRATION.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/SAHAYAKA_FEATURE_INTEGRATION.md)**: Forensic capability integration ledger of all Sahayaka reference features.
+4. 🔍 **[BASELINE_AUDIT.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/BASELINE_AUDIT.md)**: Architectural inventory, baseline state, and initial findings.
+5. 🛠️ **[FINAL_DEFECT_AUDIT.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/FINAL_DEFECT_AUDIT.md)**: Root-cause analysis and remediation proof for 20 faults and bugs.
+6. 🌐 **[BROWSER_VERIFICATION.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/BROWSER_VERIFICATION.md)**: Live browser automation test logs across 10 complete user journeys.
+7. 🛡️ **[SECURITY_AND_ACCESSIBILITY_AUDIT.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/SECURITY_AND_ACCESSIBILITY_AUDIT.md)**: WCAG 2.2 AA accessibility and India DPDP Act 2023 compliance audit.
+8. 🚀 **[FINAL_RELEASE_REPORT.md](file:///d:/Multilingual-Government-Scheme-Assistant-main/Multilingual-Government-Scheme-Assistant-main/FINAL_RELEASE_REPORT.md)**: Production release sign-off, system metrics, and deployment guide.
 
 ---
 
@@ -38,35 +53,33 @@ Unlike generic chatbots or naive RAG pipelines that hallucinate or falsely rejec
 ## 🏗️ System Architecture
 
 ```
-+---------------------------------------------------------------------------------------+
-|                                    Streamlit Frontend                                 |
-|   (Chat Assistant | Scheme Explorer | Eligibility Assessment | Admin & Evaluation UI) |
-+-------------------------------------------+-------------------------------------------+
-                                            | HTTP REST API
-                                            v
-+---------------------------------------------------------------------------------------+
-|                                  FastAPI Backend (/api/v1)                            |
-|   [health.py]   [schemes.py]   [chat.py]   [eligibility.py]   [admin.py]   [eval.py]  |
-+---------------------+---------------------+---------------------+---------------------+
-                      |                     |                     |
-                      v                     v                     v
-          +-----------------------+ +-------------------+ +---------------------+
-          | Multilingual NLP Core | | Retrieval Engine  | | Eligibility Engine  |
-          | - Lang Detection      | | - FAISS Vectors   | | - PASS/FAIL/UNKNOWN |
-          | - Text Normalization  | | - BM25 Lexical    | | - Predicate Rules   |
-          | - Entity Extraction   | | - Hybrid Ranker   | | - Adaptive Qs       |
-          | - Profile State       | | - Metadata Map    | | - Near-Miss Alts    |
-          +-----------------------+ +-------------------+ +---------------------+
-                      |                     |                     |
-                      +---------------------+---------------------+
-                                            |
-                                            v
-                            +-------------------------------+
-                            |   Relational Database (ORM)   |
-                            | - 22 Verified Schemes & Rules |
-                            | - Sources & Provenance        |
-                            | - SQLite / PostgreSQL         |
-                            +-------------------------------+
+                                  [ CITIZEN / ADMIN USER ]
+                                              │
+                      ┌───────────────────────┴───────────────────────┐
+                      ▼                                               ▼
+         [ Next.js 14 Citizen Web Portal ]               [ Streamlit Admin Workbench ]
+             http://localhost:3000                           http://localhost:8501
+            (Policies: /policies)                          (Multi-page Admin & Eval)
+                      │                                               │
+                      └───────────────────────┬───────────────────────┘
+                                              │ HTTP REST
+                                              ▼
+                                 [ FastAPI Gateway Service ]
+                                   http://127.0.0.1:8000
+                                 (Swagger: /api/v1/docs)
+                                              │
+             ┌────────────────────────────────┼────────────────────────────────┐
+             ▼                                ▼                                ▼
+  [ Bilingual Indic NLP ]         [ Hybrid Retrieval Engine ]      [ 3-State Eligibility ]
+   • Script Detector               • FAISS Dense Vector Store       • PASS / FAIL / UNKNOWN
+   • Dravidian Suffix Parser       • BM25Okapi Lexical Store        • Relaxation shortfalls
+   • 10 Profile Fields             • Reciprocal Rank Fusion         • Near-miss alternatives
+             │                                │                                │
+             └────────────────────────────────┼────────────────────────────────┘
+                                              ▼
+                                 [ SQLite Thread-Safe Store ]
+                                  (WAL Mode, Busy Timeout)
+                                  57 Verified Scheme Specs
 ```
 
 ---
@@ -174,13 +187,13 @@ Run the full automated test suite (53 tests covering unit, API, and the 20 acade
 pytest -v
 ```
 
-All 53 tests run and pass in ~12 seconds.
+All 62 tests run and pass in ~1.6 seconds (`python -m pytest`).
 
 ---
 
 ## 🏛️ Knowledge Base of Verified Government Schemes
 
-The catalog includes 22 authentic schemes verified against official portals:
+The catalog includes **57 authentic schemes** (42 Central, 15 Karnataka State) verified against official portals:
 
 | Scheme ID | Scheme Title | Level | Category | Key Benefit | Official Source |
 | :--- | :--- | :---: | :--- | :--- | :--- |
@@ -206,6 +219,8 @@ The catalog includes 22 authentic schemes verified against official portals:
 | `stand-up-india` | Stand-Up India Scheme | Central | Entrepreneurship| Rs. 10 Lakh - 1 Cr bank credit | [standupmitra.in](https://www.standupmitra.in/) |
 | `pre-matric-minority` | Pre-Matric Minority Scholar.| Central | Education | Up to Rs. 9,000 / year | [scholarships.gov.in](https://scholarships.gov.in/) |
 | `arundhati-karnataka` | Karnataka Arundhati Scheme | Karnataka | Social Welfare | Rs. 25,000 marriage grant | [sevasindhu.karnataka.gov.in](https://sevasindhu.karnataka.gov.in/) |
+
+*(The complete 57-scheme catalogue can be explored and filtered interactively on `http://localhost:3000/policies` or in Streamlit `Scheme Explorer`.)*
 
 ---
 

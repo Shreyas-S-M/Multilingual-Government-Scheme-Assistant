@@ -16,7 +16,7 @@ from backend.schemas.admin import (
     IndexRebuildResponse,
 )
 from backend.schemas.scheme import SchemeCreate, SchemeUpdate
-from backend.models.database import AuditLogModel
+from backend.models.database import AuditLogModel, ConversationModel
 from backend.api.deps import get_hybrid_retriever, HybridRetriever
 from backend.core.config import settings
 
@@ -44,7 +44,7 @@ def get_admin_system_stats(
         central_schemes=stats["central_schemes"],
         state_schemes=stats["state_schemes"],
         categories_breakdown=stats["categories_breakdown"],
-        total_conversations=0,
+        total_conversations=db.query(ConversationModel).count(),
         faiss_indexed_schemes=indexed_count,
         embedding_model=settings.EMBEDDING_MODEL_NAME,
         llm_provider=settings.LLM_PROVIDER,

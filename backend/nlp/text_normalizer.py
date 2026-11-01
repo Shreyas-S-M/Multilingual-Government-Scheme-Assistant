@@ -77,9 +77,9 @@ class TextNormalizer:
         # Remove commas
         clean_text = text.replace(",", "")
 
-        # Check for multiplier pattern: e.g. 2.5 lakh or 2 lakh
+        # Check for multiplier pattern: e.g. 2.5 lakh or 2 lakh or 50 thousand
         pattern = re.compile(
-            r"^([0-9]+(?:\.[0-9]+)?)\s*([a-zA-Z\u0C80-\u0CFF]+)?$", re.IGNORECASE
+            r"^([0-9]+(?:\.[0-9]+)?)\s*([a-zA-Z\u0C80-\u0CFF\s]+)?$", re.IGNORECASE
         )
         match = pattern.match(clean_text)
         if match:
@@ -89,6 +89,9 @@ class TextNormalizer:
                 mult_key = mult_str.lower().strip()
                 if mult_key in MULTIPLIERS:
                     return base_val * MULTIPLIERS[mult_key]
+                first_word = mult_key.split()[0] if mult_key.split() else ""
+                if first_word in MULTIPLIERS:
+                    return base_val * MULTIPLIERS[first_word]
             return base_val
 
         # Plain number fallback
@@ -282,6 +285,51 @@ class TextNormalizer:
             ]
         ):
             return "unemployed"
+        # Senior Citizen / Retired / Pensioner
+        if any(
+            x in t
+            for x in [
+                "senior citizen",
+                "elderly",
+                "pensioner",
+                "retired",
+                "old age",
+                "ಹಿರಿಯ ನಾಗರಿಕ",
+                "ನಿವೃತ್ತ",
+                "ಪಿಂಚಣಿದಾರ",
+                "ವೃದ್ಧ",
+            ]
+        ):
+            return "senior_citizen"
+        # Homemaker / Housewife
+        if any(
+            x in t
+            for x in [
+                "homemaker",
+                "housewife",
+                "home maker",
+                "ಗೃಹಿಣಿ",
+                "ಮನೆಗೆಲಸ",
+            ]
+        ):
+            return "homemaker"
+        # Daily Wager / Laborer
+        if any(
+            x in t
+            for x in [
+                "daily wage",
+                "daily wager",
+                "coolie",
+                "laborer",
+                "labourer",
+                "construction worker",
+                "manual laborer",
+                "ಕೂಲಿ",
+                "ದಿನಗೂಲಿ",
+                "ಕಾರ್ಮಿಕ",
+            ]
+        ):
+            return "daily_wager"
         # Salaried / Employed
         if any(
             x in t

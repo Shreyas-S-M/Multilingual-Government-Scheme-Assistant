@@ -25,6 +25,8 @@ class Settings(BaseSettings):
     API_PORT: int = 8000
     API_PREFIX: str = "/api/v1"
     CORS_ORIGINS: List[str] = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
         "http://localhost:8501",
         "http://127.0.0.1:8501",
         "http://localhost:8000",
@@ -50,9 +52,11 @@ class Settings(BaseSettings):
     INDEX_METADATA_PATH: str = str(PROJECT_ROOT / "data" / "processed" / "index_metadata.json")
 
     # LLM & RAG Configuration
-    LLM_PROVIDER: str = "deterministic"  # "deterministic", "gemini", "openai"
+    LLM_PROVIDER: str = "deterministic"  # "deterministic", "ollama", "gemini", "openai"
     LLM_MODEL_NAME: str = "gemini-1.5-flash"
     LLM_API_KEY: Optional[str] = None
+    OLLAMA_BASE_URL: str = "http://127.0.0.1:11434"
+    OLLAMA_TIMEOUT_SECONDS: int = 90
 
     # Feature Flags
     ENABLE_HYBRID_RETRIEVAL: bool = True

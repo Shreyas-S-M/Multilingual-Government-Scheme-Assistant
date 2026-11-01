@@ -108,6 +108,41 @@ class TestEntityExtractor:
         assert entities_kn["state"]["value"] == "Karnataka"
         assert entities_kn["is_student"]["value"] is True
 
+    def test_kannada_agglutinative_age_extraction(self):
+        """Verifies Dravidian case inflections attach to numbers without whitespace (FAULT-04)."""
+        cases = [
+            ("ನನಗೆ 22 ವರ್ಷ", 22),
+            ("ನನಗೆ 22 ವರ್ಷದ", 22),
+            ("ನನ್ನ ವಯಸ್ಸು 22", 22),
+            ("22 ವಯಸ್ಸಿನ ಯುವಕ", 22),
+            ("22 ವರ್ಷಕ್ಕೆ", 22),
+            ("22 ವರ್ಷಗಳು", 22),
+            ("22ವರ್ಷ", 22),
+            ("೨೨ ವರ್ಷದ", 22),
+            ("nanna vayassu 22", 22),
+            ("22 varsha", 22),
+        ]
+        for text, expected in cases:
+            res = EntityExtractor.extract_entities(text)
+            assert "age" in res, f"Expected 'age' in {text}"
+            assert res["age"]["value"] == expected
+
+    def test_kannada_postfix_income_extraction(self):
+        """Verifies Kannada income postfix notations and currency symbols (FAULT-04)."""
+        cases = [
+            ("ಆದಾಯ 1.5 ಲಕ್ಷ", 150000.0),
+            ("ಆದಾಯ 50 ಸಾವಿರ", 50000.0),
+            ("1.5 ಲಕ್ಷ ಆದಾಯ", 150000.0),
+            ("50 ಸಾವಿರ ರೂಪಾಯಿ ಆದಾಯ", 50000.0),
+            ("ರೂ 50000", 50000.0),
+            ("1.5 lakh income", 150000.0),
+            ("earning 2.5 lac", 250000.0),
+        ]
+        for text, expected in cases:
+            res = EntityExtractor.extract_entities(text)
+            assert "annual_income" in res, f"Expected 'annual_income' in {text}"
+            assert res["annual_income"]["value"] == expected
+
     def test_profile_conflict_handling(self):
         profile = UserProfile(age=25, annual_income=100000.0)
         # Update with new conflicting age 30

@@ -92,6 +92,21 @@ class APIClient:
             }
 
     @staticmethod
+    def reset_conversation(conversation_id: str) -> Dict[str, Any]:
+        """Resets active conversation and flushes stored messages from the backend."""
+        try:
+            resp = requests.post(
+                f"{API_BASE_URL}/chat/reset",
+                json={"conversation_id": conversation_id},
+                timeout=5,
+            )
+            if resp.status_code == 200:
+                return resp.json()
+            return {"status": "warning", "message": f"Server returned {resp.status_code}"}
+        except Exception as e:
+            return {"status": "error", "message": str(e)}
+
+    @staticmethod
     def list_schemes(
         category: Optional[str] = None,
         level: Optional[str] = None,

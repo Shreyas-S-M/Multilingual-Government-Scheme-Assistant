@@ -1772,5 +1772,1545 @@
     "source_reliability": "official_portal",
     "status": "active",
     "is_active": true
+  },
+  {
+    "scheme_id": "pm-jan-dhan",
+    "name": "Pradhan Mantri Jan-Dhan Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Jan-Dhan Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Financial Services, Government of India",
+    "category": "Financial Inclusion",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Financial inclusion and access to basic banking services",
+    "detailed_description": "Financial inclusion and access to basic banking services This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmjdy.gov.in/",
+    "application_url": "https://pmjdy.gov.in/",
+    "source_title": "Department of Financial Services, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pmjjby",
+    "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Financial Services, Government of India",
+    "category": "Insurance",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Life insurance scheme offered through participating banks and insurers",
+    "detailed_description": "Life insurance scheme offered through participating banks and insurers This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://jansuraksha.gov.in/",
+    "application_url": "https://jansuraksha.gov.in/",
+    "source_title": "Department of Financial Services, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pmsby",
+    "name": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Suraksha Bima Yojana (PMSBY)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Financial Services, Government of India",
+    "category": "Insurance",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Accident insurance scheme offered through participating banks",
+    "detailed_description": "Accident insurance scheme offered through participating banks This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://jansuraksha.gov.in/",
+    "application_url": "https://jansuraksha.gov.in/",
+    "source_title": "Department of Financial Services, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-ujjwala",
+    "name": "Pradhan Mantri Ujjwala Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Ujjwala Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Petroleum and Natural Gas, Government of India",
+    "category": "Energy",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "LPG connections for eligible households; current eligibility must be checked on the official portal",
+    "detailed_description": "LPG connections for eligible households; current eligibility must be checked on the official portal This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://www.pmuy.gov.in/",
+    "application_url": "https://www.pmuy.gov.in/",
+    "source_title": "Ministry of Petroleum and Natural Gas, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-matru-vandana",
+    "name": "Pradhan Mantri Matru Vandana Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Matru Vandana Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Women and Child Development, Government of India",
+    "category": "Health and Women Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Maternity benefit programme; check current conditions and application windows",
+    "detailed_description": "Maternity benefit programme; check current conditions and application windows This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://wcd.gov.in/",
+    "application_url": "https://wcd.gov.in/",
+    "source_title": "Ministry of Women and Child Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "janani-suraksha",
+    "name": "Janani Suraksha Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Janani Suraksha Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "National Health Mission, Government of India",
+    "category": "Health",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Safe motherhood intervention supporting institutional delivery for eligible beneficiaries",
+    "detailed_description": "Safe motherhood intervention supporting institutional delivery for eligible beneficiaries This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nhm.gov.in/",
+    "application_url": "https://nhm.gov.in/",
+    "source_title": "National Health Mission, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "mgnrega",
+    "name": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+    "name_kannada": "",
+    "aliases": [
+      "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Employment",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Rural household wage-employment guarantee subject to applicable programme rules",
+    "detailed_description": "Rural household wage-employment guarantee subject to applicable programme rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nrega.nic.in/",
+    "application_url": "https://nrega.nic.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "day-nrlm",
+    "name": "Deendayal Antyodaya Yojana – National Rural Livelihoods Mission",
+    "name_kannada": "",
+    "aliases": [
+      "Deendayal Antyodaya Yojana – National Rural Livelihoods Mission"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Livelihoods",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Supports rural poor households through women self-help groups and livelihoods",
+    "detailed_description": "Supports rural poor households through women self-help groups and livelihoods This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://aajeevika.gov.in/",
+    "application_url": "https://aajeevika.gov.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-kisan-maandhan",
+    "name": "Pradhan Mantri Kisan Maandhan Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Kisan Maandhan Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Agriculture and Farmers Welfare, Government of India",
+    "category": "Agriculture and Pension",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Pension programme for eligible small and marginal farmers; verify current conditions",
+    "detailed_description": "Pension programme for eligible small and marginal farmers; verify current conditions This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://maandhan.in/",
+    "application_url": "https://maandhan.in/",
+    "source_title": "Ministry of Agriculture and Farmers Welfare, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-matsya-sampada",
+    "name": "Pradhan Mantri Matsya Sampada Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Matsya Sampada Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Fisheries, Government of India",
+    "category": "Agriculture and Fisheries",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Support for fisheries and aquaculture development through eligible activities",
+    "detailed_description": "Support for fisheries and aquaculture development through eligible activities This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmmsy.dof.gov.in/",
+    "application_url": "https://pmmsy.dof.gov.in/",
+    "source_title": "Department of Fisheries, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-kaushal-vikas",
+    "name": "Pradhan Mantri Kaushal Vikas Yojana",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Kaushal Vikas Yojana"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Skill Development and Entrepreneurship, Government of India",
+    "category": "Skill Development",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Skill training and certification through approved training programmes",
+    "detailed_description": "Skill training and certification through approved training programmes This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://www.skillindiadigital.gov.in/",
+    "application_url": "https://www.skillindiadigital.gov.in/",
+    "source_title": "Ministry of Skill Development and Entrepreneurship, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-poshan",
+    "name": "PM POSHAN Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "PM POSHAN Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of School Education and Literacy, Government of India",
+    "category": "Education and Nutrition",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "School meal programme for eligible children in government and government-aided schools",
+    "detailed_description": "School meal programme for eligible children in government and government-aided schools This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmposhan.education.gov.in/",
+    "application_url": "https://pmposhan.education.gov.in/",
+    "source_title": "Department of School Education and Literacy, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-shri",
+    "name": "PM Schools for Rising India (PM SHRI)",
+    "name_kannada": "",
+    "aliases": [
+      "PM Schools for Rising India (PM SHRI)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of School Education and Literacy, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "School strengthening initiative implemented through selected schools",
+    "detailed_description": "School strengthening initiative implemented through selected schools This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmshrischools.education.gov.in/",
+    "application_url": "https://pmshrischools.education.gov.in/",
+    "source_title": "Department of School Education and Literacy, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "central-sector-scholarship",
+    "name": "Central Sector Scheme of Scholarship for College and University Students",
+    "name_kannada": "",
+    "aliases": [
+      "Central Sector Scheme of Scholarship for College and University Students"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Higher Education, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Scholarship support for eligible higher-education students; verify current notification",
+    "detailed_description": "Scholarship support for eligible higher-education students; verify current notification This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://scholarships.gov.in/",
+    "application_url": "https://scholarships.gov.in/",
+    "source_title": "Department of Higher Education, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "post-matric-obc",
+    "name": "Post-Matric Scholarship for OBC Students",
+    "name_kannada": "",
+    "aliases": [
+      "Post-Matric Scholarship for OBC Students"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Social Justice and Empowerment, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Post-matric education assistance for eligible OBC students under applicable guidelines",
+    "detailed_description": "Post-matric education assistance for eligible OBC students under applicable guidelines This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://scholarships.gov.in/",
+    "application_url": "https://scholarships.gov.in/",
+    "source_title": "Ministry of Social Justice and Empowerment, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "post-matric-st",
+    "name": "Post-Matric Scholarship for ST Students",
+    "name_kannada": "",
+    "aliases": [
+      "Post-Matric Scholarship for ST Students"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Tribal Affairs, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Post-matric education assistance for eligible Scheduled Tribe students",
+    "detailed_description": "Post-matric education assistance for eligible Scheduled Tribe students This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://tribal.nic.in/",
+    "application_url": "https://tribal.nic.in/",
+    "source_title": "Ministry of Tribal Affairs, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pre-matric-sc",
+    "name": "Pre-Matric Scholarship for SC Students",
+    "name_kannada": "",
+    "aliases": [
+      "Pre-Matric Scholarship for SC Students"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Social Justice and Empowerment, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "School education support under the applicable Scheduled Caste scholarship guidelines",
+    "detailed_description": "School education support under the applicable Scheduled Caste scholarship guidelines This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://scholarships.gov.in/",
+    "application_url": "https://scholarships.gov.in/",
+    "source_title": "Ministry of Social Justice and Empowerment, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "national-means-cum-merit",
+    "name": "National Means-cum-Merit Scholarship Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "National Means-cum-Merit Scholarship Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of School Education and Literacy, Government of India",
+    "category": "Education",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Scholarship for eligible students to reduce dropouts at secondary stage",
+    "detailed_description": "Scholarship for eligible students to reduce dropouts at secondary stage This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://scholarships.gov.in/",
+    "application_url": "https://scholarships.gov.in/",
+    "source_title": "Department of School Education and Literacy, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-adarsh-gram",
+    "name": "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Anusuchit Jaati Abhyuday Yojana (PM-AJAY)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Social Justice and Empowerment, Government of India",
+    "category": "Social Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Development support for eligible Scheduled Caste communities and villages",
+    "detailed_description": "Development support for eligible Scheduled Caste communities and villages This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://socialjustice.gov.in/",
+    "application_url": "https://socialjustice.gov.in/",
+    "source_title": "Ministry of Social Justice and Empowerment, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "national-family-benefit",
+    "name": "National Family Benefit Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "National Family Benefit Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Social Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Financial assistance to eligible households following the death of the primary breadwinner, subject to state rules",
+    "detailed_description": "Financial assistance to eligible households following the death of the primary breadwinner, subject to state rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nsap.nic.in/",
+    "application_url": "https://nsap.nic.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "indira-gandhi-national-old-age-pension",
+    "name": "Indira Gandhi National Old Age Pension Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "Indira Gandhi National Old Age Pension Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Pension",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Pension assistance for eligible older persons under NSAP and state implementation rules",
+    "detailed_description": "Pension assistance for eligible older persons under NSAP and state implementation rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nsap.nic.in/",
+    "application_url": "https://nsap.nic.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "indira-gandhi-national-widow-pension",
+    "name": "Indira Gandhi National Widow Pension Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "Indira Gandhi National Widow Pension Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Pension",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Pension assistance for eligible widows under applicable NSAP and state rules",
+    "detailed_description": "Pension assistance for eligible widows under applicable NSAP and state rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nsap.nic.in/",
+    "application_url": "https://nsap.nic.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "indira-gandhi-national-disability-pension",
+    "name": "Indira Gandhi National Disability Pension Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "Indira Gandhi National Disability Pension Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Rural Development, Government of India",
+    "category": "Pension and Disability",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Pension assistance for eligible persons with disabilities under applicable rules",
+    "detailed_description": "Pension assistance for eligible persons with disabilities under applicable rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://nsap.nic.in/",
+    "application_url": "https://nsap.nic.in/",
+    "source_title": "Ministry of Rural Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-garib-kalyan-anna",
+    "name": "Pradhan Mantri Garib Kalyan Anna Yojana / Foodgrain Support",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Garib Kalyan Anna Yojana / Foodgrain Support"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Food and Public Distribution, Government of India",
+    "category": "Food Security",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Foodgrain support implemented through the public distribution system; check current entitlements locally",
+    "detailed_description": "Foodgrain support implemented through the public distribution system; check current entitlements locally This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://dfpd.gov.in/",
+    "application_url": "https://dfpd.gov.in/",
+    "source_title": "Department of Food and Public Distribution, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-janman",
+    "name": "Pradhan Mantri Janjati Adivasi Nyaya Maha Abhiyan (PM-JANMAN)",
+    "name_kannada": "",
+    "aliases": [
+      "Pradhan Mantri Janjati Adivasi Nyaya Maha Abhiyan (PM-JANMAN)"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Tribal Affairs, Government of India",
+    "category": "Tribal Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Basic services and development interventions for eligible Particularly Vulnerable Tribal Groups",
+    "detailed_description": "Basic services and development interventions for eligible Particularly Vulnerable Tribal Groups This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://tribal.nic.in/",
+    "application_url": "https://tribal.nic.in/",
+    "source_title": "Ministry of Tribal Affairs, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "beti-bachao-beti-padhao",
+    "name": "Beti Bachao Beti Padhao",
+    "name_kannada": "",
+    "aliases": [
+      "Beti Bachao Beti Padhao"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Women and Child Development, Government of India",
+    "category": "Women and Child Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Initiative supporting the survival, protection and education of the girl child; not a universal cash benefit",
+    "detailed_description": "Initiative supporting the survival, protection and education of the girl child; not a universal cash benefit This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://wcd.gov.in/",
+    "application_url": "https://wcd.gov.in/",
+    "source_title": "Ministry of Women and Child Development, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "sukanya-samriddhi-account",
+    "name": "Sukanya Samriddhi Account Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "Sukanya Samriddhi Account Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Department of Posts, Government of India",
+    "category": "Savings",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Small savings account for a girl child under notified account rules",
+    "detailed_description": "Small savings account for a girl child under notified account rules This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://www.indiapost.gov.in/",
+    "application_url": "https://www.indiapost.gov.in/",
+    "source_title": "Department of Posts, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pm-fme",
+    "name": "PM Formalisation of Micro Food Processing Enterprises Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "PM Formalisation of Micro Food Processing Enterprises Scheme"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Food Processing Industries, Government of India",
+    "category": "Entrepreneurship",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Support for eligible micro food-processing enterprises subject to programme guidelines",
+    "detailed_description": "Support for eligible micro food-processing enterprises subject to programme guidelines This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmfme.mofpi.gov.in/",
+    "application_url": "https://pmfme.mofpi.gov.in/",
+    "source_title": "Ministry of Food Processing Industries, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "pmfme-self-help",
+    "name": "PMFME Support for SHGs",
+    "name_kannada": "",
+    "aliases": [
+      "PMFME Support for SHGs"
+    ],
+    "level": "central",
+    "state": null,
+    "department": "Ministry of Food Processing Industries, Government of India",
+    "category": "Entrepreneurship",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Support to eligible self-help groups engaged in food processing under PMFME guidelines",
+    "detailed_description": "Support to eligible self-help groups engaged in food processing under PMFME guidelines This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://pmfme.mofpi.gov.in/",
+    "application_url": "https://pmfme.mofpi.gov.in/",
+    "source_title": "Ministry of Food Processing Industries, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-sandhya-suraksha",
+    "name": "Karnataka Sandhya Suraksha Yojane",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Sandhya Suraksha Yojane"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Pension",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Karnataka social-security pension programme for eligible older residents; verify current criteria with the state portal",
+    "detailed_description": "Karnataka social-security pension programme for eligible older residents; verify current criteria with the state portal This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://sevasindhu.karnataka.gov.in/",
+    "application_url": "https://sevasindhu.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-bhagyalakshmi",
+    "name": "Karnataka Bhagyalakshmi Scheme",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Bhagyalakshmi Scheme"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Women and Child Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Girl-child welfare programme; current eligibility and benefit conditions require official verification",
+    "detailed_description": "Girl-child welfare programme; current eligibility and benefit conditions require official verification This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://dwcd.karnataka.gov.in/",
+    "application_url": "https://dwcd.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-krishi-bhagya",
+    "name": "Karnataka Krishi Bhagya",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Krishi Bhagya"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Agriculture",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Agricultural water-conservation and farm-water support programme; verify current district implementation",
+    "detailed_description": "Agricultural water-conservation and farm-water support programme; verify current district implementation This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://raitamitra.karnataka.gov.in/",
+    "application_url": "https://raitamitra.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-ksheera-dhare",
+    "name": "Karnataka Ksheera Dhare / Dairy Support",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Ksheera Dhare / Dairy Support"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Agriculture and Dairy",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Dairy-sector support programmes administered through Karnataka institutions; check current programme details",
+    "detailed_description": "Dairy-sector support programmes administered through Karnataka institutions; check current programme details This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://ahvs.karnataka.gov.in/",
+    "application_url": "https://ahvs.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-devadasi-rehabilitation",
+    "name": "Karnataka Rehabilitation Programme for Devadasis",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Rehabilitation Programme for Devadasis"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Social Welfare",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "Targeted rehabilitation and welfare support; eligibility must be confirmed with the relevant state department",
+    "detailed_description": "Targeted rehabilitation and welfare support; eligibility must be confirmed with the relevant state department This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://socialwelfare.karnataka.gov.in/",
+    "application_url": "https://socialwelfare.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
+  },
+  {
+    "scheme_id": "karnataka-disabled-pension",
+    "name": "Karnataka Disability Pension Assistance",
+    "name_kannada": "",
+    "aliases": [
+      "Karnataka Disability Pension Assistance"
+    ],
+    "level": "state",
+    "state": "Karnataka",
+    "department": "Government of Karnataka, Government of Karnataka",
+    "category": "Disability and Pension",
+    "subcategory": "Needs official criteria verification",
+    "short_description": "State social-security support for eligible persons with disabilities; verify the current scheme and criteria",
+    "detailed_description": "State social-security support for eligible persons with disabilities; verify the current scheme and criteria This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+    "description_kannada": "",
+    "min_age": null,
+    "max_age": null,
+    "max_income": null,
+    "eligible_genders": [
+      "all"
+    ],
+    "eligible_categories": [
+      "all"
+    ],
+    "target_occupations": [
+      "all"
+    ],
+    "rules": [],
+    "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+    "benefits_amount": "Not specified — verify official source",
+    "required_documents": [],
+    "application_process": [
+      "Open the official portal and verify current eligibility, documents, application status and process."
+    ],
+    "official_portal_url": "https://sevasindhu.karnataka.gov.in/",
+    "application_url": "https://sevasindhu.karnataka.gov.in/",
+    "source_title": "Government of Karnataka, Government portal",
+    "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+    "effective_date": null,
+    "last_verified_date": "needs-review",
+    "source_reliability": "needs_review",
+    "status": "needs_review",
+    "is_active": true
   }
 ]
