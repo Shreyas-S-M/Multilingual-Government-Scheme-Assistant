@@ -1,0 +1,89 @@
+{
+  "scheme_id": "tamil-pudhalvan-tamil-nadu",
+  "name": "Tamil Pudhalvan Scheme",
+  "name_kannada": "ತಮಿಳು ಪುದಲ್ವನ್ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Tamil Pudhalvan",
+    "TN Boys College Stipend"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare & Higher Education, Govt of Tamil Nadu",
+  "category": "Education",
+  "subcategory": "Boy Higher Education",
+  "short_description": "Monthly stipend of Rs. 1,000 to male students from Tamil Nadu government schools pursuing higher education.",
+  "detailed_description": "Tamil Pudhalvan scheme extends Rs. 1,000 monthly stipend directly to male students who studied Classes 6 to 12 in Tamil Nadu government and government-aided Tamil medium schools pursuing ITI, Polytechnic, and University undergraduate courses to buy textbooks and learning aids.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಶಾಲೆಯಲ್ಲಿ ಓದಿದ ಬಡ ಗಂಡು ಮಕ್ಕಳಿಗೆ ಕಾಲೇಜು ವ್ಯಾಸಂಗಕ್ಕಾಗಿ ಮಾಸಿಕ ರೂ. 1,000 ಪ್ರೋತ್ಸಾಹಧನ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 17,
+  "max_age": 25,
+  "max_income": null,
+  "eligible_genders": [
+    "male"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "tp_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu G.O. Social Welfare Dept 2024",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "tp_gender",
+      "name": "Male Student",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "male",
+      "is_mandatory": true,
+      "source_citation": "Tamil Pudhalvan Scheme Guidelines",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant male?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಪುರುಷ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    },
+    {
+      "criterion_id": "tp_student",
+      "name": "Must be Student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Higher Education Verification Criteria",
+      "description_kannada": "ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently enrolled in higher education?",
+      "clarification_question_kn": "ನೀವು ಉನ್ನತ ಶಿಕ್ಷಣದಲ್ಲಿ ವ್ಯಾಸಂಗ ಮಾಡುತ್ತಿದ್ದೀರಾ?"
+    }
+  ],
+  "benefits_summary": "Direct cash transfer of Rs. 1,000 every month into the student's bank account.",
+  "benefits_amount": "Rs. 1,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "EMIS Certificate confirming Class 6 to 12 study in government schools",
+    "College admission ID / Bonafide certificate",
+    "Active bank account passbook"
+  ],
+  "application_process": [
+    "Apply via your college principal or student welfare officer.",
+    "Cross-verified with the Department of School Education EMIS portal.",
+    "Monthly funds transferred directly into the student's bank account."
+  ],
+  "official_portal_url": "https://tamilpudhalvan.tn.gov.in/",
+  "application_url": "https://tamilpudhalvan.tn.gov.in/",
+  "source_title": "Social Welfare & Higher Education Dept, Govt of Tamil Nadu",
+  "source_excerpt": "Under Tamil Pudhalvan, Rs. 1,000 monthly aid is given to male students who studied in govt schools pursuing college degrees.",
+  "effective_date": "2024-08-09",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

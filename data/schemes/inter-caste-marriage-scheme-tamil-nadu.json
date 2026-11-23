@@ -1,0 +1,77 @@
+{
+  "scheme_id": "inter-caste-marriage-scheme-tamil-nadu",
+  "name": "Dr. Muthulakshmi Reddy Inter-Caste Marriage Assistance Scheme",
+  "name_kannada": "ಡಾ. ಮುತ್ತುಲಕ್ಷ್ಮಿ ರೆಡ್ಡಿ ಅಂತರ್ಜಾತಿ ವಿವಾಹ ಸಹಾಯ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Dr. Muthulakshmi Reddy Scheme",
+    "TN Inter-caste Marriage Assistance"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare & Women Empowerment, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Inter-Caste Marriage Incentive",
+  "short_description": "Financial assistance of Rs. 25,000 to Rs. 50,000 plus an 8-gram gold coin to abolish caste discrimination through inter-caste marriages.",
+  "detailed_description": "Aimed at eradicating caste discrimination, this scheme awards financial assistance of Rs. 25,000 (non-graduates) or Rs. 50,000 (graduates) along with an 8-gram (one sovereign) 22K gold coin to couples solemnizing inter-caste marriages involving SC/ST and non-SC/ST communities.",
+  "description_kannada": "ಅಂತರ್ಜಾತಿ ವಿವಾಹವಾದ ದಂಪತಿಗಳಿಗೆ ಜಾತಿ ತಾರತಮ್ಯ ನಿವಾರಣೆಗಾಗಿ ರೂ. 25,000 ದಿಂದ 50,000 ಧನಸಹಾಯ ಮತ್ತು 8 ಗ್ರಾಂ ಚಿನ್ನದ ನಾಣ್ಯ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "icm_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Social Welfare Dept Order",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "icm_age",
+      "name": "Legal Age of Marriage",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Legal Marriage Age Verification",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the applicant bride?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Grant of Rs. 25,000 to Rs. 50,000 plus 8 grams 22K gold coin.",
+  "benefits_amount": "Rs. 25,000 to Rs. 50,000 + 8g Gold",
+  "required_documents": [
+    "Aadhaar Cards of Bride and Groom",
+    "Community / Caste Certificates of both spouses showing different categories",
+    "Marriage Registration Certificate",
+    "Joint Bank Account Passbook"
+  ],
+  "application_process": [
+    "Apply online through e-Sevai centre within two years of marriage registration.",
+    "District Social Welfare Officer inspects and approves the grant.",
+    "Cheque and gold coin distributed directly to the couple."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19443",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Social Welfare Department, Govt of Tamil Nadu",
+  "source_excerpt": "Incentive of up to Rs. 50,000 and 8 grams gold coin is given to encourage inter-caste marriages.",
+  "effective_date": "1967-07-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

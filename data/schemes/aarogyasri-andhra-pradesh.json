@@ -1,0 +1,78 @@
+{
+  "scheme_id": "aarogyasri-andhra-pradesh",
+  "name": "Dr. YSR Aarogyasri Health Care Scheme",
+  "name_kannada": "ಡಾ. ವೈಎಸ್ಆರ್ ಆರೋಗ್ಯಶ್ರೀ ಯೋಜನೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "YSR Aarogyasri",
+    "Aarogyasri",
+    "AP Health Insurance"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Dr. YSR Aarogyasri Health Care Trust, Department of Health, Medical & Family Welfare, Govt of AP",
+  "category": "Healthcare",
+  "subcategory": "Health Insurance",
+  "short_description": "Cashless medical and surgical treatment up to Rs. 25 Lakh per family per year for BPL families in Andhra Pradesh.",
+  "detailed_description": "Dr. YSR Aarogyasri is a flagship health insurance program providing end-to-end cashless treatment for over 3,250 medical and surgical procedures up to a financial ceiling of Rs. 25 Lakh per beneficiary family holding an Aarogyasri/Rice card.",
+  "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶದ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ವಾರ್ಷಿಕ ರೂ. 25 ಲಕ್ಷದವರೆಗೆ ಉಚಿತ ನಗದು ರಹಿತ ಚಿಕಿತ್ಸೆ ನೀಡುವ ಆರೋಗ್ಯ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 500000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "aarogya_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Dr. YSR Aarogyasri Health Care Trust Operational Rules 2023",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "aarogya_income",
+      "name": "Annual Family Income ceiling Rs 5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 500000.0,
+      "is_mandatory": true,
+      "source_citation": "Aarogyasri Eligibility Criteria Gazette Notification",
+      "description_kannada": "ವಾರ್ಷಿಕ ಆದಾಯ 5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is your total annual family income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Cashless hospitalization, surgical procedures, and post-operative follow-up up to Rs. 25 Lakh.",
+  "benefits_amount": "Up to Rs. 25 Lakh per year",
+  "required_documents": [
+    "Aarogyasri Health Card / Rice Card (Ration Card)",
+    "Aadhaar Card of all family members",
+    "Medical diagnosis records / Referral slip from Govt Hospital"
+  ],
+  "application_process": [
+    "Visit any network empanelled hospital in AP or neighboring cities (Hyderabad, Chennai, Bengaluru).",
+    "Approach the Aarogyasri Help Desk and present your Aarogyasri Card or Aadhaar.",
+    "Aarogya Mithra processes e-pre-authorization with the trust.",
+    "Receive cashless inpatient care, diagnostics, surgeries, and medicines."
+  ],
+  "official_portal_url": "https://aarogyasri.ap.gov.in/",
+  "application_url": "https://aarogyasri.ap.gov.in/AarogyasriTrust/",
+  "source_title": "Dr. YSR Aarogyasri Health Care Trust, Govt of Andhra Pradesh",
+  "source_excerpt": "Aarogyasri provides comprehensive health cover up to Rs. 25 lakhs for catastrophic illness to underprivileged families.",
+  "effective_date": "2007-04-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

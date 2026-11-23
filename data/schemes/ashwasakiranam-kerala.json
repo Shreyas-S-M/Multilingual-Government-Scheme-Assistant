@@ -1,0 +1,65 @@
+{
+  "scheme_id": "ashwasakiranam-kerala",
+  "name": "Ashwasakiranam Scheme for Caregivers",
+  "name_kannada": "ಆಶ್ವಾಸಕಿರಣಂ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Ashwasakiranam",
+    "Kerala Caregiver Support Scheme"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Kerala Social Security Mission (KSSM), Social Justice Dept, Govt of Kerala",
+  "category": "Social Welfare",
+  "subcategory": "Caregiver Allowance",
+  "short_description": "Monthly stipend of Rs. 600 to family caregivers of bedridden, mentally challenged, or cancer patients.",
+  "detailed_description": "Ashwasakiranam provides a monthly financial allowance of Rs. 600 to dedicated family caregivers who are unable to take up outside employment because they provide round-the-clock personal care to bedridden patients, severely mentally retarded individuals, or advanced cancer patients.",
+  "description_kannada": "ಹಾಸಿಗೆ ಹಿಡಿದ ರೋಗಿಗಳು ಮತ್ತು ತೀವ್ರ ವಿಕಲಚೇತನರನ್ನು ನೋಡಿಕೊಳ್ಳುವ ಕುಟುಂಬದ ಆರೈಕೆದಾರರಿಗೆ ಮಾಸಿಕ ರೂ. 600 ಗೌರವಧನ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ak_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala KSSM Operational Guidelines",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct monthly transfer of Rs. 600 into the caregiver's bank account.",
+  "benefits_amount": "Rs. 600 per month",
+  "required_documents": [
+    "Aadhaar Card of Caregiver and Patient",
+    "Medical Certificate from Government Doctor confirming patient is bedridden / severely disabled",
+    "BPL Ration Card / Income Certificate",
+    "Caregiver Bank Passbook"
+  ],
+  "application_process": [
+    "Submit application form at local Gram Panchayat / Municipality or Akshaya Centre.",
+    "Forwarded to Kerala Social Security Mission (KSSM).",
+    "Monthly stipend credited directly via DBT."
+  ],
+  "official_portal_url": "https://socialsecuritymission.gov.in/scheme_info.php?id=MTE=",
+  "application_url": "https://socialsecuritymission.gov.in/",
+  "source_title": "Kerala Social Security Mission, Govt of Kerala",
+  "source_excerpt": "Ashwasakiranam gives a monthly allowance of Rs. 600 to family caregivers who take care of bedridden patients at home.",
+  "effective_date": "2010-08-02",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

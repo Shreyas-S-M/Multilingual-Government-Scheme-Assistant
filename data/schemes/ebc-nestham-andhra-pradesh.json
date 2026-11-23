@@ -1,0 +1,78 @@
+{
+  "scheme_id": "ebc-nestham-andhra-pradesh",
+  "name": "YSR EBC Nestham",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಇಬಿಸಿ ನೇಸ್ತಂ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "EBC Nestham",
+    "YSR EBC Nestham"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Backward Classes Welfare, Govt of Andhra Pradesh",
+  "category": "Social Welfare",
+  "subcategory": "Economically Backward Upper Caste Support",
+  "short_description": "Financial assistance of Rs. 15,000 per year to economically backward upper caste women aged 45 to 60 years in Andhra Pradesh.",
+  "detailed_description": "YSR EBC Nestham extends financial assistance of Rs. 45,000 in three phases (Rs. 15,000 per year) directly to poor women aged 45 to 60 belonging to Economically Backward Castes (EBC) other than SC, ST, BC, and Kapu.",
+  "description_kannada": "ಆರ್ಥಿಕವಾಗಿ ಹಿಂದುಳಿದ ಮೇಲ್ಜಾತಿಯ ಬಡ ಮಹಿಳೆಯರಿಗೆ (45-60 ವರ್ಷ) ವಾರ್ಷಿಕ ರೂ. 15,000 ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 45,
+  "max_age": 60,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "ews",
+    "general"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ebc_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 12 BC Welfare Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "ebc_gender",
+      "name": "Female Applicant",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "EBC Nestham Beneficiary Criteria",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant female?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 15,000 per annum for three years.",
+  "benefits_amount": "Rs. 15,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "EWS / EBC Income Certificate",
+    "White Ration Card / Rice Card",
+    "Aadhaar-seeded bank account passbook"
+  ],
+  "application_process": [
+    "Apply at the local Village or Ward Secretariat.",
+    "Field verification done by the Welfare and Education Assistant.",
+    "Amount credited directly into bank account."
+  ],
+  "official_portal_url": "https://navasakam.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "BC Welfare Department, Govt of AP",
+  "source_excerpt": "Under YSR EBC Nestham, Rs. 15,000 per year is given to economically backward upper caste women.",
+  "effective_date": "2021-01-25",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

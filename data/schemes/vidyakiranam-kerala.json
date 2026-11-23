@@ -1,0 +1,76 @@
+{
+  "scheme_id": "vidyakiranam-kerala",
+  "name": "Vidyakiranam Digital Education Scheme",
+  "name_kannada": "ವಿದ್ಯಾಕಿರಣಂ ಡಿಜಿಟಲ್ ಶಿಕ್ಷಣ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Vidyakiranam",
+    "Kerala Free Student Laptop",
+    "Digital Divide Kerala"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "General Education Department, Govt of Kerala",
+  "category": "Education",
+  "subcategory": "Digital Empowerment",
+  "short_description": "Free digital learning tablets and laptops provided to underprivileged school students in Kerala.",
+  "detailed_description": "Vidyakiranam provides free digital devices (laptops and tablets with pre-loaded digital curriculum and internet connectivity) to underprivileged students studying in government and aided schools across Kerala to eliminate digital disparity in school education.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಶಾಲೆಯ ಬಡ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಡಿಜಿಟಲ್ ಶಿಕ್ಷಣಕ್ಕಾಗಿ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ಮತ್ತು ಟ್ಯಾಬ್ಲೆಟ್ ವಿತರಿಸುವ ಯೋಜನೆ.",
+  "min_age": 6,
+  "max_age": 18,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "vk_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala General Education Dept Guidelines",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "vk_student",
+      "name": "Enrolled as School Student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "School Enrollment Verification Criteria",
+      "description_kannada": "ಶಾಲಾ ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the child enrolled in school?",
+      "clarification_question_kn": "ಮಗುವು ಶಾಲೆಯಲ್ಲಿ ಕಲಿಯುತ್ತಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "One-time free distribution of a laptop or tablet with educational content.",
+  "benefits_amount": "Free Laptop / Tablet Device",
+  "required_documents": [
+    "Student Aadhaar Card",
+    "School Bonafide Certificate / Sampoorna School ID",
+    "BPL Ration Card"
+  ],
+  "application_process": [
+    "School Headmaster identifies students lacking digital learning devices via Sampoorna portal.",
+    "KITE (Kerala Infrastructure and Technology for Education) distributes devices directly at the school."
+  ],
+  "official_portal_url": "https://kite.kerala.gov.in/",
+  "application_url": "https://kite.kerala.gov.in/",
+  "source_title": "General Education Department / KITE, Govt of Kerala",
+  "source_excerpt": "Under Vidyakiranam, digital devices are distributed free of cost to underprivileged students to bridge the digital gap.",
+  "effective_date": "2021-06-07",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,70 @@
+{
+  "scheme_id": "chedodu-andhra-pradesh",
+  "name": "Jagananna Chedodu Scheme",
+  "name_kannada": "ಜಗನಣ್ಣ ಚೇದೋಡು ಯೋಜನೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Jagananna Chedodu",
+    "Chedodu",
+    "AP Tailors Barbers Scheme"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "BC Welfare Department, Govt of Andhra Pradesh",
+  "category": "Employment",
+  "subcategory": "Artisan & Livelihood Support",
+  "short_description": "Annual financial grant of Rs. 10,000 for small tailors, barbers, and washermen in Andhra Pradesh.",
+  "detailed_description": "Jagananna Chedodu provides an annual investment support of Rs. 10,000 to small self-employed professionals including Rajakas (washermen), Nayee Brahmins (barbers), and Tailors owning micro establishments to purchase tools, equipment, and raw materials.",
+  "description_kannada": "ಬಡ ದರ್ಜಿಗಳು, ಕ್ಷೌರಿಕರು ಮತ್ತು ಅಗಸರಿಗೆ ಸಲಕರಣೆ ಖರೀದಿಗೆ ವಾರ್ಷಿಕ ರೂ. 10,000 ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 21,
+  "max_age": 60,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "bc",
+    "sc",
+    "st",
+    "all"
+  ],
+  "target_occupations": [
+    "artisan",
+    "self_employed"
+  ],
+  "rules": [
+    {
+      "criterion_id": "chedodu_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP BC Welfare Dept G.O.Ms.No. 15",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct deposit of Rs. 10,000 per year into the beneficiary's bank account.",
+  "benefits_amount": "Rs. 10,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Trade / Establishment verification certificate from Sachivalayam",
+    "Rice Card / BPL card",
+    "Aadhaar-seeded bank account"
+  ],
+  "application_process": [
+    "Register at Village/Ward Secretariat.",
+    "Welfare Assistant inspects establishment / tailoring unit / laundry shop.",
+    "Grant credited directly via DBT."
+  ],
+  "official_portal_url": "https://navasakam.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "BC Welfare Department, Govt of Andhra Pradesh",
+  "source_excerpt": "Under Jagananna Chedodu, Rs. 10,000 annual support is provided to barbers, washermen, and tailors to procure trade equipment.",
+  "effective_date": "2020-06-10",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

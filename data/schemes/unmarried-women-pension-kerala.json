@@ -1,0 +1,90 @@
+{
+  "scheme_id": "unmarried-women-pension-kerala",
+  "name": "Kerala 50+ Unmarried Women Pension Scheme",
+  "name_kannada": "ಕೇರಳ 50+ ಅವಿವಾಹಿತ ಮಹಿಳೆಯರ ಪಿಂಚಣಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Kerala Unmarried Women Pension",
+    "Sevana Unmarried Women Pension"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Local Self Government Department, Govt of Kerala",
+  "category": "Social Welfare",
+  "subcategory": "Women Security",
+  "short_description": "Monthly pension of Rs. 1,600 to unmarried women aged 50 years and above from low-income families in Kerala.",
+  "detailed_description": "Provides financial security and social protection of Rs. 1,600 per month to unmarried women who have attained 50 years of age, have no regular means of subsistence, and whose family annual income does not exceed Rs. 1 Lakh.",
+  "description_kannada": "50 ವರ್ಷ ದಾಟಿದ ಅವಿವಾಹಿತ ಬಡ ಮಹಿಳೆಯರಿಗೆ ಮಾಸಿಕ ರೂ. 1,600 ಜೀವನ ಭದ್ರತಾ ಪಿಂಚಣಿ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 50,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "uwp_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala LSGD Social Welfare Pension Rules",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "uwp_age",
+      "name": "Minimum Age 50 Years",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 50,
+      "is_mandatory": true,
+      "source_citation": "Unmarried Women Age Rule",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 50 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    },
+    {
+      "criterion_id": "uwp_gender",
+      "name": "Female Beneficiary",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Unmarried Women Gender Criterion",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant female?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Monthly pension of Rs. 1,600 credited to bank account or doorstep cooperative bank delivery.",
+  "benefits_amount": "Rs. 1,600 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Age Certificate / School Leaving Certificate",
+    "Unmarried Status Certificate issued by Village Officer / Tahsildar",
+    "BPL Ration Card / Income Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply through the local Gram Panchayat or Municipality via Akshaya Centre.",
+    "Local Body Secretary approves the application.",
+    "Monthly pension credited via DBT."
+  ],
+  "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+  "application_url": "https://sevana.gov.in/",
+  "source_title": "Local Self Government Dept, Govt of Kerala",
+  "source_excerpt": "Under the Sevana pension program, unmarried women aged 50 and above receive a monthly pension of Rs. 1,600.",
+  "effective_date": "2001-04-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

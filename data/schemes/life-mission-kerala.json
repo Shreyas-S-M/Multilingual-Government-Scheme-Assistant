@@ -1,0 +1,80 @@
+{
+  "scheme_id": "life-mission-kerala",
+  "name": "LIFE Mission Housing Scheme",
+  "name_kannada": "ಲೈಫ್ ಮಿಷನ್ ವಸತಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "LIFE Mission",
+    "Livelihood Inclusion and Financial Empowerment",
+    "Kerala Housing Mission"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Local Self Government Department, Govt of Kerala",
+  "category": "Housing",
+  "subcategory": "Affordable Housing",
+  "short_description": "Safe, permanent pucca house construction grant of Rs. 4 Lakh for homeless and landless families in Kerala.",
+  "detailed_description": "LIFE (Livelihood Inclusion and Financial Empowerment) Mission aims to provide comprehensive housing solutions to all landless and homeless families in Kerala by providing financial grants of Rs. 4 Lakh for building independent houses or providing flats in housing complexes with drinking water and electricity.",
+  "description_kannada": "ವಸತಿ ರಹಿತ ಮತ್ತು ನಿವೇಶನ ರಹಿತ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ಸುಸಜ್ಜಿತ ಮನೆ ನಿರ್ಮಾಣಕ್ಕಾಗಿ ರೂ. 4 ಲಕ್ಷ ಆರ್ಥಿಕ ಅನುದಾನ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "life_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala LSGD G.O.(P) No. 67/2017",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "life_income",
+      "name": "Annual Family Income ceiling Rs 1 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 100000.0,
+      "is_mandatory": true,
+      "source_citation": "LIFE Mission Homeless Beneficiary Criteria",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 1 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "Is your family's annual income below Rs 1 Lakh?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 1 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Financial grant of Rs. 4 Lakh paid in 4 construction stages via DBT, or allotment of a flat in a housing complex.",
+  "benefits_amount": "Rs. 4 Lakh housing grant",
+  "required_documents": [
+    "Aadhaar Card of head of family",
+    "BPL Ration Card",
+    "Certificate confirming no existing pucca house in the name of any family member",
+    "Land title deed / possession certificate (if owning land)",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply online through the LIFE Mission web portal or via Akshaya Centre.",
+    "Local Self Government (Gram Panchayat / Municipality) conducts field scrutiny.",
+    "District Level Committee approves priority list.",
+    "Stage-wise funds released directly based on construction geo-tagged photos."
+  ],
+  "official_portal_url": "https://lifemission.kerala.gov.in/",
+  "application_url": "https://lifemission.kerala.gov.in/",
+  "source_title": "LIFE Mission, Local Self Government Dept, Govt of Kerala",
+  "source_excerpt": "LIFE Mission guarantees safe, secure pucca housing to homeless and landless beneficiaries across Kerala.",
+  "effective_date": "2017-02-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

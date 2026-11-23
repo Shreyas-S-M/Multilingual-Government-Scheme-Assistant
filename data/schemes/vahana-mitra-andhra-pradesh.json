@@ -1,0 +1,81 @@
+{
+  "scheme_id": "vahana-mitra-andhra-pradesh",
+  "name": "YSR Vahana Mitra",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ವಾಹನ ಮಿತ್ರ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Vahana Mitra",
+    "YSR Vahana Mitra",
+    "AP Auto Driver Financial Aid"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Transport Department, Govt of Andhra Pradesh",
+  "category": "Employment",
+  "subcategory": "Transport Sector Support",
+  "short_description": "Annual recurring financial assistance of Rs. 10,000 to self-employed auto, taxi, and maxi-cab driver-owners in Andhra Pradesh.",
+  "detailed_description": "YSR Vahana Mitra provides an annual grant of Rs. 10,000 to self-employed driver-cum-owners of auto-rickshaws, light commercial motor vehicles, and maxi cabs to cover recurring expenses such as vehicle insurance, fitness certification, and minor repairs.",
+  "description_kannada": "ಆಟೋರಿಕ್ಷಾ, ಟ್ಯಾಕ್ಸಿ ಮಾಲೀಕ-ಚಾಲಕರಿಗೆ ವಿಮೆ ಮತ್ತು ನಿರ್ವಹಣೆಗಾಗಿ ವಾರ್ಷಿಕ ರೂ. 10,000 ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "driver",
+    "self_employed"
+  ],
+  "rules": [
+    {
+      "criterion_id": "vm_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 40 Transport Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "vm_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Vahana Mitra Driving License Eligibility Rules",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Annual direct cash transfer of Rs. 10,000 to auto and taxi driver-owners.",
+  "benefits_amount": "Rs. 10,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Driving License for Light Motor Vehicle / Transport",
+    "Vehicle Registration Certificate (RC) in applicant's name",
+    "White Ration Card / Rice Card",
+    "Bank passbook copy"
+  ],
+  "application_process": [
+    "Apply online through Navasakam or Grama/Ward Sachivalayam.",
+    "Vehicle inspection and document verification done by Motor Vehicle Inspector (MVI).",
+    "Social audit list published at Village Secretariat.",
+    "Assistance credited into the driver's bank account."
+  ],
+  "official_portal_url": "https://vahanamitra.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Transport Department, Govt of Andhra Pradesh",
+  "source_excerpt": "Under YSR Vahana Mitra, Rs. 10,000 is credited yearly to self-employed auto and taxi driver-owners for vehicle upkeep and insurance.",
+  "effective_date": "2019-10-04",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

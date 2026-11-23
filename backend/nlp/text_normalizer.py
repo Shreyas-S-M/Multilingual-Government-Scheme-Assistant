@@ -7,40 +7,53 @@ import re
 import unicodedata
 from typing import Optional, Tuple
 
-# Mapping of Kannada numerals to standard Arabic digits
-KANNADA_DIGITS_MAP = {
-    "೦": "0",
-    "೧": "1",
-    "೨": "2",
-    "೩": "3",
-    "೪": "4",
-    "೫": "5",
-    "೬": "6",
-    "೭": "7",
-    "೮": "8",
-    "೯": "9",
+# Mapping of Indic numerals (Kannada, Telugu, Tamil, Malayalam) to standard Arabic digits
+INDIC_DIGITS_MAP = {
+    # Kannada
+    "೦": "0", "೧": "1", "೨": "2", "೩": "3", "೪": "4", "೫": "5", "೬": "6", "೭": "7", "೮": "8", "೯": "9",
+    # Telugu
+    "౦": "0", "౧": "1", "౨": "2", "౩": "3", "౪": "4", "౫": "5", "౬": "6", "౭": "7", "౮": "8", "౯": "9",
+    # Tamil
+    "௦": "0", "௧": "1", "௨": "2", "௩": "3", "௪": "4", "௫": "5", "௬": "6", "௭": "7", "௮": "8", "௯": "9",
+    # Malayalam
+    "൦": "0", "൧": "1", "൨": "2", "൩": "3", "൪": "4", "൫": "5", "൬": "6", "൭": "7", "൮": "8", "൯": "9",
 }
+KANNADA_DIGITS_MAP = INDIC_DIGITS_MAP
 
-# Currency regexes
-CURRENCY_PREFIX = re.compile(r"(?:rs\.?|inr|₹|ರೂ\.?|ರೂಪಾಯಿ)\s*", re.IGNORECASE)
+# Currency regexes for South Indian languages and standard terms
+CURRENCY_PREFIX = re.compile(r"(?:rs\.?|inr|₹|ರೂ\.?|ರೂಪಾಯಿ|రూ\.?|రూపాయలు|ரூ\.?|ரூபாய்|രൂപ|രൂ\.?)\s*", re.IGNORECASE)
 
-# Indian numeric multipliers
+# Indian numeric multipliers across English, Kannada, Telugu, Tamil, Malayalam
 MULTIPLIERS = {
     "k": 1_000.0,
     "thousand": 1_000.0,
     "ಸಾವಿರ": 1_000.0,
     "savira": 1_000.0,
+    "వేలు": 1_000.0,
+    "velu": 1_000.0,
+    "ஆயிரம்": 1_000.0,
+    "aayiram": 1_000.0,
+    "ആയിരം": 1_000.0,
     "l": 100_000.0,
     "lac": 100_000.0,
     "lakh": 100_000.0,
     "lakhs": 100_000.0,
     "ಲಕ್ಷ": 100_000.0,
     "laksha": 100_000.0,
+    "లక్ష": 100_000.0,
+    "లక్షలు": 100_000.0,
+    "லட்சம்": 100_000.0,
+    "latcham": 100_000.0,
+    "ലക്ഷം": 100_000.0,
+    "laksham": 100_000.0,
     "cr": 10_000_000.0,
     "crore": 10_000_000.0,
     "crores": 10_000_000.0,
     "ಕೋಟಿ": 10_000_000.0,
     "koti": 10_000_000.0,
+    "కోటి": 10_000_000.0,
+    "கோடி": 10_000_000.0,
+    "kodi": 10_000_000.0,
 }
 
 
@@ -79,7 +92,7 @@ class TextNormalizer:
 
         # Check for multiplier pattern: e.g. 2.5 lakh or 2 lakh or 50 thousand
         pattern = re.compile(
-            r"^([0-9]+(?:\.[0-9]+)?)\s*([a-zA-Z\u0C80-\u0CFF\s]+)?$", re.IGNORECASE
+            r"^([0-9]+(?:\.[0-9]+)?)\s*([a-zA-Z\u0B80-\u0D7F\s]+)?$", re.IGNORECASE
         )
         match = pattern.match(clean_text)
         if match:
@@ -128,17 +141,17 @@ class TextNormalizer:
             ]
         ):
             return "Karnataka"
-        if "delhi" in t or "ದೆಹಲಿ" in t:
+        if "delhi" in t or "ದೆಹಲಿ" in t or "ఢిల్లీ" in t or "டெல்லி" in t or "ഡൽഹി" in t:
             return "Delhi"
-        if "tamil nadu" in t or "ತಮಿಳುನಾಡು" in t:
+        if any(x in t for x in ["tamil nadu", "tamilnadu", "ತಮಿಳುನಾಡು", "తమిళనాడు", "தமிழ்நாடு", "தமிழகம்", "chennai", "சென்னை"]):
             return "Tamil Nadu"
-        if "maharashtra" in t or "ಮಹಾರಾಷ್ಟ್ರ" in t:
+        if "maharashtra" in t or "ಮಹಾರಾಷ್ಟ್ರ" in t or "మహారాష్ట్ర" in t:
             return "Maharashtra"
-        if "andhra" in t or "ಆಂಧ್ರ" in t:
+        if any(x in t for x in ["andhra", "andhra pradesh", "ಆಂಧ್ರ", "ಆಂಧ್ರಪ್ರದೇಶ", "ఆంధ్రప్రదేశ్", "ఆంధ్ర", "amaravati", "visakhapatnam", "vijayawada"]):
             return "Andhra Pradesh"
-        if "telangana" in t or "ತೆಲಂಗಾಣ" in t:
+        if any(x in t for x in ["telangana", "ತೆಲಂಗಾಣ", "తెలంగాణ", "hyderabad", "హైదరాబాద్"]):
             return "Telangana"
-        if "kerala" in t or "ಕೇರಳ" in t:
+        if any(x in t for x in ["kerala", "ಕೇರಳ", "కేరళ", "കേരളം", "കേരള", "thiruvananthapuram", "kochi"]):
             return "Kerala"
         return None
 
@@ -157,11 +170,27 @@ class TextNormalizer:
                 "girl",
                 "mother",
                 "lady",
+                # Kannada
                 "ಮಹಿಳೆ",
                 "ಹೆಣ್ಣು",
                 "ಹುಡುಗಿ",
                 "ತಾಯಿ",
                 "ಸ್ತ್ರೀ",
+                # Telugu
+                "మహిళ",
+                "స్త్రీ",
+                "అమ్మాయి",
+                "తల్లి",
+                # Tamil
+                "பெண்",
+                "மகளிர்",
+                "தாய்",
+                "அம்மா",
+                # Malayalam
+                "സ്ത്രീ",
+                "വനിത",
+                "പെൺകുട്ടി",
+                "അമ്മ",
             ]
         ):
             return "female"
@@ -173,6 +202,9 @@ class TextNormalizer:
                 "third gender",
                 "ತೃತೀಯಲಿಂಗಿ",
                 "ಮಂಗಳಮುಖಿ",
+                "ట్రాన్స్‌జెండర్",
+                "திருநங்கை",
+                "ഭിന്നലിംഗം",
             ]
         ):
             return "transgender"
@@ -184,10 +216,24 @@ class TextNormalizer:
                 "boy",
                 "father",
                 "gentleman",
+                # Kannada
                 "ಪುರುಷ",
                 "ಗಂಡು",
                 "ಹುಡುಗ",
                 "ತಂದೆ",
+                # Telugu
+                "పురుషుడు",
+                "మగ",
+                "అబ్బాయి",
+                "తండ్రి",
+                # Tamil
+                "ஆண்",
+                "தந்தை",
+                "அப்பா",
+                # Malayalam
+                "പുരുഷൻ",
+                "ആൺ",
+                "പിതാവ്",
             ]
         ):
             return "male"
@@ -210,10 +256,21 @@ class TextNormalizer:
                 "grower",
                 "raitha",
                 "krishika",
+                "rythu",
+                "vivasayi",
+                "karshakan",
                 "ರೈತ",
                 "ಕೃಷಿಕ",
                 "ಕೃಷಿ",
                 "ವ್ಯವಸಾಯ",
+                "రైతు",
+                "రైతులు",
+                "వ్యవసాయం",
+                "விவசாயி",
+                "உழவர்",
+                "കർഷകൻ",
+                "കർഷക",
+                "കൃഷി",
             ]
         ):
             return "farmer"
@@ -228,6 +285,9 @@ class TextNormalizer:
                 "beedi vyapari",
                 "ಬೀದಿ ವ್ಯಾಪಾರಿ",
                 "ತಳ್ಳುವ ಗಾಡಿ",
+                "వీధి వ్యాపారి",
+                "தெருவோர வியாபாரி",
+                "തെരുവ് കച്ചവടക്കാരൻ",
             ]
         ):
             return "street_vendor"
@@ -251,6 +311,11 @@ class TextNormalizer:
                 "ಕಮ್ಮಾರ",
                 "ದರ್ಜಿ",
                 "ನೇಕಾರ",
+                "చేనేత",
+                "దర్జీ",
+                "நெசவாளர்",
+                "தையல்காரர்",
+                "നെയ്ത്തുകാരൻ",
             ]
         ):
             return "artisan"
@@ -264,9 +329,17 @@ class TextNormalizer:
                 "college",
                 "university",
                 "vidyarthi",
+                "maanavar",
                 "ವಿದ್ಯಾರ್ಥಿ",
                 "ಓದುತ್ತಿದ್ದೇನೆ",
                 "ಕಾಲೇಜು",
+                "విద్యార్థి",
+                "చదువుతున్నాను",
+                "மாணவர்",
+                "மாணவி",
+                "படிக்கிறேன்",
+                "വിദ്യാർത്ഥി",
+                "പഠിക്കുന്നു",
             ]
         ):
             return "student"
@@ -282,6 +355,12 @@ class TextNormalizer:
                 "nirudyogi",
                 "ನಿರುದ್ಯೋಗಿ",
                 "ಕೆಲಸವಿಲ್ಲ",
+                "నిరుద్యోగి",
+                "ఉద్యోగం లేదు",
+                "வேலையில்லாத",
+                "வேலையின்மை",
+                "തൊഴിൽരഹിതൻ",
+                "തൊഴിലില്ലാത്ത",
             ]
         ):
             return "unemployed"
@@ -298,6 +377,11 @@ class TextNormalizer:
                 "ನಿವೃತ್ತ",
                 "ಪಿಂಚಣಿದಾರ",
                 "ವೃದ್ಧ",
+                "వృద్ధులు",
+                "సీనియర్ సిటిజన్",
+                "ముதியோர்",
+                "ஓய்வூதியம்",
+                "മുതിർന്ന പൗരൻ",
             ]
         ):
             return "senior_citizen"
@@ -310,6 +394,9 @@ class TextNormalizer:
                 "home maker",
                 "ಗೃಹಿಣಿ",
                 "ಮನೆಗೆಲಸ",
+                "గృహిణి",
+                "இல்லத்தரசி",
+                "வீട്ടമ്മ",
             ]
         ):
             return "homemaker"

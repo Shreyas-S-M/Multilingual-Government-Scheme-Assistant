@@ -1,66 +1,164 @@
 "use client";
 
-import { useMemo, useState } from "react";
+export const dynamic = "force-dynamic";
+
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, FileText, Landmark, Printer, Search, ShieldCheck, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowLeft, Briefcase, ExternalLink, FileText, GraduationCap, HeartPulse, Landmark, Printer, Search, ShieldCheck, Sprout, UserRound, Users, X } from "lucide-react";
 import policies from "@/lib/policies.json";
+import { AuthNav } from "@/components/AuthNav";
+import { SaveSchemeButton } from "@/components/SaveSchemeButton";
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
 
 type Policy = any;
 
 export default function PoliciesPage() {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [level, setLevel] = useState("all");
-  const [language, setLanguage] = useState<"en" | "kn">("en");
+  const [language, setLanguage] = useState<"en" | "kn" | "te" | "ta" | "ml">("en");
   const [textSize, setTextSize] = useState<"normal" | "large" | "xlarge">("normal");
 
-  const copy = language === "en" ? {
-    back: "Back to assistant",
-    eyebrow: "COMPLETE SCHEME DIRECTORY",
-    title: "Explore all 57 government schemes",
-    sub: "Browse the official scheme catalogue available in Sahayaka across Central & Karnataka state departments. Check rules, benefits, and required documents before applying.",
-    search: "Search schemes, benefits, departments…",
-    all: "All categories",
-    central: "Central Government",
-    state: "Karnataka State",
-    results: "schemes listed",
-    review: "Needs verification",
-    catalogue: "Verified Entry",
-    department: "Department",
-    benefit: "Benefits",
-    criteria: "Eligibility criteria in catalogue",
-    documents: "Documents to prepare",
-    steps: "Application guidance",
-    official: "Open official portal",
-    disclaimer: "This directory is for public discovery and academic research. The official government portal is always the authoritative source.",
-    noResults: "No schemes match those filters. Try another search or select 'All'.",
-    textSize: "Text Size",
-    clear: "Clear search",
-    print: "Print Catalogue",
-  } : {
-    back: "ಸಹಾಯಕಕ್ಕೆ ಹಿಂತಿರುಗಿ",
-    eyebrow: "ಸಂಪೂರ್ಣ ಯೋಜನೆಗಳ ಪಟ್ಟಿ",
-    title: "ಎಲ್ಲಾ 57 ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
-    sub: "ಕೇಂದ್ರ ಮತ್ತು ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ಎಲ್ಲಾ ಇಲಾಖೆಗಳ ಅಧಿಕೃತ ಯೋಜನೆಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಿ. ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ಮೊದಲು ನಿಯಮಗಳು, ಪ್ರಯೋಜನಗಳು ಮತ್ತು ದಾಖಲೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
-    search: "ಯೋಜನೆ, ಪ್ರಯೋಜನ ಅಥವಾ ಇಲಾಖೆಯನ್ನು ಹುಡುಕಿ…",
-    all: "ಎಲ್ಲಾ ವಿಭಾಗಗಳು",
-    central: "ಕೇಂದ್ರ ಸರ್ಕಾರ",
-    state: "ಕರ್ನಾಟಕ ರಾಜ್ಯ",
-    results: "ಯೋಜನೆಗಳು",
-    review: "ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
-    catalogue: "ದೃಢೀಕೃತ ದಾಖಲೆ",
-    department: "ಇಲಾಖೆ",
-    benefit: "ಪ್ರಯೋಜನಗಳು",
-    criteria: "ಪಟ್ಟಿಯಲ್ಲಿರುವ ಅರ್ಹತಾ ಮಾನದಂಡಗಳು",
-    documents: "ಸಿದ್ಧಪಡಿಸಬೇಕಾದ ದಾಖಲೆಗಳು",
-    steps: "ಅರ್ಜಿ ಮಾರ್ಗದರ್ಶನ",
-    official: "ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ",
-    disclaimer: "ಈ ಪಟ್ಟಿ ಸಾರ್ವಜನಿಕ ಮಾಹಿತಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಸಂಶೋಧನೆಗಾಗಿ. ಅಧಿಕೃತ ಸರ್ಕಾರಿ ಪೋರ್ಟಲ್ ಅಂತಿಮ ಮೂಲವಾಗಿದೆ.",
-    noResults: "ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದುವ ಯೋಜನೆಗಳಿಲ್ಲ. ಬೇರೆ ಹುಡುಕಾಟ ಅಥವಾ 'ಎಲ್ಲಾ' ಆಯ್ಕೆಮಾಡಿ.",
-    textSize: "ಅಕ್ಷರ ಗಾತ್ರ",
-    clear: "ಹುಡುಕಾಟ ತೆರವುಗೊಳಿಸಿ",
-    print: "ಪಟ್ಟಿ ಮುದ್ರಿಸಿ",
+  useEffect(() => {
+    if (isSupabaseConfigured()) {
+      const supabase = createClient();
+      supabase.auth.getUser().then(({ data: { user } }) => {
+        if (!user) {
+          router.replace("/login?redirectTo=/policies");
+        }
+      });
+    }
+  }, [router]);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  const copyMap = {
+    en: {
+      back: "Back to assistant",
+      eyebrow: "COMPLETE SCHEME DIRECTORY",
+      title: "Explore all 111 government schemes",
+      sub: "Browse the official scheme catalogue available in Sahayaka across Central & South Indian state departments (Andhra Pradesh, Karnataka, Kerala, Tamil Nadu). Check rules, benefits, and required documents before applying.",
+      search: "Search schemes, benefits, departments…",
+      all: "All categories",
+      central: "Central Government",
+      state: "State Government",
+      results: "schemes listed",
+      review: "Needs verification",
+      catalogue: "Verified Entry",
+      department: "Department",
+      benefit: "Benefits",
+      criteria: "Eligibility criteria in catalogue",
+      documents: "Documents to prepare",
+      steps: "Application guidance",
+      official: "Open official portal",
+      disclaimer: "This directory is for public discovery and academic research. The official government portal is always the authoritative source.",
+      noResults: "No schemes match those filters. Try another search or select 'All'.",
+      textSize: "Text Size",
+      clear: "Clear search",
+      print: "Print Catalogue",
+    },
+    kn: {
+      back: "ಸಹಾಯಕಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+      eyebrow: "ಸಂಪೂರ್ಣ ಯೋಜನೆಗಳ ಪಟ್ಟಿ",
+      title: "ಎಲ್ಲಾ 111 ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+      sub: "ಕೇಂದ್ರ, ಕರ್ನಾಟಕ, ಆಂಧ್ರಪ್ರದೇಶ, ಕೇರಳ ಮತ್ತು ತಮಿಳುನಾಡು ಸರ್ಕಾರಗಳ ಅಧಿಕೃತ ಯೋಜನೆಗಳ ಪಟ್ಟಿಯನ್ನು ನೋಡಿ. ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ಮೊದಲು ನಿಯಮಗಳು, ಪ್ರಯೋಜನಗಳು ಮತ್ತು ದಾಖಲೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+      search: "ಯೋಜನೆ, ಪ್ರಯೋಜನ ಅಥವಾ ಇಲಾಖೆಯನ್ನು ಹುಡುಕಿ…",
+      all: "ಎಲ್ಲಾ ವಿಭಾಗಗಳು",
+      central: "ಕೇಂದ್ರ ಸರ್ಕಾರ",
+      state: "ರಾಜ್ಯ ಸರ್ಕಾರ",
+      results: "ಯೋಜನೆಗಳು",
+      review: "ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
+      catalogue: "ದೃಢೀಕೃತ ದಾಖಲೆ",
+      department: "ಇಲಾಖೆ",
+      benefit: "ಪ್ರಯೋಜನಗಳು",
+      criteria: "ಪಟ್ಟಿಯಲ್ಲಿರುವ ಅರ್ಹತಾ ಮಾನದಂಡಗಳು",
+      documents: "ಸಿದ್ಧಪಡಿಸಬೇಕಾದ ದಾಖಲೆಗಳು",
+      steps: "ಅರ್ಜಿ ಮಾರ್ಗದರ್ಶನ",
+      official: "ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ",
+      disclaimer: "ಈ ಪಟ್ಟಿ ಸಾರ್ವಜನಿಕ ಮಾಹಿತಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಸಂಶೋಧನೆಗಾಗಿ. ಅಧಿಕೃತ ಸರ್ಕಾರಿ ಪೋರ್ಟಲ್ ಅಂತಿಮ ಮೂಲವಾಗಿದೆ.",
+      noResults: "ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದುವ ಯೋಜನೆಗಳಿಲ್ಲ. ಬೇರೆ ಹುಡುಕಾಟ ಅಥವಾ 'ಎಲ್ಲಾ' ಆಯ್ಕೆಮಾಡಿ.",
+      textSize: "ಅಕ್ಷರ ಗಾತ್ರ",
+      clear: "ಹುಡುಕಾಟ ತೆರವುಗೊಳಿಸಿ",
+      print: "ಪಟ್ಟಿ ಮುದ್ರಿಸಿ",
+    },
+    te: {
+      back: "సహాయకుడికి తిరిగి వెళ్ళండి",
+      eyebrow: "పూర్తి పథకాల డైరెక్టరీ",
+      title: "మొత్తం 111 ప్రభుత్వ పథకాలను అన్వేషించండి",
+      sub: "కేంద్ర, ఆంధ్రప్రదేశ్, కర్ణాటక, కేరళ, తమిళనాడు రాష్ట్రాల అధికారిక సంక్షేమ పథకాలను చూడండి. దరఖాస్తు చేయడానికి ముందు నిబంధనలు, ప్రయోజనాలు మరియు పత్రాలను తనిఖీ చేయండి.",
+      search: "పథకాలు, ప్రయోజనాలు, శాఖలను వెతకండి…",
+      all: "అన్ని వర్గాలు",
+      central: "కేంద్ర ప్రభుత్వం",
+      state: "రాష్ట్ర ప్రభుత్వం",
+      results: "పథకాలు నమోదయ్యాయి",
+      review: "పరిశీలన అవసరం",
+      catalogue: "ధృవీకరించబడిన పథకం",
+      department: "శాఖ",
+      benefit: "ప్రయోజనాలు",
+      criteria: "కేటలాగ్‌లోని అర్హత నిబంధనలు",
+      documents: "సిద్ధం చేసుకోవాల్సిన పత్రాలు",
+      steps: "దరఖాస్తు మార్గదర్శకత్వం",
+      official: "అధికారిక పోర్టల్ తెరవండి",
+      disclaimer: "ఈ డైరెక్టరీ సమాచార అవగాహన మరియు విద్యా పరిశోధన కోసం మాత్రమే. అధికారిక ప్రభుత్వ పోర్టల్ మాత్రమే ప్రామాణికమైనది.",
+      noResults: "ఈ ఫిల్టర్‌లకు సరిపోలే పథకాలు లేవు. వేరొక శోధన ప్రయత్నించండి లేదా 'అన్ని' ఎంచుకోండి.",
+      textSize: "అక్షర పరిమాణం",
+      clear: "శోధనను క్లియర్ చేయండి",
+      print: "కేటలాగ్ ప్రింట్ చేయండి",
+    },
+    ta: {
+      back: "உதவியாளரிடம் திரும்பு",
+      eyebrow: "முழு திட்டங்களின் பட்டியல்",
+      title: "அனைத்து 111 அரசு திட்டங்களையும் காண்க",
+      sub: "மத்திய, தமிழ்நாடு, கர்நாடகா, ஆந்திரா, கேரளா அரசுகளின் அதிகாரப்பூர்வ திட்டங்களின் அட்டவணையைப் பாருங்கள். விண்ணப்பிக்கும் முன் விதிமுறைகள், பயன்கள், ஆவணங்களைச் சரிபார்க்கவும்.",
+      search: "திட்டங்கள், பயன்கள், துறைகளைத் தேடுங்கள்…",
+      all: "அனைத்துப் பிரிவுகள்",
+      central: "மத்திய அரசு",
+      state: "மாநில அரசு",
+      results: "திட்டங்கள் பட்டியலிடப்பட்டுள்ளன",
+      review: "சரிபார்ப்பு தேவை",
+      catalogue: "சான்றளிக்கப்பட்ட பதிவு",
+      department: "துறை",
+      benefit: "பயன்கள்",
+      criteria: "பட்டியலில் உள்ள தகுதி வரம்புகள்",
+      documents: "தயார் செய்ய வேண்டிய ஆவணங்கள்",
+      steps: "விண்ணப்ப வழிகாட்டுதல்",
+      official: "அதிகாரப்பூர்வ தளம் திறக்க",
+      disclaimer: "இந்தத் தொகுப்பு தகவல் அறியும் கல்வி ஆய்வுக்காக மட்டுமே. அதிகாரப்பூர்வ அரசு போர்ட்டலே இறுதியானது.",
+      noResults: "வடிகட்டிகளுக்குப் பொருத்தமான திட்டங்கள் இல்லை. வேறு தேடலை முயற்சிக்கவும் அல்லது 'அனைத்தும்' தேர்ந்தெடுக்கவும்.",
+      textSize: "எழுத்து அளவு",
+      clear: "தேடலை அழிக்கவும்",
+      print: "பட்டியலை அச்சிடுக",
+    },
+    ml: {
+      back: "സഹായിലേക്ക് മടങ്ങുക",
+      eyebrow: "പൂർണ്ണ പദ്ധതി ഡയറക്ടറി",
+      title: "എല്ലാ 111 സർക്കാർ പദ്ധതികളും അറിയുക",
+      sub: "കേന്ദ്ര, കേരള, കർണാടക, ആന്ധ്രാപ്രദേശ്, തമിഴ്നാട് സർക്കാരുകളുടെ ഔദ്യോഗിക ക്ഷേമപദ്ധതികൾ പരിശോധിക്കുക. അപേക്ഷിക്കുന്നതിന് മുമ്പ് നിബന്ധനകളും രേഖകളും പരിശോധിക്കുക.",
+      search: "പദ്ധതികൾ, ആനുകൂല്യങ്ങൾ, വകുപ്പുകൾ തിരയുക…",
+      all: "എല്ലാ വിഭാഗങ്ങളും",
+      central: "കേന്ദ്ര സർക്കാർ",
+      state: "സംസ്ഥാന സർക്കാർ",
+      results: "പദ്ധതികൾ ലിസ്റ്റ് ചെയ്തിട്ടുണ്ട്",
+      review: "പരിശോധന ആവശ്യമാണ്",
+      catalogue: "സ്ഥിരീകരിച്ച രേഖ",
+      department: "വകുപ്പ്",
+      benefit: "ആനുകൂല്യങ്ങൾ",
+      criteria: "ലിസ്റ്റിലുള്ള യോഗ്യതാ മാനദണ്ഡങ്ങൾ",
+      documents: "തയ്യാറാക്കേണ്ട രേഖകൾ",
+      steps: "അപേക്ഷാ മാർഗ്ഗനിർദ്ദേശം",
+      official: "ഔദ്യോഗിക പോർട്ടൽ തുറക്കുക",
+      disclaimer: "ഈ ഡയറക്ടറി പൊതുജന വിവരങ്ങൾക്കും വിദ്യാഭ്യാസ ഗവേഷണത്തിനുമുള്ളതാണ്. ഔദ്യോഗിക സർക്കാർ പോർട്ടലാണ് അവസാന വാക്ക്.",
+      noResults: "ഈ ഫിൽട്ടറുകളുമായി പൊരുത്തപ്പെടുന്ന പദ്ധതികളൊന്നുമില്ല. മറ്റൊരു തിരച്ചിൽ നടത്തുക അല്ലെങ്കിൽ 'എല്ലാം' തിരഞ്ഞെടുക്കുക.",
+      textSize: "അക്ഷര വലുപ്പം",
+      clear: "തിരച്ചിൽ മായ്‌ക്കുക",
+      print: "ലിസ്റ്റ് പ്രിന്റ് ചെയ്യുക",
+    },
   };
+  const copy = copyMap[language];
 
   const categories = useMemo(
     () => Array.from(new Set(policies.map((p) => p.category).filter(Boolean))).sort(),
@@ -78,13 +176,104 @@ export default function PoliciesPage() {
   }, [query, category, level]);
 
   const QUICK_PILLS = [
-    { id: "all", label: language === "kn" ? "ಎಲ್ಲಾ (57)" : "All (57)" },
-    { id: "Agriculture", label: language === "kn" ? "🌾 ಕೃಷಿ & ರೈತರು" : "🌾 Agriculture" },
-    { id: "Education", label: language === "kn" ? "🎓 ಶಿಕ್ಷಣ & ವಿದ್ಯಾರ್ಥಿವೇತನ" : "🎓 Education" },
-    { id: "Social Welfare", label: language === "kn" ? "👵 ಸಾಮಾಜಿಕ ಕಲ್ಯಾಣ & ಪಿಂಚಣಿ" : "👵 Social Welfare & Pension" },
-    { id: "Employment", label: language === "kn" ? "💼 ಉದ್ಯೋಗ & ವ್ಯಾಪಾರ" : "💼 Employment" },
-    { id: "Healthcare", label: language === "kn" ? "🏥 ಆರೋಗ್ಯ & ವಿಮೆ" : "🏥 Healthcare" },
-    { id: "Women and Child Welfare", label: language === "kn" ? "👩 ಮಹಿಳಾ ಕಲ್ಯಾಣ" : "👩 Women Welfare" },
+    {
+      id: "all",
+      icon: Landmark,
+      label:
+        language === "kn"
+          ? "ಎಲ್ಲಾ (111)"
+          : language === "te"
+          ? "అన్ని (111)"
+          : language === "ta"
+          ? "அனைத்தும் (111)"
+          : language === "ml"
+          ? "എല്ലാം (111)"
+          : "All (111)",
+    },
+    {
+      id: "Agriculture",
+      icon: Sprout,
+      label:
+        language === "kn"
+          ? "ಕೃಷಿ & ರೈತರು"
+          : language === "te"
+          ? "వ్యవసాయం & రైతులు"
+          : language === "ta"
+          ? "வேளாண்மை & விவசாயிகள்"
+          : language === "ml"
+          ? "കൃഷി & കർഷകർ"
+          : "Agriculture",
+    },
+    {
+      id: "Education",
+      icon: GraduationCap,
+      label:
+        language === "kn"
+          ? "ಶಿಕ್ಷಣ & ವಿದ್ಯಾರ್ಥಿವೇತನ"
+          : language === "te"
+          ? "విద్య & స్కాలర్‌షిప్‌లు"
+          : language === "ta"
+          ? "கல்வி & உதவித்தொகை"
+          : language === "ml"
+          ? "വിദ്യാഭ്യാസം & സ്കോളർഷിപ്പ്"
+          : "Education",
+    },
+    {
+      id: "Social Welfare",
+      icon: Users,
+      label:
+        language === "kn"
+          ? "ಸಾಮಾಜಿಕ ಕಲ್ಯಾಣ & ಪಿಂಚಣಿ"
+          : language === "te"
+          ? "సాంఘిక సంక్షేమం & పింఛను"
+          : language === "ta"
+          ? "சமூக நலம் & ஓய்வூதியம்"
+          : language === "ml"
+          ? "സാമൂഹികക്ഷേമം & പെൻഷൻ"
+          : "Social Welfare & Pension",
+    },
+    {
+      id: "Employment",
+      icon: Briefcase,
+      label:
+        language === "kn"
+          ? "ಉದ್ಯೋಗ & ವ್ಯಾಪಾರ"
+          : language === "te"
+          ? "ఉపాధి & వ్యాపారం"
+          : language === "ta"
+          ? "வேலைவாய்ப்பு & தொழில்"
+          : language === "ml"
+          ? "തൊഴിൽ & സംരംഭം"
+          : "Employment",
+    },
+    {
+      id: "Healthcare",
+      icon: HeartPulse,
+      label:
+        language === "kn"
+          ? "ಆರೋಗ್ಯ & ವಿಮೆ"
+          : language === "te"
+          ? "ఆరోగ్యం & బీమా"
+          : language === "ta"
+          ? "மருத்துவம் & காப்பீடு"
+          : language === "ml"
+          ? "ആരോഗ്യം & ഇൻഷുറൻസ്"
+          : "Healthcare",
+    },
+    {
+      id: "Women and Child Welfare",
+      icon: UserRound,
+      label:
+        language === "kn"
+          ? "ಮಹಿಳಾ ಕಲ್ಯಾಣ"
+          : language === "te"
+          ? "మహిళా సంక్షేమం"
+          : language === "ta"
+          ? "மகளிர் நலம்"
+          : language === "ml"
+          ? "വനിതാക്ഷേമം"
+          : "Women Welfare",
+    },
   ];
 
   return (
@@ -125,7 +314,21 @@ export default function PoliciesPage() {
             <button className={language === "kn" ? "active" : ""} onClick={() => setLanguage("kn")}>
               ಕನ್ನಡ
             </button>
+            <span>/</span>
+            <button className={language === "te" ? "active" : ""} onClick={() => setLanguage("te")}>
+              తెలుగు
+            </button>
+            <span>/</span>
+            <button className={language === "ta" ? "active" : ""} onClick={() => setLanguage("ta")}>
+              தமிழ்
+            </button>
+            <span>/</span>
+            <button className={language === "ml" ? "active" : ""} onClick={() => setLanguage("ml")}>
+              മലയാളം
+            </button>
           </div>
+
+          <AuthNav lang={language} />
         </div>
       </header>
 
@@ -134,10 +337,7 @@ export default function PoliciesPage() {
           <ArrowLeft size={15} /> {copy.back}
         </Link>
         <div className="policies-hero">
-          <div className="eyebrow">
-            <span className="eyebrow-line" />
-            {copy.eyebrow}
-          </div>
+
           <h1>{copy.title}</h1>
           <p>{copy.sub}</p>
           <div className="policies-count">
@@ -148,15 +348,19 @@ export default function PoliciesPage() {
 
         {/* Quick Category Filter Pills for All Age Brackets */}
         <div className="category-pills">
-          {QUICK_PILLS.map((pill) => (
-            <button
-              key={pill.id}
-              className={`category-pill ${category === pill.id ? "active" : ""}`}
-              onClick={() => setCategory(pill.id)}
-            >
-              {pill.label}
-            </button>
-          ))}
+          {QUICK_PILLS.map((pill) => {
+            const Icon = pill.icon;
+            return (
+              <button
+                key={pill.id}
+                className={`category-pill ${category === pill.id ? "active" : ""}`}
+                onClick={() => setCategory(pill.id)}
+              >
+                <Icon size={14} strokeWidth={1.8} />
+                <span>{pill.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         <div className="policy-filters">
@@ -208,6 +412,16 @@ export default function PoliciesPage() {
                     <span className={`policy-review ${needsReview ? "needs-review" : "catalogue-status"}`}>
                       {needsReview ? copy.review : copy.catalogue}
                     </span>
+                    <div style={{ marginLeft: "auto" }}>
+                      <SaveSchemeButton
+                        schemeId={policy.scheme_id}
+                        schemeName={language === "kn" && policy.name_kannada ? policy.name_kannada : policy.name}
+                        category={policy.category}
+                        benefitsSummary={policy.benefits_summary}
+                        officialPortalUrl={policy.official_portal_url || policy.url}
+                        lang={language}
+                      />
+                    </div>
                   </div>
                   <h2>{language === "kn" && policy.name_kannada ? policy.name_kannada : policy.name}</h2>
                   {language === "kn" && policy.name_kannada && <p className="policy-english-name">{policy.name}</p>}

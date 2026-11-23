@@ -24,11 +24,36 @@ class TestTextNormalizer:
         assert "25" in digits_fixed
         assert "150000" in digits_fixed
 
+    def test_south_indian_indic_digit_normalization(self):
+        # Telugu: ౨౫ = 25, ౧౫౦౦౦౦ = 150000
+        te_text = "నా వయస్సు ౨౫, ఆదాయం ౧౫౦౦౦౦"
+        te_fixed = TextNormalizer.normalize_digits(te_text)
+        assert "25" in te_fixed
+        assert "150000" in te_fixed
+
+        # Tamil: ௨௫ = 25, ௧௫௦௦௦௦ = 150000
+        ta_text = "என் வயது ௨௫, வருமானம் ௧௫௦௦௦௦"
+        ta_fixed = TextNormalizer.normalize_digits(ta_text)
+        assert "25" in ta_fixed
+        assert "150000" in ta_fixed
+
+        # Malayalam: ൨൫ = 25, ൧൫൦൦൦൦ = 150000
+        ml_text = "എന്റെ പ്രായം ൨൫, വരുമാനം ൧൫൦൦൦൦"
+        ml_fixed = TextNormalizer.normalize_digits(ml_text)
+        assert "25" in ml_fixed
+        assert "150000" in ml_fixed
+
     def test_indian_number_and_currency_parsing(self):
         assert TextNormalizer.parse_indian_number("2.5 lakh") == 250000.0
         assert TextNormalizer.parse_indian_number("₹ 1,50,000") == 150000.0
         assert TextNormalizer.parse_indian_number("50 thousand") == 50000.0
         assert TextNormalizer.parse_indian_number("30 ಸಾವಿರ") == 30000.0
+        assert TextNormalizer.parse_indian_number("50 వేలు") == 50000.0
+        assert TextNormalizer.parse_indian_number("2.5 లక్ష") == 250000.0
+        assert TextNormalizer.parse_indian_number("50 ஆயிரம்") == 50000.0
+        assert TextNormalizer.parse_indian_number("2.5 லட்சம்") == 250000.0
+        assert TextNormalizer.parse_indian_number("50 ആയിരം") == 50000.0
+        assert TextNormalizer.parse_indian_number("2.5 ലക്ഷം") == 250000.0
         assert TextNormalizer.parse_indian_number("1.2 cr") == 12000000.0
         assert TextNormalizer.parse_indian_number("invalid") is None
 
@@ -36,11 +61,20 @@ class TestTextNormalizer:
         assert TextNormalizer.normalize_state("I live in Bengaluru, Karnataka") == "Karnataka"
         assert TextNormalizer.normalize_state("ಕರ್ನಾಟಕ ರಾಜ್ಯ") == "Karnataka"
         assert TextNormalizer.normalize_state("New Delhi capital") == "Delhi"
+        assert TextNormalizer.normalize_state("ఆంధ్ర ప్రదేశ్ రైతు") == "Andhra Pradesh"
+        assert TextNormalizer.normalize_state("I live in Vijayawada, Andhra Pradesh") == "Andhra Pradesh"
+        assert TextNormalizer.normalize_state("தமிழ்நாடு மாணவர்") == "Tamil Nadu"
+        assert TextNormalizer.normalize_state("I live in Madurai, Tamil Nadu") == "Tamil Nadu"
+        assert TextNormalizer.normalize_state("കേരളത്തിലെ കർഷകൻ") == "Kerala"
+        assert TextNormalizer.normalize_state("I live in Kochi, Kerala") == "Kerala"
         assert TextNormalizer.normalize_state("Unknown place") is None
 
     def test_occupation_normalization(self):
         assert TextNormalizer.normalize_occupation("I do agriculture and farming") == "farmer"
         assert TextNormalizer.normalize_occupation("ನಾನು ರೈತ") == "farmer"
+        assert TextNormalizer.normalize_occupation("నేను రైతు") == "farmer"
+        assert TextNormalizer.normalize_occupation("நான் விவசாயி") == "farmer"
+        assert TextNormalizer.normalize_occupation("ഞാൻ കർഷകൻ") == "farmer"
         assert TextNormalizer.normalize_occupation("street food vendor") == "street_vendor"
         assert TextNormalizer.normalize_occupation("carpenter and wood worker") == "artisan"
         assert TextNormalizer.normalize_occupation("looking for job, unemployed") == "unemployed"
@@ -68,10 +102,41 @@ class TestLanguageDetector:
         assert lang == "kn"
         assert conf >= 0.7
 
+    def test_telugu_detection(self):
+        text = "ఆంధ్రప్రదేశ్ రైతులకు లభించే సబ్సిడీ పథకాలు ఏమిటి?"
+        lang, conf, is_mixed = LanguageDetector.detect(text)
+        assert lang == "te"
+        assert conf >= 0.7
+
+    def test_tamil_detection(self):
+        text = "தமிழ்நாடு விவசாயிகளுக்கு கிடைக்கும் அரசு நலத்திட்டங்கள் என்ன?"
+        lang, conf, is_mixed = LanguageDetector.detect(text)
+        assert lang == "ta"
+        assert conf >= 0.7
+
+    def test_malayalam_detection(self):
+        text = "കേരളത്തിലെ കർഷകർക്ക് ലഭിക്കുന്ന ആനുകൂല്യങ്ങൾ ഏതെല്ലാമാണ്?"
+        lang, conf, is_mixed = LanguageDetector.detect(text)
+        assert lang == "ml"
+        assert conf >= 0.7
+
     def test_code_mixed_detection(self):
         text = "Nanna age 24, graduate pass out, yava scheme sigutthe?"
         lang, conf, is_mixed = LanguageDetector.detect(text)
         assert is_mixed is True
+
+    def test_south_indian_code_mixed_detection(self):
+        te_mixed = "Naa age 25, Andhra farmer, em scheme undi?"
+        _, _, is_te_mixed = LanguageDetector.detect(te_mixed)
+        assert is_te_mixed is True
+
+        ta_mixed = "Enakku 22 vayasu, Tamil Nadu student, scholarship irukka?"
+        _, _, is_ta_mixed = LanguageDetector.detect(ta_mixed)
+        assert is_ta_mixed is True
+
+        ml_mixed = "Enikku 26 vayas, Kerala unemployed graduate, ethu scheme kittum?"
+        _, _, is_ml_mixed = LanguageDetector.detect(ml_mixed)
+        assert is_ml_mixed is True
 
 
 class TestIntentClassifier:
@@ -107,6 +172,31 @@ class TestEntityExtractor:
         assert entities_kn["annual_income"]["value"] == 100000.0
         assert entities_kn["state"]["value"] == "Karnataka"
         assert entities_kn["is_student"]["value"] is True
+
+    def test_south_indian_entity_extraction(self):
+        # Telugu
+        q_te = "వయస్సు 25 సంవత్సరాలు, ఆంధ్ర ప్రదేశ్ నివాసి, రైతు, వార్షిక ఆదాయం 1.5 లక్ష."
+        entities_te = EntityExtractor.extract_entities(q_te)
+        assert entities_te["age"]["value"] == 25
+        assert entities_te["annual_income"]["value"] == 150000.0
+        assert entities_te["state"]["value"] == "Andhra Pradesh"
+        assert entities_te["occupation"]["value"] == "farmer"
+
+        # Tamil
+        q_ta = "வயது 24 ஆண்டுகள், தமிழ்நாடு, விவசாயி, வருமானம் 2 லட்சம்."
+        entities_ta = EntityExtractor.extract_entities(q_ta)
+        assert entities_ta["age"]["value"] == 24
+        assert entities_ta["annual_income"]["value"] == 200000.0
+        assert entities_ta["state"]["value"] == "Tamil Nadu"
+        assert entities_ta["occupation"]["value"] == "farmer"
+
+        # Malayalam
+        q_ml = "വയസ്സ് 23, കേരളം, വിദ്യാർത്ഥി, വരുമാനം 1.2 ലക്ഷം."
+        entities_ml = EntityExtractor.extract_entities(q_ml)
+        assert entities_ml["age"]["value"] == 23
+        assert entities_ml["annual_income"]["value"] == 120000.0
+        assert entities_ml["state"]["value"] == "Kerala"
+        assert entities_ml["is_student"]["value"] is True
 
     def test_kannada_agglutinative_age_extraction(self):
         """Verifies Dravidian case inflections attach to numbers without whitespace (FAULT-04)."""

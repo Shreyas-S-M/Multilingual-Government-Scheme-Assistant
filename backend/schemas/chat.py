@@ -10,9 +10,9 @@ from backend.schemas.eligibility import SchemeEligibilityResult
 
 
 class ChatMessageRequest(BaseModel):
-    message: str = Field(description="User natural language message in English, Kannada, or code-mixed")
+    message: str = Field(description="User natural language message in English, Kannada, Telugu, Tamil, Malayalam, or code-mixed")
     conversation_id: Optional[str] = Field(default=None, description="Active conversation session ID")
-    language: Optional[str] = Field(default=None, description="Preferred response language ('en', 'kn'), or auto-detected")
+    language: Optional[str] = Field(default=None, description="Preferred response language ('en', 'kn', 'te', 'ta', 'ml'), or auto-detected")
     current_profile: Optional[UserProfile] = Field(default=None, description="Current accumulated user profile")
 
 
@@ -26,7 +26,7 @@ class SourceReference(BaseModel):
 
 class ChatMessageResponse(BaseModel):
     reply: str = Field(description="Conversational assistant response")
-    language: str = Field(description="Language used in response ('en' or 'kn')")
+    language: str = Field(description="Language used in response ('en', 'kn', 'te', 'ta', 'ml')")
     detected_language: str = Field(description="Detected language of the query")
     intent: str = Field(description="Classified user intent")
     conversation_id: str = Field(description="Session identifier")

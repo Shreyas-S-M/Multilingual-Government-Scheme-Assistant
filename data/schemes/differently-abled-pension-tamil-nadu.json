@@ -1,0 +1,65 @@
+{
+  "scheme_id": "differently-abled-pension-tamil-nadu",
+  "name": "Tamil Nadu Differently Abled Maintenance Allowance",
+  "name_kannada": "ವಿಕಲಚೇತನರ ಮಾಸಾಶನ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "TN Disability Pension",
+    "Maintenance Allowance for Differently Abled"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Welfare of Differently Abled Persons Department, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Disability Welfare",
+  "short_description": "Monthly maintenance allowance of Rs. 1,500 to Rs. 2,000 for persons with severe disabilities (40% and above).",
+  "detailed_description": "Provides financial assistance of Rs. 1,500 to Rs. 2,000 per month to persons with disabilities (locomotor, intellectual, visual, or speech-hearing disability 40% and above) to support their dignity, specialized healthcare, and daily sustenance.",
+  "description_kannada": "ಶೇಕಡಾ 40 ಕ್ಕಿಂತ ಹೆಚ್ಚು ವಿಕಲಾಂಗತೆ ಹೊಂದಿರುವ ವ್ಯಕ್ತಿಗಳಿಗೆ ಮಾಸಿಕ ರೂ. 1,500 ರಿಂದ 2,000 ವರೆಗೆ ನಿರ್ವಹಣಾ ಭತ್ಯೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "dap_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Differently Abled Welfare Rules",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 1,500 to Rs. 2,000 credited every month into bank account.",
+  "benefits_amount": "Rs. 1,500 to Rs. 2,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "UDID (Unique Disability ID) Card or National Disability Identity Card with 40%+ rating",
+    "Medical Board Disability Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Submit application to District Differently Abled Welfare Officer (DDAWO) or via e-Sevai.",
+    "District Medical Board assesses and confirms disability percentage.",
+    "Monthly maintenance allowance credited directly into beneficiary's account."
+  ],
+  "official_portal_url": "https://www.scd.tn.gov.in/",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Welfare of Differently Abled Persons Dept, Govt of Tamil Nadu",
+  "source_excerpt": "Maintenance allowance of Rs. 1,500 to Rs. 2,000 per month is granted to persons with benchmark disabilities.",
+  "effective_date": "2011-09-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

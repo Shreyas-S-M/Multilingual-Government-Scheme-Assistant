@@ -1,0 +1,90 @@
+{
+  "scheme_id": "pudhumai-penn-tamil-nadu",
+  "name": "Pudhumai Penn Scheme (Moovalur Ramamirtham Ammaiyar Higher Education Assurance)",
+  "name_kannada": "ಪುದುಮೈ ಪೆಣ್ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Pudhumai Penn",
+    "Moovalur Ramamirtham Higher Education Scheme",
+    "TN Girls College Stipend"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare and Women Empowerment, Govt of Tamil Nadu",
+  "category": "Education",
+  "subcategory": "Girl Higher Education",
+  "short_description": "Monthly stipend of Rs. 1,000 to female students who studied from Class 6 to 12 in Government schools pursuing higher education.",
+  "detailed_description": "Pudhumai Penn Scheme provides Rs. 1,000 per month directly into bank accounts of female students who studied in Tamil Nadu government schools from Class 6 to Class 12 until the uninterrupted completion of their undergraduate degree, diploma, ITI, or professional degree.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಶಾಲೆಯಲ್ಲಿ 6 ರಿಂದ 12 ನೇ ತರಗತಿವರೆಗೆ ಓದಿದ ಹೆಣ್ಣು ಮಕ್ಕಳಿಗೆ ಉನ್ನತ ಶಿಕ್ಷಣ ಮುಗಿಯುವವರೆಗೆ ಮಾಸಿಕ ರೂ. 1,000 ಪ್ರೋತ್ಸಾಹಧನ.",
+  "min_age": 17,
+  "max_age": 25,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pp_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu G.O.(Ms) No. 37 Social Welfare Dept",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "pp_gender",
+      "name": "Must be Female Student",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Pudhumai Penn Target Beneficiary Rules",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ವಿದ್ಯಾರ್ಥಿನಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the student female?",
+      "clarification_question_kn": "ವಿದ್ಯಾರ್ಥಿಯು ಹೆಣ್ಣು ಮಗುವೇ?"
+    },
+    {
+      "criterion_id": "pp_student",
+      "name": "Enrolled in College / Higher Education",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Higher Education Enrollment Verification",
+      "description_kannada": "ಉನ್ನತ ಶಿಕ್ಷಣ ಸಂಸ್ಥೆಯಲ್ಲಿ ದಾಖಲಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you enrolled in an undergraduate degree or diploma program?",
+      "clarification_question_kn": "ನೀವು ಕಾಲೇಜು ಅಥವಾ ಪಾಲಿಟೆಕ್ನಿಕ್ ಶಿಕ್ಷಣದಲ್ಲಿ ದಾಖಲಾಗಿದ್ದೀರಾ?"
+    }
+  ],
+  "benefits_summary": "Direct deposit of Rs. 1,000 every month till graduation.",
+  "benefits_amount": "Rs. 1,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "School Transfer Certificate proving Class 6 to 12 study in Govt schools (EMIS verification)",
+    "College Bonafide Certificate / Admission Card",
+    "Student Bank Account passbook"
+  ],
+  "application_process": [
+    "College administration registers eligible students on the dedicated Pudhumai Penn portal.",
+    "EMIS number cross-verified with School Education database.",
+    "Monthly stipend credited into student's personal bank account."
+  ],
+  "official_portal_url": "https://www.pudhumaipenn.tn.gov.in/",
+  "application_url": "https://www.pudhumaipenn.tn.gov.in/",
+  "source_title": "Social Welfare & Women Empowerment Dept, Govt of Tamil Nadu",
+  "source_excerpt": "Financial assistance of Rs. 1,000 per month is given to girl students studying in higher education institutions who studied in govt schools.",
+  "effective_date": "2022-09-05",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

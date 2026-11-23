@@ -1,0 +1,78 @@
+{
+  "scheme_id": "destitute-widow-pension-tamil-nadu",
+  "name": "Tamil Nadu Destitute Widow Pension Scheme",
+  "name_kannada": "ನಿರ್ಗತಿಕ ವಿಧವಾ ಪಿಂಚಣಿ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "TN Widow Pension",
+    "Destitute Widow Pension"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Revenue and Disaster Management Department, Govt of Tamil Nadu",
+  "category": "Social Security",
+  "subcategory": "Widow Pensions",
+  "short_description": "Monthly pension of Rs. 1,000 to destitute widows with annual family income below Rs. 1,20,000.",
+  "detailed_description": "This social welfare initiative grants a lifelong monthly pension of Rs. 1,000 along with free rice (20 kg) and sarees twice a year to destitute widows in Tamil Nadu without independent income or supportive adult children.",
+  "description_kannada": "ತಮಿಳುನಾಡಿನ ನಿರ್ಗತಿಕ ವಿಧವೆಯರಿಗೆ ಮಾಸಿಕ ರೂ. 1,000 ಪಿಂಚಣಿ ಮತ್ತು ಉಚಿತ ಅಕ್ಕಿ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "dwp_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Social Security Pension Rules",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "dwp_gender",
+      "name": "Must be Female",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Widow Pension Gender Rule",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant a widowed woman?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ವಿಧವೆ ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Monthly pension of Rs. 1,000 deposited via DBT, free rice, and subsidized clothing.",
+  "benefits_amount": "Rs. 1,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Husband's Death Certificate",
+    "Destitute Widow Certificate issued by Tahsildar",
+    "Smart Ration Card",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply at the nearest e-Sevai centre or Taluk Office.",
+    "VAO and Revenue Inspector verify widow status and family income.",
+    "Tahsildar sanctions monthly pension credited via DBT."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19445",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Revenue & Disaster Management, Govt of Tamil Nadu",
+  "source_excerpt": "A monthly pension of Rs. 1,000 is paid to destitute widows having no source of livelihood.",
+  "effective_date": "1975-06-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

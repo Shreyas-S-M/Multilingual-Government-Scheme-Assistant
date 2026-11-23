@@ -1,0 +1,75 @@
+{
+  "scheme_id": "vayomadhuram-kerala",
+  "name": "Vayomadhuram Scheme for Senior Citizens",
+  "name_kannada": "ವಯೋಮಧುರಂ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Vayomadhuram",
+    "Kerala Elderly Free Glucometer Scheme"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Social Justice Department, Govt of Kerala",
+  "category": "Healthcare",
+  "subcategory": "Elderly Healthcare",
+  "short_description": "Free digital glucometers and test strips distributed to elderly diabetic patients aged 60 and above belonging to BPL families.",
+  "detailed_description": "Vayomadhuram provides free electronic glucometers and test strips to senior citizens aged 60 and above belonging to BPL families who suffer from diabetes, facilitating regular home blood-glucose monitoring and preventing acute diabetic complications.",
+  "description_kannada": "ಮಧುಮೇಹದಿಂದ ಬಳಲುತ್ತಿರುವ 60 ವರ್ಷ ಮೇಲ್ಪಟ್ಟ ಬಡ ಹಿರಿಯ ನಾಗರಿಕರಿಗೆ ಉಚಿತ ಗ್ಲುಕೋಮೀಟರ್ ಮತ್ತು ಟೆಸ್ಟ್ ಸ್ಟ್ರಿಪ್ ವಿತರಿಸುವ ಯೋಜನೆ.",
+  "min_age": 60,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "vm_k_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Social Justice Dept G.O. 2019",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "vm_k_age",
+      "name": "Senior Citizen Age 60 or above",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 60,
+      "is_mandatory": true,
+      "source_citation": "Senior Citizen Age Criteria",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 60 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "One-time digital glucometer device plus recurring free blood testing strips.",
+  "benefits_amount": "Free Digital Glucometer & Strips",
+  "required_documents": [
+    "Aadhaar Card",
+    "BPL Ration Card / Income Certificate",
+    "Medical Certificate from Govt Assistant Surgeon confirming diabetes condition"
+  ],
+  "application_process": [
+    "Submit application to District Social Justice Officer (DSJO) or via nearest Akshaya Centre.",
+    "Glucometers distributed at special community distribution camps."
+  ],
+  "official_portal_url": "https://sjd.kerala.gov.in/scheme-info.php?id=MTEy",
+  "application_url": "https://sjd.kerala.gov.in/",
+  "source_title": "Social Justice Department, Govt of Kerala",
+  "source_excerpt": "Under Vayomadhuram, free digital glucometers are distributed to BPL senior citizens suffering from diabetes.",
+  "effective_date": "2019-11-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

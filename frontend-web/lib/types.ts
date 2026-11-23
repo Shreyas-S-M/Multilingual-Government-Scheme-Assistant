@@ -1,4 +1,4 @@
-export type Language = "en" | "kn";
+export type Language = "en" | "kn" | "te" | "ta" | "ml";
 
 export interface CriterionResult {
   criterion_id: string;

@@ -1,0 +1,78 @@
+{
+  "scheme_id": "vasathi-deevena-andhra-pradesh",
+  "name": "Jagananna Vasathi Deevena (MTF)",
+  "name_kannada": "ಜಗನಣ್ಣ ವಸತಿ ದೀವೇನೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Vasathi Deevena",
+    "JVD Vasathi",
+    "AP Hostel Allowance"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Social Welfare, Govt of Andhra Pradesh",
+  "category": "Education",
+  "subcategory": "Boarding & Hostel Maintenance",
+  "short_description": "Annual boarding and food grant up to Rs. 20,000 for college and professional students in Andhra Pradesh.",
+  "detailed_description": "Jagananna Vasathi Deevena covers boarding, food, and hostel maintenance expenses for students pursuing ITI (Rs. 10,000/yr), Polytechnic (Rs. 15,000/yr), and Degree/Engineering/Medicine (Rs. 20,000/yr) in two installments.",
+  "description_kannada": "ಕಾಲೇಜು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಊಟ ಮತ್ತು ವಸತಿ ವೆಚ್ಚಕ್ಕಾಗಿ ವಾರ್ಷಿಕ ರೂ. 10,000 ದಿಂದ 20,000 ವರೆಗೆ ನೆರವು.",
+  "min_age": 16,
+  "max_age": 30,
+  "max_income": 250000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "jvd_v_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 115 Social Welfare Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "jvd_v_student",
+      "name": "Must be Student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Vasathi Deevena Enrollment Rules",
+      "description_kannada": "ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a currently enrolled student?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Rs. 10,000 (ITI), Rs. 15,000 (Polytechnic), and Rs. 20,000 (Degree/PG) per year paid in two installments.",
+  "benefits_amount": "Rs. 10,000 to Rs. 20,000 per year",
+  "required_documents": [
+    "Aadhaar Card of Student and Mother",
+    "College admission bonafide certificate",
+    "Rice Card / BPL income certificate",
+    "Mother's Aadhaar linked bank passbook"
+  ],
+  "application_process": [
+    "College uploads student attendance and hostel registration on Jnanabhumi portal.",
+    "Verification completed by Village/Ward Secretariat.",
+    "Amount credited via DBT into mother's bank account in two phases (July & December)."
+  ],
+  "official_portal_url": "https://jnanabhumi.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Social Welfare Department, Govt of AP",
+  "source_excerpt": "Jagananna Vasathi Deevena assists students in meeting boarding and hostel expenses to avoid dropouts.",
+  "effective_date": "2020-02-24",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

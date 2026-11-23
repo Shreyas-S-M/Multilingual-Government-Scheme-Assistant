@@ -1,0 +1,81 @@
+{
+  "scheme_id": "widow-remarriage-assistance-tamil-nadu",
+  "name": "Dr. Dharmambal Ammaiyar Ninaivu Widow Remarriage Assistance",
+  "name_kannada": "ಡಾ. ಧರ್ಮಾಂಬಾಳ್ ವಿಧವಾ ಪುನರ್ವಿವಾಹ ಸಹಾಯ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Dr. Dharmambal Scheme",
+    "TN Widow Remarriage Scheme"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare & Women Empowerment, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Widow Rehabilitation",
+  "short_description": "Financial grant of Rs. 25,000 to Rs. 50,000 and an 8-gram gold coin to rehabilitate young widows through remarriage.",
+  "detailed_description": "Encourages the rehabilitation and remarriage of young widows in Tamil Nadu by offering financial assistance of Rs. 25,000 (regular) or Rs. 50,000 (degree/diploma holders) plus an 8-gram 22-carat gold coin, provided the bride's age is between 20 and 30 years.",
+  "description_kannada": "ಯುವ ವಿಧವೆಯರ ಪುನರ್ವಿವಾಹವನ್ನು ಪ್ರೋತ್ಸಾಹಿಸಲು ರೂ. 25,000 ದಿಂದ 50,000 ಧನಸಹಾಯ ಮತ್ತು 8 ಗ್ರಾಂ ಚಿನ್ನದ ನಾಣ್ಯ.",
+  "min_age": 20,
+  "max_age": 30,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "wra_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Social Welfare Dept Order",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "wra_age",
+      "name": "Widow Age between 20 and 30",
+      "field": "age",
+      "operator": "inclusive_range",
+      "expected_value": [
+        20,
+        30
+      ],
+      "is_mandatory": true,
+      "source_citation": "Widow Remarriage Age Criteria",
+      "description_kannada": "ವಯಸ್ಸು 20 ರಿಂದ 30 ವರ್ಷಗಳ ನಡುವೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is the bride's age at remarriage?",
+      "clarification_question_kn": "ವಧುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Financial assistance of Rs. 25,000 to Rs. 50,000 plus an 8g 22K gold coin.",
+  "benefits_amount": "Rs. 25,000 to Rs. 50,000 + 8g Gold",
+  "required_documents": [
+    "Aadhaar Card of Bride and Groom",
+    "First Husband's Death Certificate",
+    "Remarriage Registration Certificate",
+    "Educational Qualification Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply at the District Social Welfare Office or e-Sevai centre within 6 months of remarriage.",
+    "Verification conducted by District Social Welfare staff.",
+    "Assistance disbursed via DBT and physical coin handover."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19442",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Social Welfare Department, Govt of Tamil Nadu",
+  "source_excerpt": "Under Dr. Dharmambal scheme, financial aid and 8 grams gold are presented to rehabilitate young widows through remarriage.",
+  "effective_date": "1975-04-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

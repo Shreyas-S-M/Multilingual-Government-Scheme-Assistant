@@ -1,0 +1,77 @@
+{
+  "scheme_id": "uzhavar-pathukappu-tamil-nadu",
+  "name": "Chief Minister's Uzhavar Pathukappu Thittam (Farmers Security Scheme)",
+  "name_kannada": "ರೈತರ ಭದ್ರತಾ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Uzhavar Pathukappu",
+    "TN Farmers Social Security"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Revenue and Disaster Management Department, Govt of Tamil Nadu",
+  "category": "Agriculture",
+  "subcategory": "Social Security for Farmers",
+  "short_description": "Comprehensive social security, monthly old-age pension of Rs. 1,000, and accident relief for small farmers and agricultural laborers.",
+  "detailed_description": "Uzhavar Pathukappu Thittam provides a social safety net to small farmers and agricultural laborers aged 18 to 65 owning less than 2.5 acres of wet land or 5 acres of dry land, including accident insurance up to Rs. 1 Lakh, natural death relief, education scholarships for children, and monthly pension after 60 years.",
+  "description_kannada": "ಸಣ್ಣ ರೈತರು ಮತ್ತು ಕೃಷಿ ಕಾರ್ಮಿಕರಿಗೆ ಅಪಘಾತ ವಿಮೆ, ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಧನಸಹಾಯ ನೀಡುವ ಸಮಗ್ರ ಭದ್ರತಾ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 65,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "upt_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Revenue Dept Order",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "upt_occupation",
+      "name": "Occupation Farmer or Agricultural Laborer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "Uzhavar Pathukappu Beneficiary Definition",
+      "description_kannada": "ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿ ಅಥವಾ ಕೃಷಿ ಕಾರ್ಮಿಕನಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you engaged in agricultural labor or farming?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Accident death relief of Rs. 1,00,000, monthly pension of Rs. 1,000 after 60, and marriage/educational grants.",
+  "benefits_amount": "Social security grants & Rs. 1,000/mo pension",
+  "required_documents": [
+    "Aadhaar Card",
+    "Uzhavar Pathukappu Thittam Identity Card",
+    "Patta / Chitta or Certificate from Village Administrative Officer (VAO)",
+    "Bank account passbook"
+  ],
+  "application_process": [
+    "Register with the Special Tahsildar (Uzhavar Pathukappu Thittam) at the Taluk Office.",
+    "VAO field inspection confirms agricultural occupation.",
+    "Member card issued to claim benefits."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/6847",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Revenue Department, Govt of Tamil Nadu",
+  "source_excerpt": "Uzhavar Pathukappu Thittam protects small farmers and agricultural laborers against occupational risks and old age destitution.",
+  "effective_date": "2006-08-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

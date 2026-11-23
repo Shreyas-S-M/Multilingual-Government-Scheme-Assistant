@@ -1,0 +1,44 @@
+{
+  "scheme_id": "karnataka-devadasi-rehabilitation",
+  "name": "Karnataka Rehabilitation Programme for Devadasis",
+  "name_kannada": "",
+  "aliases": [
+    "Karnataka Rehabilitation Programme for Devadasis"
+  ],
+  "level": "state",
+  "state": "Karnataka",
+  "department": "Government of Karnataka, Government of Karnataka",
+  "category": "Social Welfare",
+  "subcategory": "Needs official criteria verification",
+  "short_description": "Targeted rehabilitation and welfare support; eligibility must be confirmed with the relevant state department",
+  "detailed_description": "Targeted rehabilitation and welfare support; eligibility must be confirmed with the relevant state department This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+  "description_kannada": "",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [],
+  "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+  "benefits_amount": "Not specified — verify official source",
+  "required_documents": [],
+  "application_process": [
+    "Open the official portal and verify current eligibility, documents, application status and process."
+  ],
+  "official_portal_url": "https://socialwelfare.karnataka.gov.in/",
+  "application_url": "https://socialwelfare.karnataka.gov.in/",
+  "source_title": "Government of Karnataka, Government portal",
+  "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+  "effective_date": null,
+  "last_verified_date": "needs-review",
+  "source_reliability": "needs_review",
+  "status": "needs_review",
+  "is_active": true
+}

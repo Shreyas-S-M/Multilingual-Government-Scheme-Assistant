@@ -1,0 +1,75 @@
+{
+  "scheme_id": "free-laptop-scheme-tamil-nadu",
+  "name": "Tamil Nadu Free Laptop Scheme for Students",
+  "name_kannada": "ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "TN Free Laptop",
+    "Free Laptop Scheme"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Special Programme Implementation & School Education Dept, Govt of Tamil Nadu",
+  "category": "Education",
+  "subcategory": "Digital Education",
+  "short_description": "Free laptop computers distributed to students studying in Class 11, 12, government arts, science, and polytechnic colleges.",
+  "detailed_description": "Provides brand new laptop computers pre-loaded with educational software free of cost to students passing through government and government-aided schools and polytechnic colleges to bridge the digital divide and foster digital literacy.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಶಾಲೆ ಮತ್ತು ಕಾಲೇಜುಗಳಲ್ಲಿ ವ್ಯಾಸಂಗ ಮಾಡುವ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಸಂಪೂರ್ಣ ಉಚಿತ ಲ್ಯಾಪ್‌ಟಾಪ್ ವಿತರಣೆ ಯೋಜನೆ.",
+  "min_age": 15,
+  "max_age": 22,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "fl_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu ELCOT / School Education Guidelines",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "fl_student",
+      "name": "Must be Student in Govt / Aided Institution",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Student Enrollment Verification",
+      "description_kannada": "ಸರ್ಕಾರಿ ಶಾಲಾ-ಕಾಲೇಜು ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you enrolled in a government or aided school/college?",
+      "clarification_question_kn": "ನೀವು ಸರ್ಕಾರಿ ಅಥವಾ ಅನುದಾನಿತ ಕಾಲೇಜಿನಲ್ಲಿ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "One-time distribution of a fully configured modern laptop computer.",
+  "benefits_amount": "Free Laptop Computer",
+  "required_documents": [
+    "Student Aadhaar Card",
+    "School / College Student Identity Card",
+    "EMIS number registration"
+  ],
+  "application_process": [
+    "School Headmaster or College Principal prepares list of enrolled students.",
+    "Laptops procured by ELCOT and distributed directly at the educational institution."
+  ],
+  "official_portal_url": "https://elcot.in/",
+  "application_url": "https://www.tn.gov.in/",
+  "source_title": "ELCOT / School Education Dept, Govt of Tamil Nadu",
+  "source_excerpt": "Under the Free Laptop Scheme, laptops are distributed to students studying in government and aided educational institutions.",
+  "effective_date": "2011-09-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

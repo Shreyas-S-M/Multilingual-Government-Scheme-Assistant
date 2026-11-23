@@ -1,0 +1,80 @@
+{
+  "scheme_id": "amma-vodi-andhra-pradesh",
+  "name": "Jagananna Amma Vodi / Thalliki Vandanam",
+  "name_kannada": "ಜಗನಣ್ಣ ಅಮ್ಮ ವೋಡಿ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Amma Vodi",
+    "Jagananna Amma Vodi",
+    "Thalliki Vandanam",
+    "AP Mother Education Grant"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "School Education Department, Govt of Andhra Pradesh",
+  "category": "Education",
+  "subcategory": "Mother Education Incentive",
+  "short_description": "Financial grant of Rs. 15,000 per year directly to poor mothers for sending their children to school from Class 1 to 12.",
+  "detailed_description": "Jagananna Amma Vodi provides financial assistance of Rs. 15,000 annually to eligible mothers or recognized guardians living below poverty line who enroll and educate their children in recognized schools/junior colleges across Andhra Pradesh.",
+  "description_kannada": "ಮಕ್ಕಳನ್ನು ಶಾಲೆಗೆ ಕಳುಹಿಸುವ ಬಡ ತಾಯಂದಿರಿಗೆ ವಾರ್ಷಿಕ ರೂ. 15,000 ಪ್ರೋತ್ಸಾಹಧನ ನೀಡುವ ಶಿಕ್ಷಣ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "av_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 79 School Education Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "av_gender",
+      "name": "Beneficiary must be Female Mother or Guardian",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Amma Vodi Operational Guidelines Section 3.1",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ತಾಯಿ ಅಥವಾ ಮಹಿಳಾ ಪೋಷಕರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant the mother or female guardian of the school student?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ವಿದ್ಯಾರ್ಥಿಯ ತಾಯಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct deposit of Rs. 15,000 per academic year into mother's bank account (net Rs. 13,000 after Rs. 2,000 school maintenance fund).",
+  "benefits_amount": "Rs. 15,000 per year",
+  "required_documents": [
+    "Aadhaar Card of Mother and Child",
+    "White Ration Card / Rice Card",
+    "School admission details and minimum 75% attendance record",
+    "Aadhaar-seeded Bank Passbook of the Mother"
+  ],
+  "application_process": [
+    "School Headmaster uploads student and mother data onto the Child Info portal.",
+    "Village/Ward Secretariat conducts field verification of student attendance and family rice card.",
+    "Social audit list displayed for public verification at Grama Sachivalayam.",
+    "Amount credited via DBT to mother's account."
+  ],
+  "official_portal_url": "https://jaganannaammavodi.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Amma Vodi Portal, Department of School Education, Govt of AP",
+  "source_excerpt": "Financial assistance of Rs. 15,000 is transferred to mothers sending their children to school from Class 1 to 12.",
+  "effective_date": "2020-01-09",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

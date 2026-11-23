@@ -23,11 +23,11 @@ class EntityExtractor:
         normalized_text = TextNormalizer.normalize_unicode(text)
         digits_normalized = TextNormalizer.normalize_digits(normalized_text)
 
-        # 1. Age extraction with robust Dravidian agglutinative suffix handling
+        # 1. Age extraction with robust Dravidian agglutinative suffix handling (Kannada, Telugu, Tamil, Malayalam)
         age_patterns = [
-            r"(?:i am|age is|age|aged|vayassu|varsha|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ)?)\s*[:=]?\s*([0-9]{1,2})(?:\b|[^\w]|$)",
-            r"([0-9]{1,2})\s*(?:years?|yrs?|vayassu|varsha|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ|ಗಳ|ಗಳು)?)\s*(?:old|ಆಗಿದೆ|ಇದೆ)?(?:\b|[^\w]|$)",
-            r"(?:ನನಗೆ|ನನ್ನ)\s*([0-9]{1,2})\s*(?:ವರ್ಷ|ವಯಸ್ಸು)",
+            r"(?:i am|age is|age|aged|vayassu|varsha|vayathu|వయస్సు|సంవత్సరాలు|வயது|ஆண்டு|വയസ്സ്|വർಷಂ|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ)?)\s*[:=]?\s*([0-9]{1,2})(?:\b|[^\w]|$)",
+            r"([0-9]{1,2})\s*(?:years?|yrs?|vayassu|varsha|vayathu|వయస్సు|సంవత్సరాలు|ఏళ్ళు|வயது|வருடம்|ஆண்டு|വയസ്സ്|വർഷം|ವಯಸ್ಸು|ವಯಸ್ಸಿನ|ವರ್ಷ(?:ದ|ಕ್ಕೆ|ಗಳ|ಗಳು)?)\s*(?:old|ಆಗಿದೆ|ಇದೆ|ఉంది|உள்ளது|ആണ്)?(?:\b|[^\w]|$)",
+            r"(?:ನನಗೆ|ನನ್ನ|నాకు|నా|எனக்கு|என்|എനിക്ക്|എന്റെ)\s*([0-9]{1,2})\s*(?:ವರ್ಷ|ವಯಸ್ಸು|సంవత్సరాలు|వయస్సు|வயது|ஆண்டு|വയസ്സ്|വർഷം)",
         ]
         for pat in age_patterns:
             m = re.search(pat, digits_normalized, re.IGNORECASE)
@@ -51,11 +51,11 @@ class EntityExtractor:
                     "confidence": 0.85,
                 }
 
-        # 2. Annual Income extraction with Indian currency & Kannada postfix notations
+        # 2. Annual Income extraction with Indian currency & South Indian language postfix notations
         income_patterns = [
-            r"(?:income|salary|earning|annual income|ಆದಾಯ|ಸಂಬಳ)\s*(?:is|of|around)?\s*[:=]?\s*(?:rs\.?|inr|₹|ರೂ\.?)?\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)(?:\b|[^\w]|$)",
-            r"(?:rs\.?|inr|₹|ರೂ\.?)\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ)?)\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ)?(?:\b|[^\w]|$)",
-            r"([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ))\s*(?:ರೂಪಾಯಿ|ರೂ\.?|rs\.?|inr)?\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ)?(?:\b|[^\w]|$)",
+            r"(?:income|salary|earning|annual income|ಆದಾಯ|ಸಂಬಳ|ఆదాయం|సంపాదన|வருமானம்|சம்பளம்|വരുമാനം|ശമ്പളം)\s*(?:is|of|around)?\s*[:=]?\s*(?:rs\.?|inr|₹|ರೂ\.?|రూ\.?|ரூ\.?|രೂ\.?)?\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ|వేలు|లక్ష|లక్షలు|ஆயிரம்|லட்சம்|ആയിരം|ലക്ഷം)?)(?:\b|[^\w]|$)",
+            r"(?:rs\.?|inr|₹|ರೂ\.?|రూ\.?|ரூ\.?|രೂ\.?)\s*([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ|వేలు|లಕ್ಷలు|ஆயிரம்|லட்சம்|ആയിരം|ലക്ഷം)?)\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ|వార్షిక|ఆదాయం|வருமானம்|വാർഷിക|വരുമാനം)?(?:\b|[^\w]|$)",
+            r"([0-9]+(?:,[0-9]+)*(?:\.[0-9]+)?\s*(?:lakh|lakhs|lac|thousand|cr|crore|k|ಸಾವಿರ|ಲಕ್ಷ|ಕೋಟಿ|వేలు|లಕ್ಷలు|ஆயிரம்|லட்சம்|ആയിരം|ലಕ್ಷം))\s*(?:ರೂಪಾಯಿ|ರೂ\.?|రూపాయలు|రూ\.?|ரூபாய்|ரூ\.?|രൂപ|രೂ\.?|rs\.?|inr)?\s*(?:per annum|per year|annual|ವಾರ್ಷಿಕ|ಆದಾಯ|వಾರ್షಿಕ|ఆదాయం|வருமானம்|വാർഷിക|വരുമാനം)?(?:\b|[^\w]|$)",
         ]
         for pat in income_patterns:
             m = re.search(pat, digits_normalized, re.IGNORECASE)

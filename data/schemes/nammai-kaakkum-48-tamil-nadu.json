@@ -1,0 +1,64 @@
+{
+  "scheme_id": "nammai-kaakkum-48-tamil-nadu",
+  "name": "Innuyir Kaappom - Nammai Kaakkum 48",
+  "name_kannada": "ಇನ್ನುಯಿರ್ ಕಾಪ್ಪೋಂ - ನಮ್ಮೈ ಕಾಕ್ಕುಂ 48 (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Innuyir Kaappom",
+    "Nammai Kaakkum 48",
+    "TN Road Accident Emergency Scheme"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Tamil Nadu Health Systems Project, Govt of Tamil Nadu",
+  "category": "Healthcare",
+  "subcategory": "Emergency Trauma Care",
+  "short_description": "100% free emergency medical and surgical care up to Rs. 1 Lakh within the first 48 hours for road accident victims in Tamil Nadu.",
+  "detailed_description": "Innuyir Kaappom - Nammai Kaakkum 48 covers 81 identified emergency life-saving medical procedures up to Rs. 1 Lakh per person for the first 48 hours following a road traffic accident in Tamil Nadu, irrespective of nationality, domicile, or insurance coverage.",
+  "description_kannada": "ರಸ್ತೆ ಅಪಘಾತಕ್ಕೊಳಗಾದವರಿಗೆ ಮೊದಲ 48 ಗಂಟೆಗಳ ಕಾಲ ಆಸ್ಪತ್ರೆಯಲ್ಲಿ ರೂ. 1 ಲಕ್ಷದವರೆಗೆ ಉಚಿತ ತುರ್ತು ಜೀವ ರಕ್ಷಕ ಚಿಕಿತ್ಸೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "nk48_emergency",
+      "name": "Accident in Tamil Nadu Jurisdiction",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Health Dept G.O.Ms.No. 531",
+      "description_kannada": "ಅಪಘಾತವು ತಮಿಳುನಾಡು ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಸಂಭವಿಸಿರಬೇಕು",
+      "clarification_question_en": "Did the road accident occur within Tamil Nadu territory?",
+      "clarification_question_kn": "ಅಪಘಾತವು ತಮಿಳುನಾಡು ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ನಡೆದಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Free emergency stabilization, ICU, CT scans, and surgeries up to Rs. 1 Lakh within the first 48 hours.",
+  "benefits_amount": "Up to Rs. 1 Lakh emergency care",
+  "required_documents": [
+    "Accident Emergency Registration at Hospital",
+    "Any photo ID card of patient or accompanying bystander (if available)"
+  ],
+  "application_process": [
+    "Call 108 ambulance to transport accident victim to nearest empanelled trauma care hospital.",
+    "Hospital immediately triggers Innuyir Kaappom admission protocol without demanding payment.",
+    "Direct claim settlement by government to the hospital."
+  ],
+  "official_portal_url": "https://www.cmchistn.com/",
+  "application_url": "https://www.cmchistn.com/",
+  "source_title": "Health Systems Project, Govt of Tamil Nadu",
+  "source_excerpt": "Innuyir Kaappom ensures free critical care up to Rs. 1 Lakh within 48 hours for anyone injured in a road accident in Tamil Nadu.",
+  "effective_date": "2021-12-18",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

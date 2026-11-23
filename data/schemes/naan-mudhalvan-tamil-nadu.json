@@ -1,0 +1,66 @@
+{
+  "scheme_id": "naan-mudhalvan-tamil-nadu",
+  "name": "Naan Mudhalvan Scheme",
+  "name_kannada": "ನಾನ್ ಮುದಲ್ವನ್ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Naan Mudhalvan",
+    "TN Youth Skill Initiative"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Tamil Nadu Skill Development Corporation (TNSDC), Govt of Tamil Nadu",
+  "category": "Employment",
+  "subcategory": "Skill Development",
+  "short_description": "Free industry skill development, certification, and career placement support for students and youth in Tamil Nadu.",
+  "detailed_description": "Naan Mudhalvan is Tamil Nadu's flagship skill enhancement program empowering college students and educated jobseekers with free training in artificial intelligence, software programming, semiconductors, banking, logistics, and foreign languages alongside corporate campus placement.",
+  "description_kannada": "ಕಾಲೇಜು ಯುವಜನರಿಗೆ ಉನ್ನತ ತಂತ್ರಜ್ಞಾನ, ಕೌಶಲ್ಯ ತರಬೇತಿ ಮತ್ತು ಉದ್ಯೋಗ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 30,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student",
+    "unemployed"
+  ],
+  "rules": [
+    {
+      "criterion_id": "nm_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu TNSDC Operational Guidelines",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% free technical and domain certifications with direct job interview placement drives.",
+  "benefits_amount": "Free Professional Skill Training",
+  "required_documents": [
+    "Aadhaar Card",
+    "College Enrollment / Degree Completion Certificate",
+    "Resume / Mark sheets"
+  ],
+  "application_process": [
+    "Register online on the official Naan Mudhalvan portal.",
+    "Select high-demand technical courses.",
+    "Complete blended learning modules and industry certification tests.",
+    "Participate in statewide campus placement drives."
+  ],
+  "official_portal_url": "https://naanmudhalvan.tn.gov.in/",
+  "application_url": "https://portal.naanmudhalvan.tn.gov.in/",
+  "source_title": "Tamil Nadu Skill Development Corporation (TNSDC)",
+  "source_excerpt": "Naan Mudhalvan delivers cutting-edge technical training to youth across Tamil Nadu to enhance career readiness.",
+  "effective_date": "2022-03-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

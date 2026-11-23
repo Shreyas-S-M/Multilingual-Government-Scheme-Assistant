@@ -1,0 +1,79 @@
+{
+  "scheme_id": "pension-kanuka-andhra-pradesh",
+  "name": "YSR Pension Kanuka",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಪಿಂಚಣಿ ಕಾಣಿಕೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "YSR Pension Kanuka",
+    "AP Old Age Pension",
+    "NTR Bharosa Pension"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Society for Elimination of Rural Poverty (SERP), Govt of Andhra Pradesh",
+  "category": "Social Security",
+  "subcategory": "Pensions",
+  "short_description": "Monthly social security pension of Rs. 3,000 to Rs. 4,000 directly delivered at doorstep to elderly, widows, and disabled citizens.",
+  "detailed_description": "YSR Pension Kanuka provides monthly social security pensions to underprivileged citizens. The pension amount is Rs. 3,000/month for Old Age (60+ years), Widows, Weavers, and Toddy Tappers, and up to Rs. 6,000 - Rs. 15,000/month for severely disabled citizens and chronic dialysis patients.",
+  "description_kannada": "ಹಿರಿಯ ನಾಗರಿಕರು, ವಿಧವೆಯರು ಮತ್ತು ಅಂಗವಿಕಲರಿಗೆ ಮಾಸಿಕ ರೂ. 3,000 ರಿಂದ ರೂ. 4,000 ವರೆಗೆ ಮನೆ ಬಾಗಿಲಿಗೆ ಪಿಂಚಣಿ ವಿತರಿಸುವ ಯೋಜನೆ.",
+  "min_age": 60,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pension_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 174 Panchayat Raj & Rural Development",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "pension_age",
+      "name": "Minimum Age 60 for Old Age Pension",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 60,
+      "is_mandatory": true,
+      "source_citation": "Pension Kanuka Operational Rules 2024",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 60 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Monthly cash pension of Rs. 3,000 to Rs. 4,000 delivered directly at home by secretariat staff on the 1st of every month.",
+  "benefits_amount": "Rs. 3,000 to Rs. 4,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Rice Card / BPL card",
+    "Age proof certificate / Birth Certificate",
+    "Death certificate of spouse (for Widow Pension) or SADAREM disability certificate (for Disability Pension)"
+  ],
+  "application_process": [
+    "Submit application at Grama / Ward Sachivalayam.",
+    "Welfare and Education Assistant conducts bi-annual door verification.",
+    "MPDO/Municipal Commissioner sanctions the pension.",
+    "Secretariat staff delivers cash pension directly at the citizen's doorstep on the 1st of each month."
+  ],
+  "official_portal_url": "https://sspensions.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Society for Elimination of Rural Poverty, Govt of AP",
+  "source_excerpt": "Under YSR Pension Kanuka, social security pensions are disbursed monthly at doorsteps to secure vulnerable elderly and destitute citizens.",
+  "effective_date": "2019-07-08",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

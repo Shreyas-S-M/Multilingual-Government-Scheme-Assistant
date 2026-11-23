@@ -1,0 +1,77 @@
+{
+  "scheme_id": "kasp-kerala",
+  "name": "Karunya Arogya Suraksha Padhathi (KASP)",
+  "name_kannada": "ಕಾರುಣ್ಯ ಆರೋಗ್ಯ ಸುರಕ್ಷಾ ಪದ್ಧತಿ (ಕೇರಳ)",
+  "aliases": [
+    "KASP",
+    "Karunya Health Scheme",
+    "Kerala Health Insurance"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "State Health Agency (SHA), Department of Health & Family Welfare, Govt of Kerala",
+  "category": "Healthcare",
+  "subcategory": "Health Assurance",
+  "short_description": "Cashless hospitalization coverage up to Rs. 5 Lakh per family per year for secondary and tertiary healthcare in Kerala.",
+  "detailed_description": "Karunya Arogya Suraksha Padhathi (KASP) converges state health schemes with PM-JAY to provide cashless health coverage of up to Rs. 5 Lakh per family per annum for over 42 lakh poor and vulnerable families across Kerala, empanelling both government medical colleges and designated private hospitals.",
+  "description_kannada": "ಕೇರಳದ ಬಡ ಕುಟುಂಬಗಳಿಗೆ ವಾರ್ಷಿಕ ರೂ. 5 ಲಕ್ಷದವರೆಗೆ ಆಸ್ಪತ್ರೆ ಚಿಕಿತ್ಸೆಗಾಗಿ ನಗದು ರಹಿತ ಆರೋಗ್ಯ ವಿಮೆ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 300000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "kasp_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Health & Family Welfare Order No. 45/2020",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "kasp_income",
+      "name": "Annual Family Income ceiling Rs 3 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 300000.0,
+      "is_mandatory": true,
+      "source_citation": "KASP Beneficiary Eligibility Parameters",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 3 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is your total family annual income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Cashless secondary and tertiary hospitalization cover up to Rs. 5 Lakh per family per annum.",
+  "benefits_amount": "Up to Rs. 5 Lakh per year",
+  "required_documents": [
+    "Ration Card (Priority / Non-Priority Subsidy or BPL card)",
+    "Aadhaar Card of all family members",
+    "KASP Health Card / PM-JAY Card"
+  ],
+  "application_process": [
+    "Approach the KASP Kiosk at any empanelled government medical college, district hospital, or private hospital.",
+    "Present Ration Card and Aadhaar card.",
+    "Arogyamithra generates digital authorization and initiates cashless treatment."
+  ],
+  "official_portal_url": "https://sha.kerala.gov.in/",
+  "application_url": "https://karunya.kerala.gov.in/",
+  "source_title": "State Health Agency, Govt of Kerala",
+  "source_excerpt": "KASP provides comprehensive health protection of Rs. 5 Lakh per family per year to vulnerable populations in Kerala.",
+  "effective_date": "2020-04-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

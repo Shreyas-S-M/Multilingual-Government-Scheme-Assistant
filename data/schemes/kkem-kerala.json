@@ -1,0 +1,66 @@
+{
+  "scheme_id": "kkem-kerala",
+  "name": "Kerala Knowledge Economy Mission (KKEM)",
+  "name_kannada": "ಕೇರಳ ನಾಲೆಡ್ಜ್ ಎಕಾನಮಿ ಮಿಷನ್ (ಕೇರಳ)",
+  "aliases": [
+    "KKEM",
+    "Kerala Digital Workforce",
+    "DWMS Kerala"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Kerala Development and Innovation Strategic Council (K-DISC), Govt of Kerala",
+  "category": "Employment",
+  "subcategory": "Knowledge Employment",
+  "short_description": "Free skill upskilling, remote work training, career counseling, and high-wage job matching for educated unemployed youth.",
+  "detailed_description": "Kerala Knowledge Economy Mission (KKEM) aims to transform Kerala into a knowledge society by providing 20 lakh knowledge jobs. Through the Digital Workforce Management System (DWMS), educated jobseekers receive customized training, mentorship, and direct recruitment placement with national and global employers.",
+  "description_kannada": "ವಿದ್ಯಾವಂತ ನಿರುದ್ಯೋಗಿ ಯುವಜನರಿಗೆ ಉಚಿತ ಉನ್ನತ ತಂತ್ರಜ್ಞಾನ ತರಬೇತಿ ಮತ್ತು ಜಾಗತಿಕ ಉದ್ಯೋಗಾವಕಾಶ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": 40,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "unemployed",
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "kkem_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala K-DISC Mission Document",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% free professional upskilling certifications, career mentorship, and direct knowledge-economy job placement.",
+  "benefits_amount": "Free Career Upskilling & Placement",
+  "required_documents": [
+    "Aadhaar Card",
+    "Degree / Diploma / ITI Completion Certificate",
+    "Resume / Mark sheets"
+  ],
+  "application_process": [
+    "Register profile on the Digital Workforce Management System (DWMS) mobile app or website.",
+    "Undergo skill assessment and enroll in sponsored industry bootcamps.",
+    "Attend job fairs and corporate interview rounds."
+  ],
+  "official_portal_url": "https://knowledgemission.kerala.gov.in/",
+  "application_url": "https://dwms.kerala.gov.in/",
+  "source_title": "K-DISC, Govt of Kerala",
+  "source_excerpt": "KKEM prepares educated youth for knowledge-sector careers with free industry training and job connectivity.",
+  "effective_date": "2021-02-09",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

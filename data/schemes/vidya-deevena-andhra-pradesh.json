@@ -1,0 +1,93 @@
+{
+  "scheme_id": "vidya-deevena-andhra-pradesh",
+  "name": "Jagananna Vidya Deevena (RTF)",
+  "name_kannada": "ಜಗನಣ್ಣ ವಿದ್ಯಾ ದೀವೇನೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Vidya Deevena",
+    "JVD",
+    "AP Fee Reimbursement",
+    "Reimbursement of Tuition Fee"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Higher Education Department, Govt of Andhra Pradesh",
+  "category": "Education",
+  "subcategory": "Fee Reimbursement",
+  "short_description": "100% full fee reimbursement directly to mothers for students pursuing ITI, Polytechnic, Degree, Engineering, and PG courses.",
+  "detailed_description": "Jagananna Vidya Deevena reimburses the complete tuition fee of students from low-income families pursuing post-matric higher education in Andhra Pradesh. The fee is credited directly into the bank accounts of students' mothers on a quarterly basis.",
+  "description_kannada": "ಪಾಲಿಟೆಕ್ನಿಕ್, ಐಟಿಐ, ಪದವಿ ಹಾಗೂ ಇಂಜಿನಿಯರಿಂಗ್ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಸಂಪೂರ್ಣ ಬೋಧನಾ ಶುಲ್ಕ ಮರುಪಾವತಿ ಯೋಜನೆ.",
+  "min_age": 17,
+  "max_age": 30,
+  "max_income": 250000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "jvd_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 115 Higher Education Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "jvd_income",
+      "name": "Family Annual Income ceiling Rs 2.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 250000.0,
+      "is_mandatory": true,
+      "source_citation": "Jagananna Vidya Deevena Income Ceiling Rules",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 2.5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "Is your family's annual income below Rs 2.5 Lakh?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 2.5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯೇ?"
+    },
+    {
+      "criterion_id": "jvd_student",
+      "name": "Must be Student",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Higher Education Student Enrollment Criteria",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ವಿದ್ಯಾರ್ಥಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you currently enrolled as a student?",
+      "clarification_question_kn": "ನೀವು ಪ್ರಸ್ತುತ ವಿದ್ಯಾರ್ಥಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% full tuition fee reimbursement credited quarterly to mother's bank account.",
+  "benefits_amount": "Full Tuition Fee Reimbursement",
+  "required_documents": [
+    "Aadhaar Card of student and mother",
+    "College admission allotment order",
+    "Integrated Caste and Income Certificate",
+    "Rice Card / BPL card",
+    "Bank passbook of the student's mother"
+  ],
+  "application_process": [
+    "Submit admission verification via college principal to Jnanabhumi portal.",
+    "Welfare and Education Assistant conducts field inspection.",
+    "Social audit list displayed at Grama/Ward Sachivalayam.",
+    "Fees released quarterly via DBT into mother's account."
+  ],
+  "official_portal_url": "https://jaganannavidyadeevena.ap.gov.in/",
+  "application_url": "https://jnanabhumi.ap.gov.in/",
+  "source_title": "Jnanabhumi / Higher Education Dept, Govt of AP",
+  "source_excerpt": "Complete tuition fee reimbursement is transferred to mothers of post-matric students to encourage higher education.",
+  "effective_date": "2020-04-28",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

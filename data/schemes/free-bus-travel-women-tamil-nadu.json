@@ -1,0 +1,66 @@
+{
+  "scheme_id": "free-bus-travel-women-tamil-nadu",
+  "name": "Free Bus Travel Scheme for Women (Vidiyal Payanam)",
+  "name_kannada": "ಮಹಿಳೆಯರಿಗೆ ಉಚಿತ ಬಸ್ ಪ್ರಯಾಣ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Vidiyal Payanam",
+    "TN Free Bus Scheme",
+    "Zero Ticket Bus Travel TN"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Transport Department, Govt of Tamil Nadu",
+  "category": "Transport",
+  "subcategory": "Mobility Support",
+  "short_description": "100% free fare bus travel for all women, trans persons, and differently abled persons in state ordinary town buses.",
+  "detailed_description": "Vidiyal Payanam permits all women, transgender women, and differently abled persons with an escort to travel completely free of fare without distance limit in all government ordinary town buses operated by State Transport Corporations across Tamil Nadu.",
+  "description_kannada": "ತಮಿಳುನಾಡಿನ ಎಲ್ಲಾ ಸಾಮಾನ್ಯ ನಗರ ಸಾರಿಗೆ ಬಸ್ಸುಗಳಲ್ಲಿ ಮಹಿಳೆಯರಿಗೆ ಸಂಪೂರ್ಣ ಉಚಿತ ಪ್ರಯಾಣ ಕಲ್ಪಿಸುವ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "female",
+    "transgender"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "fb_gender",
+      "name": "Female or Transgender Passenger",
+      "field": "gender",
+      "operator": "in_list",
+      "expected_value": [
+        "female",
+        "transgender"
+      ],
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Transport Dept Order No. 1",
+      "description_kannada": "ಪ್ರಯಾಣಿಕರು ಮಹಿಳೆ ಅಥವಾ ತೃತೀಯಲಿಂಗಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the passenger a woman or transgender person?",
+      "clarification_question_kn": "ಪ್ರಯಾಣಿಕರು ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Zero-ticket fare across all ordinary State Transport Corporation town buses.",
+  "benefits_amount": "100% Free Bus Travel",
+  "required_documents": [
+    "No document required for routine travel; conductor issues zero-fare ticket."
+  ],
+  "application_process": [
+    "Board any ordinary city/town government bus displaying the pink 'Free for Women' board.",
+    "Obtain zero-rupee travel ticket directly from the conductor."
+  ],
+  "official_portal_url": "https://www.tnstc.in/",
+  "application_url": "https://www.tnstc.in/",
+  "source_title": "Transport Department, Govt of Tamil Nadu",
+  "source_excerpt": "All women passengers are granted free travel across ordinary city and town services operated by state transport undertakings.",
+  "effective_date": "2021-05-08",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

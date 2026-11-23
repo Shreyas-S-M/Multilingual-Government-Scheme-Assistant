@@ -1,0 +1,74 @@
+{
+  "scheme_id": "cm-breakfast-scheme-tamil-nadu",
+  "name": "Chief Minister's Breakfast Scheme (Kaalai Unavu Thittam)",
+  "name_kannada": "ಮುಖ್ಯಮಂತ್ರಿಗಳ ಉಪಹಾರ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Kaalai Unavu Thittam",
+    "TN Breakfast Scheme",
+    "CM Breakfast Scheme"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare and Nutritious Meal Programme, Govt of Tamil Nadu",
+  "category": "Education",
+  "subcategory": "School Nutrition",
+  "short_description": "Free hot nutritious morning breakfast served to all students from Class 1 to 5 in government primary schools across Tamil Nadu.",
+  "detailed_description": "Chief Minister's Breakfast Scheme guarantees hot cooked nutritious breakfasts (such as uppuma, khichdi, pongal with sambar) every school morning to all children studying in Classes 1 to 5 across all 31,008 government primary schools in Tamil Nadu to eliminate child hunger and enhance learning retention.",
+  "description_kannada": "ಸರ್ಕಾರಿ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯ 1 ರಿಂದ 5 ನೇ ತರಗತಿಯ ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಪ್ರತಿ ದಿನ ಬೆಳಿಗ್ಗೆ ಬಿಸಿ ಪೌಷ್ಟಿಕ ಉಪಹಾರ ಒದಗಿಸುವ ಯೋಜನೆ.",
+  "min_age": 5,
+  "max_age": 11,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "bf_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Social Welfare G.O.Ms.No. 43",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "bf_student",
+      "name": "Enrolled in Government Primary School",
+      "field": "is_student",
+      "operator": "boolean_is",
+      "expected_value": true,
+      "is_mandatory": true,
+      "source_citation": "Primary School Enrollment Clause",
+      "description_kannada": "ಸರ್ಕಾರಿ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ ದಾಖಲಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the child enrolled in a government primary school?",
+      "clarification_question_kn": "ಮಗುವು ಸರ್ಕಾರಿ ಪ್ರಾಥಮಿಕ ಶಾಲೆಯಲ್ಲಿ ಕಲಿಯುತ್ತಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% free hot breakfast served every school working day.",
+  "benefits_amount": "Free Daily Hot Breakfast",
+  "required_documents": [
+    "School Admission Record / Student EMIS Number"
+  ],
+  "application_process": [
+    "Automatic entitlement upon enrolling in any government primary school in Tamil Nadu.",
+    "No separate application or fees required."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/",
+  "application_url": "https://www.tn.gov.in/",
+  "source_title": "Social Welfare & Nutritious Meal Programme, Govt of Tamil Nadu",
+  "source_excerpt": "Free nutritious breakfast is served every morning to primary students across all government schools in Tamil Nadu.",
+  "effective_date": "2022-09-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

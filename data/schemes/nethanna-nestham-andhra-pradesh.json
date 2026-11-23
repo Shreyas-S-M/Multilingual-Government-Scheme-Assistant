@@ -1,0 +1,82 @@
+{
+  "scheme_id": "nethanna-nestham-andhra-pradesh",
+  "name": "YSR Nethanna Nestham",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ನೇತ್ರಣ್ಣ ನೇಸ್ತಂ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Nethanna Nestham",
+    "YSR Nethanna Nestham",
+    "AP Handloom Weaver Scheme"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Handlooms and Textiles, Govt of Andhra Pradesh",
+  "category": "Employment",
+  "subcategory": "Weaver Support",
+  "short_description": "Annual financial aid of Rs. 24,000 to handloom weaver families owning a loom in Andhra Pradesh.",
+  "detailed_description": "YSR Nethanna Nestham provides Rs. 24,000 per annum directly into the bank accounts of every handloom weaver family owning an operational loom, assisting in modernizing equipment, procuring yarn, and achieving competitive viability.",
+  "description_kannada": "ಮಗ್ಗ ಹೊಂದಿರುವ ಕೈಮಗ್ಗ ನೇಕಾರ ಕುಟುಂಬಗಳಿಗೆ ಆಧುನೀಕರಣ ಮತ್ತು ಕಚ್ಚಾ ಮಾಲಿಗಾಗಿ ವಾರ್ಷಿಕ ರೂ. 24,000 ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "artisan",
+    "weaver"
+  ],
+  "rules": [
+    {
+      "criterion_id": "nn_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP Handlooms Dept Order No. 44",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "nn_occupation",
+      "name": "Must be Weaver or Artisan",
+      "field": "occupation",
+      "operator": "in_list",
+      "expected_value": [
+        "weaver",
+        "artisan"
+      ],
+      "is_mandatory": true,
+      "source_citation": "Weaver Loom Ownership Criteria",
+      "description_kannada": "ಮುಖ್ಯ ಕಸುಬು ಕೈಮಗ್ಗ ನೇಕಾರಿಕೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is your family engaged in handloom weaving?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬವು ಕೈಮಗ್ಗ ನೇಕಾರಿಕೆಯಲ್ಲಿ ತೊಡಗಿದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct deposit of Rs. 24,000 every year to loom-owning weaver households.",
+  "benefits_amount": "Rs. 24,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Handloom Weaver Registration Certificate / Geo-tagged loom photo",
+    "Rice Card / BPL card",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Enroll at Grama / Ward Sachivalayam.",
+    "Assistant Director of Handlooms conducts physical verification and geo-tagging of the loom.",
+    "Approval sanctioned and payment processed via DBT."
+  ],
+  "official_portal_url": "https://navasakam.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Handlooms & Textiles Dept, Govt of AP",
+  "source_excerpt": "Financial aid of Rs. 24,000 per annum is deposited into the accounts of weaver families owning a loom.",
+  "effective_date": "2019-12-21",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

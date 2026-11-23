@@ -1,0 +1,78 @@
+{
+  "scheme_id": "sevana-pension-old-age-kerala",
+  "name": "Indira Gandhi National Old Age Pension - Kerala Sevana",
+  "name_kannada": "ಕೇರಳ ಸೇವನಾ ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Kerala Old Age Pension",
+    "Sevana Old Age Pension",
+    "IGNOAPS Kerala"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Local Self Government Department, Govt of Kerala",
+  "category": "Social Security",
+  "subcategory": "Senior Citizen Welfare",
+  "short_description": "Monthly pension of Rs. 1,600 delivered directly to senior citizens aged 60 and above belonging to BPL families in Kerala.",
+  "detailed_description": "Under Kerala's Sevana social security system, senior citizens aged 60 and above living in BPL households receive a monthly direct cash transfer of Rs. 1,600 directly into their bank accounts or delivered at their doorstep via primary cooperative banks.",
+  "description_kannada": "60 ವರ್ಷ ಮತ್ತು ಅದಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ವಯಸ್ಸಿನ ಬಡ ಹಿರಿಯ ನಾಗರಿಕರಿಗೆ ಮಾಸಿಕ ರೂ. 1,600 ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ.",
+  "min_age": 60,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sop_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala LSGD Social Security Pension Rules",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "sop_age",
+      "name": "Age 60 years or above",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 60,
+      "is_mandatory": true,
+      "source_citation": "Old Age Pension Statutory Criteria",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 60 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Monthly pension of Rs. 1,600 credited to bank account or doorstep cooperative bank delivery.",
+  "benefits_amount": "Rs. 1,600 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Age proof certificate / School Leaving Certificate / Electoral Card",
+    "BPL Ration Card / Income Certificate from Village Officer",
+    "Bank account passbook"
+  ],
+  "application_process": [
+    "Apply through the local Grama Panchayat, Municipality, or Akshaya Centre via the Sevana portal.",
+    "Local Inquiry Officer conducts field verification.",
+    "Secretary sanctions the pension, disbursed monthly via DBT or cooperative banks."
+  ],
+  "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+  "application_url": "https://sevana.gov.in/",
+  "source_title": "Local Self Government Dept, Govt of Kerala",
+  "source_excerpt": "Under the Sevana pension program, eligible senior citizens in Kerala receive a monthly pension of Rs. 1,600.",
+  "effective_date": "1995-08-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,65 @@
+{
+  "scheme_id": "sunna-vaddi-andhra-pradesh",
+  "name": "YSR Sunna Vaddi (Zero Interest Loans)",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಸುನ್ನ ವಡ್ಡಿ (ಶೂನ್ಯ ಬಡ್ಡಿ ಸಾಲ) (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Sunna Vaddi",
+    "YSR Sunna Vaddi",
+    "AP Zero Interest Loan"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Rural Development (SERP) & MEPMA, Govt of AP",
+  "category": "Financial Inclusion",
+  "subcategory": "Zero Interest Credit",
+  "short_description": "100% interest reimbursement on bank loans up to Rs. 3 Lakh for women Self Help Groups (SHGs) in Andhra Pradesh.",
+  "detailed_description": "YSR Sunna Vaddi relieves women SHG members from debt burden by reimbursing the entire interest amount charged by commercial and regional rural banks on bank linkage loans up to Rs. 3 Lakh, credited directly to the SHGs' bank accounts.",
+  "description_kannada": "ಮಹಿಳಾ ಸ್ವಸಹಾಯ ಸಂಘಗಳ ರೂ. 3 ಲಕ್ಷದವರೆಗಿನ ಬ್ಯಾಂಕ್ ಸಾಲಕ್ಕೆ ಶೇಕಡಾ 100 ರಷ್ಟು ಬಡ್ಡಿ ಮರುಪಾವತಿ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sv_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP SERP Operational Circular",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Complete interest reimbursement on SHG bank loans up to Rs. 3 Lakh.",
+  "benefits_amount": "100% Interest Reimbursement",
+  "required_documents": [
+    "SHG Bank Loan Account Number",
+    "Proof of prompt loan repayment (NPA-free status)",
+    "Group members' Aadhaar details"
+  ],
+  "application_process": [
+    "Banks upload prompt repayment data directly to SERP portal.",
+    "SERP computes interest subsidy.",
+    "Subsidized interest credited directly into the SHG's group account."
+  ],
+  "official_portal_url": "https://navasakam.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "SERP / MEPMA, Govt of Andhra Pradesh",
+  "source_excerpt": "Under YSR Sunna Vaddi, the government pays the full interest on behalf of women SHGs who repay their bank loans on time.",
+  "effective_date": "2020-04-24",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

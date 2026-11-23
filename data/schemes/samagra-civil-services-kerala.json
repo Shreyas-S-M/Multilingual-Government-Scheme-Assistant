@@ -1,0 +1,83 @@
+{
+  "scheme_id": "samagra-civil-services-kerala",
+  "name": "Samagra Civil Service Coaching Assistance",
+  "name_kannada": "ಸಮಗ್ರ ನಾಗರಿಕ ಸೇವಾ ತರಬೇತಿ ನೆರವು (ಕೇರಳ)",
+  "aliases": [
+    "Samagra Civil Services",
+    "Kerala SC/ST Civil Service Coaching"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Scheduled Castes and Scheduled Tribes Development Department, Govt of Kerala",
+  "category": "Education",
+  "subcategory": "Competitive Exam Coaching",
+  "short_description": "Free UPSC Civil Services exam coaching, accommodation, and monthly stipend for SC and ST graduates in Kerala.",
+  "detailed_description": "Provides full financial assistance, premier private coaching institution fee sponsorship, free hostel accommodation, and a monthly stipend of Rs. 4,500 to meritorious SC and ST candidates from Kerala preparing for the UPSC Civil Services Preliminary and Mains examinations.",
+  "description_kannada": "ಪರಿಶಿಷ್ಟ ಜಾತಿ ಮತ್ತು ಪಂಗಡದ ಪದವೀಧರರಿಗೆ ಉಚಿತ ಯುಪಿಎಸ್ಸಿ ಸಿವಿಲ್ ಸರ್ವೀಸ್ ತರಬೇತಿ, ವಸತಿ ಮತ್ತು ಮಾಸಿಕ ರೂ. 4,500 ಶಿಷ್ಯವೇತನ.",
+  "min_age": 21,
+  "max_age": 35,
+  "max_income": 300000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "sc",
+    "st"
+  ],
+  "target_occupations": [
+    "student",
+    "unemployed"
+  ],
+  "rules": [
+    {
+      "criterion_id": "scs_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala SC/ST Development Dept Guidelines",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "scs_category",
+      "name": "Belong to SC or ST Category",
+      "field": "social_category",
+      "operator": "in_list",
+      "expected_value": [
+        "sc",
+        "st"
+      ],
+      "is_mandatory": true,
+      "source_citation": "SC/ST Target Beneficiary Requirement",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಎಸ್ಸಿ ಅಥವಾ ಎಸ್ಟಿ ವರ್ಗಕ್ಕೆ ಸೇರಿದವರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Do you belong to the SC or ST category?",
+      "clarification_question_kn": "ನೀವು ಪರಿಶಿಷ್ಟ ಜಾತಿ (SC) ಅಥವಾ ಪಂಗಡಕ್ಕೆ (ST) ಸೇರಿದವರೇ?"
+    }
+  ],
+  "benefits_summary": "100% course fee sponsorship at empanelled civil service academies plus Rs. 4,500 monthly living stipend.",
+  "benefits_amount": "Full Coaching Fees + Rs. 4,500/mo Stipend",
+  "required_documents": [
+    "Aadhaar Card",
+    "Caste Certificate (SC/ST)",
+    "Undergraduate Degree Certificate",
+    "Income Certificate (<= Rs. 3 Lakh)",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply online through the SC/ST Development Department portal.",
+    "Attend the statewide selection entrance examination.",
+    "Selected candidates choose their preferred empanelled coaching institute."
+  ],
+  "official_portal_url": "https://scdd.kerala.gov.in/",
+  "application_url": "https://scholarship.itschool.gov.in/",
+  "source_title": "SC/ST Development Department, Govt of Kerala",
+  "source_excerpt": "Under Samagra, full tuition and stipends are provided to SC/ST aspirants preparing for Civil Services examinations.",
+  "effective_date": "2018-07-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

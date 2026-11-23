@@ -1,0 +1,77 @@
+{
+  "scheme_id": "agricultural-workers-pension-kerala",
+  "name": "Kerala Agricultural Workers Pension Scheme",
+  "name_kannada": "ಕೇರಳ ಕೃಷಿ ಕಾರ್ಮಿಕರ ಪಿಂಚಣಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Kerala Agricultural Labor Pension",
+    "KSRAP Kerala"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Labour and Skills Department, Govt of Kerala",
+  "category": "Agriculture",
+  "subcategory": "Farm Labor Social Security",
+  "short_description": "Monthly pension of Rs. 1,600 to veteran agricultural laborers aged 60 and above in Kerala.",
+  "detailed_description": "A pioneering social welfare program in India granting a monthly pension of Rs. 1,600 to retired agricultural laborers aged 60 years or more who have worked in farming for at least 10 years and are registered with the Kerala Agricultural Workers Welfare Fund Board.",
+  "description_kannada": "60 ವರ್ಷ ಮೀರಿದ ಕೃಷಿ ಕಾರ್ಮಿಕರಿಗೆ ಮಾಸಿಕ ರೂ. 1,600 ಸಾಮಾಜಿಕ ಭದ್ರತಾ ಪಿಂಚಣಿ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 60,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "awp_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Kerala Agricultural Workers Act 1974",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "awp_age",
+      "name": "Age 60 years or older",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 60,
+      "is_mandatory": true,
+      "source_citation": "Agricultural Workers Pension Age Clause",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 60 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is your current age?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಪ್ರಸ್ತುತ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Monthly pension of Rs. 1,600 directly transferred to bank account.",
+  "benefits_amount": "Rs. 1,600 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Kerala Agricultural Workers Welfare Fund Board Membership Passbook",
+    "Age proof certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply through the local Grama Panchayat or Akshaya Centre.",
+    "Welfare Inspector verifies 10 years of farm labor service.",
+    "Pension approved and credited monthly via DBT."
+  ],
+  "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+  "application_url": "https://sevana.gov.in/",
+  "source_title": "Labour & Skills Department, Govt of Kerala",
+  "source_excerpt": "Monthly pension of Rs. 1,600 is paid to registered veteran agricultural laborers in Kerala.",
+  "effective_date": "1980-04-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

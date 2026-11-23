@@ -1,0 +1,89 @@
+{
+  "scheme_id": "mathruvandanam-janani-kerala",
+  "name": "Janani Janmaraksha Tribal Maternity Scheme",
+  "name_kannada": "ಜನನಿ ಜನ್ಮರಕ್ಷಾ ಆದಿವಾಸಿ ಮಾತೃತ್ವ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Janani Janmaraksha",
+    "Kerala Tribal Maternity Support"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Scheduled Tribes Development Department, Govt of Kerala",
+  "category": "Healthcare",
+  "subcategory": "Maternal & Child Health",
+  "short_description": "Financial assistance of Rs. 1,000 per month for 18 months directly to pregnant and lactating mothers from Scheduled Tribes.",
+  "detailed_description": "Janani Janmaraksha provides monthly nutritional and financial assistance of Rs. 1,000 for 18 consecutive months (from the 3rd month of pregnancy until the child reaches 1 year of age) directly into the bank accounts of pregnant and lactating mothers belonging to Scheduled Tribes in Kerala.",
+  "description_kannada": "ಪರಿಶಿಷ್ಟ ಪಂಗಡದ (ST) ಗರ್ಭಿಣಿಯರು ಮತ್ತು ಬಾಣಂತಿಯರಿಗೆ ಪೌಷ್ಟಿಕ ಆಹಾರಕ್ಕಾಗಿ 18 ತಿಂಗಳುಗಳ ಕಾಲ ಮಾಸಿಕ ರೂ. 1,000 ಆರ್ಥಿಕ ಸಹಾಯ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "st"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "jj_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala ST Development Dept Order No. 89/2014",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "jj_category",
+      "name": "Scheduled Tribe (ST) Beneficiary",
+      "field": "social_category",
+      "operator": "equals",
+      "expected_value": "st",
+      "is_mandatory": true,
+      "source_citation": "Scheduled Tribe Category Requirement",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಪರಿಶಿಷ್ಟ ಪಂಗಡಕ್ಕೆ (ST) ಸೇರಿದವರಾಗಿರಬೇಕು",
+      "clarification_question_en": "Does the applicant belong to a Scheduled Tribe?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಪರಿಶಿಷ್ಟ ಪಂಗಡಕ್ಕೆ (ST) ಸೇರಿದವರೇ?"
+    },
+    {
+      "criterion_id": "jj_gender",
+      "name": "Female Mother",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Maternal Beneficiary Gender Clause",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant female?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 1,000 per month for 18 continuous months (Total Rs. 18,000).",
+  "benefits_amount": "Rs. 1,000 per month for 18 months",
+  "required_documents": [
+    "Mother's Aadhaar Card",
+    "Scheduled Tribe (ST) Community Certificate",
+    "MCH (Mother & Child Health) Card / Anganwadi registration",
+    "Mother's bank passbook"
+  ],
+  "application_process": [
+    "Register pregnancy at nearest Anganwadi centre or Tribal Extension Office (TEO).",
+    "Promoter / ASHA worker submits particulars to Tribal Development Officer (TDO).",
+    "Monthly funds transferred directly into mother's bank account."
+  ],
+  "official_portal_url": "https://stdd.kerala.gov.in/",
+  "application_url": "https://stdd.kerala.gov.in/",
+  "source_title": "Scheduled Tribes Development Department, Govt of Kerala",
+  "source_excerpt": "Janani Janmaraksha gives Rs. 1,000 monthly for 18 months to pregnant and lactating mothers from Scheduled Tribes.",
+  "effective_date": "2014-07-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

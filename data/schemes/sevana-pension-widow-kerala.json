@@ -1,0 +1,78 @@
+{
+  "scheme_id": "sevana-pension-widow-kerala",
+  "name": "Kerala Sevana Widow Pension Scheme",
+  "name_kannada": "ಕೇರಳ ಸೇವನಾ ವಿಧವಾ ಪಿಂಚಣಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Kerala Widow Pension",
+    "Sevana Widow Pension"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Local Self Government Department, Govt of Kerala",
+  "category": "Social Security",
+  "subcategory": "Widow Welfare",
+  "short_description": "Monthly pension of Rs. 1,600 to destitute and widowed women residing in Kerala.",
+  "detailed_description": "Provides a monthly social security pension of Rs. 1,600 to destitute widows residing in Kerala whose annual family income does not exceed Rs. 1 Lakh and who have not remarried, supporting their financial independence and dignity.",
+  "description_kannada": "ಕೇರಳದ ಬಡ ವಿಧವೆ ಮಹಿಳೆಯರಿಗೆ ಜೀವನೋಪಾಯಕ್ಕಾಗಿ ಮಾಸಿಕ ರೂ. 1,600 ವಿಧವಾ ಪಿಂಚಣಿ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "swp_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala LSGD Widow Pension Rules",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "swp_gender",
+      "name": "Female Widow",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Widow Beneficiary Criteria",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant a widowed woman?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ವಿಧವೆ ಮಹಿಳೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Monthly direct benefit transfer of Rs. 1,600 into the widow's bank account.",
+  "benefits_amount": "Rs. 1,600 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Husband's Death Certificate",
+    "Non-remarriage certificate issued by Village Officer",
+    "BPL Ration Card / Income Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Apply via Gram Panchayat, Municipal Office, or Akshaya Centre.",
+    "Local body secretary sanctions the pension after field inspection.",
+    "Monthly pension credited via DBT."
+  ],
+  "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+  "application_url": "https://sevana.gov.in/",
+  "source_title": "Local Self Government Department, Govt of Kerala",
+  "source_excerpt": "Widow pension of Rs. 1,600 per month is paid to eligible destitute widows in Kerala.",
+  "effective_date": "1995-08-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,65 @@
+{
+  "scheme_id": "ysr-bima-andhra-pradesh",
+  "name": "YSR Bima Insurance Scheme",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಬೀಮಾ ಯೋಜನೆ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "YSR Bima",
+    "AP Natural Death and Accidental Insurance"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Labour and Employment, Govt of Andhra Pradesh",
+  "category": "Social Security",
+  "subcategory": "Life & Accident Insurance",
+  "short_description": "Insurance coverage up to Rs. 5 Lakh for accidental death and Rs. 1 Lakh for natural death of primary family breadwinners.",
+  "detailed_description": "YSR Bima is an insurance scheme where the entire premium is borne by the State Government, offering financial relief of Rs. 5 Lakh in case of accidental death/permanent disability (age 18-70) and Rs. 1 Lakh in case of natural death (age 18-50) of the primary earning member of poor families.",
+  "description_kannada": "ಕುಟುಂಬದ ಮುಖ್ಯಸ್ಥರ ಆಕಸ್ಮಿಕ ಅಥವಾ ಸ್ವಾಭಾವಿಕ ಸಾವಿನ ಸಂದರ್ಭದಲ್ಲಿ ರೂ. 5 ಲಕ್ಷದವರೆಗೆ ಸಂಪೂರ್ಣ ಉಚಿತ ಜೀವ ವಿಮೆ.",
+  "min_age": 18,
+  "max_age": 70,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "bima_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP Labour Dept G.O.Ms.No. 29",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Immediate relief of Rs. 10,000 for funeral expenses within 24 hours, followed by claim settlement of Rs. 1 Lakh to Rs. 5 Lakh.",
+  "benefits_amount": "Rs. 1 Lakh to Rs. 5 Lakh insurance cover",
+  "required_documents": [
+    "Aadhaar Card of the deceased breadwinner and nominee",
+    "Rice Card (BPL proof)",
+    "Death Certificate and FIR / Post-Mortem Report (for accidental claims)",
+    "Nominee Bank Passbook"
+  ],
+  "application_process": [
+    "Secretariat staff reports death within 24 hours and pays Rs. 10,000 immediate cash relief.",
+    "Claim documents submitted to District Collectorate.",
+    "Full claim amount settled via DBT within 21 days."
+  ],
+  "official_portal_url": "https://ysrbima.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Labour Department, Govt of Andhra Pradesh",
+  "source_excerpt": "YSR Bima provides 100% state-funded insurance to secure unorganized and BPL families upon demise of primary breadwinners.",
+  "effective_date": "2020-10-21",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

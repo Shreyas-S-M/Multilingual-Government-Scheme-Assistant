@@ -1,0 +1,64 @@
+{
+  "scheme_id": "sampoorna-poshana-andhra-pradesh",
+  "name": "YSR Sampoorna Poshana",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಸಂಪೂರ್ಣ ಪೋಷಣಾ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Sampoorna Poshana",
+    "YSR Sampoorna Poshana Plus",
+    "AP Nutrition Scheme"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Women Development and Child Welfare, Govt of AP",
+  "category": "Healthcare",
+  "subcategory": "Maternal & Child Nutrition",
+  "short_description": "Nutritious meal kits and milk provided to pregnant women, lactating mothers, and children aged 6 to 72 months.",
+  "detailed_description": "YSR Sampoorna Poshana provides nutritious food kits comprising milk, eggs, rice, dal, and fortified peanut chikkis monthly to pregnant women, lactating mothers, and children aged 6-72 months via Anganwadi centres across Andhra Pradesh to eliminate malnutrition and maternal anaemia.",
+  "description_kannada": "ಗರ್ಭಿಣಿಯರು, ಬಾಣಂತಿಯರು ಮತ್ತು 6 ವರ್ಷದೊಳಗಿನ ಮಕ್ಕಳಿಗೆ ಪೌಷ್ಟಿಕ ಆಹಾರ ಮತ್ತು ಹಾಲು ಒದಗಿಸುವ ಅಪೌಷ್ಟಿಕತೆ ನಿವಾರಣೆ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sp_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP WDCW Dept G.O.Ms.No. 18",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Monthly nutritional kit with 25 eggs, 5 litres milk, oil, dal, and take-home energy-dense ration.",
+  "benefits_amount": "Nutritious Food Kit Monthly",
+  "required_documents": [
+    "Mother's Aadhaar Card",
+    "MCH (Mother and Child Health) Card / RCH ID",
+    "Anganwadi Registration Entry"
+  ],
+  "application_process": [
+    "Register pregnancy at nearest Anganwadi centre or PHC.",
+    "Receive monthly hot meals and take-home ration kits directly through Anganwadi workers."
+  ],
+  "official_portal_url": "https://wdcw.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Women Development & Child Welfare, Govt of AP",
+  "source_excerpt": "YSR Sampoorna Poshana delivers supplementary nutrition to pregnant women and infants to combat stunting and anaemia.",
+  "effective_date": "2020-09-07",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

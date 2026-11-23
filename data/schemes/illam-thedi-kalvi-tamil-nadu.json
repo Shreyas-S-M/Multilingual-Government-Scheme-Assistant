@@ -1,0 +1,62 @@
+{
+  "scheme_id": "illam-thedi-kalvi-tamil-nadu",
+  "name": "Illam Thedi Kalvi (Education at Doorstep)",
+  "name_kannada": "ಇಲ್ಲಂ ತೇಡಿ ಕಲ್ವಿ (ಮನೆ ಬಾಗಿಲಿಗೆ ಶಿಕ್ಷಣ) (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Illam Thedi Kalvi",
+    "ITK",
+    "Education at Doorstep TN"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of School Education, Govt of Tamil Nadu",
+  "category": "Education",
+  "subcategory": "Remedial Learning",
+  "short_description": "Free evening remedial education sessions conducted by community volunteers near homes for students of Classes 1 to 8.",
+  "detailed_description": "Illam Thedi Kalvi is a massive community volunteer-driven remedial education program offering free daily 90-minute evening learning sessions close to students' habitations to bridge learning loss and improve foundational reading and math competencies for Classes 1 to 8.",
+  "description_kannada": "1 ರಿಂದ 8 ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಕಲಿಕಾ ಕೊರತೆ ನೀಗಿಸಲು ಸಂಜೆ ವೇಳೆ ವಸತಿ ಸಮೀಪ ಉಚಿತ ಶಿಕ್ಷಣ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 6,
+  "max_age": 14,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "student"
+  ],
+  "rules": [
+    {
+      "criterion_id": "itk_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu School Education Dept Guidelines",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% free daily supplementary evening coaching, activity-based learning kits, and reading books.",
+  "benefits_amount": "Free Supplementary Education",
+  "required_documents": [
+    "Student School Enrollment Details / EMIS ID"
+  ],
+  "application_process": [
+    "Students join their neighborhood ITK centre after school hours.",
+    "Coordinated by local female volunteer tutors trained by the School Education Department."
+  ],
+  "official_portal_url": "https://illamthedikalvi.tnschools.gov.in/",
+  "application_url": "https://illamthedikalvi.tnschools.gov.in/",
+  "source_title": "School Education Department, Govt of Tamil Nadu",
+  "source_excerpt": "Illam Thedi Kalvi offers home-neighborhood learning support to primary and middle school students to reinforce basic literacy and numeracy.",
+  "effective_date": "2021-10-27",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,65 @@
+{
+  "scheme_id": "sevana-pension-disability-kerala",
+  "name": "Kerala Sevana Disability Pension Scheme",
+  "name_kannada": "ಕೇರಳ ಸೇವನಾ ವಿಕಲಚೇತನರ ಪಿಂಚಣಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Kerala Disability Pension",
+    "Sevana Disability Pension"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Local Self Government Department, Govt of Kerala",
+  "category": "Social Welfare",
+  "subcategory": "Disability Welfare",
+  "short_description": "Monthly disability pension of Rs. 1,600 for persons with disabilities (40% and above) in Kerala.",
+  "detailed_description": "Guarantees a monthly financial pension of Rs. 1,600 to physically, mentally, or visually challenged persons with a minimum 40% disability whose family annual income is below Rs. 1 Lakh, providing essential financial stability.",
+  "description_kannada": "ಶೇಕಡಾ 40 ಕ್ಕಿಂತ ಹೆಚ್ಚು ವಿಕಲಾಂಗತೆ ಹೊಂದಿರುವ ಬಡ ವ್ಯಕ್ತಿಗಳಿಗೆ ಮಾಸಿಕ ರೂ. 1,600 ಪಿಂಚಣಿ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sdp_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala LSGD Disability Pension Order",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Monthly pension of Rs. 1,600 credited to bank account or doorstep cooperative bank delivery.",
+  "benefits_amount": "Rs. 1,600 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Medical Board Disability Certificate with 40%+ rating or UDID Card",
+    "BPL Ration Card / Income Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Submit application at the local Gram Panchayat or Urban Local Body office.",
+    "Inspection verified by the Secretary.",
+    "Monthly allowance paid via DBT."
+  ],
+  "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+  "application_url": "https://sevana.gov.in/",
+  "source_title": "Local Self Government Dept, Govt of Kerala",
+  "source_excerpt": "Under the Sevana scheme, persons with disabilities of 40% or more receive a monthly pension of Rs. 1,600.",
+  "effective_date": "1995-08-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,83 @@
+{
+  "scheme_id": "kalyanamasthu-andhra-pradesh",
+  "name": "YSR Kalyanamasthu & Shaadi Tohfa",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಕಲ್ಯಾಣಮಸ್ತು ಮತ್ತು ಶಾದಿ ತೋಹ್ಫಾ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "YSR Kalyanamasthu",
+    "Shaadi Tohfa",
+    "AP Marriage Grant"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Social Welfare & Minorities Welfare Department, Govt of AP",
+  "category": "Social Welfare",
+  "subcategory": "Marriage Financial Assistance",
+  "short_description": "Financial grant of Rs. 40,000 to Rs. 1,50,000 for marriages of poor brides from SC, ST, BC, Minority, and Divyang families.",
+  "detailed_description": "YSR Kalyanamasthu provides financial support to poor brides (SC/ST: Rs. 1,00,000; Inter-caste: Rs. 1,20,000; BC: Rs. 50,000; Differently Abled: Rs. 1,50,000; Shaadi Tohfa for Minorities: Rs. 1,00,000) on the mandatory condition that both bride and groom have passed Class 10.",
+  "description_kannada": "ಎಸ್ಸಿ, ಎಸ್ಟಿ, ಹಿಂದುಳಿದ ವರ್ಗ ಹಾಗೂ ವಿಕಲಚೇತನ ವಧುಗಳಿಗೆ ರೂ. 40,000 ದಿಂದ 1,50,000 ವರೆಗೆ ವಿವಾಹ ಪ್ರೋತ್ಸಾಹಧನ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "sc",
+    "st",
+    "bc",
+    "minority",
+    "ews"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "km_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 61 Social Welfare Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "km_age",
+      "name": "Bride Age 18 and Groom Age 21",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Legal Marriage Age and 10th Pass Verification Criteria",
+      "description_kannada": "ವಧುವಿಗೆ ಕನಿಷ್ಠ 18 ವರ್ಷ ವಯಸ್ಸಾಗಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the bride?",
+      "clarification_question_kn": "ವಧುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "One-time financial grant ranging from Rs. 40,000 to Rs. 1,50,000 transferred directly to the bride's bank account.",
+  "benefits_amount": "Rs. 40,000 to Rs. 1,50,000 one-time",
+  "required_documents": [
+    "Aadhaar Cards of Bride and Groom",
+    "Class 10 (SSC) Pass Certificate of both Bride and Groom",
+    "Integrated Caste Certificate",
+    "Rice Card (BPL proof)",
+    "Marriage Registration Certificate"
+  ],
+  "application_process": [
+    "Apply at Grama / Ward Sachivalayam within 60 days of solemnizing marriage.",
+    "Welfare Assistant conducts physical inspection and certificate verification.",
+    "Funds disbursed via DBT into bride's bank account."
+  ],
+  "official_portal_url": "https://gsws.ap.gov.in/",
+  "application_url": "https://navasakam.ap.gov.in/",
+  "source_title": "Social Welfare Department, Govt of Andhra Pradesh",
+  "source_excerpt": "YSR Kalyanamasthu grants financial aid up to Rs. 1.5 Lakh for marriages of daughters from vulnerable communities who completed Class 10.",
+  "effective_date": "2022-10-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

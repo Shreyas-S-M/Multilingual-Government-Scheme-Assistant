@@ -1,0 +1,62 @@
+{
+  "scheme_id": "aardram-mission-kerala",
+  "name": "Aardram Health Mission",
+  "name_kannada": "ಆರ್ದ್ರಂ ಆರೋಗ್ಯ ಮಿಷನ್ (ಕೇರಳ)",
+  "aliases": [
+    "Aardram Mission",
+    "Kerala Family Health Centre Scheme"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Health and Family Welfare Department, Govt of Kerala",
+  "category": "Healthcare",
+  "subcategory": "Public Healthcare Transformation",
+  "short_description": "Free outpatient consultation, digital lab diagnostics, and lifestyle disease management at Family Health Centres.",
+  "detailed_description": "Aardram Mission transforms primary health centres into patient-friendly Family Health Centres (FHCs), providing free outpatient consultations from 9 AM to 6 PM, free basic laboratory tests, free essential medicines, and evening specialty clinics for depression and lifestyle diseases.",
+  "description_kannada": "ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳನ್ನು ಕುಟುಂಬ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳಾಗಿ ಮೇಲ್ದರ್ಜೆಗೇರಿಸಿ ಉಚಿತ ಚಿಕಿತ್ಸೆ, ಲ್ಯಾಬ್ ತಪಾಸಣೆ ಮತ್ತು ಔಷಧಿ ಒದಗಿಸುವ ಮಿಷನ್.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ard_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Health Dept Mission Order",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "100% free outpatient consultations, free lab diagnostics, free chronic disease medicines, and depression screening.",
+  "benefits_amount": "Free Primary & Family Healthcare",
+  "required_documents": [
+    "Aadhaar Card or Hospital OP Ticket"
+  ],
+  "application_process": [
+    "Walk into any Family Health Centre (FHC) in Kerala.",
+    "Obtain electronic token and consult medical officer.",
+    "Free pharmacy dispensing and lab testing on site."
+  ],
+  "official_portal_url": "https://dhs.kerala.gov.in/",
+  "application_url": "https://dhs.kerala.gov.in/",
+  "source_title": "Directorate of Health Services, Govt of Kerala",
+  "source_excerpt": "Aardram Mission provides patient-centered, free quality primary health services across all Family Health Centres.",
+  "effective_date": "2017-02-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

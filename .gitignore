@@ -66,3 +66,9 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Agent metadata
+.agents/
+.codex/
+.impeccable/
+skills-lock.json

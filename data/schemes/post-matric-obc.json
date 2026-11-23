@@ -1,0 +1,44 @@
+{
+  "scheme_id": "post-matric-obc",
+  "name": "Post-Matric Scholarship for OBC Students",
+  "name_kannada": "",
+  "aliases": [
+    "Post-Matric Scholarship for OBC Students"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Social Justice and Empowerment, Government of India",
+  "category": "Education",
+  "subcategory": "Needs official criteria verification",
+  "short_description": "Post-matric education assistance for eligible OBC students under applicable guidelines",
+  "detailed_description": "Post-matric education assistance for eligible OBC students under applicable guidelines This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+  "description_kannada": "",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [],
+  "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+  "benefits_amount": "Not specified — verify official source",
+  "required_documents": [],
+  "application_process": [
+    "Open the official portal and verify current eligibility, documents, application status and process."
+  ],
+  "official_portal_url": "https://scholarships.gov.in/",
+  "application_url": "https://scholarships.gov.in/",
+  "source_title": "Ministry of Social Justice and Empowerment, Government portal",
+  "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+  "effective_date": null,
+  "last_verified_date": "needs-review",
+  "source_reliability": "needs_review",
+  "status": "needs_review",
+  "is_active": true
+}

@@ -1,0 +1,44 @@
+{
+  "scheme_id": "pm-kaushal-vikas",
+  "name": "Pradhan Mantri Kaushal Vikas Yojana",
+  "name_kannada": "",
+  "aliases": [
+    "Pradhan Mantri Kaushal Vikas Yojana"
+  ],
+  "level": "central",
+  "state": null,
+  "department": "Ministry of Skill Development and Entrepreneurship, Government of India",
+  "category": "Skill Development",
+  "subcategory": "Needs official criteria verification",
+  "short_description": "Skill training and certification through approved training programmes",
+  "detailed_description": "Skill training and certification through approved training programmes This catalogue entry is for discovery only. Verify the current notification, eligibility, benefits and application window at the linked official portal before relying on it.",
+  "description_kannada": "",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [],
+  "benefits_summary": "See the official portal for current benefits and conditions; not independently verified in this project build.",
+  "benefits_amount": "Not specified — verify official source",
+  "required_documents": [],
+  "application_process": [
+    "Open the official portal and verify current eligibility, documents, application status and process."
+  ],
+  "official_portal_url": "https://www.skillindiadigital.gov.in/",
+  "application_url": "https://www.skillindiadigital.gov.in/",
+  "source_title": "Ministry of Skill Development and Entrepreneurship, Government portal",
+  "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
+  "effective_date": null,
+  "last_verified_date": "needs-review",
+  "source_reliability": "needs_review",
+  "status": "needs_review",
+  "is_active": true
+}

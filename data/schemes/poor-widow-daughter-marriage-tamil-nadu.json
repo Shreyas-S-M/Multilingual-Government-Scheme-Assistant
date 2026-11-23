@@ -1,0 +1,78 @@
+{
+  "scheme_id": "poor-widow-daughter-marriage-tamil-nadu",
+  "name": "E.V.R. Maniammaiyar Ninaivu Marriage Assistance for Poor Widows' Daughters",
+  "name_kannada": "ಇ.ವಿ.ಆರ್. ಮಣಿಯಮ್ಮೈಯಾರ್ ಬಡ ವಿಧವೆಯರ ಪುತ್ರಿಯರ ವಿವಾಹ ಸಹಾಯ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "E.V.R. Maniammaiyar Scheme",
+    "TN Widow Daughter Marriage Grant"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare & Women Empowerment, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Marriage Financial Aid",
+  "short_description": "Grant of Rs. 25,000 to Rs. 50,000 plus an 8-gram gold coin to destitute mothers for marrying off their daughters.",
+  "detailed_description": "Relieves poor widowed mothers from heavy marriage expenses by granting Rs. 25,000 (Class 10 pass) or Rs. 50,000 (graduate/diploma) plus an 8-gram 22K gold coin for the marriage of their daughters, subject to annual family income not exceeding Rs. 72,000.",
+  "description_kannada": "ಬಡ ವಿಧವೆ ತಾಯಿಯ ಹೆಣ್ಣು ಮಕ್ಕಳ ವಿವಾಹಕ್ಕಾಗಿ ರೂ. 25,000 ದಿಂದ 50,000 ಧನಸಹಾಯ ಮತ್ತು 8 ಗ್ರಾಂ ಚಿನ್ನದ ನಾಣ್ಯ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 72000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "pwd_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Social Welfare Dept Order",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "pwd_age",
+      "name": "Bride Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Legal Marriage Age Criteria",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the daughter?",
+      "clarification_question_kn": "ಮದುವೆಯಾಗುವ ಹೆಣ್ಣು ಮಗುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Financial assistance of Rs. 25,000 to Rs. 50,000 plus 8 grams 22K gold coin.",
+  "benefits_amount": "Rs. 25,000 to Rs. 50,000 + 8g Gold",
+  "required_documents": [
+    "Mother's Widow Certificate",
+    "Bride's Aadhaar Card",
+    "Income Certificate (<= Rs. 72,000 p.a.)",
+    "Educational Qualification Certificate",
+    "Marriage Invitation card"
+  ],
+  "application_process": [
+    "Apply via e-Sevai portal 40 days before wedding date.",
+    "Verification carried out by District Social Welfare staff.",
+    "Benefit disbursed at the Taluk / Block office."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19444",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Social Welfare Department, Govt of Tamil Nadu",
+  "source_excerpt": "Financial aid and 8 grams gold coin are given to poor widowed mothers to help solemnize their daughters' marriages.",
+  "effective_date": "1981-06-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

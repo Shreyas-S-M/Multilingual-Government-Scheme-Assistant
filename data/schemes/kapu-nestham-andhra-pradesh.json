@@ -1,0 +1,95 @@
+{
+  "scheme_id": "kapu-nestham-andhra-pradesh",
+  "name": "YSR Kapu Nestham",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಕಾಪು ನೇಸ್ತಂ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Kapu Nestham",
+    "YSR Kapu Nestham"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Andhra Pradesh State Kapu Welfare and Development Corporation, Govt of AP",
+  "category": "Social Welfare",
+  "subcategory": "Women Livelihood",
+  "short_description": "Financial assistance of Rs. 15,000 per year to women aged 45 to 60 years from Kapu, Balija, Telaga, and Ontari communities.",
+  "detailed_description": "YSR Kapu Nestham provides financial support of Rs. 60,000 in four installments (Rs. 15,000 per year) directly to poor women between 45 and 60 years of age belonging to Kapu, Balija, Telaga, and Ontari sub-castes to enhance their livelihood and financial security.",
+  "description_kannada": "ಕಾಪು, ಬಲಿಜ, ತೆಲಗ ಸಮುದಾಯಗಳ 45 ರಿಂದ 60 ವರ್ಷ ವಯಸ್ಸಿನ ಮಹಿಳೆಯರಿಗೆ ವಾರ್ಷಿಕ ರೂ. 15,000 ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 45,
+  "max_age": 60,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "kapu",
+    "bc",
+    "general"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "kn_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP Kapu Welfare Dept G.O.Ms.No. 23",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "kn_gender",
+      "name": "Female Applicant",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Kapu Nestham Gender Criteria",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant female?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳೆಯೇ?"
+    },
+    {
+      "criterion_id": "kn_age",
+      "name": "Age 45 to 60 years",
+      "field": "age",
+      "operator": "inclusive_range",
+      "expected_value": [
+        45,
+        60
+      ],
+      "is_mandatory": true,
+      "source_citation": "Kapu Nestham Age Limit Rules",
+      "description_kannada": "ವಯಸ್ಸು 45 ರಿಂದ 60 ವರ್ಷಗಳ ನಡುವೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is the applicant's age?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Direct cash transfer of Rs. 15,000 per year for four years (Total Rs. 60,000).",
+  "benefits_amount": "Rs. 15,000 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Caste Certificate (Kapu / Balija / Telaga / Ontari)",
+    "Integrated Rice Card (BPL proof)",
+    "Bank Account passbook linked to Aadhaar"
+  ],
+  "application_process": [
+    "Apply at Grama / Ward Sachivalayam.",
+    "Welfare & Education Assistant completes field verification.",
+    "Beneficiary list approved by District Collector.",
+    "Amount credited directly into bank account."
+  ],
+  "official_portal_url": "https://navasakam.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Kapu Welfare Corporation, Govt of AP",
+  "source_excerpt": "YSR Kapu Nestham provides Rs. 15,000 per year to women aged 45-60 from Kapu community.",
+  "effective_date": "2020-06-24",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

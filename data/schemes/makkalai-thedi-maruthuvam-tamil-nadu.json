@@ -1,0 +1,64 @@
+{
+  "scheme_id": "makkalai-thedi-maruthuvam-tamil-nadu",
+  "name": "Makkalai Thedi Maruthuvam",
+  "name_kannada": "ಮಕ್ಕಳೈ ತೇಡಿ ಮರುತ್ತುವಂ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Makkalai Thedi Maruthuvam",
+    "Doorstep Healthcare TN"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Health & Family Welfare, Govt of Tamil Nadu",
+  "category": "Healthcare",
+  "subcategory": "Doorstep Healthcare",
+  "short_description": "Doorstep delivery of chronic disease medications and home-based health screening for non-communicable diseases.",
+  "detailed_description": "Makkalai Thedi Maruthuvam delivers essential health services right to the doorsteps of citizens across Tamil Nadu, providing free screening for hypertension and diabetes, doorstep supply of monthly maintenance medicines, palliative care, and physiotherapy for bedridden patients.",
+  "description_kannada": "ಮನೆ ಬಾಗಿಲಿಗೆ ರಕ್ತದೊತ್ತಡ, ಮಧುಮೇಹ ತಪಾಸಣೆ ಮತ್ತು ಉಚಿತ ಔಷಧಿಗಳನ್ನು ತಲುಪಿಸುವ ತಮಿಳುನಾಡು ಸರ್ಕಾರದ ಆರೋಗ್ಯ ಯೋಜನೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "mtm_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu Health Dept Order 2021",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Free monthly doorstep delivery of medicines for hypertension and diabetes, dialysis kits, and home physiotherapy.",
+  "benefits_amount": "Free Doorstep Healthcare & Medicines",
+  "required_documents": [
+    "Aadhaar Card",
+    "Medical prescription / PHC outpatient record",
+    "Smart Family Card"
+  ],
+  "application_process": [
+    "Women Health Volunteers (WHVs) visit households for routine screening.",
+    "Patients diagnosed with NCDs are registered in the mobile app.",
+    "Monthly medication boxes delivered directly at home."
+  ],
+  "official_portal_url": "https://tnhealth.tn.gov.in/",
+  "application_url": "https://tnhealth.tn.gov.in/",
+  "source_title": "Health & Family Welfare Department, Govt of Tamil Nadu",
+  "source_excerpt": "Makkalai Thedi Maruthuvam ensures doorstep delivery of non-communicable disease medication to senior citizens and vulnerable patients.",
+  "effective_date": "2021-08-05",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

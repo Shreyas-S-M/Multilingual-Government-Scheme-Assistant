@@ -1,0 +1,78 @@
+{
+  "scheme_id": "cmchis-tamil-nadu",
+  "name": "Chief Minister's Comprehensive Health Insurance Scheme (CMCHIS)",
+  "name_kannada": "ಮುಖ್ಯಮಂತ್ರಿಗಳ ಸಮಗ್ರ ಆರೋಗ್ಯ ವಿಮಾ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "CMCHIS",
+    "Amma Maruthuva Kaappeettu Thittam",
+    "TN Health Insurance"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Tamil Nadu Health Systems Project, Health & Family Welfare Dept, Govt of Tamil Nadu",
+  "category": "Healthcare",
+  "subcategory": "Health Assurance",
+  "short_description": "Cashless health cover up to Rs. 5 Lakh per family per year for secondary and tertiary hospitalization in Tamil Nadu.",
+  "detailed_description": "CMCHIS provides cashless medical and surgical treatment up to Rs. 5 Lakh per family per year in empanelled government and private hospitals across Tamil Nadu for 1,090 surgical procedures, 401 medical treatments, and 52 diagnostic tests.",
+  "description_kannada": "ಬಡ ಕುಟುಂಬಗಳಿಗೆ ವಾರ್ಷಿಕ ರೂ. 5 ಲಕ್ಷದವರೆಗೆ ಉಚಿತ ನಗದು ರಹಿತ ಚಿಕಿತ್ಸೆ ನೀಡುವ ತಮಿಳುನಾಡಿನ ಸಮಗ್ರ ಆರೋಗ್ಯ ವಿಮೆ.",
+  "min_age": null,
+  "max_age": null,
+  "max_income": 120000.0,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "cmchis_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu G.O.Ms.No. 169 Health Dept",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "cmchis_income",
+      "name": "Family Annual Income ceiling Rs 1.2 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 120000.0,
+      "is_mandatory": true,
+      "source_citation": "CMCHIS Income Eligibility Parameters",
+      "description_kannada": "ವಾರ್ಷಿಕ ಆದಾಯ 1.2 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is your total family annual income?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Cashless treatment and surgery up to Rs. 5 Lakh per annum per family.",
+  "benefits_amount": "Up to Rs. 5 Lakh per year",
+  "required_documents": [
+    "Smart Ration Card (Family Card)",
+    "Aadhaar Card of all family members",
+    "Income certificate issued by VAO/Tahsildar (unless BPL ration card held)"
+  ],
+  "application_process": [
+    "Visit the District Collectorate CMCHIS kiosk or nearest e-Sevai centre with Smart Card.",
+    "Biometric enrolment and family photograph captured.",
+    "Smart Health Insurance Card issued on the spot.",
+    "Avail cashless treatment at any empanelled hospital by presenting the card."
+  ],
+  "official_portal_url": "https://www.cmchistn.com/",
+  "application_url": "https://www.cmchistn.com/",
+  "source_title": "CMCHIS Portal, Health and Family Welfare Dept, Govt of Tamil Nadu",
+  "source_excerpt": "CMCHIS ensures cashless hospitalization coverage up to Rs. 5 Lakh per year to eligible families in Tamil Nadu.",
+  "effective_date": "2012-01-11",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

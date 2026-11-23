@@ -1,0 +1,78 @@
+{
+  "scheme_id": "snehasparsham-kerala",
+  "name": "Snehasparsham Scheme for Unwed Mothers",
+  "name_kannada": "ಸ್ನೇಹಸ್ಪರ್ಶಂ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Snehasparsham",
+    "Kerala Unwed Mothers Financial Aid"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Social Justice Department, Govt of Kerala",
+  "category": "Social Welfare",
+  "subcategory": "Destitute Women Rehabilitation",
+  "short_description": "Monthly financial aid of Rs. 2,000 to unwed mothers from vulnerable and marginalized communities in Kerala.",
+  "detailed_description": "Snehasparsham provides a monthly rehabilitation stipend of Rs. 2,000 directly to unwed mothers (primarily belonging to Scheduled Tribes and marginalized backgrounds) to facilitate financial independence, childcare, and basic livelihood security.",
+  "description_kannada": "ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಅವಿವಾಹಿತ ತಾಯಂದಿರಿಗೆ ಆರ್ಥಿಕ ಪುನರ್ವಸತಿಗಾಗಿ ಮಾಸಿಕ ರೂ. 2,000 ಧನಸಹಾಯ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 100000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sn_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Social Justice Dept G.O.(P) No. 34/2011",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "sn_gender",
+      "name": "Female Unwed Mother",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "Snehasparsham Target Beneficiary Definition",
+      "description_kannada": "ಅಭ್ಯರ್ಥಿಯು ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant an unwed mother?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಅವಿವಾಹಿತ ತಾಯಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct monthly deposit of Rs. 2,000 into the mother's bank account.",
+  "benefits_amount": "Rs. 2,000 per month",
+  "required_documents": [
+    "Aadhaar Card",
+    "Child's Birth Certificate",
+    "Unwed Mother Certificate issued by Village Officer / ICDS Supervisor",
+    "BPL Ration Card / Income Certificate",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Submit application to the Child Development Project Officer (CDPO) or District Social Justice Officer (DSJO).",
+    "Social worker conducts discreet verification.",
+    "Monthly stipend credited directly to bank account."
+  ],
+  "official_portal_url": "https://sjd.kerala.gov.in/scheme-info.php?id=NTc=",
+  "application_url": "https://sjd.kerala.gov.in/",
+  "source_title": "Social Justice Department, Govt of Kerala",
+  "source_excerpt": "Snehasparsham provides monthly financial assistance of Rs. 2,000 to unwed mothers to lead a life of dignity.",
+  "effective_date": "2011-06-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

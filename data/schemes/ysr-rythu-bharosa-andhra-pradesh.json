@@ -1,0 +1,80 @@
+{
+  "scheme_id": "ysr-rythu-bharosa-andhra-pradesh",
+  "name": "YSR Rythu Bharosa / Annadata Sukhibhava",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ರೈತು ಭರೋಸಾ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Rythu Bharosa",
+    "YSR Rythu Bharosa",
+    "Annadata Sukhibhava",
+    "AP Farmer Support"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Agriculture & Farmers Welfare, Govt of Andhra Pradesh",
+  "category": "Agriculture",
+  "subcategory": "Income Support",
+  "short_description": "Financial assistance of Rs. 13,500 per year for farmer and tenant farmer families in Andhra Pradesh.",
+  "detailed_description": "YSR Rythu Bharosa provides financial assistance of Rs. 13,500 per annum to all landholding farmer families and landless tenant farmers belonging to SC, ST, BC, and Minority categories in Andhra Pradesh for agricultural input procurement.",
+  "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶದ ರೈತರು ಮತ್ತು ಹಿಂದುಳಿದ ವರ್ಗಗಳ ಗೇಣಿದಾರರಿಗೆ ವಾರ್ಷಿಕ ರೂ. 13,500 ಕೃಷಿ ಹೂಡಿಕೆ ನೆರವು ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "ysr_rb_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP G.O.Ms.No. 113 Agriculture & Cooperation Dept",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "ysr_rb_occupation",
+      "name": "Occupation Farmer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "YSR Rythu Bharosa Operational Guidelines Section 2",
+      "description_kannada": "ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is your primary occupation farming or cultivation?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Rs. 13,500 per year per farmer family distributed across three crop season installments.",
+  "benefits_amount": "Rs. 13,500 per year",
+  "required_documents": [
+    "Aadhaar Card",
+    "Pattadar Passbook / 1-B Adangal or CCRC agreement for tenant farmers",
+    "Aadhaar-seeded bank account passbook",
+    "Ration Card / Rice Card"
+  ],
+  "application_process": [
+    "Enroll at the local Rythu Bharosa Kendra (RBK) or Grama Sachivalayam.",
+    "Verify landholding survey numbers with Village Agriculture Assistant (VAA).",
+    "Complete biometric eKYC authentication.",
+    "Check social audit beneficiary list published at the Village Secretariat."
+  ],
+  "official_portal_url": "https://ysrrythubharosa.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "YSR Rythu Bharosa Portal, Govt of Andhra Pradesh",
+  "source_excerpt": "Under YSR Rythu Bharosa, Rs. 13,500 is credited annually to farmer families to meet pre-sowing and agricultural input requirements.",
+  "effective_date": "2019-10-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

@@ -1,0 +1,77 @@
+{
+  "scheme_id": "moovalur-marriage-assistance-tamil-nadu",
+  "name": "Moovalur Ramamirtham Ammaiyar Marriage Assistance Scheme",
+  "name_kannada": "ಮೂವಲೂರು ರಾಮಾಮೃತಂ ಅಮ್ಮೈಯಾರ್ ವಿವಾಹ ಸಹಾಯ ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "Moovalur Marriage Scheme",
+    "TN Gold for Thali Scheme"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Social Welfare & Women Empowerment, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Marriage Assistance",
+  "short_description": "Financial grant of Rs. 25,000 to Rs. 50,000 along with an 8-gram 22-carat gold coin (Thirumangalyam) for marriage of poor brides.",
+  "detailed_description": "This legacy social welfare scheme provides financial aid of Rs. 25,000 (for Class 10 pass brides) or Rs. 50,000 (for degree/diploma holders) along with an 8-gram (one sovereign) 22-carat gold coin for Thirumangalyam to economically underprivileged brides in Tamil Nadu.",
+  "description_kannada": "ಬಡ ಕುಟುಂಬಗಳ ವಧುಗಳಿಗೆ ರೂ. 25,000 ದಿಂದ 50,000 ಧನಸಹಾಯ ಮತ್ತು 8 ಗ್ರಾಂ ಚಿನ್ನದ ನಾಣ್ಯ ನೀಡುವ ವಿವಾಹ ಯೋಜನೆ.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": 72000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "mma_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Social Welfare Dept Marriage Guidelines",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "mma_age",
+      "name": "Minimum Age 18",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Legal Marriage Age Criteria",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 18 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the bride?",
+      "clarification_question_kn": "ವಧುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "Cash assistance of Rs. 25,000 to Rs. 50,000 plus 8 grams 22K gold coin.",
+  "benefits_amount": "Rs. 25,000 to Rs. 50,000 + 8g Gold",
+  "required_documents": [
+    "Aadhaar Card of Bride and Groom",
+    "Educational Qualification Certificate (10th mark sheet or Degree)",
+    "Income Certificate (annual income <= Rs. 72,000)",
+    "Marriage Invitation / Marriage Registration Certificate"
+  ],
+  "application_process": [
+    "Apply online through e-Sevai centre 40 days prior to the wedding date.",
+    "District Social Welfare Officer conducts field verification.",
+    "Cheque and gold coin distributed at the Block Development Office."
+  ],
+  "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19441",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Social Welfare Department, Govt of Tamil Nadu",
+  "source_excerpt": "Marriage assistance with 8 grams of gold is provided to poor brides who have completed specified educational criteria.",
+  "effective_date": "1989-06-03",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

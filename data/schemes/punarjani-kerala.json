@@ -1,0 +1,66 @@
+{
+  "scheme_id": "punarjani-kerala",
+  "name": "Punarjani Coastal Fishermen Housing & Rehabilitation Scheme",
+  "name_kannada": "ಪುನರ್ಜನಿ ಕರಾವಳಿ ಮೀನುಗಾರರ ವಸತಿ ಪುನರ್ವಸತಿ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Punarjani Scheme",
+    "Kerala Fishermen Coastal Relocation"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Fisheries Department, Govt of Kerala",
+  "category": "Housing",
+  "subcategory": "Disaster Relocation",
+  "short_description": "Financial compensation of Rs. 10 Lakh for safe relocation and house construction of fishermen families living within 50m of tidal coastline.",
+  "detailed_description": "Punarjani (Punargeham) provides a comprehensive package of Rs. 10 Lakh (Rs. 6 Lakh for land acquisition and Rs. 4 Lakh for house construction) to relocate coastal fisher families residing in high-risk zones within 50 metres of the sea high-tide line to safe inland locations.",
+  "description_kannada": "ಕರಾವಳಿಯ ಅಲೆಗಳ ಅಪಾಯಕಾರಿ ವಲಯದಲ್ಲಿ ವಾಸಿಸುವ ಮೀನುಗಾರ ಕುಟುಂಬಗಳ ಸುರಕ್ಷಿತ ಸ್ಥಳಾಂತರಕ್ಕಾಗಿ ರೂ. 10 ಲಕ್ಷ ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "fisherman",
+    "fishery"
+  ],
+  "rules": [
+    {
+      "criterion_id": "punar_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Fisheries Dept G.O.(Ms) No. 42/2019",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Financial grant of Rs. 10 Lakh (Rs. 6 Lakh land + Rs. 4 Lakh house construction) for safe coastal relocation.",
+  "benefits_amount": "Rs. 10 Lakh rehabilitation grant",
+  "required_documents": [
+    "Aadhaar Card",
+    "Fishermen Registration / Welfare Board Card",
+    "Coastal residence certificate confirming dwelling within 50m of high-tide line",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Submit application to the Matsya Bhavan (Fisheries Extension Office).",
+    "Joint inspection by Revenue and Fisheries officers verifies coastal distance criteria.",
+    "Grant credited in stages to acquire land and construct permanent dwelling."
+  ],
+  "official_portal_url": "https://fisheries.kerala.gov.in/",
+  "application_url": "https://fisheries.kerala.gov.in/",
+  "source_title": "Fisheries Department, Govt of Kerala",
+  "source_excerpt": "Punarjani provides Rs. 10 Lakh to rehabilitate fisher families residing within 50 metres of high-tide shoreline to safe zones.",
+  "effective_date": "2019-11-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

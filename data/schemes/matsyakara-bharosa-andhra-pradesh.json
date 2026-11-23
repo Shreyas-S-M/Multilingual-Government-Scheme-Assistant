@@ -1,0 +1,67 @@
+{
+  "scheme_id": "matsyakara-bharosa-andhra-pradesh",
+  "name": "YSR Matsyakara Bharosa",
+  "name_kannada": "ವೈಎಸ್ಆರ್ ಮತ್ಸ್ಯಕಾರ ಭರೋಸಾ (ಆಂಧ್ರಪ್ರದೇಶ)",
+  "aliases": [
+    "Matsyakara Bharosa",
+    "YSR Matsyakara",
+    "AP Fishermen Ban Relief"
+  ],
+  "level": "state",
+  "state": "Andhra Pradesh",
+  "department": "Department of Fisheries, Govt of Andhra Pradesh",
+  "category": "Agriculture",
+  "subcategory": "Fisheries Support",
+  "short_description": "Financial relief of Rs. 10,000 to marine fishermen families during the annual sea-fishing ban period.",
+  "detailed_description": "YSR Matsyakara Bharosa offers a financial compensation of Rs. 10,000 per family to marine fishermen operating motorized and non-motorized boats during the annual 61-day conservation breeding ban period, alongside subsidized diesel of Rs. 9/litre.",
+  "description_kannada": "ಮೀನುಗಾರಿಕೆ ನಿಷೇಧ ಅವಧಿಯಲ್ಲಿ ಕರಾವಳಿ ಮೀನುಗಾರ ಕುಟುಂಬಗಳಿಗೆ ರೂ. 10,000 ಆರ್ಥಿಕ ಪರಿಹಾರ ಮತ್ತು ಡೀಸೆಲ್ ಸಬ್ಸಿಡಿ.",
+  "min_age": 18,
+  "max_age": 60,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "fisherman",
+    "fishery"
+  ],
+  "rules": [
+    {
+      "criterion_id": "mb_state",
+      "name": "Resident of Andhra Pradesh",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Andhra Pradesh",
+      "is_mandatory": true,
+      "source_citation": "Govt of AP Fisheries Dept G.O.Ms.No. 65",
+      "description_kannada": "ಆಂಧ್ರಪ್ರದೇಶ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Andhra Pradesh?",
+      "clarification_question_kn": "ನೀವು ಆಂಧ್ರಪ್ರದೇಶದ ನಿವಾಸಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct relief transfer of Rs. 10,000 during the marine fishing ban period plus diesel subsidy.",
+  "benefits_amount": "Rs. 10,000 during ban period",
+  "required_documents": [
+    "Aadhaar Card",
+    "Fishermen Biometric Card / Registration Certificate",
+    "Boat Registration Certificate (for motorized/mechanized boat operators)",
+    "Aadhaar-seeded Bank Account Passbook"
+  ],
+  "application_process": [
+    "Submit particulars to the Village Fisheries Assistant at coastal Grama Sachivalayams.",
+    "Joint verification by Fisheries Inspector and Coastal Police.",
+    "DBT credit disbursed into eligible fishermen accounts prior to the ban period."
+  ],
+  "official_portal_url": "https://fisheries.ap.gov.in/",
+  "application_url": "https://gsws.ap.gov.in/",
+  "source_title": "Fisheries Department, Govt of Andhra Pradesh",
+  "source_excerpt": "Under YSR Matsyakara Bharosa, relief of Rs. 10,000 is given to marine fishermen families during the conservation ban period.",
+  "effective_date": "2019-11-21",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

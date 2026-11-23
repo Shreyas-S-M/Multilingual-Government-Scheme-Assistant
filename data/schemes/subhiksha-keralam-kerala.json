@@ -1,0 +1,77 @@
+{
+  "scheme_id": "subhiksha-keralam-kerala",
+  "name": "Subhiksha Keralam Integrated Food Security Program",
+  "name_kannada": "ಸುಭಿಕ್ಷಾ ಕೇರಳಂ ಸಮಗ್ರ ಆಹಾರ ಭದ್ರತಾ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Subhiksha Keralam",
+    "Kerala Agriculture Food Security"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Department of Agriculture Development and Farmers' Welfare, Govt of Kerala",
+  "category": "Agriculture",
+  "subcategory": "Food Production",
+  "short_description": "Financial subsidy, input assistance, and interest-free loans for converting fallow land into organic farming and homestead cultivation.",
+  "detailed_description": "Subhiksha Keralam is an integrated agriculture mission aiming for self-sufficiency in food production by bringing fallow land into cultivation of vegetables, tubers, and paddy, granting up to Rs. 40,000 per hectare for fallow land farming alongside subsidies for drip irrigation and rooftop vegetable gardens.",
+  "description_kannada": "ಬಂಜರು ಭೂಮಿಯಲ್ಲಿ ಕೃಷಿ, ಹೈನುಗಾರಿಕೆ ಮತ್ತು ಆಹಾರ ಧಾನ್ಯ ಉತ್ಪಾದನೆ ಹೆಚ್ಚಿಸಲು ರೈತರಿಗೆ ಸಬ್ಸಿಡಿ ಮತ್ತು ಆರ್ಥಿಕ ನೆರವು.",
+  "min_age": 18,
+  "max_age": null,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "farmer"
+  ],
+  "rules": [
+    {
+      "criterion_id": "sk_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala Agriculture Dept Order 2020",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "sk_occupation",
+      "name": "Occupation Farmer",
+      "field": "occupation",
+      "operator": "equals",
+      "expected_value": "farmer",
+      "is_mandatory": true,
+      "source_citation": "Subhiksha Keralam Cultivator Definition",
+      "description_kannada": "ಮುಖ್ಯ ವೃತ್ತಿ ಕೃಷಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you engaged in farming or agricultural cultivation?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಮುಖ್ಯ ಕಸುಬು ಕೃಷಿಯೇ?"
+    }
+  ],
+  "benefits_summary": "Up to Rs. 40,000 per hectare subsidy for fallow land farming, input subsidies, and subsidized micro-credit.",
+  "benefits_amount": "Up to Rs. 40,000 per hectare",
+  "required_documents": [
+    "Aadhaar Card",
+    "Land tax receipt / Lease agreement for fallow land",
+    "Krishi Bhavan Farmer Registration (KIMS/AIMS)",
+    "Bank passbook"
+  ],
+  "application_process": [
+    "Register on the AIMS (Agricultural Information Management System) portal or at the local Krishi Bhavan.",
+    "Agricultural Officer inspects the plot and prepares the production plan.",
+    "Subsidies credited via DBT upon field verification."
+  ],
+  "official_portal_url": "https://aims.kerala.gov.in/",
+  "application_url": "https://aims.kerala.gov.in/subhiksha",
+  "source_title": "Agriculture Development & Farmers Welfare Dept, Govt of Kerala",
+  "source_excerpt": "Subhiksha Keralam provides input subsidies to cultivate fallow land and promote sustainable domestic food production.",
+  "effective_date": "2020-05-04",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

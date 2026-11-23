@@ -1,0 +1,103 @@
+{
+  "scheme_id": "kmut-tamil-nadu",
+  "name": "Kalaignar Magalir Urimai Thittam (KMUT)",
+  "name_kannada": "ಕಲೈಂಜರ್ ಮಹಿಳಾ ಹಕ್ಕು ಯೋಜನೆ (ತಮಿಳುನಾಡು)",
+  "aliases": [
+    "KMUT",
+    "Magalir Urimai Thittam",
+    "Tamil Nadu Basic Income for Women"
+  ],
+  "level": "state",
+  "state": "Tamil Nadu",
+  "department": "Department of Special Programme Implementation, Govt of Tamil Nadu",
+  "category": "Social Welfare",
+  "subcategory": "Women Basic Income",
+  "short_description": "Monthly basic income grant of Rs. 1,000 directly transferred to the bank accounts of women heads of families in Tamil Nadu.",
+  "detailed_description": "Kalaignar Magalir Urimai Thittam is Tamil Nadu's landmark universal basic income scheme, granting Rs. 1,000 every month to eligible female heads of households whose family annual income is below Rs. 2.5 Lakh, wet land is under 5 acres, or dry land is under 10 acres.",
+  "description_kannada": "ತಮಿಳುನಾಡಿನ ಅರ್ಹ ಮಹಿಳಾ ಕುಟುಂಬದ ಯಜಮಾನಿಯರಿಗೆ ಮಾಸಿಕ ರೂ. 1,000 ಮೂಲ ಆದಾಯ ಸಹಾಯಧನ ನೀಡುವ ಯೋಜನೆ.",
+  "min_age": 21,
+  "max_age": null,
+  "max_income": 250000.0,
+  "eligible_genders": [
+    "female"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "kmut_state",
+      "name": "Resident of Tamil Nadu",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Tamil Nadu",
+      "is_mandatory": true,
+      "source_citation": "Govt of Tamil Nadu G.O.(Ms) No. 3 Special Programme Implementation Dept",
+      "description_kannada": "ತಮಿಳುನಾಡು ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a permanent resident of Tamil Nadu?",
+      "clarification_question_kn": "ನೀವು ತಮಿಳುನಾಡಿನ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "kmut_gender",
+      "name": "Female Head of Family",
+      "field": "gender",
+      "operator": "equals",
+      "expected_value": "female",
+      "is_mandatory": true,
+      "source_citation": "KMUT Scheme Guidelines Section 4",
+      "description_kannada": "ಕುಟುಂಬದ ಮುಖ್ಯಸ್ಥ ಮಹಿಳೆಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Is the applicant the female head of the family?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರರು ಮಹಿಳಾ ಕುಟುಂಬದ ಯಜಮಾನಿಯೇ?"
+    },
+    {
+      "criterion_id": "kmut_age",
+      "name": "Minimum Age 21 Years",
+      "field": "age",
+      "operator": "greater_than_or_equal",
+      "expected_value": 21,
+      "is_mandatory": true,
+      "source_citation": "KMUT Eligibility Age Limit Clause",
+      "description_kannada": "ಕನಿಷ್ಠ ವಯಸ್ಸು 21 ವರ್ಷ ತುಂಬಿರಬೇಕು",
+      "clarification_question_en": "What is the age of the female applicant?",
+      "clarification_question_kn": "ಅರ್ಜಿದಾರ ಮಹಿಳೆಯ ವಯಸ್ಸು ಎಷ್ಟು?"
+    },
+    {
+      "criterion_id": "kmut_income",
+      "name": "Family Annual Income ceiling Rs 2.5 Lakh",
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "expected_value": 250000.0,
+      "is_mandatory": true,
+      "source_citation": "KMUT Income Exclusion Parameters",
+      "description_kannada": "ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 2.5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "Is your family's annual income below Rs 2.5 Lakh?",
+      "clarification_question_kn": "ನಿಮ್ಮ ಕುಟುಂಬದ ವಾರ್ಷಿಕ ಆದಾಯ 2.5 ಲಕ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇದೆಯೇ?"
+    }
+  ],
+  "benefits_summary": "Direct benefit transfer of Rs. 1,000 every month on the 15th directly into the woman's Aadhaar-linked bank account.",
+  "benefits_amount": "Rs. 1,000 per month",
+  "required_documents": [
+    "Smart Ration Card (Family Card) with applicant named as Head of Family",
+    "Aadhaar Card of the applicant woman",
+    "Aadhaar-seeded Bank Account Passbook",
+    "Electricity Consumer Number / Bill"
+  ],
+  "application_process": [
+    "Submit application form at special registration camps organized at Fair Price Shops.",
+    "Volunteers conduct biometric authentication and verification of family card details.",
+    "Appeals submitted via e-Sevai centres if initially rejected.",
+    "Monthly financial aid credited directly via DBT."
+  ],
+  "official_portal_url": "https://kmut.tn.gov.in/",
+  "application_url": "https://www.tnesevai.tn.gov.in/",
+  "source_title": "Department of Special Programme Implementation, Govt of Tamil Nadu",
+  "source_excerpt": "Under Kalaignar Magalir Urimai Thittam, Rs. 1,000 per month is paid to eligible women heads of households.",
+  "effective_date": "2023-09-15",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}

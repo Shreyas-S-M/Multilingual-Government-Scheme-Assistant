@@ -1,0 +1,75 @@
+{
+  "scheme_id": "thaalolam-kerala",
+  "name": "Thaalolam Health Scheme for Children",
+  "name_kannada": "ತಾಲೋಲಂ ಮಕ್ಕಳ ಆರೋಗ್ಯ ಯೋಜನೆ (ಕೇರಳ)",
+  "aliases": [
+    "Thaalolam",
+    "Kerala Free Treatment for Children"
+  ],
+  "level": "state",
+  "state": "Kerala",
+  "department": "Kerala Social Security Mission (KSSM), Health Dept, Govt of Kerala",
+  "category": "Healthcare",
+  "subcategory": "Pediatric Critical Care",
+  "short_description": "100% free specialized medical and surgical treatment for children below 18 years suffering from severe life-threatening ailments.",
+  "detailed_description": "Thaalolam provides completely free inpatient medical and surgical care up to Rs. 1 Lakh (extendable for major surgeries) to children under 18 years of age suffering from kidney diseases, neurological disorders, congenital heart ailments, cerebral palsy, or hemophilia in government medical colleges and specialty hospitals.",
+  "description_kannada": "ತೀವ್ರ ಕಾಯಿಲೆಗಳಿಂದ ಬಳಲುತ್ತಿರುವ 18 ವರ್ಷದೊಳಗಿನ ಮಕ್ಕಳಿಗೆ ಸರ್ಕಾರಿ ಮೆಡಿಕಲ್ ಕಾಲೇಜುಗಳಲ್ಲಿ ಉಚಿತ ಚಿಕಿತ್ಸೆ ಮತ್ತು ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ.",
+  "min_age": 0,
+  "max_age": 18,
+  "max_income": null,
+  "eligible_genders": [
+    "all"
+  ],
+  "eligible_categories": [
+    "all"
+  ],
+  "target_occupations": [
+    "all"
+  ],
+  "rules": [
+    {
+      "criterion_id": "thaal_state",
+      "name": "Resident of Kerala",
+      "field": "state",
+      "operator": "state_match",
+      "expected_value": "Kerala",
+      "is_mandatory": true,
+      "source_citation": "Govt of Kerala KSSM Thaalolam Guidelines",
+      "description_kannada": "ಕೇರಳ ರಾಜ್ಯದ ನಿವಾಸಿಯಾಗಿರಬೇಕು",
+      "clarification_question_en": "Are you a resident of Kerala?",
+      "clarification_question_kn": "ನೀವು ಕೇರಳದ ನಿವಾಸಿಯೇ?"
+    },
+    {
+      "criterion_id": "thaal_age",
+      "name": "Age Under 18 Years",
+      "field": "age",
+      "operator": "less_than_or_equal",
+      "expected_value": 18,
+      "is_mandatory": true,
+      "source_citation": "Pediatric Age Limit Requirement",
+      "description_kannada": "ವಯಸ್ಸು 18 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಇರಬೇಕು",
+      "clarification_question_en": "What is the child's age?",
+      "clarification_question_kn": "ಮಗುವಿನ ವಯಸ್ಸು ಎಷ್ಟು?"
+    }
+  ],
+  "benefits_summary": "100% cashless medical and surgical care, free implants, specialized drugs, and diagnostics.",
+  "benefits_amount": "Free Inpatient Critical Care",
+  "required_documents": [
+    "Child's Birth Certificate / Aadhaar Card",
+    "Parent's Aadhaar Card",
+    "Medical Diagnosis Summary by treating specialist at Govt Medical College / SAT Hospital"
+  ],
+  "application_process": [
+    "Approach the KSSM Superintendent desk at any government medical college in Kerala.",
+    "Hospital Superintendent sanctions immediate funds for medicines, diagnostics, and surgeries directly from the Thaalolam revolving fund."
+  ],
+  "official_portal_url": "https://socialsecuritymission.gov.in/scheme_info.php?id=MQ==",
+  "application_url": "https://socialsecuritymission.gov.in/",
+  "source_title": "Kerala Social Security Mission, Govt of Kerala",
+  "source_excerpt": "Thaalolam provides free specialized treatment to children below 18 years suffering from life-threatening medical conditions.",
+  "effective_date": "2010-01-01",
+  "last_verified_date": "2025-01-20",
+  "source_reliability": "official_portal",
+  "status": "active",
+  "is_active": true
+}
