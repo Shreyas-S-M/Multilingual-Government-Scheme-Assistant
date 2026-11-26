@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sahayaka-api
+    runtime: python
+    plan: free
+    branch: skanda
+    buildCommand: pip install --no-cache-dir -r requirements-render.txt && python -m scripts.seed_data && OFFLINE_EMBEDDINGS=true python -m scripts.build_index
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.11"
+      - key: OFFLINE_EMBEDDINGS
+        value: "true"
+      - key: LLM_PROVIDER
+        value: "deterministic"
+      - key: APP_ENV
+        value: "production"
+      - key: DEBUG
+        value: "false"
