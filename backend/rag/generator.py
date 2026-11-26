@@ -27,85 +27,100 @@ LOCALIZED_TEXTS = {
         "intro_title": "### Personalized Government Scheme Assessment\n",
         "intro_desc": "Based on the details provided in your query, here is your transparent eligibility evaluation:\n",
         "no_match": "No specific schemes matched your exact profile yet. Please provide more details such as your occupation, annual family income, or state of residence.",
-        "eligible_title": "#### ✅ Schemes You Appear Eligible For",
-        "unknown_title": "#### ℹ️ Schemes Requiring More Information",
-        "failed_title": "#### ❌ Schemes You Do Not Currently Qualify For",
-        "near_miss_title": "#### 💡 Alternative Scheme Options (Near-Miss Recommendations)",
+        "eligible_title": "#### Schemes You Appear Eligible For",
+        "unknown_title": "#### Schemes Requiring Verification",
+        "failed_title": "#### Schemes You Do Not Currently Qualify For",
+        "near_miss_title": "#### Alternative Scheme Options (Near-Miss Recommendations)",
+        "status_label": "Status",
+        "status_unknown": "Needs Verification",
+        "unmet_label": "Unmet Criterion",
         "benefits_label": "Benefits",
         "reason_label": "Reason",
         "docs_label": "Required Documents",
         "portal_label": "Official Portal",
         "missing_label": "Missing Attributes",
-        "why_alt_label": "Why this alternative?",
-        "follow_up_header": "\n> **🎯 Targeted Follow-Up Question:**",
+        "why_alt_label": "Why this alternative:",
+        "follow_up_header": "\n> **Targeted Follow-Up Question:**",
         "disclaimer": "\n*Note: Scheme recommendations are for informational discovery only. Official eligibility determinations and benefit approvals are made solely by the respective government authorities.*",
     },
     "kn": {
         "intro_title": "### ನಿಮ್ಮ ವಿವರಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳ ವಿಶ್ಲೇಷಣೆ\n",
         "intro_desc": "ನೀವು ಒದಗಿಸಿದ ಮಾಹಿತಿಯ ಆಧಾರದ ಮೇಲೆ ಕೆಳಗಿನ ಯೋಜನೆಗಳ ಅರ್ಹತೆಯನ್ನು ಪರಿಶೀಲಿಸಲಾಗಿದೆ:\n",
         "no_match": "ನಿಮ್ಮ ಪ್ರಶ್ನೆಗೆ ಹೊಂದಿಕೆಯಾಗುವ ಯಾವುದೇ ನೇರ ಯೋಜನೆಗಳು ಸದ್ಯಕ್ಕೆ ಪತ್ತೆಯಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಯಸ್ಸು, ವೃತ್ತಿ, ಅಥವಾ ಆದಾಯದ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ನೀಡಿ.",
-        "eligible_title": "#### ✅ ನೀವು ಅರ್ಹತೆ ಹೊಂದಿರುವ ಯೋಜನೆಗಳು (Appears Eligible)",
-        "unknown_title": "#### ℹ️ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಅಗತ್ಯವಿರುವ ಯೋಜನೆಗಳು (Information Needed)",
-        "failed_title": "#### ❌ ಪ್ರಸ್ತುತ ಅರ್ಹತೆ ಹೊಂದಿರದ ಯೋಜನೆಗಳು (Ineligible)",
-        "near_miss_title": "#### 💡 ಪರ್ಯಾಯ ಯೋಜನೆಗಳ ಶಿಫಾರಸು (Alternative Scheme Options)",
+        "eligible_title": "#### ನೀವು ಅರ್ಹತೆ ಹೊಂದಿರುವ ಯೋಜನೆಗಳು (Appears Eligible)",
+        "unknown_title": "#### ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿರುವ ಯೋಜನೆಗಳು (Verification Needed)",
+        "failed_title": "#### ಪ್ರಸ್ತುತ ಅರ್ಹತೆ ಹೊಂದಿರದ ಯೋಜನೆಗಳು (Ineligible)",
+        "near_miss_title": "#### ಪರ್ಯಾಯ ಯೋಜನೆಗಳ ಶಿಫಾರಸು (Alternative Scheme Options)",
+        "status_label": "ಸ್ಥಿತಿ",
+        "status_unknown": "ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
+        "unmet_label": "ಪೂರೈಸದ ಮಾನದಂಡ",
         "benefits_label": "ಪ್ರಯೋಜನಗಳು",
         "reason_label": "ಕಾರಣ",
         "docs_label": "ಅಗತ್ಯ ದಾಖಲೆಗಳು",
         "portal_label": "ಅಧಿಕೃತ ಪೋರ್ಟಲ್",
         "missing_label": "ಅಪೂರ್ಣ ವಿವರಗಳು",
-        "why_alt_label": "ಈ ಪರ್ಯಾಯ ಏಕೆ?",
-        "follow_up_header": "\n> **🎯 ಮುಂದುವರಿದ ಪ್ರಶ್ನೆ (Follow-Up Question):**",
+        "why_alt_label": "ಈ ಪರ್ಯಾಯ ಏಕೆ:",
+        "follow_up_header": "\n> **ಮುಂದುವರಿದ ಪ್ರಶ್ನೆ (Follow-Up Question):**",
         "disclaimer": "\n*ಗಮನಿಸಿ: ಈ ಶಿಫಾರಸುಗಳು ಮಾಹಿತಿ ಉದ್ದೇಶಗಳಿಗಾಗಿ ಮಾತ್ರ. ಅಂತಿಮ ಅರ್ಹತೆ ಮತ್ತು ಅರ್ಜಿ ಅನುಮೋದನೆಯನ್ನು ಸಂಬಂಧಪಟ್ಟ ಸರ್ಕಾರಿ ಪ್ರಾಧಿಕಾರವೇ ನಿರ್ಧರಿಸುತ್ತದೆ.*",
     },
     "te": {
         "intro_title": "### మీ వివరాల ఆధారంగా ప్రభుత్వ పథకాల మూల్యాంకనం\n",
         "intro_desc": "మీరు అందించిన సమాచారం ఆధారంగా క్రింది పథకాల అర్హతను పరిశీలించడమైనది:\n",
         "no_match": "మీ ప్రొఫైల్‌కు సరిపోలే నిర్దిష్ట పథకాలు ఏవీ ఇంకా కనుగొనబడలేదు. దయచేసి మీ వయస్సు, వృత్తి లేదా వార్షిక ఆదాయం వంటి మరిన్ని వివరాలను అందించండి.",
-        "eligible_title": "#### ✅ మీరు అర్హత కలిగిన పథకాలు (Appears Eligible)",
-        "unknown_title": "#### ℹ️ మరింత సమాచారం అవసరమైన పథకాలు (Information Needed)",
-        "failed_title": "#### ❌ ప్రస్తుతం మీకు అర్హత లేని పథకాలు (Ineligible)",
-        "near_miss_title": "#### 💡 ప్రత్యామ్నాయ పథకాల సిఫార్సు (Alternative Scheme Options)",
+        "eligible_title": "#### మీరు అర్హత కలిగిన పథకాలు (Appears Eligible)",
+        "unknown_title": "#### పరిశీలన అవసరమైన పథకాలు (Verification Needed)",
+        "failed_title": "#### ప్రస్తుతం మీకు అర్హత లేని పథకాలు (Ineligible)",
+        "near_miss_title": "#### ప్రత్యామ్నాయ పథకాల సిఫార్సు (Alternative Scheme Options)",
+        "status_label": "స్థితి",
+        "status_unknown": "పరిశీలన అవసరం",
+        "unmet_label": "పూర్తి కాని నిబంధన",
         "benefits_label": "ప్రయోజనాలు",
         "reason_label": "కారణం",
         "docs_label": "కావలసిన పత్రాలు",
         "portal_label": "అధికారిక పోర్టల్",
         "missing_label": "అసంపూర్ణ వివరాలు",
-        "why_alt_label": "ఈ ప్రత్యామ్నాయం ఎందుకు?",
-        "follow_up_header": "\n> **🎯 తదుపరి ప్రశ్న (Follow-Up Question):**",
+        "why_alt_label": "ఈ ప్రత్యామ్నాయం ఎందుకు:",
+        "follow_up_header": "\n> **తదుపరి ప్రశ్న (Follow-Up Question):**",
         "disclaimer": "\n*గమనిక: పథకాల సిఫార్సులు కేవలం సమాచార అవగాహన కోసం మాత్రమే. తుది అర్హత మరియు దరఖాస్తు ఆమోదం సంబంధిత ప్రభుత్వ విభాగం ద్వారానే నిర్ణయించబడుతుంది.*",
     },
     "ta": {
         "intro_title": "### உங்கள் விவரங்களின் அடிப்படையிலான அரசு நலத்திட்ட மதிப்பீடு\n",
         "intro_desc": "நீங்கள் வழங்கிய தகவல்களின் அடிப்படையில் கீழ்வரும் திட்டங்களுக்கான தகுதி மதிப்பீடு செய்யப்பட்டுள்ளது:\n",
         "no_match": "உங்கள் விவரங்களுடன் பொருந்தும் திட்டங்கள் எதுவும் தற்போது கண்டறியப்படவில்லை. தயவுசெய்து உங்கள் வயது, தொழில் அல்லது குடும்ப வருமானம் பற்றிய கூடுதல் விவரங்களை வழங்கவும்.",
-        "eligible_title": "#### ✅ நீங்கள் தகுதி பெற்றுள்ள திட்டங்கள் (Appears Eligible)",
-        "unknown_title": "#### ℹ️ கூடுதல் தகவல் தேவைப்படும் திட்டங்கள் (Information Needed)",
-        "failed_title": "#### ❌ நீங்கள் தற்போது தகுதி பெறாத திட்டங்கள் (Ineligible)",
-        "near_miss_title": "#### 💡 மாற்றுத் திட்டப் பரிந்துரைகள் (Alternative Scheme Options)",
+        "eligible_title": "#### நீங்கள் தகுதி பெற்றுள்ள திட்டங்கள் (Appears Eligible)",
+        "unknown_title": "#### சரிபார்ப்பு தேவைப்படும் திட்டங்கள் (Verification Needed)",
+        "failed_title": "#### நீங்கள் தற்போது தகுதி பெறாத திட்டங்கள் (Ineligible)",
+        "near_miss_title": "#### மாற்றுத் திட்டப் பரிந்துரைகள் (Alternative Scheme Options)",
+        "status_label": "நிலை",
+        "status_unknown": "சரிபார்ப்பு தேவை",
+        "unmet_label": "பூர்த்தி செய்யப்படாத நிபந்தனை",
         "benefits_label": "நன்மைகள்",
         "reason_label": "காரணம்",
         "docs_label": "தேவையான ஆவணங்கள்",
         "portal_label": "அதிகாரப்பூர்வ தளம்",
         "missing_label": "விடுபட்ட விவரங்கள்",
-        "why_alt_label": "இந்த மாற்று ஏன்?",
-        "follow_up_header": "\n> **🎯 தொடர் கேள்வி (Follow-Up Question):**",
+        "why_alt_label": "இந்த மாற்று ஏன்:",
+        "follow_up_header": "\n> **தொடர் கேள்வி (Follow-Up Question):**",
         "disclaimer": "\n*குறிப்பு: இந்தத் திட்டப் பரிந்துரைகள் தகவல் அறிவதற்காக மட்டுமே. அதிகாரப்பூர்வ தகுதி மற்றும் விண்ணப்ப ஒப்புதல் சம்பந்தப்பட்ட அரசுத் துறையினரால் மட்டுமே தீர்மானிக்கப்படும்.*",
     },
     "ml": {
         "intro_title": "### നിങ്ങളുടെ വിവരങ്ങളെ അടിസ്ഥാനമാക്കിയുള്ള സർക്കാർ പദ്ധതി വിലയിരുത്തൽ\n",
         "intro_desc": "നിങ്ങൾ നൽകിയ വിവരങ്ങളുടെ അടിസ്ഥാനത്തിൽ താഴെ പറയുന്ന പദ്ധതികളുടെ അർഹത പരിശോധിച്ചിരിക്കുന്നു:\n",
         "no_match": "നിങ്ങളുടെ പ്രൊഫൈലുമായി പൊരുത്തപ്പെടുന്ന നിർദ്ദിഷ്ട പദ്ധതികളൊന്നും ഇതുവരെ കണ്ടെത്തിയില്ല. ദയവായി നിങ്ങളുടെ പ്രായം, തൊഴിൽ അല്ലെങ്കിൽ വാർഷിക വരുമാനം എന്നിവ വ്യക്തമാക്കുക.",
-        "eligible_title": "#### ✅ നിങ്ങൾക്ക് അർഹതയുള്ള പദ്ധതികൾ (Appears Eligible)",
-        "unknown_title": "#### ℹ️ കൂടുതൽ വിവരങ്ങൾ ആവശ്യമുള്ള പദ്ധതികൾ (Information Needed)",
-        "failed_title": "#### ❌ നിലവിൽ നിങ്ങൾക്ക് അർഹതയില്ലാത്ത പദ്ധതികൾ (Ineligible)",
-        "near_miss_title": "#### 💡 ഇതര പദ്ധതി നിർദ്ദേശങ്ങൾ (Alternative Scheme Options)",
+        "eligible_title": "#### നിങ്ങൾക്ക് അർഹതയുള്ള പദ്ധതികൾ (Appears Eligible)",
+        "unknown_title": "#### പരിശോധന ആവശ്യമുള്ള പദ്ധതികൾ (Verification Needed)",
+        "failed_title": "#### നിലവിൽ നിങ്ങൾക്ക് അർഹതയില്ലാത്ത പദ്ധതികൾ (Ineligible)",
+        "near_miss_title": "#### ഇതര പദ്ധതി നിർദ്ദേശങ്ങൾ (Alternative Scheme Options)",
+        "status_label": "നില",
+        "status_unknown": "പരിശോധന ആവശ്യമാണ്",
+        "unmet_label": "പാലിക്കാത്ത നിബന്ധന",
         "benefits_label": "ആനുകൂല്യങ്ങൾ",
         "reason_label": "കാരണം",
         "docs_label": "ആവശ്യമായ രേഖകൾ",
         "portal_label": "ഔദ്യോഗിക പോർട്ടൽ",
         "missing_label": "ലഭ്യമല്ലാത്ത വിവരങ്ങൾ",
-        "why_alt_label": "എന്തുകൊണ്ട് ഈ ഇതരമാർഗ്ഗം?",
-        "follow_up_header": "\n> **🎯 തുടർ ചോദ്യം (Follow-Up Question):**",
+        "why_alt_label": "എന്തുകൊണ്ട് ഈ ഇതരമാർഗ്ഗം:",
+        "follow_up_header": "\n> **തുടർ ചോദ്യം (Follow-Up Question):**",
         "disclaimer": "\n*ശ്രദ്ധിക്കുക: ഈ പദ്ധതി നിർദ്ദേശങ്ങൾ വിവര ആവശ്യങ്ങൾക്ക് മാത്രമുള്ളതാണ്. ഔദ്യോഗിക അർഹതയും അപേക്ഷാ അംഗീകാരവും ബന്ധപ്പെട്ട സർക്കാർ അധികാരികൾ മാത്രമാണ് തീരുമാനിക്കുന്നത്.*",
     },
 }
@@ -158,6 +173,27 @@ class ResponseGenerator:
             query, profile, recommended_schemes, schemes_data_map, lang_code, follow_up_question, near_misses
         )
 
+    @staticmethod
+    def _format_missing_attributes(attrs: List[str]) -> str:
+        """Formats raw profile attribute identifiers into readable labels."""
+        labels = {
+            "age": "Age",
+            "annual_income": "Annual Income",
+            "state": "State",
+            "residence_type": "Residence Type",
+            "occupation": "Occupation",
+            "education_level": "Education Level",
+            "is_student": "Student Status",
+            "gender": "Gender",
+            "social_category": "Social Category",
+            "is_disabled": "Disability Status",
+            "disability_percentage": "Disability Percentage",
+            "land_ownership_ha": "Agricultural Land (Hectares)",
+            "has_bpl_card": "BPL / Antyodaya Card",
+            "unemployed_duration_months": "Unemployment Duration",
+        }
+        return ", ".join(labels.get(a, a.replace("_", " ").title()) for a in attrs)
+
     def _generate_deterministic(
         self,
         query: str,
@@ -191,11 +227,12 @@ class ResponseGenerator:
         # Render Confirmed Matches
         if eligible:
             lines.append(loc["eligible_title"])
-            for res in eligible:
+            lines.append("")
+            for idx, res in enumerate(eligible, start=1):
                 s_data = schemes_data_map.get(res.scheme_id, {})
                 scheme_name = s_data.get("name_kannada") if lang_code == "kn" and s_data.get("name_kannada") else res.scheme_name
                 level_str = s_data.get("level", "Central").capitalize()
-                lines.append(f"**{scheme_name}** ({level_str})")
+                lines.append(f"**{idx}. {scheme_name}** ({level_str})")
                 lines.append(f"- **{loc['benefits_label']}:** {res.benefits_summary or s_data.get('benefits_summary')}")
                 lines.append(f"- **{loc['reason_label']}:** {res.summary_explanation}")
                 if s_data.get("required_documents"):
@@ -208,12 +245,15 @@ class ResponseGenerator:
         # Render Potential Matches requiring more info
         if unknown:
             lines.append(loc["unknown_title"])
-            for res in unknown:
+            lines.append("")
+            for idx, res in enumerate(unknown, start=1):
                 s_data = schemes_data_map.get(res.scheme_id, {})
                 scheme_name = s_data.get("name_kannada") if lang_code == "kn" and s_data.get("name_kannada") else res.scheme_name
-                lines.append(f"**{scheme_name}**")
-                lines.append(f"- **Status:** ⏳ UNKNOWN — {res.summary_explanation}")
-                lines.append(f"- **{loc['missing_label']}:** `{', '.join(res.missing_attributes)}`")
+                lines.append(f"**{idx}. {scheme_name}**")
+                lines.append(f"- **{loc['status_label']}:** {loc['status_unknown']} — {res.summary_explanation}")
+                visible_missing = [a for a in res.missing_attributes if a != "scheme_specific_criteria"]
+                if visible_missing:
+                    lines.append(f"- **{loc['missing_label']}:** {self._format_missing_attributes(visible_missing)}")
                 lines.append(f"- **{loc['benefits_label']}:** {res.benefits_summary or s_data.get('benefits_summary')}")
                 if s_data.get("official_portal_url"):
                     lines.append(f"- **{loc['portal_label']}:** [{s_data.get('source_title', 'Official Link')}]({s_data['official_portal_url']})")
@@ -222,19 +262,20 @@ class ResponseGenerator:
         # Render Ineligible schemes (with reasons)
         if failed and not eligible:
             lines.append(loc["failed_title"])
-            for res in failed:
-                s_data = schemes_data_map.get(res.scheme_id, {})
-                lines.append(f"**{res.scheme_name}**")
+            lines.append("")
+            for idx, res in enumerate(failed, start=1):
+                lines.append(f"**{idx}. {res.scheme_name}**")
                 for fc in res.failed_criteria:
-                    lines.append(f"- ❌ *{fc.name}*: {fc.reason} *(Source: {fc.source_citation})*")
+                    lines.append(f"- **{loc['unmet_label']} ({fc.name}):** {fc.reason} *(Source: {fc.source_citation})*")
                 lines.append("")
 
         # Render Near-Miss Alternatives if user failed
         if near_misses:
             lines.append(loc["near_miss_title"])
-            for alt in near_misses:
+            lines.append("")
+            for idx, alt in enumerate(near_misses, start=1):
                 s_data = schemes_data_map.get(alt.scheme_id, {})
-                lines.append(f"**{alt.scheme_name}**")
+                lines.append(f"**{idx}. {alt.scheme_name}**")
                 lines.append(f"- **{loc['why_alt_label']}** {alt.near_miss_reason}")
                 lines.append(f"- **{loc['benefits_label']}:** {alt.benefits_summary or s_data.get('benefits_summary')}")
                 if s_data.get("official_portal_url"):
@@ -246,6 +287,7 @@ class ResponseGenerator:
             lines.append(f"{loc['follow_up_header']}\n> {follow_up_question}\n")
 
         # Official Disclaimer
+        lines.append("---")
         lines.append(loc["disclaimer"])
 
         return "\n".join(lines)

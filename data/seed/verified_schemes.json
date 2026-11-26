@@ -137,7 +137,7 @@
       "Verify your family details using Ration Card or Aadhaar number.",
       "Visit any empaneled public or private hospital with your Ayushman Card for cashless admission."
     ],
-    "official_portal_url": "https://pmjay.gov.in/",
+    "official_portal_url": "https://nha.gov.in/",
     "application_url": "https://beneficiary.nha.gov.in/",
     "source_title": "National Health Authority, Ministry of Health and Family Welfare",
     "source_excerpt": "Ayushman Bharat PM-JAY provides cashless access to healthcare services for the beneficiary at the point of service, that is, the hospital.",
@@ -710,7 +710,7 @@
       "Enter Vending ID or ULB Letter of Recommendation.",
       "Choose preferred lending institution and submit."
     ],
-    "official_portal_url": "https://pmsvanidhi.mohua.gov.in/",
+    "official_portal_url": "https://www.myscheme.gov.in/schemes/pmsvanidhi",
     "application_url": "https://pmsvanidhi.mohua.gov.in/Home/VendorLender",
     "source_title": "Ministry of Housing and Urban Affairs, Government of India",
     "source_excerpt": "A central sector scheme to facilitate street vendors access to affordable working capital loans for resuming their livelihoods.",
@@ -1047,7 +1047,7 @@
       "Fill in the APY registration form with auto-debit consent.",
       "PRAN (Permanent Retirement Account Number) card is issued."
     ],
-    "official_portal_url": "https://www.npscra.nsdl.co.in/scheme-details.php",
+    "official_portal_url": "https://www.npscra.proteantech.in/",
     "application_url": "https://enps.nsdl.com/eNPS/ApySubRegistration.html",
     "source_title": "Pension Fund Regulatory and Development Authority (PFRDA)",
     "source_excerpt": "Under the APY, a guaranteed minimum pension of Rs. 1,000/- to Rs. 5,000/- per month will be given at the age of 60 years depending on the contributions by the subscriber.",
@@ -1216,8 +1216,8 @@
       "Holders of valid BPL/AAY ration cards in Karnataka are automatically enrolled.",
       "Collect rice from local Fair Price Shop (FPS) and receive monthly DBT for additional 5 kg directly in bank."
     ],
-    "official_portal_url": "https://ahara.kar.nic.in/",
-    "application_url": "https://ahara.kar.nic.in/",
+    "official_portal_url": "https://ahara.karnataka.gov.in/",
+    "application_url": "https://ahara.karnataka.gov.in/",
     "source_title": "Food, Civil Supplies & Consumer Affairs Department, Govt of Karnataka",
     "source_excerpt": "Under Anna Bhagya guarantee scheme, 10 kg food grains are provided to every member of BPL and AAY ration card holder families.",
     "effective_date": "2023-07-01",
@@ -1294,7 +1294,7 @@
       "Beneficiary list is drawn from SECC/Awaas+ data and verified by Gram Sabha.",
       "Registration is done by Panchayat Secretary via the AwaasSoft portal with geotagged photo of existing kutcha house."
     ],
-    "official_portal_url": "https://pmayg.nic.in/",
+    "official_portal_url": "https://pmayg.dord.gov.in/netiayHome/Home.aspx",
     "application_url": "https://awaassoft.nic.in/",
     "source_title": "Ministry of Rural Development, Government of India",
     "source_excerpt": "To achieve the objective of providing 'Housing for All' in rural areas, unit assistance of Rs. 1.20 lakh is provided in plain areas.",
@@ -2115,8 +2115,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://aajeevika.gov.in/",
-    "application_url": "https://aajeevika.gov.in/",
+    "official_portal_url": "https://www.myscheme.gov.in/schemes/day-nrlm",
+    "application_url": "https://www.myscheme.gov.in/schemes/day-nrlm",
     "source_title": "Ministry of Rural Development, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2203,8 +2203,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://pmmsy.dof.gov.in/",
-    "application_url": "https://pmmsy.dof.gov.in/",
+    "official_portal_url": "https://www.myscheme.gov.in/schemes/pmmsy",
+    "application_url": "https://www.myscheme.gov.in/schemes/pmmsy",
     "source_title": "Department of Fisheries, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2599,8 +2599,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://socialjustice.gov.in/",
-    "application_url": "https://socialjustice.gov.in/",
+    "official_portal_url": "https://www.myscheme.gov.in/schemes/pm-ajay",
+    "application_url": "https://www.myscheme.gov.in/schemes/pm-ajay",
     "source_title": "Ministry of Social Justice and Empowerment, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2643,8 +2643,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://nsap.nic.in/",
-    "application_url": "https://nsap.nic.in/",
+    "official_portal_url": "https://nsap.dord.gov.in/",
+    "application_url": "https://nsap.dord.gov.in/",
     "source_title": "Ministry of Rural Development, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2687,8 +2687,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://nsap.nic.in/",
-    "application_url": "https://nsap.nic.in/",
+    "official_portal_url": "https://nsap.dord.gov.in/",
+    "application_url": "https://nsap.dord.gov.in/",
     "source_title": "Ministry of Rural Development, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2731,8 +2731,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://nsap.nic.in/",
-    "application_url": "https://nsap.nic.in/",
+    "official_portal_url": "https://nsap.dord.gov.in/",
+    "application_url": "https://nsap.dord.gov.in/",
     "source_title": "Ministry of Rural Development, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -2775,8 +2775,8 @@
     "application_process": [
       "Open the official portal and verify current eligibility, documents, application status and process."
     ],
-    "official_portal_url": "https://nsap.nic.in/",
-    "application_url": "https://nsap.nic.in/",
+    "official_portal_url": "https://nsap.dord.gov.in/",
+    "application_url": "https://nsap.dord.gov.in/",
     "source_title": "Ministry of Rural Development, Government portal",
     "source_excerpt": "Catalogue discovery entry. Eligibility criteria and current benefits have not been independently verified for this build.",
     "effective_date": null,
@@ -3383,7 +3383,7 @@
       "Complete biometric eKYC authentication.",
       "Check social audit beneficiary list published at the Village Secretariat."
     ],
-    "official_portal_url": "https://ysrrythubharosa.ap.gov.in/",
+    "official_portal_url": "https://annadathasukhibhava.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "YSR Rythu Bharosa Portal, Govt of Andhra Pradesh",
     "source_excerpt": "Under YSR Rythu Bharosa, Rs. 13,500 is credited annually to farmer families to meet pre-sowing and agricultural input requirements.",
@@ -3461,7 +3461,7 @@
       "Aarogya Mithra processes e-pre-authorization with the trust.",
       "Receive cashless inpatient care, diagnostics, surgeries, and medicines."
     ],
-    "official_portal_url": "https://aarogyasri.ap.gov.in/",
+    "official_portal_url": "https://drntrvaidyaseva.ap.gov.in/",
     "application_url": "https://aarogyasri.ap.gov.in/AarogyasriTrust/",
     "source_title": "Dr. YSR Aarogyasri Health Care Trust, Govt of Andhra Pradesh",
     "source_excerpt": "Aarogyasri provides comprehensive health cover up to Rs. 25 lakhs for catastrophic illness to underprivileged families.",
@@ -3541,7 +3541,7 @@
       "Social audit list displayed for public verification at Grama Sachivalayam.",
       "Amount credited via DBT to mother's account."
     ],
-    "official_portal_url": "https://jaganannaammavodi.ap.gov.in/",
+    "official_portal_url": "https://www.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Amma Vodi Portal, Department of School Education, Govt of AP",
     "source_excerpt": "Financial assistance of Rs. 15,000 is transferred to mothers sending their children to school from Class 1 to 12.",
@@ -3638,7 +3638,7 @@
       "Verification approved by Mandal Parishad Development Officer (MPDO).",
       "Disbursement credited directly to Aadhaar-seeded bank account."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://wcdsc.ap.gov.in/WCDASC/Default.aspx",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Navasakam Portal, Department of Social Welfare, Govt of AP",
     "source_excerpt": "YSR Cheyutha extends financial support of Rs. 18,750 per year to women aged 45-60 from SC, ST, BC, and Minority communities.",
@@ -3717,7 +3717,7 @@
       "Biometric authentication done by Village Organization Assistant (VOA).",
       "Funds transferred directly to each member's personal savings account."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://serp.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "SERP / Navasakam, Govt of Andhra Pradesh",
     "source_excerpt": "Under YSR Aasara, the government reimburses outstanding bank loans of DWCRA women to achieve socio-economic empowerment.",
@@ -3810,7 +3810,7 @@
       "Social audit list displayed at Grama/Ward Sachivalayam.",
       "Fees released quarterly via DBT into mother's account."
     ],
-    "official_portal_url": "https://jaganannavidyadeevena.ap.gov.in/",
+    "official_portal_url": "https://jnanabhumi.ap.gov.in/",
     "application_url": "https://jnanabhumi.ap.gov.in/",
     "source_title": "Jnanabhumi / Higher Education Dept, Govt of AP",
     "source_excerpt": "Complete tuition fee reimbursement is transferred to mothers of post-matric students to encourage higher education.",
@@ -4048,7 +4048,7 @@
       "Social audit list published at Village Secretariat.",
       "Assistance credited into the driver's bank account."
     ],
-    "official_portal_url": "https://vahanamitra.ap.gov.in/",
+    "official_portal_url": "https://www.aptransport.org/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Transport Department, Govt of Andhra Pradesh",
     "source_excerpt": "Under YSR Vahana Mitra, Rs. 10,000 is credited yearly to self-employed auto and taxi driver-owners for vehicle upkeep and insurance.",
@@ -4130,7 +4130,7 @@
       "Assistant Director of Handlooms conducts physical verification and geo-tagging of the loom.",
       "Approval sanctioned and payment processed via DBT."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://handlooms.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Handlooms & Textiles Dept, Govt of AP",
     "source_excerpt": "Financial aid of Rs. 24,000 per annum is deposited into the accounts of weaver families owning a loom.",
@@ -4292,7 +4292,7 @@
       "Beneficiary list approved by District Collector.",
       "Amount credited directly into bank account."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://www.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Kapu Welfare Corporation, Govt of AP",
     "source_excerpt": "YSR Kapu Nestham provides Rs. 15,000 per year to women aged 45-60 from Kapu community.",
@@ -4370,7 +4370,7 @@
       "Field verification done by the Welfare and Education Assistant.",
       "Amount credited directly into bank account."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://www.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "BC Welfare Department, Govt of AP",
     "source_excerpt": "Under YSR EBC Nestham, Rs. 15,000 per year is given to economically backward upper caste women.",
@@ -4435,7 +4435,7 @@
       "SERP computes interest subsidy.",
       "Subsidized interest credited directly into the SHG's group account."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://serp.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "SERP / MEPMA, Govt of Andhra Pradesh",
     "source_excerpt": "Under YSR Sunna Vaddi, the government pays the full interest on behalf of women SHGs who repay their bank loans on time.",
@@ -4518,7 +4518,7 @@
       "Welfare Assistant conducts physical inspection and certificate verification.",
       "Funds disbursed via DBT into bride's bank account."
     ],
-    "official_portal_url": "https://gsws.ap.gov.in/",
+    "official_portal_url": "https://www.ap.gov.in/",
     "application_url": "https://navasakam.ap.gov.in/",
     "source_title": "Social Welfare Department, Govt of Andhra Pradesh",
     "source_excerpt": "YSR Kalyanamasthu grants financial aid up to Rs. 1.5 Lakh for marriages of daughters from vulnerable communities who completed Class 10.",
@@ -4588,7 +4588,7 @@
       "Welfare Assistant inspects establishment / tailoring unit / laundry shop.",
       "Grant credited directly via DBT."
     ],
-    "official_portal_url": "https://navasakam.ap.gov.in/",
+    "official_portal_url": "https://www.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "BC Welfare Department, Govt of Andhra Pradesh",
     "source_excerpt": "Under Jagananna Chedodu, Rs. 10,000 annual support is provided to barbers, washermen, and tailors to procure trade equipment.",
@@ -4653,7 +4653,7 @@
       "Claim documents submitted to District Collectorate.",
       "Full claim amount settled via DBT within 21 days."
     ],
-    "official_portal_url": "https://ysrbima.ap.gov.in/",
+    "official_portal_url": "https://labour.ap.gov.in/",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Labour Department, Govt of Andhra Pradesh",
     "source_excerpt": "YSR Bima provides 100% state-funded insurance to secure unorganized and BPL families upon demise of primary breadwinners.",
@@ -4717,7 +4717,7 @@
       "Register pregnancy at nearest Anganwadi centre or PHC.",
       "Receive monthly hot meals and take-home ration kits directly through Anganwadi workers."
     ],
-    "official_portal_url": "https://wdcw.ap.gov.in/",
+    "official_portal_url": "https://wcdsc.ap.gov.in/WCDASC/Default.aspx",
     "application_url": "https://gsws.ap.gov.in/",
     "source_title": "Women Development & Child Welfare, Govt of AP",
     "source_excerpt": "YSR Sampoorna Poshana delivers supplementary nutrition to pregnant women and infants to combat stunting and anaemia.",
@@ -4820,7 +4820,7 @@
       "Appeals submitted via e-Sevai centres if initially rejected.",
       "Monthly financial aid credited directly via DBT."
     ],
-    "official_portal_url": "https://kmut.tn.gov.in/",
+    "official_portal_url": "https://www.tn.gov.in/",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Department of Special Programme Implementation, Govt of Tamil Nadu",
     "source_excerpt": "Under Kalaignar Magalir Urimai Thittam, Rs. 1,000 per month is paid to eligible women heads of households.",
@@ -4910,8 +4910,8 @@
       "EMIS number cross-verified with School Education database.",
       "Monthly stipend credited into student's personal bank account."
     ],
-    "official_portal_url": "https://www.pudhumaipenn.tn.gov.in/",
-    "application_url": "https://www.pudhumaipenn.tn.gov.in/",
+    "official_portal_url": "https://umis.tn.gov.in/",
+    "application_url": "https://umis.tn.gov.in/",
     "source_title": "Social Welfare & Women Empowerment Dept, Govt of Tamil Nadu",
     "source_excerpt": "Financial assistance of Rs. 1,000 per month is given to girl students studying in higher education institutions who studied in govt schools.",
     "effective_date": "2022-09-05",
@@ -4999,8 +4999,8 @@
       "Cross-verified with the Department of School Education EMIS portal.",
       "Monthly funds transferred directly into the student's bank account."
     ],
-    "official_portal_url": "https://tamilpudhalvan.tn.gov.in/",
-    "application_url": "https://tamilpudhalvan.tn.gov.in/",
+    "official_portal_url": "https://umis.tn.gov.in/",
+    "application_url": "https://umis.tn.gov.in/",
     "source_title": "Social Welfare & Higher Education Dept, Govt of Tamil Nadu",
     "source_excerpt": "Under Tamil Pudhalvan, Rs. 1,000 monthly aid is given to male students who studied in govt schools pursuing college degrees.",
     "effective_date": "2024-08-09",
@@ -5143,7 +5143,7 @@
       "Complete blended learning modules and industry certification tests.",
       "Participate in statewide campus placement drives."
     ],
-    "official_portal_url": "https://naanmudhalvan.tn.gov.in/",
+    "official_portal_url": "https://www.tnskill.tn.gov.in/",
     "application_url": "https://portal.naanmudhalvan.tn.gov.in/",
     "source_title": "Tamil Nadu Skill Development Corporation (TNSDC)",
     "source_excerpt": "Naan Mudhalvan delivers cutting-edge technical training to youth across Tamil Nadu to enhance career readiness.",
@@ -5348,7 +5348,7 @@
       "District Social Welfare Officer conducts field verification.",
       "Cheque and gold coin distributed at the Block Development Office."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19441",
+    "official_portal_url": "https://tnsocialwelfare.tn.gov.in/en",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Social Welfare Department, Govt of Tamil Nadu",
     "source_excerpt": "Marriage assistance with 8 grams of gold is provided to poor brides who have completed specified educational criteria.",
@@ -5565,7 +5565,7 @@
       "VAO field inspection confirms agricultural occupation.",
       "Member card issued to claim benefits."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/6847",
+    "official_portal_url": "https://www.tnagrisnet.tn.gov.in/",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Revenue Department, Govt of Tamil Nadu",
     "source_excerpt": "Uzhavar Pathukappu Thittam protects small farmers and agricultural laborers against occupational risks and old age destitution.",
@@ -5643,7 +5643,7 @@
       "VAO and Revenue Inspector verify widow status and family income.",
       "Tahsildar sanctions monthly pension credited via DBT."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19445",
+    "official_portal_url": "https://tnsocialwelfare.tn.gov.in/en",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Revenue & Disaster Management, Govt of Tamil Nadu",
     "source_excerpt": "A monthly pension of Rs. 1,000 is paid to destitute widows having no source of livelihood.",
@@ -5922,7 +5922,7 @@
       "District Social Welfare Officer inspects and approves the grant.",
       "Cheque and gold coin distributed directly to the couple."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19443",
+    "official_portal_url": "https://tnsocialwelfare.tn.gov.in/en",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Social Welfare Department, Govt of Tamil Nadu",
     "source_excerpt": "Incentive of up to Rs. 50,000 and 8 grams gold coin is given to encourage inter-caste marriages.",
@@ -6003,7 +6003,7 @@
       "Verification conducted by District Social Welfare staff.",
       "Assistance disbursed via DBT and physical coin handover."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19442",
+    "official_portal_url": "https://tnsocialwelfare.tn.gov.in/en",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Social Welfare Department, Govt of Tamil Nadu",
     "source_excerpt": "Under Dr. Dharmambal scheme, financial aid and 8 grams gold are presented to rehabilitate young widows through remarriage.",
@@ -6081,7 +6081,7 @@
       "Verification carried out by District Social Welfare staff.",
       "Benefit disbursed at the Taluk / Block office."
     ],
-    "official_portal_url": "https://www.tn.gov.in/scheme/data_view/19444",
+    "official_portal_url": "https://tnsocialwelfare.tn.gov.in/en",
     "application_url": "https://www.tnesevai.tn.gov.in/",
     "source_title": "Social Welfare Department, Govt of Tamil Nadu",
     "source_excerpt": "Financial aid and 8 grams gold coin are given to poor widowed mothers to help solemnize their daughters' marriages.",
@@ -6393,7 +6393,7 @@
       "Local Inquiry Officer conducts field verification.",
       "Secretary sanctions the pension, disbursed monthly via DBT or cooperative banks."
     ],
-    "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+    "official_portal_url": "https://ksmart.lsgkerala.gov.in/",
     "application_url": "https://sevana.gov.in/",
     "source_title": "Local Self Government Dept, Govt of Kerala",
     "source_excerpt": "Under the Sevana pension program, eligible senior citizens in Kerala receive a monthly pension of Rs. 1,600.",
@@ -6471,7 +6471,7 @@
       "Local body secretary sanctions the pension after field inspection.",
       "Monthly pension credited via DBT."
     ],
-    "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+    "official_portal_url": "https://ksmart.lsgkerala.gov.in/",
     "application_url": "https://sevana.gov.in/",
     "source_title": "Local Self Government Department, Govt of Kerala",
     "source_excerpt": "Widow pension of Rs. 1,600 per month is paid to eligible destitute widows in Kerala.",
@@ -6536,7 +6536,7 @@
       "Inspection verified by the Secretary.",
       "Monthly allowance paid via DBT."
     ],
-    "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+    "official_portal_url": "https://ksmart.lsgkerala.gov.in/",
     "application_url": "https://sevana.gov.in/",
     "source_title": "Local Self Government Dept, Govt of Kerala",
     "source_excerpt": "Under the Sevana scheme, persons with disabilities of 40% or more receive a monthly pension of Rs. 1,600.",
@@ -6613,7 +6613,7 @@
       "Welfare Inspector verifies 10 years of farm labor service.",
       "Pension approved and credited monthly via DBT."
     ],
-    "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+    "official_portal_url": "https://ksmart.lsgkerala.gov.in/",
     "application_url": "https://sevana.gov.in/",
     "source_title": "Labour & Skills Department, Govt of Kerala",
     "source_excerpt": "Monthly pension of Rs. 1,600 is paid to registered veteran agricultural laborers in Kerala.",
@@ -6703,7 +6703,7 @@
       "Local Body Secretary approves the application.",
       "Monthly pension credited via DBT."
     ],
-    "official_portal_url": "https://welfarepension.lsgkerala.gov.in/",
+    "official_portal_url": "https://ksmart.lsgkerala.gov.in/",
     "application_url": "https://sevana.gov.in/",
     "source_title": "Local Self Government Dept, Govt of Kerala",
     "source_excerpt": "Under the Sevana pension program, unmarried women aged 50 and above receive a monthly pension of Rs. 1,600.",
@@ -6781,7 +6781,7 @@
       "Social worker conducts discreet verification.",
       "Monthly stipend credited directly to bank account."
     ],
-    "official_portal_url": "https://sjd.kerala.gov.in/scheme-info.php?id=NTc=",
+    "official_portal_url": "https://www.kerala.gov.in/",
     "application_url": "https://sjd.kerala.gov.in/",
     "source_title": "Social Justice Department, Govt of Kerala",
     "source_excerpt": "Snehasparsham provides monthly financial assistance of Rs. 2,000 to unwed mothers to lead a life of dignity.",
@@ -7071,7 +7071,7 @@
       "Attend the statewide selection entrance examination.",
       "Selected candidates choose their preferred empanelled coaching institute."
     ],
-    "official_portal_url": "https://scdd.kerala.gov.in/",
+    "official_portal_url": "http://scdd.kerala.gov.in/",
     "application_url": "https://scholarship.itschool.gov.in/",
     "source_title": "SC/ST Development Department, Govt of Kerala",
     "source_excerpt": "Under Samagra, full tuition and stipends are provided to SC/ST aspirants preparing for Civil Services examinations.",
@@ -7137,8 +7137,8 @@
       "Joint inspection by Revenue and Fisheries officers verifies coastal distance criteria.",
       "Grant credited in stages to acquire land and construct permanent dwelling."
     ],
-    "official_portal_url": "https://fisheries.kerala.gov.in/",
-    "application_url": "https://fisheries.kerala.gov.in/",
+    "official_portal_url": "http://fisheries.kerala.gov.in/",
+    "application_url": "http://fisheries.kerala.gov.in/",
     "source_title": "Fisheries Department, Govt of Kerala",
     "source_excerpt": "Punarjani provides Rs. 10 Lakh to rehabilitate fisher families residing within 50 metres of high-tide shoreline to safe zones.",
     "effective_date": "2019-11-01",
@@ -7287,7 +7287,7 @@
       "Submit application to District Social Justice Officer (DSJO) or via nearest Akshaya Centre.",
       "Glucometers distributed at special community distribution camps."
     ],
-    "official_portal_url": "https://sjd.kerala.gov.in/scheme-info.php?id=MTEy",
+    "official_portal_url": "https://www.kerala.gov.in/",
     "application_url": "https://sjd.kerala.gov.in/",
     "source_title": "Social Justice Department, Govt of Kerala",
     "source_excerpt": "Under Vayomadhuram, free digital glucometers are distributed to BPL senior citizens suffering from diabetes.",

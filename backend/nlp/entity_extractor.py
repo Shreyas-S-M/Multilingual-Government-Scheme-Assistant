@@ -92,9 +92,15 @@ class EntityExtractor:
                 "confidence": 0.95,
             }
 
-        # 4. Residence Type (rural vs urban)
+        # 4. Residence Type (rural vs urban vs semi-urban)
         lower_t = digits_normalized.lower()
-        if any(w in lower_t for w in ["rural", "village", "grama", "ಗ್ರಾಮ", "ಹಳ್ಳಿ"]):
+        if any(w in lower_t for w in ["semi-urban", "semi urban", "semiurban", "ಅರೆ-ನಗರ", "సెమీ అర్బన్", "பகுதி-நகர்ப்புற", "അർദ്ധ നഗര"]):
+            results["residence_type"] = {
+                "value": "semi-urban",
+                "span": "semi-urban",
+                "confidence": 0.90,
+            }
+        elif any(w in lower_t for w in ["rural", "village", "grama", "ಗ್ರಾಮ", "ಹಳ್ಳಿ"]):
             results["residence_type"] = {
                 "value": "rural",
                 "span": "rural",

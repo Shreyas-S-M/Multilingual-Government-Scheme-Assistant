@@ -381,7 +381,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .conversation-heading p {
-  font-size: 15px;
+  font-size: calc(15px * var(--text-scale, 1));
   line-height: 1.6;
   color: var(--muted);
   max-width: 660px;
@@ -446,13 +446,13 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .welcome-top strong {
   font-family: var(--font-serif);
-  font-size: 18px;
+  font-size: calc(18px * var(--text-scale, 1));
   font-weight: 600;
   color: var(--ink);
 }
 
 .welcome-top span:not(.welcome-check) {
-  font-size: 12px;
+  font-size: calc(12px * var(--text-scale, 1));
   color: var(--muted);
 }
 
@@ -462,7 +462,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .welcome-copy {
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.65;
   color: var(--body);
   margin: 16px 0 20px;
@@ -538,7 +538,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .how-step-text strong {
   display: block;
-  font-size: 12px;
+  font-size: calc(12px * var(--text-scale, 1));
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 2px;
@@ -546,7 +546,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .how-step-text span {
   display: block;
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   line-height: 1.45;
   color: var(--muted);
 }
@@ -616,14 +616,14 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .persona-title {
-  font-size: 13px;
+  font-size: calc(13px * var(--text-scale, 1));
   font-weight: 600;
   color: var(--ink);
   margin: 0;
 }
 
 .persona-sub {
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   line-height: 1.5;
   color: var(--muted);
   margin: 0;
@@ -634,12 +634,17 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
    ========================================================================== */
 
 .message-list {
-  padding: 24px 0 18px;
+  padding: 24px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
   max-width: 1100px;
+}
+
+.chat-scroll-anchor {
+  height: 1px;
+  scroll-margin-bottom: 160px;
 }
 
 .message-row {
@@ -679,18 +684,160 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .markdown-reply {
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.7;
   color: var(--body);
   overflow-wrap: anywhere;
 }
 
 .markdown-reply p {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .markdown-reply p:last-child {
   margin-bottom: 0;
+}
+
+.markdown-reply strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-reply em {
+  color: var(--muted-foreground);
+}
+
+.markdown-reply code {
+  font-family: var(--font-mono);
+  font-size: calc(12.5px * var(--text-scale, 1));
+  padding: 1px 6px;
+  border-radius: var(--radius-xs);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.markdown-reply a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown-reply a:hover {
+  color: var(--primary-active);
+}
+
+.markdown-reply .md-h3 {
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-serif);
+  font-size: calc(20px * var(--text-scale, 1));
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--foreground);
+}
+
+.markdown-reply .md-h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 10px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: calc(14px * var(--text-scale, 1));
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--foreground);
+}
+
+.markdown-reply .md-h4-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.markdown-reply .md-h4-eligible {
+  background: var(--success-soft);
+  border-color: rgba(99, 134, 108, 0.25);
+}
+
+.markdown-reply .md-h4-eligible .md-h4-icon {
+  color: var(--success);
+}
+
+.markdown-reply .md-h4-unknown {
+  background: var(--warning-soft);
+  border-color: rgba(179, 134, 71, 0.25);
+}
+
+.markdown-reply .md-h4-unknown .md-h4-icon {
+  color: var(--warning);
+}
+
+.markdown-reply .md-h4-failed {
+  background: var(--error-soft);
+  border-color: rgba(181, 84, 75, 0.25);
+}
+
+.markdown-reply .md-h4-failed .md-h4-icon {
+  color: var(--error);
+}
+
+.markdown-reply .md-h4-alternative {
+  background: var(--accent-soft);
+  border-color: rgba(185, 111, 81, 0.25);
+}
+
+.markdown-reply .md-h4-alternative .md-h4-icon {
+  color: var(--accent);
+}
+
+.markdown-reply .md-scheme-title {
+  margin: 14px 0 6px;
+  padding-top: 4px;
+  font-size: calc(14.5px * var(--text-scale, 1));
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.markdown-reply .md-list {
+  margin: 0 0 14px;
+  padding-left: 20px;
+}
+
+.markdown-reply .md-list li {
+  margin-bottom: 6px;
+  line-height: 1.65;
+}
+
+.markdown-reply .md-list li:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-reply .md-quote {
+  margin: 14px 0 12px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.markdown-reply .md-quote p {
+  margin: 0 0 4px;
+}
+
+.markdown-reply .md-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-reply .md-divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 16px 0 12px;
 }
 
 .user {
@@ -715,7 +862,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   background: var(--surface-dark);
   color: var(--on-dark);
   border-radius: 14px 4px 14px 14px;
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.6;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -801,7 +948,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   border: 1px solid var(--hairline);
   border-radius: 4px 12px 12px 12px;
   padding: 13px 16px;
-  font-size: 13px;
+  font-size: calc(13px * var(--text-scale, 1));
   color: var(--muted);
 }
 
@@ -857,7 +1004,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   padding: 7px 0 3px;
   background: transparent;
   color: var(--ink);
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.6;
 }
 
@@ -962,7 +1109,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .profile-header h2 {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: calc(17px * var(--text-scale, 1));
   font-weight: 600;
   letter-spacing: -0.2px;
   margin: 0;
@@ -970,7 +1117,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .profile-header p {
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   margin: 3px 0 0;
   color: var(--muted);
 }
@@ -1077,12 +1224,12 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .profile-field span {
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale, 1));
   color: var(--muted);
 }
 
 .profile-field strong {
-  font-size: 12px;
+  font-size: calc(12px * var(--text-scale, 1));
   color: var(--ink);
   font-weight: 600;
   overflow-wrap: anywhere;
@@ -1255,7 +1402,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .scheme-card h3 {
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: calc(16px * var(--text-scale, 1));
   line-height: 1.35;
   letter-spacing: -0.2px;
   color: var(--ink);
@@ -1274,21 +1421,21 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .benefit-line span {
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale, 1));
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .benefit-line strong {
-  font-size: 12px;
+  font-size: calc(12px * var(--text-scale, 1));
   line-height: 1.5;
   color: var(--ink);
   font-weight: 600;
 }
 
 .scheme-reason {
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   line-height: 1.65;
   color: var(--muted);
   margin: 0 0 10px;
@@ -1495,7 +1642,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   align-items: center;
   gap: 8px;
   padding: 5px 0;
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   color: var(--body);
   cursor: pointer;
 }
@@ -1668,7 +1815,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 .policies-hero > p {
   max-width: 780px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.7;
   margin: 12px 0 18px;
 }
@@ -1807,7 +1954,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 
 .policy-card h2 {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: calc(17px * var(--text-scale, 1));
   line-height: 1.35;
   color: var(--ink);
   margin: 0;
@@ -1815,13 +1962,13 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .policy-english-name {
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   color: var(--muted);
   margin: -4px 0 0;
 }
 
 .policy-description {
-  font-size: 12px;
+  font-size: calc(12px * var(--text-scale, 1));
   line-height: 1.7;
   color: var(--body);
   margin: 0;
@@ -1836,14 +1983,14 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .policy-detail strong {
-  font-size: 10px;
+  font-size: calc(10px * var(--text-scale, 1));
   letter-spacing: 0.5px;
   color: var(--muted);
   text-transform: uppercase;
 }
 
 .policy-detail span {
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   line-height: 1.6;
   color: var(--body);
   overflow-wrap: anywhere;
@@ -1860,7 +2007,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   gap: 7px;
   cursor: pointer;
   color: var(--primary);
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   font-weight: 600;
   list-style: none;
 }
@@ -1873,7 +2020,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   padding-left: 18px;
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: calc(11px * var(--text-scale, 1));
   line-height: 1.65;
 }
 
@@ -1928,8 +2075,8 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
    ========================================================================== */
 
 .text-size-normal { --text-scale: 1; }
-.text-size-large { --text-scale: 1.15; font-size: 115%; }
-.text-size-xlarge { --text-scale: 1.28; font-size: 128%; }
+.text-size-large { --text-scale: 1.18; }
+.text-size-xlarge { --text-scale: 1.35; }
 
 .font-size-switch {
   display: inline-flex;
@@ -1965,8 +2112,8 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
 }
 
 .font-size-switch button.active {
-  background: var(--surface-card);
-  color: var(--ink);
+  background: var(--primary);
+  color: var(--on-primary);
 }
 
 /* ==========================================================================
@@ -2087,7 +2234,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
     font-size: 28px;
   }
   .conversation-heading p {
-    font-size: 13px;
+    font-size: calc(13px * var(--text-scale, 1));
   }
   .welcome-panel {
     margin-top: 18px;
@@ -2095,7 +2242,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   }
   .welcome-copy {
     padding-left: 0;
-    font-size: 13px;
+    font-size: calc(13px * var(--text-scale, 1));
   }
   .composer-wrap {
   margin-top: auto;
@@ -2109,7 +2256,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
     padding: 8px 10px 8px 14px;
   }
   .composer textarea {
-    font-size: 13px;
+    font-size: calc(13px * var(--text-scale, 1));
   }
   .profile-column {
     position: fixed;
@@ -2261,7 +2408,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visib
   box-shadow: none !important;
   background: transparent;
   color: var(--ink);
-  font-size: 14px;
+  font-size: calc(14px * var(--text-scale, 1));
   line-height: 1.6;
   min-height: 48px;
   max-height: 140px;

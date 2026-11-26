@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Bookmark, LoaderCircle } from "lucide-react";
-import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 interface SaveSchemeButtonProps {
   schemeId: string;
@@ -37,65 +37,45 @@ export function SaveSchemeButton({
   const [loading, setLoading] = useState(false);
   const t = LABELS[lang] || LABELS.en;
 
-  // Check initial saved status
-  useEffect(() => {
-    let isMounted = true;
+  const checkSaved = useCallback(async () => {
+    try {
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
 
-    async function checkSaved() {
-      // First check local storage for instant feedback
-      try {
-        const local = localStorage.getItem("sahayaka_saved_schemes");
-        if (local) {
-          const list = JSON.parse(local);
-          if (Array.isArray(list) && list.some((item) => item.scheme_id === schemeId)) {
-            if (isMounted) setSaved(true);
-            return;
-          }
-        }
-      } catch {}
-
-      // If Supabase configured, check remote
-      if (isSupabaseConfigured()) {
-        try {
-          const supabase = createClient();
-          const {
-            data: { user },
-          } = await supabase.auth.getUser();
-          if (user) {
-            const { data } = await supabase
-              .from("saved_schemes")
-              .select("id")
-              .eq("scheme_id", schemeId)
-              .maybeSingle();
-
-            if (isMounted && data) {
-              setSaved(true);
-            }
-          }
-        } catch {}
+      if (!user) {
+        setSaved(false);
+        return;
       }
-    }
 
-    checkSaved();
+      const { data, error } = await supabase
+        .from("saved_schemes")
+        .select("id")
+        .eq("user_id", user.id)
+        .eq("scheme_id", schemeId)
+        .maybeSingle();
+
+      if (!error) {
+        setSaved(Boolean(data));
+      }
+    } catch {
+      setSaved(false);
+    }
+  }, [schemeId]);
+
+  useEffect(() => {
+    void checkSaved();
 
     const handleSavedChange = () => {
-      try {
-        const local = localStorage.getItem("sahayaka_saved_schemes");
-        if (local) {
-          const list = JSON.parse(local);
-          setSaved(Array.isArray(list) && list.some((item) => item.scheme_id === schemeId));
-        } else {
-          setSaved(false);
-        }
-      } catch {}
+      void checkSaved();
     };
 
     window.addEventListener("sahayaka_saved_schemes_changed", handleSavedChange);
     return () => {
-      isMounted = false;
       window.removeEventListener("sahayaka_saved_schemes_changed", handleSavedChange);
     };
-  }, [schemeId]);
+  }, [checkSaved]);
 
   async function handleToggle(e: React.MouseEvent) {
     e.preventDefault();
@@ -103,67 +83,46 @@ export function SaveSchemeButton({
     if (loading) return;
 
     setLoading(true);
+    const previousSaved = saved;
     const newSaved = !saved;
     setSaved(newSaved);
 
     try {
-      // 1. Sync LocalStorage
-      let list: any[] = [];
-      try {
-        const local = localStorage.getItem("sahayaka_saved_schemes");
-        if (local) list = JSON.parse(local);
-        if (!Array.isArray(list)) list = [];
-      } catch {
-        list = [];
+      const supabase = createClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (!user) {
+        setSaved(false);
+        return;
       }
 
       if (newSaved) {
-        if (!list.some((item) => item.scheme_id === schemeId)) {
-          list.push({
-            id: `local-${Date.now()}`,
+        const { error } = await supabase.from("saved_schemes").upsert(
+          {
+            user_id: user.id,
             scheme_id: schemeId,
             scheme_name: schemeName,
-            category,
-            benefits_summary: benefitsSummary,
-            official_portal_url: officialPortalUrl,
-            created_at: new Date().toISOString(),
-          });
-        }
+            category: category ?? "General Welfare",
+            benefits_summary: benefitsSummary ?? null,
+            official_portal_url: officialPortalUrl ?? null,
+          },
+          { onConflict: "user_id,scheme_id" }
+        );
+        if (error) throw error;
       } else {
-        list = list.filter((item) => item.scheme_id !== schemeId);
-      }
-      localStorage.setItem("sahayaka_saved_schemes", JSON.stringify(list));
-
-      // 2. Sync Supabase if configured & logged in
-      if (isSupabaseConfigured()) {
-        const supabase = createClient();
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-
-        if (user) {
-          if (newSaved) {
-            await supabase.from("saved_schemes").insert({
-              user_id: user.id,
-              scheme_id: schemeId,
-              scheme_name: schemeName,
-              category: category ?? "General Welfare",
-              benefits_summary: benefitsSummary ?? null,
-              official_portal_url: officialPortalUrl ?? null,
-            });
-          } else {
-            await supabase
-              .from("saved_schemes")
-              .delete()
-              .eq("user_id", user.id)
-              .eq("scheme_id", schemeId);
-          }
-        }
+        const { error } = await supabase
+          .from("saved_schemes")
+          .delete()
+          .eq("user_id", user.id)
+          .eq("scheme_id", schemeId);
+        if (error) throw error;
       }
 
-      // Notify other components
       window.dispatchEvent(new Event("sahayaka_saved_schemes_changed"));
     } catch (err) {
+      setSaved(previousSaved);
       console.warn("Failed to persist saved scheme state:", err);
     } finally {
       setLoading(false);
@@ -188,4 +147,3 @@ export function SaveSchemeButton({
     </button>
   );
 }
-

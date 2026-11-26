@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Bookmark, ChevronDown, FileText, LoaderCircle, LogOut, User, UserRound } from "lucide-react";
-import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { Bookmark, ChevronDown, FileText, KeyRound, LoaderCircle, LogOut, UserRound } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 
 interface AuthNavProps {
   lang?: "en" | "kn" | "te" | "ta" | "ml";
@@ -15,6 +15,7 @@ const LABELS = {
     signIn: "Sign In",
     savedSchemes: "Saved Schemes",
     allSchemes: "All 111 Schemes",
+    changePassword: "Change Password",
     signOut: "Sign Out",
     account: "Citizen Account",
   },
@@ -22,6 +23,7 @@ const LABELS = {
     signIn: "ಲಾಗಿನ್",
     savedSchemes: "ಉಳಿಸಿದ ಯೋಜನೆಗಳು",
     allSchemes: "ಎಲ್ಲಾ 111 ಯೋಜನೆಗಳು",
+    changePassword: "ಪಾಸ್‌ವರ್ಡ್ ಬದಲಿಸಿ",
     signOut: "ಲಾಗ್ ಔಟ್",
     account: "ನಾಗರಿಕ ಖಾತೆ",
   },
@@ -29,6 +31,7 @@ const LABELS = {
     signIn: "లాగిన్",
     savedSchemes: "సేవ్ చేసిన పథకాలు",
     allSchemes: "అన్ని 111 పథకాలు",
+    changePassword: "పాస్‌వర్డ్ మార్చండి",
     signOut: "లాగ్ అవుట్",
     account: "పౌర ఖాతా",
   },
@@ -36,6 +39,7 @@ const LABELS = {
     signIn: "உள்நுழைக",
     savedSchemes: "சேமிக்கப்பட்ட திட்டங்கள்",
     allSchemes: "அனைத்து 111 திட்டங்கள்",
+    changePassword: "கடவுச்சொல் மாற்றுக",
     signOut: "வெளியேறு",
     account: "குடிமக்கள் கணக்கு",
   },
@@ -43,6 +47,7 @@ const LABELS = {
     signIn: "ലോഗിൻ",
     savedSchemes: "സംരക്ഷിച്ച പദ്ധതികൾ",
     allSchemes: "എല്ലാ 111 പദ്ധതികളും",
+    changePassword: "പാസ്‌വേഡ് മാറ്റുക",
     signOut: "ലോഗ് ഔട്ട്",
     account: "പൗര അക്കൗണ്ട്",
   },
@@ -57,51 +62,36 @@ export function AuthNav({ lang = "en" }: AuthNavProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const t = LABELS[lang] || LABELS.en;
 
-  // Sync saved count
-  const updateCount = () => {
-    try {
-      const local = localStorage.getItem("sahayaka_saved_schemes");
-      if (local) {
-        const arr = JSON.parse(local);
-        setSavedCount(Array.isArray(arr) ? arr.length : 0);
-      } else {
-        setSavedCount(0);
-      }
-    } catch {
-      setSavedCount(0);
-    }
-  };
-
-  useEffect(() => {
-    updateCount();
-    window.addEventListener("sahayaka_saved_schemes_changed", updateCount);
-    window.addEventListener("storage", updateCount);
-    return () => {
-      window.removeEventListener("sahayaka_saved_schemes_changed", updateCount);
-      window.removeEventListener("storage", updateCount);
-    };
-  }, []);
-
   useEffect(() => {
     const supabase = createClient();
+    let activeUserId: string | null = null;
+
+    async function fetchSavedCount(userId: string | null) {
+      if (!userId) {
+        setSavedCount(0);
+        return;
+      }
+      const { count, error } = await supabase
+        .from("saved_schemes")
+        .select("*", { count: "exact", head: true })
+        .eq("user_id", userId);
+      if (!error && count !== null && count !== undefined) {
+        setSavedCount(count);
+      }
+    }
 
     async function checkUser() {
       try {
         const {
           data: { user: currentUser },
         } = await supabase.auth.getUser();
+        activeUserId = currentUser?.id ?? null;
         setUser(currentUser);
-
-        if (currentUser && isSupabaseConfigured()) {
-          const { count } = await supabase
-            .from("saved_schemes")
-            .select("*", { count: "exact", head: true });
-          if (count !== null && count !== undefined) {
-            setSavedCount(count);
-          }
-        }
+        await fetchSavedCount(activeUserId);
       } catch {
+        activeUserId = null;
         setUser(null);
+        setSavedCount(0);
       } finally {
         setLoading(false);
       }
@@ -109,21 +99,22 @@ export function AuthNav({ lang = "en" }: AuthNavProps) {
 
     checkUser();
 
+    const handleSavedChanged = () => {
+      void fetchSavedCount(activeUserId);
+    };
+    window.addEventListener("sahayaka_saved_schemes_changed", handleSavedChanged);
+
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      setUser(session?.user ?? null);
-      if (session?.user && isSupabaseConfigured()) {
-        const { count } = await supabase
-          .from("saved_schemes")
-          .select("*", { count: "exact", head: true });
-        if (count !== null && count !== undefined) {
-          setSavedCount(count);
-        }
-      }
+      const nextUser = session?.user ?? null;
+      activeUserId = nextUser?.id ?? null;
+      setUser(nextUser);
+      await fetchSavedCount(activeUserId);
     });
 
     return () => {
+      window.removeEventListener("sahayaka_saved_schemes_changed", handleSavedChanged);
       subscription.unsubscribe();
     };
   }, []);
@@ -145,9 +136,15 @@ export function AuthNav({ lang = "en" }: AuthNavProps) {
 
   async function handleSignOut() {
     setMenuOpen(false);
+    try {
+      localStorage.removeItem("sahayaka_saved_schemes");
+    } catch {}
     const supabase = createClient();
     await supabase.auth.signOut();
     setUser(null);
+    setSavedCount(0);
+    window.dispatchEvent(new Event("sahayaka_saved_schemes_changed"));
+    router.push("/login");
     router.refresh();
   }
 
@@ -225,6 +222,16 @@ export function AuthNav({ lang = "en" }: AuthNavProps) {
           >
             <FileText size={14} />
             <span>{t.allSchemes}</span>
+          </Link>
+
+          <Link
+            href="/reset-password"
+            className="dropdown-item"
+            role="menuitem"
+            onClick={() => setMenuOpen(false)}
+          >
+            <KeyRound size={14} />
+            <span>{t.changePassword}</span>
           </Link>
 
           <div className="dropdown-divider" />

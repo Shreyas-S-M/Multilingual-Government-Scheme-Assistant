@@ -10,6 +10,8 @@ import policies from "@/lib/policies.json";
 import { AuthNav } from "@/components/AuthNav";
 import { SaveSchemeButton } from "@/components/SaveSchemeButton";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { fetchUserPreferredLanguage, persistUserPreferredLanguage } from "@/lib/supabase/profile";
+import type { Language } from "@/lib/types";
 
 type Policy = any;
 
@@ -18,23 +20,54 @@ export default function PoliciesPage() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [level, setLevel] = useState("all");
-  const [language, setLanguage] = useState<"en" | "kn" | "te" | "ta" | "ml">("en");
+  const [language, setLanguage] = useState<Language>("en");
   const [textSize, setTextSize] = useState<"normal" | "large" | "xlarge">("normal");
+  const [authUserId, setAuthUserId] = useState<string | null>(null);
 
   useEffect(() => {
     if (isSupabaseConfigured()) {
       const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
+      supabase.auth.getUser().then(async ({ data: { user } }) => {
         if (!user) {
           router.replace("/login?redirectTo=/policies");
+          return;
+        }
+        setAuthUserId(user.id);
+        const savedLang = await fetchUserPreferredLanguage(supabase, user.id);
+        if (savedLang) {
+          setLanguage(savedLang);
         }
       });
     }
   }, [router]);
 
+  function handleLanguageChange(nextLang: Language) {
+    setLanguage(nextLang);
+    if (authUserId) {
+      const supabase = createClient();
+      void persistUserPreferredLanguage(supabase, authUserId, nextLang);
+    }
+  }
+
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  useEffect(() => {
+    try {
+      const savedSize = localStorage.getItem("sahayaka_text_size");
+      if (savedSize === "normal" || savedSize === "large" || savedSize === "xlarge") {
+        setTextSize(savedSize);
+      }
+    } catch {}
+  }, []);
+
+  function handleTextSizeChange(nextSize: "normal" | "large" | "xlarge") {
+    setTextSize(nextSize);
+    try {
+      localStorage.setItem("sahayaka_text_size", nextSize);
+    } catch {}
+  }
 
   const copyMap = {
     en: {
@@ -183,12 +216,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಎಲ್ಲಾ (111)"
           : language === "te"
-          ? "అన్ని (111)"
-          : language === "ta"
-          ? "அனைத்தும் (111)"
-          : language === "ml"
-          ? "എല്ലാം (111)"
-          : "All (111)",
+            ? "అన్ని (111)"
+            : language === "ta"
+              ? "அனைத்தும் (111)"
+              : language === "ml"
+                ? "എല്ലാം (111)"
+                : "All (111)",
     },
     {
       id: "Agriculture",
@@ -197,12 +230,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಕೃಷಿ & ರೈತರು"
           : language === "te"
-          ? "వ్యవసాయం & రైతులు"
-          : language === "ta"
-          ? "வேளாண்மை & விவசாயிகள்"
-          : language === "ml"
-          ? "കൃഷി & കർഷകർ"
-          : "Agriculture",
+            ? "వ్యవసాయం & రైతులు"
+            : language === "ta"
+              ? "வேளாண்மை & விவசாயிகள்"
+              : language === "ml"
+                ? "കൃഷി & കർഷകർ"
+                : "Agriculture",
     },
     {
       id: "Education",
@@ -211,12 +244,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಶಿಕ್ಷಣ & ವಿದ್ಯಾರ್ಥಿವೇತನ"
           : language === "te"
-          ? "విద్య & స్కాలర్‌షిప్‌లు"
-          : language === "ta"
-          ? "கல்வி & உதவித்தொகை"
-          : language === "ml"
-          ? "വിദ്യാഭ്യാസം & സ്കോളർഷിപ്പ്"
-          : "Education",
+            ? "విద్య & స్కాలర్‌షిప్‌లు"
+            : language === "ta"
+              ? "கல்வி & உதவித்தொகை"
+              : language === "ml"
+                ? "വിദ്യാഭ്യാസം & സ്കോളർഷിപ്പ്"
+                : "Education",
     },
     {
       id: "Social Welfare",
@@ -225,12 +258,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಸಾಮಾಜಿಕ ಕಲ್ಯಾಣ & ಪಿಂಚಣಿ"
           : language === "te"
-          ? "సాంఘిక సంక్షేమం & పింఛను"
-          : language === "ta"
-          ? "சமூக நலம் & ஓய்வூதியம்"
-          : language === "ml"
-          ? "സാമൂഹികക്ഷേമം & പെൻഷൻ"
-          : "Social Welfare & Pension",
+            ? "సాంఘిక సంక్షేమం & పింఛను"
+            : language === "ta"
+              ? "சமூக நலம் & ஓய்வூதியம்"
+              : language === "ml"
+                ? "സാമൂഹികക്ഷേമം & പെൻഷൻ"
+                : "Social Welfare & Pension",
     },
     {
       id: "Employment",
@@ -239,12 +272,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಉದ್ಯೋಗ & ವ್ಯಾಪಾರ"
           : language === "te"
-          ? "ఉపాధి & వ్యాపారం"
-          : language === "ta"
-          ? "வேலைவாய்ப்பு & தொழில்"
-          : language === "ml"
-          ? "തൊഴിൽ & സംരംഭം"
-          : "Employment",
+            ? "ఉపాధి & వ్యాపారం"
+            : language === "ta"
+              ? "வேலைவாய்ப்பு & தொழில்"
+              : language === "ml"
+                ? "തൊഴിൽ & സംരംഭം"
+                : "Employment",
     },
     {
       id: "Healthcare",
@@ -253,12 +286,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಆರೋಗ್ಯ & ವಿಮೆ"
           : language === "te"
-          ? "ఆరోగ్యం & బీమా"
-          : language === "ta"
-          ? "மருத்துவம் & காப்பீடு"
-          : language === "ml"
-          ? "ആരോഗ്യം & ഇൻഷുറൻസ്"
-          : "Healthcare",
+            ? "ఆరోగ్యం & బీమా"
+            : language === "ta"
+              ? "மருத்துவம் & காப்பீடு"
+              : language === "ml"
+                ? "ആരോഗ്യം & ഇൻഷുറൻസ്"
+                : "Healthcare",
     },
     {
       id: "Women and Child Welfare",
@@ -267,12 +300,12 @@ export default function PoliciesPage() {
         language === "kn"
           ? "ಮಹಿಳಾ ಕಲ್ಯಾಣ"
           : language === "te"
-          ? "మహిళా సంక్షేమం"
-          : language === "ta"
-          ? "மகளிர் நலம்"
-          : language === "ml"
-          ? "വനിതാക്ഷേമം"
-          : "Women Welfare",
+            ? "మహిళా సంక్షేమం"
+            : language === "ta"
+              ? "மகளிர் நலம்"
+              : language === "ml"
+                ? "വനിതാക്ഷേമം"
+                : "Women Welfare",
     },
   ];
 
@@ -291,13 +324,13 @@ export default function PoliciesPage() {
         <div className="topbar-right">
           <div className="font-size-switch" aria-label={copy.textSize} title={copy.textSize}>
             <span>{copy.textSize}:</span>
-            <button className={textSize === "normal" ? "active" : ""} onClick={() => setTextSize("normal")}>
+            <button type="button" className={textSize === "normal" ? "active" : ""} onClick={() => handleTextSizeChange("normal")}>
               A
             </button>
-            <button className={textSize === "large" ? "active" : ""} onClick={() => setTextSize("large")}>
+            <button type="button" className={textSize === "large" ? "active" : ""} onClick={() => handleTextSizeChange("large")}>
               A+
             </button>
-            <button className={textSize === "xlarge" ? "active" : ""} onClick={() => setTextSize("xlarge")}>
+            <button type="button" className={textSize === "xlarge" ? "active" : ""} onClick={() => handleTextSizeChange("xlarge")}>
               A++
             </button>
           </div>
@@ -307,23 +340,23 @@ export default function PoliciesPage() {
           </button>
 
           <div className="language-switch" aria-label="Language">
-            <button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")}>
+            <button className={language === "en" ? "active" : ""} onClick={() => handleLanguageChange("en")}>
               EN
             </button>
             <span>/</span>
-            <button className={language === "kn" ? "active" : ""} onClick={() => setLanguage("kn")}>
+            <button className={language === "kn" ? "active" : ""} onClick={() => handleLanguageChange("kn")}>
               ಕನ್ನಡ
             </button>
             <span>/</span>
-            <button className={language === "te" ? "active" : ""} onClick={() => setLanguage("te")}>
+            <button className={language === "te" ? "active" : ""} onClick={() => handleLanguageChange("te")}>
               తెలుగు
             </button>
             <span>/</span>
-            <button className={language === "ta" ? "active" : ""} onClick={() => setLanguage("ta")}>
+            <button className={language === "ta" ? "active" : ""} onClick={() => handleLanguageChange("ta")}>
               தமிழ்
             </button>
             <span>/</span>
-            <button className={language === "ml" ? "active" : ""} onClick={() => setLanguage("ml")}>
+            <button className={language === "ml" ? "active" : ""} onClick={() => handleLanguageChange("ml")}>
               മലയാളം
             </button>
           </div>

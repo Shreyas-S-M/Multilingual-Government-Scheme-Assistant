@@ -6,6 +6,7 @@ import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from "
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { fetchUserPreferredLanguage, persistUserPreferredLanguage } from "@/lib/supabase/profile";
 import {
   ArrowDown,
   ArrowRight,
@@ -34,6 +35,7 @@ import {
 } from "lucide-react";
 import type { ChatMessage, ChatResponse, Language, Profile, SchemeResult } from "@/lib/types";
 import { AuthNav } from "@/components/AuthNav";
+import { FormattedReply } from "@/components/FormattedReply";
 import { SaveSchemeButton } from "@/components/SaveSchemeButton";
 
 const COPY = {
@@ -469,6 +471,14 @@ const COMMON_SCHEME_DOCS: Record<string, string[]> = {
   "vidyasiri-karnataka": ["Student College Admission Receipt", "Caste and Income Certificate", "Aadhaar Card", "Bank Passbook"],
 };
 
+function getNextIntakeTarget(profile: Profile): (typeof PROFILE_KEYS)[number] | null {
+  return (
+    PROFILE_KEYS.find(
+      (field) => (profile[field] === null || profile[field] === undefined) && profile.field_status?.[field] !== "skipped"
+    ) ?? null
+  );
+}
+
 function getIntakeCount(profile: Profile): number {
   return PROFILE_KEYS.filter(
     (key) => (profile[key] !== null && profile[key] !== undefined) || profile.field_status?.[key] === "skipped"
@@ -476,10 +486,170 @@ function getIntakeCount(profile: Profile): number {
 }
 
 function getNextIntakeQuestion(profile: Profile, lang: Language): string | null {
-  const key = PROFILE_KEYS.find(
-    (field) => (profile[field] === null || profile[field] === undefined) && profile.field_status?.[field] !== "skipped"
-  );
+  const key = getNextIntakeTarget(profile);
   return key ? INTAKE_QUESTIONS[key][lang] : null;
+}
+
+const SKIP_PHRASES = new Set([
+  "skip",
+  "skip this",
+  "skip question",
+  "skip it",
+  "pass",
+  "next",
+  "n/a",
+  "na",
+  "prefer not to say",
+  "prefer not to share",
+  "dont want to say",
+  "don't want to say",
+  "dont want to share",
+  "don't want to share",
+  "no idea",
+  "dont know",
+  "don't know",
+  "ಸ್ಕಿಪ್",
+  "ಬಿಡಿ",
+  "స్కిప్",
+  "వదిలేయండి",
+  "தவிர்க்கவும்",
+  "ഒഴിവാക്കുക",
+]);
+
+function isSkipReply(text: string): boolean {
+  const normalized = text.trim().toLowerCase().replace(/[.!?,]+$/g, "").trim();
+  return SKIP_PHRASES.has(normalized);
+}
+
+const GREETING_PHRASES = new Set([
+  "hi",
+  "hii",
+  "hiii",
+  "hey",
+  "heyy",
+  "hello",
+  "helo",
+  "hoi",
+  "hola",
+  "namaste",
+  "namaskara",
+  "namaskaram",
+  "vanakkam",
+  "good morning",
+  "good afternoon",
+  "good evening",
+  "start",
+  "help",
+  "ನಮಸ್ಕಾರ",
+  "ಹಾಯ್",
+  "ಹಲೋ",
+  "నమస్కారం",
+  "హాయ్",
+  "హలో",
+  "வணக்கம்",
+  "ஹாய்",
+  "ஹலோ",
+  "നമസ്കാരം",
+  "ഹായ്",
+  "ഹലോ",
+]);
+
+function isGreetingReply(text: string): boolean {
+  const normalized = text.trim().toLowerCase().replace(/[.!?,]+$/g, "").trim();
+  return GREETING_PHRASES.has(normalized);
+}
+
+function applyContextualIntakeReply(
+  profile: Profile,
+  pendingField: (typeof PROFILE_KEYS)[number] | null,
+  rawText: string
+): { nextProfile: Profile; skipped: boolean } {
+  const trimmed = rawText.trim();
+  const normalized = trimmed.toLowerCase().replace(/[.!?,]+$/g, "").trim();
+
+  if (pendingField && isSkipReply(trimmed)) {
+    return {
+      nextProfile: {
+        ...profile,
+        field_status: {
+          ...(profile.field_status ?? {}),
+          [pendingField]: "skipped",
+        },
+      },
+      skipped: true,
+    };
+  }
+
+  if (!pendingField) {
+    return { nextProfile: profile, skipped: false };
+  }
+
+  const yesWords = new Set(["yes", "y", "yeah", "yep", "true", "ಹೌದು", "అవును", "ஆம்", "അതെ"]);
+  const noWords = new Set(["no", "n", "nope", "none", "nil", "false", "ಇಲ್ಲ", "కాదు", "இல்லை", "അല്ല"]);
+
+  if (pendingField === "has_bpl_card") {
+    if (yesWords.has(normalized) || noWords.has(normalized)) {
+      return {
+        nextProfile: {
+          ...profile,
+          has_bpl_card: yesWords.has(normalized),
+          field_status: { ...(profile.field_status ?? {}), has_bpl_card: "provided" },
+        },
+        skipped: false,
+      };
+    }
+  }
+
+  if (pendingField === "land_ownership_ha") {
+    if (normalized === "0" || normalized === "zero" || noWords.has(normalized)) {
+      return {
+        nextProfile: {
+          ...profile,
+          land_ownership_ha: 0,
+          field_status: { ...(profile.field_status ?? {}), land_ownership_ha: "provided" },
+        },
+        skipped: false,
+      };
+    }
+  }
+
+  if (pendingField === "annual_income") {
+    if (normalized === "0" || normalized === "zero" || normalized === "none" || normalized === "nil") {
+      return {
+        nextProfile: {
+          ...profile,
+          annual_income: 0,
+          field_status: { ...(profile.field_status ?? {}), annual_income: "provided" },
+        },
+        skipped: false,
+      };
+    }
+  }
+
+  if (pendingField === "education_level" && (normalized === "other" || normalized === "ಇತರೆ" || normalized === "ఇతర" || normalized === "பிற" || normalized === "മറ്റുള്ളവ")) {
+    return {
+      nextProfile: {
+        ...profile,
+        education_level: "other",
+        field_status: { ...(profile.field_status ?? {}), education_level: "provided" },
+      },
+      skipped: false,
+    };
+  }
+
+  return { nextProfile: profile, skipped: false };
+}
+
+function buildProfileSummaryQuery(profile: Profile): string {
+  const parts: string[] = [];
+  if (profile.occupation) parts.push(String(profile.occupation));
+  if (profile.state) parts.push(String(profile.state));
+  if (profile.residence_type) parts.push(String(profile.residence_type));
+  if (profile.age !== null && profile.age !== undefined) parts.push(`age ${profile.age}`);
+  if (profile.annual_income !== null && profile.annual_income !== undefined) parts.push(`income ${profile.annual_income}`);
+  if (profile.gender) parts.push(String(profile.gender));
+  if (profile.social_category) parts.push(String(profile.social_category));
+  return parts.length > 0 ? `government welfare schemes for ${parts.join(" ")}` : "government welfare schemes";
 }
 
 function formatValue(key: string, value: unknown, lang: Language) {
@@ -518,17 +688,17 @@ function SchemeCard({ scheme, lang, provisional = false }: { scheme: SchemeResul
     ? lang === "kn"
       ? "ಸಂಭಾವ್ಯ ಹೊಂದಿಕೆ"
       : lang === "te"
-      ? "సంభావ్య సరిపోలిక"
-      : lang === "ta"
-      ? "சாத்தியமான பொருத்தம்"
-      : lang === "ml"
-      ? "സാധ്യതയുള്ള പൊരുത്തം"
-      : "Potential match"
+        ? "సంభావ్య సరిపోలిక"
+        : lang === "ta"
+          ? "சாத்தியமான பொருத்தம்"
+          : lang === "ml"
+            ? "സാധ്യതയുള്ള പൊരുത്തം"
+            : "Potential match"
     : status === "PASS"
-    ? t.pass
-    : status === "FAIL"
-    ? t.fail
-    : t.unknown;
+      ? t.pass
+      : status === "FAIL"
+        ? t.fail
+        : t.unknown;
   const criteria = scheme.criteria_results ?? scheme.failed_criteria ?? [];
 
   const requiredDocs = useMemo(() => {
@@ -645,6 +815,7 @@ export default function Home() {
   const [apiState, setApiState] = useState<"checking" | "connected" | "offline">("checking");
   const [mobileProfileOpen, setMobileProfileOpen] = useState(false);
   const [desktopLedgerOpen, setDesktopLedgerOpen] = useState(true);
+  const [authUserId, setAuthUserId] = useState<string | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const t = COPY[lang];
@@ -652,13 +823,27 @@ export default function Home() {
   useEffect(() => {
     if (isSupabaseConfigured()) {
       const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
+      supabase.auth.getUser().then(async ({ data: { user } }) => {
         if (!user) {
           router.replace("/login");
+          return;
+        }
+        setAuthUserId(user.id);
+        const savedLang = await fetchUserPreferredLanguage(supabase, user.id);
+        if (savedLang) {
+          setLang(savedLang);
         }
       });
     }
   }, [router]);
+
+  function handleLanguageChange(nextLang: Language) {
+    setLang(nextLang);
+    if (authUserId) {
+      const supabase = createClient();
+      void persistUserPreferredLanguage(supabase, authUserId, nextLang);
+    }
+  }
 
   const knownProfile = useMemo(
     () => PROFILE_KEYS.filter((key) => profile[key] !== null && profile[key] !== undefined),
@@ -679,6 +864,22 @@ export default function Home() {
   }, [lang]);
 
   useEffect(() => {
+    try {
+      const savedSize = localStorage.getItem("sahayaka_text_size");
+      if (savedSize === "normal" || savedSize === "large" || savedSize === "xlarge") {
+        setTextSize(savedSize);
+      }
+    } catch {}
+  }, []);
+
+  function handleTextSizeChange(nextSize: "normal" | "large" | "xlarge") {
+    setTextSize(nextSize);
+    try {
+      localStorage.setItem("sahayaka_text_size", nextSize);
+    } catch {}
+  }
+
+  useEffect(() => {
     fetch("/api/health")
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((data) => setApiState(data.status === "healthy" ? "connected" : "offline"))
@@ -686,7 +887,15 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    if (messages.length === 0 && !busy) return;
+    const rafId = window.requestAnimationFrame(() => {
+      endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
+    });
+    return () => window.cancelAnimationFrame(rafId);
   }, [messages, busy]);
 
   async function sendMessage(text: string) {
@@ -696,22 +905,38 @@ export default function Home() {
     const userMessage: ChatMessage = { id: crypto.randomUUID(), role: "user", text: value };
     setMessages((old) => [...old, userMessage]);
     setBusy(true);
+
+    const pendingField = getNextIntakeTarget(profile);
+    const { nextProfile, skipped } = applyContextualIntakeReply(profile, pendingField, value);
+    const contextualRecorded = !skipped && getIntakeCount(nextProfile) > getIntakeCount(profile);
+    const greetingOnly = !skipped && !contextualRecorded && isGreetingReply(value);
+    const outgoingMessage = skipped ? buildProfileSummaryQuery(nextProfile) : value;
+
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: value,
+          message: outgoingMessage,
           conversation_id: conversationId,
           language: lang,
-          current_profile: profile,
+          current_profile: nextProfile,
         }),
       });
       const data = await response.json();
       if (!response.ok) throw new Error(typeof data.detail === "string" ? data.detail : t.apiError);
       const result = data as ChatResponse;
-      const updatedProfile = result.updated_profile ?? profile;
+      const updatedProfile: Profile = {
+        ...(result.updated_profile ?? nextProfile),
+        field_status: {
+          ...(nextProfile.field_status ?? {}),
+          ...(result.updated_profile?.field_status ?? {}),
+          ...(pendingField && skipped ? { [pendingField]: "skipped" } : {}),
+        },
+      };
       const completed = getIntakeCount(updatedProfile);
+      const extractedCount = Object.keys(result.extracted_entities ?? {}).length;
+      const recordedDetails = extractedCount > 0 || contextualRecorded;
 
       if (completed < PROFILE_KEYS.length) {
         const nextQuestion = getNextIntakeQuestion(updatedProfile, lang);
@@ -719,33 +944,59 @@ export default function Home() {
         result.intake_completed = completed;
         result.intake_total = PROFILE_KEYS.length;
         result.follow_up_question = nextQuestion;
-        result.follow_up_target_attribute =
-          PROFILE_KEYS.find(
-            (field) => (updatedProfile[field] === null || updatedProfile[field] === undefined) && updatedProfile.field_status?.[field] !== "skipped"
-          ) ?? null;
+        result.follow_up_target_attribute = getNextIntakeTarget(updatedProfile);
         result.sources = [];
         result.near_miss_schemes = [];
-        const thankPrefix =
-          lang === "kn"
-            ? "ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ವಿವರಗಳನ್ನು ದಾಖಲಿಸಿದ್ದೇನೆ."
+        const ackPrefix = skipped
+          ? lang === "kn"
+            ? "ಸರಿ, ಆ ಪ್ರಶ್ನೆಯನ್ನು ಬಿಡಲಾಗಿದೆ."
             : lang === "te"
-            ? "ధన్యవాదాలు. మీ వివరాలను నమోదు చేసుకున్నాను."
-            : lang === "ta"
-            ? "நன்றி. உங்கள் விவரங்களைப் பதிவு செய்துள்ளேன்."
-            : lang === "ml"
-            ? "നന്ദി. നിങ്ങളുടെ വിവരങ്ങൾ രേഖപ്പെടുത്തിയിട്ടുണ്ട്."
-            : "Thanks, I've recorded your details.";
+              ? "సరే, ఆ ప్రశ్నను వదిలేసాము."
+              : lang === "ta"
+                ? "சரி, அந்தக் கேள்வி தவிர்க்கப்பட்டது."
+                : lang === "ml"
+                  ? "ശരി, ആ ചോദ്യം ഒഴിവാക്കി."
+                  : "Okay, skipped that question."
+          : recordedDetails
+            ? lang === "kn"
+              ? "ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ವಿವರಗಳನ್ನು ದಾಖಲಿಸಿದ್ದೇನೆ."
+              : lang === "te"
+                ? "ధన్యవాదాలు. మీ వివరాలను నమోదు చేసుకున్నాను."
+                : lang === "ta"
+                  ? "நன்றி. உங்கள் விவரங்களைப் பதிவு செய்துள்ளேன்."
+                  : lang === "ml"
+                    ? "നന്ദി. നിങ്ങളുടെ വിവരങ്ങൾ രേഖപ്പെടുത്തിയിട്ടുണ്ട്."
+                    : "Thanks, I've recorded your details."
+            : greetingOnly || messages.length === 0
+              ? lang === "kn"
+                ? "ನಮಸ್ಕಾರ! ನಿಮಗೆ ಸೂಕ್ತವಾದ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳನ್ನು ಹುಡುಕಲು ಕೆಲವು ವಿವರಗಳನ್ನು ಕೇಳುತ್ತೇನೆ."
+                : lang === "te"
+                  ? "నమస్కారం! మీకు అర్హమైన ప్రభుత్వ పథకాలను కనుగొనడానికి కొన్ని వివరాలు అడుగుతాను."
+                  : lang === "ta"
+                    ? "வணக்கம்! உங்களுக்குப் பொருத்தமான அரசு திட்டங்களைக் கண்டறிய சில விவரங்களைக் கேட்கிறேன்."
+                    : lang === "ml"
+                      ? "നമസ്കാരം! നിങ്ങൾക്ക് അനുയോജ്യമായ സർക്കാർ പദ്ധതികൾ കണ്ടെത്താൻ ചില വിവരങ്ങൾ ചോദിക്കാം."
+                      : "Hello! I'll help you find eligible government schemes—let's start with a few quick details."
+              : lang === "kn"
+                ? "ಕ್ಷಮಿಸಿ, ಆ ವಿವರ ಸ್ಪಷ್ಟವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ತಿಳಿಸಿ ಅಥವಾ 'skip' ಎಂದು ಬರೆಯಿರಿ."
+                : lang === "te"
+                  ? "క్షమించండి, ఆ వివరం స్పష్టంగా అర్థం కాలేదు. దయచేసి మళ్ళీ చెప్పండి లేదా 'skip' అని వ్రాయండి."
+                  : lang === "ta"
+                    ? "மன்னிக்கவும், அந்த விவரம் தெளிவாக இல்லை. தயவுசெய்து மீண்டும் பதிவிடவும் அல்லது 'skip' எனக் கூறவும்."
+                    : lang === "ml"
+                      ? "ക്ഷമിക്കണം, ആ വിവരം വ്യക്തമായില്ല. ദയവായി വീണ്ടും നൽകുക അല്ലെങ്കിൽ 'skip' എന്ന് പറയുക."
+                      : "I didn't quite catch that detail. Please share your answer or reply 'skip' to move on.";
         const checkingText =
           lang === "kn"
             ? "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸುತ್ತಿದ್ದೇನೆ."
             : lang === "te"
-            ? "మీ వివరాలను పరిశీలిస్తున్నాను."
-            : lang === "ta"
-            ? "உங்கள் விவரங்களைச் சரிபார்க்கிறேன்."
-            : lang === "ml"
-            ? "നിങ്ങളുടെ വിവരങ്ങൾ പരിശോധിക്കുന്നു."
-            : "I'm checking your details.";
-        result.reply = nextQuestion ? `${thankPrefix}\n\n${nextQuestion}` : checkingText;
+              ? "మీ వివరాలను పరిశీలిస్తున్నాను."
+              : lang === "ta"
+                ? "உங்கள் விவரங்களைச் சரிபார்க்கிறேன்."
+                : lang === "ml"
+                  ? "നിങ്ങളുടെ വിവരങ്ങൾ പരിശോധിക്കുന്നു."
+                  : "I'm checking your details.";
+        result.reply = nextQuestion ? `${ackPrefix}\n\n${nextQuestion}` : checkingText;
       } else {
         result.is_final_assessment = true;
         result.intake_completed = PROFILE_KEYS.length;
@@ -760,7 +1011,9 @@ export default function Home() {
       setApiState("offline");
     } finally {
       setBusy(false);
-      inputRef.current?.focus();
+      window.requestAnimationFrame(() => {
+        inputRef.current?.focus({ preventScroll: true });
+      });
     }
   }
 
@@ -782,7 +1035,7 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ conversation_id: conversationId }),
-      }).catch(() => {});
+      }).catch(() => { });
     }
     setMessages([]);
     setProfile({});
@@ -800,42 +1053,42 @@ export default function Home() {
         lang === "kn"
           ? "ಹಿರಿಯ ನಾಗರಿಕರು & ಪಿಂಚಣಿ (60+)"
           : lang === "te"
-          ? "సీనియర్ సిటిజన్లు & పింఛను (60+)"
-          : lang === "ta"
-          ? "முதியவர்கள் & ஓய்வூதியம் (60+)"
-          : lang === "ml"
-          ? "വയോജനങ്ങൾ & പെൻഷൻ (60+)"
-          : "Senior Citizens & Pension (60+)",
+            ? "సీనియర్ సిటిజన్లు & పింఛను (60+)"
+            : lang === "ta"
+              ? "முதியவர்கள் & ஓய்வூதியம் (60+)"
+              : lang === "ml"
+                ? "വയോജനങ്ങൾ & പെൻഷൻ (60+)"
+                : "Senior Citizens & Pension (60+)",
       badge:
         lang === "kn"
           ? "ಪಿಂಚಣಿ / ಆರೋಗ್ಯ"
           : lang === "te"
-          ? "పింఛను / ఆరోగ్యం"
-          : lang === "ta"
-          ? "ஓய்வூதியம் / மருத்துவம்"
-          : lang === "ml"
-          ? "പെൻഷൻ / ആരോഗ്യം"
-          : "Pension / Health",
+            ? "పింఛను / ఆరోగ్యం"
+            : lang === "ta"
+              ? "ஓய்வூதியம் / மருத்துவம்"
+              : lang === "ml"
+                ? "പെൻഷൻ / ആരോഗ്യം"
+                : "Pension / Health",
       sub:
         lang === "kn"
           ? "ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ, ಆಯುಷ್ಮಾನ್ ಭಾರತ್ ಮತ್ತು ಸಂಧ್ಯಾ ಸುರಕ್ಷಾ"
           : lang === "te"
-          ? "వృద్ధాప్య పింఛను, వైఎస్సార్ పెన్షన్ కానుక, ఆయుష్మాన్ భారత్"
-          : lang === "ta"
-          ? "முதியோர் ஓய்வூதியம், முதலமைச்சரின் விரிவான மருத்துவக் காப்பீடு"
-          : lang === "ml"
-          ? "ഇന്ദിരാഗാന്ധി വാർദ്ധക്യകാല പെൻഷൻ, കാരുണ്യ ആരോഗ്യ സുരക്ഷാപദ്ധതി"
-          : "Old age pension, health cover & welfare support",
+            ? "వృద్ధాప్య పింఛను, వైఎస్సార్ పెన్షన్ కానుక, ఆయుష్మాన్ భారత్"
+            : lang === "ta"
+              ? "முதியோர் ஓய்வூதியம், முதலமைச்சரின் விரிவான மருத்துவக் காப்பீடு"
+              : lang === "ml"
+                ? "ഇന്ദിരാഗാന്ധി വാർദ്ധക്യകാല പെൻഷൻ, കാരുണ്യ ആരോഗ്യ സുരക്ഷാപദ്ധതി"
+                : "Old age pension, health cover & welfare support",
       prompt:
         lang === "kn"
           ? "ನಾನು ಕರ್ನಾಟಕದ 65 ವರ್ಷದ ಹಿರಿಯ ನಾಗರಿಕ, ವೃದ್ಧಾಪ್ಯ ಪಿಂಚಣಿ ಮತ್ತು ಆರೋಗ್ಯ ಯೋಜನೆಗಳು ಬೇಕು"
           : lang === "te"
-          ? "నా వయస్సు 65 సంవత్సరాలు, సీనియర్ సిటిజన్ పింఛను మరియు ఆరోగ్య పథకాల వివరాలు కావాలి"
-          : lang === "ta"
-          ? "எனக்கு 65 வயது, முதியோர் ஓய்வூதியம் மற்றும் மருத்துவ காப்பீட்டுத் திட்டங்கள் பற்றி அறிய வேண்டும்"
-          : lang === "ml"
-          ? "എനിക്ക് 65 വയസ്സുണ്ട്, വയോജന പെൻഷനും ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതികളും അറിയണം"
-          : "I am a 65 year old senior citizen looking for old age pension and health support",
+            ? "నా వయస్సు 65 సంవత్సరాలు, సీనియర్ సిటిజన్ పింఛను మరియు ఆరోగ్య పథకాల వివరాలు కావాలి"
+            : lang === "ta"
+              ? "எனக்கு 65 வயது, முதியோர் ஓய்வூதியம் மற்றும் மருத்துவ காப்பீட்டுத் திட்டங்கள் பற்றி அறிய வேண்டும்"
+              : lang === "ml"
+                ? "എനിക്ക് 65 വയസ്സുണ്ട്, വയോജന പെൻഷനും ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതികളും അറിയണം"
+                : "I am a 65 year old senior citizen looking for old age pension and health support",
     },
     {
       id: "farmer",
@@ -844,42 +1097,42 @@ export default function Home() {
         lang === "kn"
           ? "ರೈತರು & ಕೃಷಿ ಕುಟುಂಬಗಳು"
           : lang === "te"
-          ? "రైతులు & వ్యవసాయ కుటుంబాలు"
-          : lang === "ta"
-          ? "விவசாயிகள் & வேளாண் குடும்பங்கள்"
-          : lang === "ml"
-          ? "കർഷകർ & കാർഷിക കുടുംബങ്ങൾ"
-          : "Farmers & Agriculture",
+            ? "రైతులు & వ్యవసాయ కుటుంబాలు"
+            : lang === "ta"
+              ? "விவசாயிகள் & வேளாண் குடும்பங்கள்"
+              : lang === "ml"
+                ? "കർഷകർ & കാർഷിക കുടുംബങ്ങൾ"
+                : "Farmers & Agriculture",
       badge:
         lang === "kn"
           ? "ಕೃಷಿ ಸಬ್ಸಿಡಿ"
           : lang === "te"
-          ? "రైతు భరోసా / సబ్సిడీ"
-          : lang === "ta"
-          ? "வேளாண் மானியம்"
-          : lang === "ml"
-          ? "കർഷക ആനുകൂല്യങ്ങൾ"
-          : "DBT / Irrigation",
+            ? "రైతు భరోసా / సబ్సిడీ"
+            : lang === "ta"
+              ? "வேளாண் மானியம்"
+              : lang === "ml"
+                ? "കർഷക ആനുകൂല്യങ്ങൾ"
+                : "DBT / Irrigation",
       sub:
         lang === "kn"
           ? "ಪಿಎಂ-ಕಿಸಾನ್, ರೈತ ಸಿರಿ, ಬೆಳೆ ವಿಮೆ ಮತ್ತು ಗಂಗಾ ಕಲ್ಯಾಣ"
           : lang === "te"
-          ? "వైఎస్సార్ రైతు భరోసా, పీఎం-కిసాన్, పంటల బీమా మరియు ఉచిత విద్యుత్"
-          : lang === "ta"
-          ? "கலைஞர் அனைத்துக் கிராம ஒருங்கிணைந்த வேளாண் வளர்ச்சி, பயிர் காப்பீடு"
-          : lang === "ml"
-          ? "സുഭിക്ഷ കേരളം, നെൽവയൽ ഉടമസ്ഥർക്കുള്ള റോയൽറ്റി, വിള ഇൻഷുറൻസ്"
-          : "PM-KISAN, crop insurance & farm subsidies",
+            ? "వైఎస్సార్ రైతు భరోసా, పీఎం-కిసాన్, పంటల బీమా మరియు ఉచిత విద్యుత్"
+            : lang === "ta"
+              ? "கலைஞர் அனைத்துக் கிராம ஒருங்கிணைந்த வேளாண் வளர்ச்சி, பயிர் காப்பீடு"
+              : lang === "ml"
+                ? "സുഭിക്ഷ കേരളം, നെൽവയൽ ഉടമസ്ഥർക്കുള്ള റോയൽറ്റി, വിള ഇൻഷുറൻസ്"
+                : "PM-KISAN, crop insurance & farm subsidies",
       prompt:
         lang === "kn"
           ? "ನಾನು ಕರ್ನಾಟಕದ 40 ವರ್ಷದ ರೈತ, 2 ಎಕರೆ ಭೂಮಿ ಇದೆ, ವಾರ್ಷಿಕ ಆದಾಯ 1.5 ಲಕ್ಷ"
           : lang === "te"
-          ? "నేను 2 ఎకరాల భూమి ఉన్న రైతును, రైతు భరోసా మరియు పంటల బీమా వివరాలు కావాలి"
-          : lang === "ta"
-          ? "நான் 2 ஏக்கர் நிலமுள்ள விவசாயி, பயிர் காப்பீடு மற்றும் மானியத் திட்டங்கள் என்ன?"
-          : lang === "ml"
-          ? "ഞാൻ 2 ഏക്കർ ഭൂമിയുള്ള കർഷകനാണ്, കർഷക ആനുകൂല്യങ്ങളും വിള ഇൻഷുറൻസും അറിയണം"
-          : "I am a 40 year old farmer with 2 acres of land and annual income of 1.5 lakh",
+            ? "నేను 2 ఎకరాల భూమి ఉన్న రైతును, రైతు భరోసా మరియు పంటల బీమా వివరాలు కావాలి"
+            : lang === "ta"
+              ? "நான் 2 ஏக்கர் நிலமுள்ள விவசாயி, பயிர் காப்பீடு மற்றும் மானியத் திட்டங்கள் என்ன?"
+              : lang === "ml"
+                ? "ഞാൻ 2 ഏക്കർ ഭൂമിയുള്ള കർഷകനാണ്, കർഷക ആനുകൂല്യങ്ങളും വിള ഇൻഷുറൻസും അറിയണം"
+                : "I am a 40 year old farmer with 2 acres of land and annual income of 1.5 lakh",
     },
     {
       id: "student",
@@ -888,42 +1141,42 @@ export default function Home() {
         lang === "kn"
           ? "ವಿದ್ಯಾರ್ಥಿಗಳು & ಯುವಜನರು"
           : lang === "te"
-          ? "విద్యార్థులు & యువత"
-          : lang === "ta"
-          ? "மாணவர்கள் & இளைஞர்கள்"
-          : lang === "ml"
-          ? "വിദ്യാർത്ഥികൾ & യുവാക്കൾ"
-          : "Students & Job Seekers",
+            ? "విద్యార్థులు & యువత"
+            : lang === "ta"
+              ? "மாணவர்கள் & இளைஞர்கள்"
+              : lang === "ml"
+                ? "വിദ്യാർത്ഥികൾ & യുവാക്കൾ"
+                : "Students & Job Seekers",
       badge:
         lang === "kn"
           ? "ವಿದ್ಯಾರ್ಥಿವೇತನ"
           : lang === "te"
-          ? "ఫీజు రీయింబర్స్‌మెంట్ / స్కాలర్‌షిప్"
-          : lang === "ta"
-          ? "கல்வி உதவித்தொகை"
-          : lang === "ml"
-          ? "സ്കോളർഷിപ്പ്"
-          : "Scholarships / Aid",
+            ? "ఫీజు రీయింబర్స్‌మెంట్ / స్కాలర్‌షిప్"
+            : lang === "ta"
+              ? "கல்வி உதவித்தொகை"
+              : lang === "ml"
+                ? "സ്കോളർഷിപ്പ്"
+                : "Scholarships / Aid",
       sub:
         lang === "kn"
           ? "ಯುವನಿಧಿ, ವಿದ್ಯಾಸಿರಿ, ಮೆರಿಟ್ ಸ್ಕಾಲರ್‌ಶಿಪ್ ಮತ್ತು ಮುದ್ರಾ"
           : lang === "te"
-          ? "జగనన్న విద్యా దీవెన, వసతి దీవెన, నిరుద్యోగ భృతి మరియు స్కాలర్‌షిప్‌లు"
-          : lang === "ta"
-          ? "புதுமைப் பெண் திட்டம், நான் முதல்வன், கல்வி உதவித்தொகை"
-          : lang === "ml"
-          ? "വിദ്യാകിരണം, ഡിജിറ്റൽ സർവ്വകലാശാല സ്കോളർഷിപ്പ്, യുവാക്കൾക്കുള്ള തൊഴിൽ സഹായം"
-          : "Yuva Nidhi, scholarships & job training",
+            ? "జగనన్న విద్యా దీవెన, వసతి దీవెన, నిరుద్యోగ భృతి మరియు స్కాలర్‌షిప్‌లు"
+            : lang === "ta"
+              ? "புதுமைப் பெண் திட்டம், நான் முதல்வன், கல்வி உதவித்தொகை"
+              : lang === "ml"
+                ? "വിദ്യാകിരണം, ഡിജിറ്റൽ സർവ്വകലാശാല സ്കോളർഷിപ്പ്, യുവാക്കൾക്കുള്ള തൊഴിൽ സഹായം"
+                : "Yuva Nidhi, scholarships & job training",
       prompt:
         lang === "kn"
           ? "ನಾನು 21 ವರ್ಷದ ನಿರುದ್ಯೋಗಿ ಪದವೀಧರ, ಕರ್ನಾಟಕದಲ್ಲಿ ವಾಸಿಸುತ್ತಿದ್ದೇನೆ, ವಿದ್ಯಾರ್ಥಿವೇತನ ಮತ್ತು ಉದ್ಯೋಗ ನೆರವು ಬೇಕು"
           : lang === "te"
-          ? "నేను 21 సంవత్సరాల నిరుద్యోగ గ్రాడ్యుయేట్‌ను, స్కాలర్‌షిప్ మరియు ఉపాధి పథకాలు కావాలి"
-          : lang === "ta"
-          ? "நான் 21 வயது வேலையில்லாத பட்டதாரி, கல்வி உதவித்தொகை மற்றும் வேலைவாய்ப்பு பயிற்சி தேவை"
-          : lang === "ml"
-          ? "ഞാൻ 21 വയസ്സുള്ള തൊഴിൽരഹിത ബിരുദധാരിയാണ്, സ്കോളർഷിപ്പും തൊഴിൽ പരിശീലനവും വേണം"
-          : "I am a 21 year old student looking for college fee scholarships and job training",
+            ? "నేను 21 సంవత్సరాల నిరుద్యోగ గ్రాడ్యుయేట్‌ను, స్కాలర్‌షిప్ మరియు ఉపాధి పథకాలు కావాలి"
+            : lang === "ta"
+              ? "நான் 21 வயது வேலையில்லாத பட்டதாரி, கல்வி உதவித்தொகை மற்றும் வேலைவாய்ப்பு பயிற்சி தேவை"
+              : lang === "ml"
+                ? "ഞാൻ 21 വയസ്സുള്ള തൊഴിൽരഹിത ബിരുദധാരിയാണ്, സ്കോളർഷിപ്പും തൊഴിൽ പരിശീലനവും വേണം"
+                : "I am a 21 year old student looking for college fee scholarships and job training",
     },
     {
       id: "women",
@@ -932,42 +1185,42 @@ export default function Home() {
         lang === "kn"
           ? "ಮಹಿಳೆಯರು & ಕುಟುಂಬ ಕಲ್ಯಾಣ"
           : lang === "te"
-          ? "మహిళలు & కుటుంబ సంక్షేమం"
-          : lang === "ta"
-          ? "மகளிர் & குடும்ப நலம்"
-          : lang === "ml"
-          ? "വനിതകൾ & കുടുംബക്ഷേമം"
-          : "Women & Family Welfare",
+            ? "మహిళలు & కుటుంబ సంక్షేమం"
+            : lang === "ta"
+              ? "மகளிர் & குடும்ப நலம்"
+              : lang === "ml"
+                ? "വനിതകൾ & കുടുംബക്ഷേമം"
+                : "Women & Family Welfare",
       badge:
         lang === "kn"
           ? "ಗೃಹ ಲಕ್ಷ್ಮಿ / ಶಕ್ತಿ"
           : lang === "te"
-          ? "వైఎస్సార్ ఆసరా / చేయూత"
-          : lang === "ta"
-          ? "கலைஞர் மகளிர் உரிமை / விடியல் பயணம்"
-          : lang === "ml"
-          ? "കുടുംബശ്രീ / മാതൃവന്ദന"
-          : "Women Welfare / Aid",
+            ? "వైఎస్సార్ ఆసరా / చేయూత"
+            : lang === "ta"
+              ? "கலைஞர் மகளிர் உரிமை / விடியல் பயணம்"
+              : lang === "ml"
+                ? "കുടുംബശ്രീ / മാതൃവന്ദന"
+                : "Women Welfare / Aid",
       sub:
         lang === "kn"
           ? "ಗೃಹ ಲಕ್ಷ್ಮಿ ಮಾಸಿಕ ₹2000, ಉಚಿತ ಬಸ್ ಪ್ರಯಾಣ ಮತ್ತು ಸುಕನ್ಯಾ ಸಮೃದ್ಧಿ"
           : lang === "te"
-          ? "వైఎస్సార్ చేయూత, ఆసరా మరియు మహిళా సాధికారత పథకాలు"
-          : lang === "ta"
-          ? "கலைஞர் மகளிர் உரிமைத் தொகை ₹1000/மாதம் மற்றும் இலவச பேருந்து பயணம்"
-          : lang === "ml"
-          ? "കുടുംബശ്രീ മൈക്രോക്രെഡിറ്റ്, മാതൃവന്ദന, സ്വയംതొഴിൽ സഹായം"
-          : "Gruha Lakshmi ₹2,000/mo, free RTC bus travel & Sukanya Samriddhi",
+            ? "వైఎస్సార్ చేయూత, ఆసరా మరియు మహిళా సాధికారత పథకాలు"
+            : lang === "ta"
+              ? "கலைஞர் மகளிர் உரிமைத் தொகை ₹1000/மாதம் மற்றும் இலவச பேருந்து பயணம்"
+              : lang === "ml"
+                ? "കുടുംബശ്രീ മൈക്രോക്രെഡിറ്റ്, മാതൃവന്ദന, സ്വയംതొഴിൽ സഹായം"
+                : "Gruha Lakshmi ₹2,000/mo, free RTC bus travel & Sukanya Samriddhi",
       prompt:
         lang === "kn"
           ? "ಕರ್ನಾಟಕದಲ್ಲಿ ಮಹಿಳೆಯರು ಮತ್ತು ಹೆಣ್ಣು ಮಕ್ಕಳ ಕಲ್ಯಾಣಕ್ಕಾಗಿ ಯಾವ ಸರ್ಕಾರಿ ಯೋಜನೆಗಳಿವೆ?"
           : lang === "te"
-          ? "మహిళలు మరియు బాలికల సంక్షేమం కోసం అందుబాటులో ఉన్న ప్రభుత్వ పథకాలు ఏమిటి?"
-          : lang === "ta"
-          ? "மகளிர் மற்றும் பெண் குழந்தைகள் நலனுக்காக என்னென்ன அரசு திட்டங்கள் உள்ளன?"
-          : lang === "ml"
-          ? "വനിതകൾക്കും പെൺകുട്ടികൾക്കുമായി ലഭ്യമായ സർക്കാർ പദ്ധതികൾ ഏതെല്ലാമാണ്?"
-          : "What government welfare, monthly grant and education schemes are available for women?",
+            ? "మహిళలు మరియు బాలికల సంక్షేమం కోసం అందుబాటులో ఉన్న ప్రభుత్వ పథకాలు ఏమిటి?"
+            : lang === "ta"
+              ? "மகளிர் மற்றும் பெண் குழந்தைகள் நலனுக்காக என்னென்ன அரசு திட்டங்கள் உள்ளன?"
+              : lang === "ml"
+                ? "വനിതകൾക്കും പെൺകുട്ടികൾക്കുമായി ലഭ്യമായ സർക്കാർ പദ്ധതികൾ ഏതെല്ലാമാണ്?"
+                : "What government welfare, monthly grant and education schemes are available for women?",
     },
   ];
 
@@ -989,22 +1242,25 @@ export default function Home() {
           <div className="font-size-switch" aria-label={t.textSize} title={t.textSize}>
             <span>{t.textSize}:</span>
             <button
+              type="button"
               className={textSize === "normal" ? "active" : ""}
-              onClick={() => setTextSize("normal")}
+              onClick={() => handleTextSizeChange("normal")}
               aria-label="Normal text size"
             >
               A
             </button>
             <button
+              type="button"
               className={textSize === "large" ? "active" : ""}
-              onClick={() => setTextSize("large")}
+              onClick={() => handleTextSizeChange("large")}
               aria-label="Large text size"
             >
               A+
             </button>
             <button
+              type="button"
               className={textSize === "xlarge" ? "active" : ""}
-              onClick={() => setTextSize("xlarge")}
+              onClick={() => handleTextSizeChange("xlarge")}
               aria-label="Extra large text size"
             >
               A++
@@ -1016,12 +1272,12 @@ export default function Home() {
             {lang === "kn"
               ? "ಎಲ್ಲಾ 111 ಯೋಜನೆಗಳು"
               : lang === "te"
-              ? "అన్ని 111 పథకాలు"
-              : lang === "ta"
-              ? "அனைத்து 111 திட்டங்கள்"
-              : lang === "ml"
-              ? "എല്ലാ 111 പദ്ധതികളും"
-              : "All 111 policies"}
+                ? "అన్ని 111 పథకాలు"
+                : lang === "ta"
+                  ? "அனைத்து 111 திட்டங்கள்"
+                  : lang === "ml"
+                    ? "എല്ലാ 111 പദ്ധതികളും"
+                    : "All 111 policies"}
           </Link>
 
           <div className={`connection ${apiState}`}>
@@ -1031,23 +1287,23 @@ export default function Home() {
 
           <div className="language-switch" aria-label={t.language}>
             <Languages size={15} />
-            <button className={lang === "en" ? "active" : ""} onClick={() => setLang("en")}>
+            <button className={lang === "en" ? "active" : ""} onClick={() => handleLanguageChange("en")}>
               EN
             </button>
             <span>/</span>
-            <button className={lang === "kn" ? "active" : ""} onClick={() => setLang("kn")}>
+            <button className={lang === "kn" ? "active" : ""} onClick={() => handleLanguageChange("kn")}>
               ಕನ್ನಡ
             </button>
             <span>/</span>
-            <button className={lang === "te" ? "active" : ""} onClick={() => setLang("te")}>
+            <button className={lang === "te" ? "active" : ""} onClick={() => handleLanguageChange("te")}>
               తెలుగు
             </button>
             <span>/</span>
-            <button className={lang === "ta" ? "active" : ""} onClick={() => setLang("ta")}>
+            <button className={lang === "ta" ? "active" : ""} onClick={() => handleLanguageChange("ta")}>
               தமிழ்
             </button>
             <span>/</span>
-            <button className={lang === "ml" ? "active" : ""} onClick={() => setLang("ml")}>
+            <button className={lang === "ml" ? "active" : ""} onClick={() => handleLanguageChange("ml")}>
               മലയാളം
             </button>
           </div>
@@ -1077,12 +1333,12 @@ export default function Home() {
                   ? lang === "kn"
                     ? "ನಿಮ್ಮ ಯೋಜನೆಗಳನ್ನು ಹುಡುಕೋಣ."
                     : lang === "te"
-                    ? "మీకు వర్తించే పథకాలను కనుగొందాం."
-                    : lang === "ta"
-                    ? "உங்களுக்கான திட்டங்களைக் கண்டறிவோம்."
-                    : lang === "ml"
-                    ? "നിങ്ങൾക്ക് അനുയോജ്യമായ പദ്ധതികൾ കണ്ടെത്താം."
-                    : "Let's find what you qualify for."
+                      ? "మీకు వర్తించే పథకాలను కనుగొందాం."
+                      : lang === "ta"
+                        ? "உங்களுக்கான திட்டங்களைக் கண்டறிவோம்."
+                        : lang === "ml"
+                          ? "നിങ്ങൾക്ക് അനുയോജ്യമായ പദ്ധതികൾ കണ്ടെത്താം."
+                          : "Let's find what you qualify for."
                   : t.title}
               </h1>
               <p>
@@ -1090,12 +1346,12 @@ export default function Home() {
                   ? lang === "kn"
                     ? "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. ನಾನು ಹಂತ ಹಂತವಾಗಿ ಸಹಾಯ ಮಾಡುತ್ತೇನೆ."
                     : lang === "te"
-                    ? "మీ వివరాలను తెలియజేయండి. నేను దశలవారీగా సహాయం చేస్తాను."
-                    : lang === "ta"
-                    ? "உங்கள் விவரங்களைப் பகிருங்கள். நான் படிப்படியாக வழிகாட்டுகிறேன்."
-                    : lang === "ml"
-                    ? "വിവരങ്ങൾ പങ്കിടുക. ഞാൻ ഘട്ടങ്ങളായി സഹായിക്കാം."
-                    : "Share your details in your own words. I'll guide you one step at a time."
+                      ? "మీ వివరాలను తెలియజేయండి. నేను దశలవారీగా సహాయం చేస్తాను."
+                      : lang === "ta"
+                        ? "உங்கள் விவரங்களைப் பகிருங்கள். நான் படிப்படியாக வழிகாட்டுகிறேன்."
+                        : lang === "ml"
+                          ? "വിവരങ്ങൾ പങ്കിടുക. ഞാൻ ഘട്ടങ്ങളായി സഹായിക്കാം."
+                          : "Share your details in your own words. I'll guide you one step at a time."
                   : t.subtitle}
               </p>
             </div>
@@ -1226,29 +1482,19 @@ export default function Home() {
                       {message.role === "assistant"
                         ? "Sahayaka"
                         : lang === "kn"
-                        ? "ನೀವು"
-                        : lang === "te"
-                        ? "మీరు"
-                        : lang === "ta"
-                        ? "நீங்கள்"
-                        : lang === "ml"
-                        ? "നിങ്ങൾ"
-                        : "You"}
+                          ? "ನೀವು"
+                          : lang === "te"
+                            ? "మీరు"
+                            : lang === "ta"
+                              ? "நீங்கள்"
+                              : lang === "ml"
+                                ? "നിങ്ങൾ"
+                                : "You"}
                       <span>{message.role === "assistant" ? <CheckCheck size={13} /> : null}</span>
                     </div>
                     {message.role === "assistant" ? (
                       <div className="assistant-bubble">
-                        <div className="markdown-reply">
-                          {message.text.split("\n").map((line, i) => (
-                            <p key={i}>
-                              {line
-                                .replace(/^#{1,4}\s*/, "")
-                                .replace(/\*\*/g, "")
-                                .replace(/^[-*]\s/, "• ")
-                                .replace(/`/g, "") || " "}
-                            </p>
-                          ))}
-                        </div>
+                        <FormattedReply text={message.text} />
                         {message.response && (
                           <div className="response-foot">
                             <span>
@@ -1257,17 +1503,16 @@ export default function Home() {
                             </span>
                             <span>
                               {message.response.is_final_assessment === false
-                                ? `${message.response.intake_completed ?? 0}/${message.response.intake_total ?? 10} ${
-                                    lang === "kn"
-                                      ? "ವಿವರಗಳು"
-                                      : lang === "te"
-                                      ? "వివరాలు"
-                                      : lang === "ta"
+                                ? `${message.response.intake_completed ?? 0}/${message.response.intake_total ?? 10} ${lang === "kn"
+                                  ? "ವಿವರಗಳು"
+                                  : lang === "te"
+                                    ? "వివరాలు"
+                                    : lang === "ta"
                                       ? "விவரங்கள்"
                                       : lang === "ml"
-                                      ? "വിവരങ്ങൾ"
-                                      : "details"
-                                  }`
+                                        ? "വിവരങ്ങൾ"
+                                        : "details"
+                                }`
                                 : `${message.response.sources?.length ?? 0} ${t.sources.toLowerCase()}`}
                             </span>
                           </div>
@@ -1293,14 +1538,14 @@ export default function Home() {
                         {lang === "kn"
                           ? "ನಿಮ್ಮ ಹಿಂದಿನ ವಿವರಗಳಿಗೆ ವ್ಯತ್ಯಾಸ ಕಂಡುಬಂದಿದೆ. ಪ್ರೊಫೈಲ್ ಪರಿಶೀಲಿಸಿ."
                           : lang === "te"
-                          ? "మునుపటి వివరాలతో తేడా ఉంది. దయచేసి ప్రొఫైల్ పరిశీలించండి."
-                          : lang === "ta"
-                          ? "முந்தைய விவரங்களில் முரண்பாடு உள்ளது. சுயவிவரத்தைச் சரிபார்க்கவும்."
-                          : lang === "ml"
-                          ? "മുമ്പത്തെ വിവരങ്ങളിൽ പൊരുത്തക്കേടുണ്ട്. പ്രൊഫൈൽ പരിശോധിക്കുക."
-                          : `Some details differ from earlier answers: ${message.response.conflicting_fields?.join(
-                              ", "
-                            )}. Please review your profile.`}
+                            ? "మునుపటి వివరాలతో తేడా ఉంది. దయచేసి ప్రొఫైల్ పరిశీలించండి."
+                            : lang === "ta"
+                              ? "முந்தைய விவரங்களில் முரண்பாடு உள்ளது. சுயவிவரத்தைச் சரிபார்க்கவும்."
+                              : lang === "ml"
+                                ? "മുമ്പത്തെ വിവരങ്ങളിൽ പൊരുത്തക്കേടുണ്ട്. പ്രൊഫൈൽ പരിശോധിക്കുക."
+                                : `Some details differ from earlier answers: ${message.response.conflicting_fields?.join(
+                                  ", "
+                                )}. Please review your profile.`}
                       </div>
                     )}
                   </div>
@@ -1320,57 +1565,57 @@ export default function Home() {
                   </div>
                 </div>
               )}
-              <div ref={endRef} />
+              <div ref={endRef} className="chat-scroll-anchor" />
             </div>
           )}
 
           {messages.length > 0 && (
             <div className="composer-wrap">
-            <form className="composer" onSubmit={handleSubmit}>
-              <textarea
-                ref={inputRef}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={t.placeholder}
-                rows={1}
-                aria-label={t.placeholder}
-                disabled={busy}
-              />
-              {input.trim().length > 0 && (
-                <button
-                  type="button"
-                  className="composer-clear"
-                  onClick={() => setInput("")}
-                  title="Clear input"
-                  aria-label="Clear input"
-                >
-                  <X size={15} />
+              <form className="composer" onSubmit={handleSubmit}>
+                <textarea
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder={t.placeholder}
+                  rows={1}
+                  aria-label={t.placeholder}
+                  disabled={busy}
+                />
+                {input.trim().length > 0 && (
+                  <button
+                    type="button"
+                    className="composer-clear"
+                    onClick={() => setInput("")}
+                    title="Clear input"
+                    aria-label="Clear input"
+                  >
+                    <X size={15} />
+                  </button>
+                )}
+                <button className="send-button" type="submit" aria-label={t.send} disabled={busy || !input.trim()}>
+                  {busy ? <LoaderCircle size={18} className="spin" /> : <Send size={17} />}
                 </button>
-              )}
-              <button className="send-button" type="submit" aria-label={t.send} disabled={busy || !input.trim()}>
-                {busy ? <LoaderCircle size={18} className="spin" /> : <Send size={17} />}
-              </button>
-            </form>
-            <div className="composer-hint">
-              <span>
-                ↵{" "}
-                {lang === "kn"
-                  ? "ಕಳುಹಿಸಲು Enter ಒತ್ತಿ"
-                  : lang === "te"
-                  ? "పంపడానికి Enter నొక్కండి"
-                  : lang === "ta"
-                  ? "அனுப்ப Enter அழுத்தவும்"
-                  : lang === "ml"
-                  ? "അയക്കാൻ Enter അമർത്തുക"
-                  : "Press Enter to send · Shift + Enter for new line"}
-              </span>
-              <span>
-                <ShieldCheck size={13} />
-                {t.privacy}
-              </span>
+              </form>
+              <div className="composer-hint">
+                <span>
+                  ↵{" "}
+                  {lang === "kn"
+                    ? "ಕಳುಹಿಸಲು Enter ಒತ್ತಿ"
+                    : lang === "te"
+                      ? "పంపడానికి Enter నొక్కండి"
+                      : lang === "ta"
+                        ? "அனுப்ப Enter அழுத்தவும்"
+                        : lang === "ml"
+                          ? "അയക്കാൻ Enter അമർത്തുക"
+                          : "Press Enter to send · Shift + Enter for new line"}
+                </span>
+                <span>
+                  <ShieldCheck size={13} />
+                  {t.privacy}
+                </span>
+              </div>
             </div>
-          </div>
           )}
           <footer className="page-footer">
             <span>© {new Date().getFullYear()} Sahayaka · Public Service NLP Project</span>
@@ -1398,12 +1643,12 @@ export default function Home() {
                 {lang === "kn"
                   ? "ಸಂಗ್ರಹಿಸಿದ ವಿವರಗಳು"
                   : lang === "te"
-                  ? "సేకరించిన వివరాలు"
-                  : lang === "ta"
-                  ? "சேகரிக்கப்பட்ட விவரங்கள்"
-                  : lang === "ml"
-                  ? "ശേഖരിച്ച വിവരങ്ങൾ"
-                  : "Details collected"}
+                    ? "సేకరించిన వివరాలు"
+                    : lang === "ta"
+                      ? "சேகரிக்கப்பட்ட விவரங்கள்"
+                      : lang === "ml"
+                        ? "ശേഖരിച്ച വിവരങ്ങൾ"
+                        : "Details collected"}
               </span>
               <strong>
                 {latestResponse?.intake_completed ?? completedProfileCount} / {latestResponse?.intake_total ?? PROFILE_KEYS.length}
@@ -1416,7 +1661,7 @@ export default function Home() {
                     100,
                     ((latestResponse?.intake_completed ?? completedProfileCount) /
                       (latestResponse?.intake_total ?? PROFILE_KEYS.length)) *
-                      100
+                    100
                   )}%`,
                 }}
               />
@@ -1459,12 +1704,12 @@ export default function Home() {
                 {lang === "kn"
                   ? "ನಿಮ್ಮ ವಿವರಗಳಿಗೆ ಹೊಂದಿಕೆ"
                   : lang === "te"
-                  ? "మీ వివరాలకు సరిపోలిక"
-                  : lang === "ta"
-                  ? "உங்கள் விவரங்களுக்குப் பொருத்தம்"
-                  : lang === "ml"
-                  ? "നിങ്ങളുടെ വിവരങ്ങൾക്ക് പൊരുത്തം"
-                  : "Matched to your details"}
+                    ? "మీ వివరాలకు సరిపోలిక"
+                    : lang === "ta"
+                      ? "உங்கள் விவரங்களுக்குப் பொருத்தம்"
+                      : lang === "ml"
+                        ? "നിങ്ങളുടെ വിവരങ്ങൾക്ക് പൊരുത്തം"
+                        : "Matched to your details"}
               </p>
             </div>
             <span className="matches-count">{schemes.length}</span>
@@ -1496,12 +1741,12 @@ export default function Home() {
                 ? lang === "kn"
                   ? "ಇವು ಪ್ರಾಥಮಿಕ ಸಾಧ್ಯತೆಗಳು ಮಾತ್ರ; ಅಂತಿಮ ಮೌಲ್ಯಮಾಪನ ವಿವರ ಸಂಗ್ರಹ ಪೂರ್ಣವಾದ ನಂತರ ಬರುತ್ತದೆ."
                   : lang === "te"
-                  ? "ఇవి ప్రాథమిక అవకాశాలు మాత్రమే; పూర్తి వివరాల సేకరణ తర్వాత తుది అర్హత ఫలితాలు కనిపిస్తాయి."
-                  : lang === "ta"
-                  ? "இவை ஆரம்ப சாத்தியக்கூறுகள் மட்டுமே; முழு விவரங்கள் பெறப்பட்ட பின் இறுதி முடிவுகள் வரும்."
-                  : lang === "ml"
-                  ? "ഇവ പ്രാഥമിക സാധ്യതകൾ മാത്രമാണ്; മുഴുവൻ വിവരങ്ങളും ശേഖരിച്ച ശേഷം അന്തിമ ഫലം ലഭ്യമാകും."
-                  : "These are preliminary possibilities only. Final eligibility results appear after profile collection is complete."
+                    ? "ఇవి ప్రాథమిక అవకాశాలు మాత్రమే; పూర్తి వివరాల సేకరణ తర్వాత తుది అర్హత ఫలితాలు కనిపిస్తాయి."
+                    : lang === "ta"
+                      ? "இவை ஆரம்ப சாத்தியக்கூறுகள் மட்டுமே; முழு விவரங்கள் பெறப்பட்ட பின் இறுதி முடிவுகள் வரும்."
+                      : lang === "ml"
+                        ? "ഇവ പ്രാഥമിക സാധ്യതകൾ മാത്രമാണ്; മുഴുവൻ വിവരങ്ങളും ശേഖരിച്ച ശേഷം അന്തിമ ഫലം ലഭ്യമാകും."
+                        : "These are preliminary possibilities only. Final eligibility results appear after profile collection is complete."
                 : t.notGuarantee}
             </p>
           )}

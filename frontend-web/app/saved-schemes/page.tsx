@@ -7,15 +7,12 @@ import {
   ArrowLeft,
   Bookmark,
   ExternalLink,
-  FileText,
   Landmark,
   LoaderCircle,
   Printer,
-  ShieldCheck,
   Trash2,
-  UserRound,
 } from "lucide-react";
-import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 interface SavedScheme {
   id: string;
@@ -49,23 +46,14 @@ export default function SavedSchemesPage() {
 
       setUser(currentUser);
 
-      if (isSupabaseConfigured()) {
-        const { data, error } = await supabase
-          .from("saved_schemes")
-          .select("*")
-          .order("created_at", { ascending: false });
+      const { data, error } = await supabase
+        .from("saved_schemes")
+        .select("*")
+        .eq("user_id", currentUser.id)
+        .order("created_at", { ascending: false });
 
-        if (!error && data) {
-          setSchemes(data as SavedScheme[]);
-        }
-      } else {
-        // Fallback for local demo if credentials are being configured
-        const local = localStorage.getItem("sahayaka_saved_schemes");
-        if (local) {
-          try {
-            setSchemes(JSON.parse(local));
-          } catch {}
-        }
+      if (!error && data) {
+        setSchemes(data as SavedScheme[]);
       }
       setLoading(false);
     }
@@ -73,24 +61,21 @@ export default function SavedSchemesPage() {
     loadSaved();
   }, [router]);
 
-  async function handleRemoveScheme(id: string, scheme_id: string) {
+  async function handleRemoveScheme(id: string) {
+    if (!user) return;
     setRemovingId(id);
     const supabase = createClient();
 
-    if (isSupabaseConfigured()) {
-      await supabase.from("saved_schemes").delete().eq("id", id);
+    const { error } = await supabase
+      .from("saved_schemes")
+      .delete()
+      .eq("id", id)
+      .eq("user_id", user.id);
+
+    if (!error) {
+      setSchemes((prev) => prev.filter((s) => s.id !== id));
+      window.dispatchEvent(new Event("sahayaka_saved_schemes_changed"));
     }
-
-    setSchemes((prev) => prev.filter((s) => s.id !== id));
-
-    // Also update local fallback
-    try {
-      const local = localStorage.getItem("sahayaka_saved_schemes");
-      if (local) {
-        const list = JSON.parse(local).filter((s: SavedScheme) => s.scheme_id !== scheme_id);
-        localStorage.setItem("sahayaka_saved_schemes", JSON.stringify(list));
-      }
-    } catch {}
 
     setRemovingId(null);
   }
@@ -175,7 +160,7 @@ export default function SavedSchemesPage() {
                   <button
                     className="auth-link-btn"
                     style={{ color: "var(--error)", display: "flex", alignItems: "center", gap: 4 }}
-                    onClick={() => handleRemoveScheme(scheme.id, scheme.scheme_id)}
+                    onClick={() => handleRemoveScheme(scheme.id)}
                     disabled={removingId === scheme.id}
                     title="Remove from saved portfolio"
                   >

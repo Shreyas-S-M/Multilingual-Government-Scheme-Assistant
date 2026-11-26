@@ -106,8 +106,10 @@ class AdaptiveQuestioner:
         missing_counter = Counter()
         for scheme_res in viable_schemes:
             for attr in scheme_res.missing_attributes:
-                # Only consider attributes currently unknown in user profile
-                if getattr(profile, attr, None) is None:
+                # Skip internal sentinel and fields already known or explicitly skipped
+                if attr == "scheme_specific_criteria":
+                    continue
+                if getattr(profile, attr, None) is None and profile.field_status.get(attr) != "skipped":
                     missing_counter[attr] += 1
 
         if not missing_counter:

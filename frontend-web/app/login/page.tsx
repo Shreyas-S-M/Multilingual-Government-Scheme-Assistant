@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   User,
 } from "lucide-react";
-import { createClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
+import { sanitizeRedirectPath } from "@/lib/supabase/config";
 
 type AuthMode = "signin" | "signup" | "forgot";
 type Language = "en" | "kn" | "te" | "ta" | "ml";
@@ -53,7 +54,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: string;
     resetSent: string;
     resetSentDesc: string;
-    unconfiguredAlert: string;
   }
 > = {
   en: {
@@ -86,7 +86,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: "Please check your inbox and click the confirmation link to activate your account.",
     resetSent: "Password reset link sent!",
     resetSentDesc: "If an account exists with this email, you will receive a secure password reset link shortly.",
-    unconfiguredAlert: "Supabase connection is not configured yet. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to your .env.local file.",
   },
   kn: {
     titleSignIn: "ಸಹಾಯಕಕ್ಕೆ ಲಾಗಿನ್ ಆಗಿ",
@@ -118,7 +117,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ನಿಮ್ಮ ಇನ್‌ಬಾಕ್ಸ್ ಪರಿಶೀಲಿಸಿ ಲಿಂಕ್ ಕ್ಲಿಕ್ ಮಾಡಿ.",
     resetSent: "ಮರುಹೊಂದಿಸುವ ಲಿಂಕ್ ಕಳುಹಿಸಲಾಗಿದೆ!",
     resetSentDesc: "ಖಾತೆ ಲಭ್ಯವಿದ್ದರೆ ಮರುಹೊಂದಿಸುವ ಲಿಂಕ್ ನಿಮ್ಮ ಇಮೇಲ್‌ಗೆ ತಲುಪುತ್ತದೆ.",
-    unconfiguredAlert: "Supabase ಸಂಪರ್ಕ ಇನ್ನೂ ಕಾನ್ಫಿಗರ್ ಆಗಿಲ್ಲ. .env.local ನಲ್ಲಿ ವಿವರಗಳನ್ನು ಸೇರಿಸಿ.",
   },
   te: {
     titleSignIn: "సహాయకకు లాగిన్ అవ్వండి",
@@ -150,7 +148,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: "మీ ఖాతాను సక్రియం చేయడానికి మీ ఇన్‌బాక్స్‌లోని లింక్‌ను క్లిక్ చేయండి.",
     resetSent: "రీసెట్ లింక్ పంపబడింది!",
     resetSentDesc: "ఈ ఇమెయిల్‌తో ఖాతా ఉంటే రీసెట్ లింక్ వస్తుంది.",
-    unconfiguredAlert: "Supabase కాన్ఫిగరేషన్ ఇంకా పూర్తి కాలేదు. .env.local ఫైల్ చూడండి.",
   },
   ta: {
     titleSignIn: "சஹாயகாவில் உள்நுழையவும்",
@@ -182,7 +179,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: "உங்கள் கணக்கைச் செயல்படுத்த உங்கள் மின்னஞ்சல் இணைப்பைக் கிளிக் செய்யவும்.",
     resetSent: "மீட்டமைப்பு இணைப்பு அனுப்பப்பட்டது!",
     resetSentDesc: "கணக்கு இருந்தால் உங்கள் மின்னஞ்சலுக்கு இணைப்பு வரும்.",
-    unconfiguredAlert: "Supabase உள்ளமைவு இன்னும் முடிக்கப்படவில்லை. .env.local ஐப் பார்க்கவும்.",
   },
   ml: {
     titleSignIn: "സഹായകയിലേക്ക് ലോഗിൻ ചെയ്യുക",
@@ -214,7 +210,6 @@ const AUTH_COPY: Record<
     checkEmailDesc: "അക്കൗണ്ട് പ്രവർത്തനക്ഷമമാക്കാൻ ഇമെയിലിലെ ലിങ്കിൽ ക്ലിക്ക് ചെയ്യുക.",
     resetSent: "റീസെറ്റ് ലിങ്ക് അയച്ചു!",
     resetSentDesc: "അക്കൗണ്ട് ഉണ്ടെങ്കിൽ ഇമെയിലിലേക്ക് ലിങ്ക് ലഭിക്കും.",
-    unconfiguredAlert: "Supabase കോൺഫിഗറേഷൻ ഇതുവരെ ചെയ്തിട്ടില്ല. .env.local പരിശോധിക്കുക.",
   },
 };
 
@@ -232,8 +227,7 @@ function AuthContent() {
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
 
   const t = AUTH_COPY[lang];
-  const configured = isSupabaseConfigured();
-  const redirectTo = searchParams.get("redirectTo") || "/";
+  const redirectTo = sanitizeRedirectPath(searchParams.get("redirectTo"), "/");
   const urlError = searchParams.get("error");
 
   useEffect(() => {
@@ -245,11 +239,6 @@ function AuthContent() {
   async function handleGoogleSignIn() {
     setErrorMsg(null);
     setSuccessMsg(null);
-
-    if (!configured) {
-      setErrorMsg(t.unconfiguredAlert);
-      return;
-    }
 
     setLoading(true);
     try {
@@ -275,11 +264,6 @@ function AuthContent() {
     e.preventDefault();
     setErrorMsg(null);
     setSuccessMsg(null);
-
-    if (!configured) {
-      setErrorMsg(t.unconfiguredAlert);
-      return;
-    }
 
     if (mode === "signup" && password !== confirmPassword) {
       setErrorMsg(t.passwordMismatch);

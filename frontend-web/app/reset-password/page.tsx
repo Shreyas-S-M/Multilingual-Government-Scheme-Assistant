@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import type { EmailOtpType } from "@supabase/supabase-js";
 import { CheckCircle2, KeyRound, Landmark, LoaderCircle, Lock, ShieldAlert } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
@@ -11,13 +12,87 @@ export default function ResetPasswordPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [checkingSession, setCheckingSession] = useState(true);
+  const [hasSession, setHasSession] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    const supabase = createClient();
+
+    async function initRecoverySession() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+        const tokenHash = params.get("token_hash");
+        const type = params.get("type") as EmailOtpType | null;
+
+        if (code) {
+          const { error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error && active) {
+            setErrorMsg(error.message || "Recovery link is invalid or has expired.");
+          }
+        } else if (tokenHash && type) {
+          const { error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });
+          if (error && active) {
+            setErrorMsg(error.message || "Recovery link is invalid or has expired.");
+          }
+        }
+
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+
+        if (!active) return;
+
+        if (user) {
+          setHasSession(true);
+        } else {
+          setHasSession(false);
+          setErrorMsg((prev) =>
+            prev ?? "No active recovery or user session found. Please request a new password reset link from Sign In."
+          );
+        }
+      } catch (err: any) {
+        if (active) {
+          setErrorMsg(err?.message || "Failed to validate password recovery session.");
+        }
+      } finally {
+        if (active) {
+          setCheckingSession(false);
+        }
+      }
+    }
+
+    initRecoverySession();
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!active) return;
+      if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && session?.user)) {
+        setHasSession(true);
+        setErrorMsg(null);
+        setCheckingSession(false);
+      }
+    });
+
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
+  }, []);
 
   async function handleUpdatePassword(e: React.FormEvent) {
     e.preventDefault();
     setErrorMsg(null);
     setSuccessMsg(null);
+
+    if (!hasSession) {
+      setErrorMsg("Your recovery session has expired. Please request a new password reset link.");
+      return;
+    }
 
     if (password !== confirmPassword) {
       setErrorMsg("Passwords do not match.");
@@ -119,11 +194,11 @@ export default function ResetPasswordPage() {
               </div>
             </div>
 
-            <button type="submit" className="auth-submit-btn" disabled={loading}>
-              {loading ? (
+            <button type="submit" className="auth-submit-btn" disabled={loading || checkingSession || !hasSession}>
+              {loading || checkingSession ? (
                 <span className="auth-btn-loading">
                   <LoaderCircle size={16} className="spin" />
-                  <span>Updating…</span>
+                  <span>{checkingSession ? "Verifying session…" : "Updating…"}</span>
                 </span>
               ) : (
                 "Update Password"

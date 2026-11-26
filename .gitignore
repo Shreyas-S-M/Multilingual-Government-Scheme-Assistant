@@ -47,6 +47,10 @@ data/processed/index_metadata.json
 # Environment
 .env
 .env.local
+.env.*.local
+
+# Reports / Office docs
+*.docx
 
 # Testing & Coverage
 .pytest_cache/
